@@ -4,7 +4,7 @@ Site portfólio de **Raphael Castilho**, desenvolvedor Frontend com foco em QA e
 
 ## Acesso
 
-> **[Ver online →](https://raphacastilho.github.io/portfolio)** *(em breve via GitHub Pages)*
+> **[Ver online →](https://raphacastilho.github.io/Portfolio)**
 
 ## Funcionalidades
 
