@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <!--META DADOS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfólio de Raphael Castilho, desenvolvedor web focado em front-end, UX/UI e soluções digitais."
+    />
+    <meta
+      name="keywords"
+      content="desenvolvedor web, frontend, portfólio, HTML, CSS, JavaScript"
+    />
+
+    <title>DEV.Rapha - Desenvolvedor Web</title>
+    <!--META DADOS -->
+    <!--ICONES -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!--ICONES -->
+    <!--CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!--CSS -->
+  </head>
+  <body>
+    <header class="header">
+      <a href="#home" class="logo">DEV. <span>Rapha</span></a>
+
+      <!-- MENU DE NAVEGAÇÃO -->
+      <nav class="navbar">
+        <a href="#home" class="active" id="homenav">Início</a>
+        <a href="#conhecimento" id="educationnav">Conhecimento</a>
+        <a href="#services" id="servicesnav">Serviços</a>
+        <a href="#portfolio" id="portnav">Projetos</a>
+        <a href="#contato" id="contactnav">Contato</a>
+      </nav>
+
+      <!-- ÍCONE DO MENU MOBILE -->
+      <div class="header-right"></div>
+      <i class="bx bx-menu" id="menu-icon"></i>
+
+      <!-- BOTÕES: MODO ESCURO + IDIOMA -->
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Trocar tema">
+          <i class="bx bx-moon"></i>
+        </button>
+
+        <button class="lang-toggle" id="lang-toggle" aria-label="Trocar idioma">
+          <img
+            src="src/img/united-states-of-america-flag.svg"
+            alt="English"
+            id="lang-flag"
+          />
+        </button>
+      </div>
+    </header>
+
+    <!--HOME-->
+    <section class="home" id="home">
+      <!--Apresentação-->
+      <div class="home-content">
+        <h1 id="hometitle">Oi, sou o <span>Rapha!</span></h1>
+        <h3 class="text-animation" id="homesubtitle">Eu sou <span></span></h3>
+        <p id="homedescription">
+          Sou desenvolvedor Frontend em início de carreira, com foco em
+          construção de interfaces modernas, funcionais e bem estruturadas.
+          <br />Sou proativo, detalhista e com forte capacidade de organização e
+          liderança, características que desenvolvi ao longo de experiências
+          anteriores em gestão de pessoas e projetos. Valorizo o trabalho em
+          equipe, a comunicação clara e o compromisso com prazos e qualidade.
+        </p>
+        <!--Apresentação-->
+
+        <!--Icones-->
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/raphael-castilho/"
+            ><i class="bx bxl-linkedin-square"></i
+          ></a>
+          <a href="https://github.com/RaphaCastilho"
+            ><i class="bx bxl-github"></i
+          ></a>
+          <a href="https://www.instagram.com/rapha.castilho/"
+            ><i class="bx bxl-instagram-alt"></i
+          ></a>
+        </div>
+        <!--Icones-->
+
+        <!--Botões-->
+        <div class="btn-group">
+          <a href="#contato" class="btn" id="hire">Contratar</a>
+        </div>
+      </div>
+      <!--Botões-->
+
+      <!--Imagem Lateral-->
+      <div class="home-img">
+        <img src="src/img/aiease_1748015024598.png" alt="home-img" />
+      </div>
+      <!--Imagem Lateral-->
+    </section>
+    <!--HOME-->
+
+    <!--Conhecimento-->
+    <section class="conhecimento" id="conhecimento">
+      <h2 class="heading" id="educationtitle">Conhecimento</h2>
+
+      <div class="timeline-items">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2024</div>
+          <div class="timeline-content">
+            <h3 id="educationtitle1">Liderança e Gestão de Pessoas</h3>
+            <p id="educationdescription1">
+              Curso de Liderança e Gestão de Pessoas com foco prático e
+              transformacional, abordando habilidades essenciais como
+              Comunicação, Escuta Ativa, Negociação, Gestão Ágil de Projetos
+              (SCRUM), Produtividade (GTD), Inteligência Emocional, Gestão de
+              Equipes Remotas e Multiculturais, Delegação, Feedback e Motivação.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2024</div>
+          <div class="timeline-content">
+            <h3 id="educationtitle2">
+              Negociações de sucesso: estratégias e habilidades essenciais -
+              Universidade de Michigan
+            </h3>
+            <p id="educationdescription2">
+              Curso prático em Estratégias de Negociação, abordando os quatro
+              estágios principais: planejamento, negociação, criação e execução.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2025</div>
+          <div class="timeline-content">
+            <h3 id="educationtitle3">Desenvolvimento Front-End</h3>
+            <p id="educationdescription3">
+              Criação de interfaces modernas e responsivas com foco na
+              experiência do usuário, utilizando HTML, CSS e JavaScript.
+              Transformo ideias em designs funcionais, com código limpo e
+              otimizado.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2025</div>
+          <div class="timeline-content">
+            <h3 id="educationtitle4">Desenvolvimento Back-End</h3>
+            <p id="educationdescription4">
+              Construção de APIs robustas e escaláveis com Node.js e Express,
+              integrando bancos de dados como MongoDB e MySQL. Foco em
+              performance, segurança e arquitetura eficiente para soluções
+              sólidas e modernas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Conhecimento-->
+
+    <!--Serviços-->
+    <section class="services" id="services">
+      <h2 class="heading" id="servicestitle">Serviços</h2>
+
+      <div class="services-container">
+        <div class="service-box">
+          <div class="service-info">
+            <h4 id="servicestitle1">Desenvolvimento Web</h4>
+            <p id="servicesdescription1">
+              Criação de sites profissionais, personalizados para apresentar sua
+              marca ou vender seus produtos.<br />
+              Sites responsivos, rápidos e focados em gerar resultado.<br />
+              <strong>Sua presença digital</strong>, do jeito que o mercado
+              exige!
+            </p>
+          </div>
+        </div>
+
+        <div class="service-box">
+          <div class="service-info">
+            <h4 id="servicestitle2">Desenvolvimento de App Web</h4>
+            <p id="servicesdescription2">
+              Aplicativos web responsivos, com foco na melhor experiência para o
+              usuário.<br />
+              Soluções práticas e acessíveis para transformar ideias em
+              plataformas digitais que funcionam em qualquer dispositivo.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-box">
+          <div class="service-info">
+            <h4 id="servicestitle3">Landing Pages e Sites de Vendas</h4>
+            <p id="servicesdescription3">
+              Landing Pages estratégicas, pensadas para converter visitantes em
+              clientes. <br />Layouts modernos, rápidos e com foco total em
+              gerar vendas e oportunidades para o seu negócio.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-box">
+          <div class="service-info">
+            <h4 id="servicestitle4">Consultoria e Suporte Técnico</h4>
+            <p id="servicesdescription4">
+              Acompanhamento técnico completo, desde a escolha da melhor solução
+              até a manutenção do seu site ou app.<br />
+              Consultoria personalizada para garantir que sua presença online
+              esteja sempre atualizada e segura.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Serviços-->
+
+    <!--Portfolio - Projetos-->
+    <section class="portfolio" id="portfolio">
+      <div class="main-text">
+        <h2 id="portfoliotitle">Projetos</h2>
+      </div>
+
+      <div class="container">
+        <div class="fillter-buttons">
+          <button class="btn" data-filter="all">Todos</button>
+          <button class="btn" data-filter=".webpage">Web Page</button>
+          <button class="btn" data-filter=".webapp">App Web</button>
+          <button class="btn" data-filter=".qa">QA &amp; Testing</button>
+        </div>
+      </div>
+
+      <div class="portfolio-gallery">
+        <div class="port-box mix webpage">
+          <div class="port-img">
+            <img src="src/img/projeto-sentinel.PNG" alt="Sentinel Tech QA" />
+          </div>
+          <div class="port-content">
+            <h3>Sentinel Tech - QA</h3>
+            <p>Site institucional para empresa de Quality Assurance, com design moderno e responsivo.</p>
+            <a href="https://github.com/RaphaCastilho/DEV/tree/main/Sentinel-Tech-QA" target="_blank" rel="noopener noreferrer"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+
+        <div class="port-box mix webpage">
+          <div class="port-img">
+            <img src="src/img/projeto-marialice.PNG" alt="Maria Alice Crochê" />
+          </div>
+          <div class="port-content">
+            <h3>Maria Alice - Crochê</h3>
+            <p>Landing page para artesã, com catálogo de produtos e formulário de contato.</p>
+            <a href="https://github.com/RaphaCastilho/DEV/tree/main/Maria%20Alice%20-%20Croche" target="_blank" rel="noopener noreferrer"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+
+        <div class="port-box mix webpage">
+          <div class="port-img">
+            <img src="src/img/projeto-cromo.PNG" alt="Cromo e Ruínas" />
+          </div>
+          <div class="port-content">
+            <h3>Cromo e Ruínas</h3>
+            <p>Site para banda musical com identidade visual forte, repertório e página de contato.</p>
+            <a href="https://github.com/RaphaCastilho/Projetos" target="_blank" rel="noopener noreferrer"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+
+        <div class="port-box mix webapp">
+          <div class="port-img">
+            <img src="src/img/projeto-gestor.PNG" alt="Gestor Web" />
+          </div>
+          <div class="port-content">
+            <h3>Gestor Web</h3>
+            <p>Aplicativo web de gestão com cadastro, edição e controle de dados em tempo real.</p>
+            <a href="https://github.com/RaphaCastilho/DEV/tree/main/Gestor" target="_blank" rel="noopener noreferrer"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+
+        <div class="port-box mix webapp">
+          <div class="port-img">
+            <img src="src/img/projeto-checklist.PNG" alt="App CheckList" />
+          </div>
+          <div class="port-content">
+            <h3>App CheckList</h3>
+            <p>Aplicativo responsivo para criação e gerenciamento de listas e tarefas de projetos.</p>
+            <a href="https://github.com/RaphaCastilho/DEV/tree/main/CheckList" target="_blank" rel="noopener noreferrer"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+
+        <div class="port-box mix qa">
+          <div class="port-img">
+            <img src="src/img/projeto-playwright.PNG" alt="Playwright + k6" />
+          </div>
+          <div class="port-content">
+            <h3>Playwright + k6</h3>
+            <p>Suite de testes E2E com Playwright e testes de carga com k6, integrados ao Jenkins CI/CD.</p>
+            <a href="https://github.com/RaphaCastilho/playwright-serverest" target="_blank" rel="noopener noreferrer"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Portfolio - Projetos-->
+
+    <!--Contato-->
+    <section class="contato" id="contato">
+      <h2 class="heading" id="contacttitle">Entrar em <span>Contato</span></h2>
+
+      <form
+        action="https://formsubmit.co/castilho_raphael@hotmail.com"
+        method="POST"
+      >
+        <div class="input-group">
+          <div class="input-box">
+            <input
+              type="text"
+              name="Nome"
+              placeholder="Nome Completo"
+              id="contactname"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="email"
+              id="contactemail"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <input
+              type="tel"
+              name="Telefone"
+              placeholder="Telefone"
+              id="contactphone"
+            />
+            <input
+              type="text"
+              name="Assunto"
+              placeholder="Assunto"
+              id="contactsubject"
+            />
+          </div>
+        </div>
+
+        <div class="input-group-2">
+          <textarea
+            name="Mensagem"
+            id="contactmessage"
+            cols="30"
+            rows="10"
+            placeholder="Sua Mensagem"
+          ></textarea>
+          <input
+            type="submit"
+            value="Enviar Mensagem"
+            class="btn"
+            id="contactbutton"
+          />
+        </div>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <div class="social">
+        <a href="https://www.linkedin.com/in/raphael-castilho/"
+          ><i class="bx bxl-linkedin-square"></i
+        ></a>
+        <a href="https://github.com/RaphaCastilho"
+          ><i class="bx bxl-github"></i
+        ></a>
+        <a href="https://www.instagram.com/rapha.castilho/"
+          ><i class="bx bxl-instagram-alt"> </i
+        ></a>
+      </div>
+
+      <ul class="list">
+        <li>
+          <a href="#home" id="footerhome">Início</a>
+        </li>
+
+        <li>
+          <a href="#services" id="footerservice">Serviços</a>
+        </li>
+
+        <li>
+          <a href="#contato" id="footercontact">Contato</a>
+        </li>
+      </ul>
+      <p class="copyright" id="footercopy">
+        © DEV.Rapha 2025 - Todos os direitos reservados
+      </p>
+    </footer>
+
+    <script src="mixitup.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

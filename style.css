@@ -1,0 +1,915 @@
+/* =================== FONTES =================== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* =================== FONTES =================== */
+
+/* =================== VARIÁVEIS =================== */
+:root {
+  --cor-fundo: oklch(12.9% 0.042 264.695);
+  --cor-fundo2: oklch(20.8% 0.042 265.755);
+  --cor-primaria: oklch(75% 0.2 265);
+  --cor-secundaria: oklch(27.8% 0.033 256.848);
+  --cor-texto: oklch(92% 0.01 270);
+  --cor-destaque: oklch(29.1% 0.149 302.717);
+}
+
+body.light {
+  --cor-fundo: oklch(95.1% 0.026 236.824);
+  --cor-fundo2: oklch(90.1% 0.058 230.902);
+  --cor-primaria: oklch(75% 0.2 265);
+  --cor-secundaria: oklch(55% 0.15 302.717);
+  --cor-texto: oklch(12% 0.02 270);
+  --cor-destaque: oklch(29.1% 0.149 302.717);
+}
+/* =================== VARIÁVEIS =================== */
+
+/* =================== RESET & GLOBAL =================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 60%;
+  overflow-x: hidden;
+}
+
+/* =================== RESET & GLOBAL =================== */
+
+/* =================== PRINCIPAL =================== */
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+/* =================== PRINCIPAL =================== */
+
+/* =================== LOGO =================== */
+
+.logo {
+  font-size: 4rem;
+  color: var(--cor-texto);
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.2);
+}
+
+.logo span {
+  text-shadow: 0 0 50px var(--cor-destaque);
+  color: var(--cor-secundaria);
+}
+/* =================== LOGO =================== */
+/* =================== HEADER =================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 12% 2rem;
+  background: var(--cor-fundo);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 5;
+  gap: 1rem; /* pra dar espaço entre os itens */
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Espaço entre os botões */
+}
+.header-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  color: var(--cor-texto);
+}
+
+.header-actions button:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+.lang-toggle img {
+  width: 24px;
+  height: auto;
+}
+.theme-toggle i {
+  font-size: 1.5rem;
+  color: var(--cor-texto);
+}
+/* =================== HEADER =================== */
+
+/* DarkMode */
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  transition: transform 0.3s ease;
+  color: var(--cor-texto);
+}
+
+.theme-toggle:hover {
+  transform: rotate(20deg) scale(1.1);
+}
+
+/* ================ Botão de troca de idioma ================ */
+.lang-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.2s ease;
+}
+
+.lang-toggle img {
+  width: 30px;
+  height: 20px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.lang-toggle:hover {
+  transform: scale(1.1);
+}
+/* ================ Botão de troca de idioma ================ */
+
+/* =================== navbar =================== */
+
+.navbar a {
+  font-size: 1.8rem;
+  color: var(--cor-texto);
+  margin-left: 4rem;
+  font-weight: 500;
+  transition: 0.1s ease;
+  border-bottom: 3px solid transparent;
+}
+
+/* Hover + ativo */
+.navbar a:hover,
+.navbar a.active {
+  color: var(--cor-texto);
+  border-bottom: 3px solid var(--cor-texto);
+} /* Link ativo */
+
+/* =================== Icone Menu =================== */
+
+#menu-icon {
+  font-size: 3.6rem;
+  color: var(--cor-texto);
+  display: none;
+}
+/* =================== Icone Menu =================== */
+
+/* =================== HOME =================== */
+
+section {
+  min-height: 100vh;
+  padding: 10rem 12% 10rem;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15rem;
+}
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  text-align: left;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.home-content h3 {
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  font-size: 3.5rem;
+}
+
+.home-content h1 {
+  font-size: 7rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  line-height: 1;
+}
+
+.home-img {
+  border-radius: 50%;
+}
+
+.home-img img {
+  position: relative;
+  top: 1rem;
+  width: 32vw;
+  max-width: 500px;
+  border-radius: 50%;
+  box-shadow: 0 0 25px var(--cor-texto);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.home-img img:hover {
+  box-shadow: 0 0 10px var(--cor-texto), 0 0 20px var(--cor-texto),
+    0 0 40px var(--cor-texto);
+}
+
+.home-content p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.8;
+  max-width: 1000px;
+}
+
+/* =================== HOME =================== */
+
+/* =================== Icones - Redes Sociais =================== */
+
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  background: transparent;
+  border: 2px solid var(--cor-secundaria);
+  font-size: 2.5rem;
+  border-radius: 50%;
+  color: var(--cor-texto);
+  margin: 3rem 1.5rem 3rem 0;
+  transition: 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  color: var(--cor-texto);
+  transform: scale(1.3) translateY(-5px);
+  box-shadow: 0 0 25px var(--cor-texto);
+  background-color: var(--cor-secundaria);
+}
+
+/* =================== Icones - Redes Sociais =================== */
+
+/* =================== Botoes - Contato =================== */
+
+.btn {
+  display: inline-block;
+  padding: 1rem 3rem;
+  background: var(--cor-secundaria);
+  box-shadow: 0 0 25px var(--cor-secundaria);
+  border-radius: 4rem;
+  font-size: 2.2rem;
+  color: var(--cor-texto);
+  border: 2px solid transparent;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: var(--cor-texto);
+  transform: scale(1.3) translateY(-5px);
+  box-shadow: 0 0 25px var(--cor-secundaria);
+  background-color: var(--cor-fundo);
+}
+
+/* ===== LIGHT MODE AJUSTES ===== */
+body.light .btn {
+  background: var(--cor-primaria); /* mais vibrante no light */
+  box-shadow: 0 0 25px var(--cor-secundaria);
+  color: var(--cor-texto);
+}
+
+body.light .btn:hover {
+  background-color: var(--cor-primaria);
+  box-shadow: 0 0 35px var(--cor-destaque);
+  color: var(--cor-texto);
+  transform: scale(1.3) translateY(-5px);
+}
+
+.btn-group {
+  display: flex;
+  align-items: center;
+}
+
+/* =================== Botoes - Contato =================== */
+
+/* =================== Animação Cargos =================== */
+.text-animation {
+  font-size: 1.5rem;
+  font-weight: 600;
+  min-width: 280px;
+}
+
+.text-animation span {
+  position: relative;
+}
+.text-animation span::before {
+  content: "Desenvolvedor Web";
+  color: var(--cor-texto);
+  animation: words 20s infinite;
+}
+.text-animation span::after {
+  content: "";
+  background-color: var(--cor-fundo);
+  position: absolute;
+  width: calc(100% + 6px);
+  height: 100%;
+  border-left: 3px solid var(--cor-fundo);
+  right: -8px;
+  animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+/* =================== Animação Cargos =================== */
+
+/* =================== Cursor - Escrita =================== */
+@keyframes cursor {
+  to {
+    border-left: 1px solid var(--cor-secundaria);
+  }
+}
+/* =================== Cursor - Escrita =================== */
+
+/* =================== Palavras - Cargos =================== */
+@keyframes words {
+  0%,   20% { content: "Desenvolvedor Web"; }
+  21%,  40% { content: "Desenvolvedor App"; }
+  41%,  60% { content: "Web Designer"; }
+  61%,  80% { content: "Software Tester"; }
+  81%, 100% { content: "Consultor Técnico"; }
+}
+
+html[lang="en-US"] .text-animation span::before {
+  animation: words-en 20s infinite;
+}
+
+@keyframes words-en {
+  0%,   20% { content: "Web Developer"; }
+  21%,  40% { content: "App Developer"; }
+  41%,  60% { content: "Web Designer"; }
+  61%,  80% { content: "Software Tester"; }
+  81%, 100% { content: "Technical Consultant"; }
+}
+/* =================== Palavras - Cargos =================== */
+
+/* =================== Animação Escrita =================== */
+
+@keyframes typing {
+  10%,
+  15%,
+  30%,
+  35%,
+  50%,
+  55%,
+  70%,
+  75%,
+  90%,
+  95% {
+    width: 0;
+  }
+  5%,
+  20%,
+  25%,
+  40%,
+  45%,
+  60%,
+  65%,
+  80%,
+  85% {
+    width: calc(100% + 6px);
+  }
+}
+
+/* =================== Animação Escrita =================== */
+
+/* =================== Conhecimento =================== */
+.heading {
+  font-size: 8rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.conhecimento {
+  padding: 100px 15px;
+  background-color: var(--cor-fundo2);
+}
+
+.conhecimento h2 {
+  margin-bottom: 5rem;
+}
+
+/* =================== Linha do Tempo =================== */
+.timeline-items {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.timeline-items::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  background-color: var(--cor-secundaria);
+  left: calc(50% + 15px);
+}
+
+.timeline-item {
+  margin-bottom: 40px;
+  width: 100%;
+  position: relative;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+.timeline-item:nth-child(odd) {
+  padding-right: calc(50% + 30px);
+  text-align: right;
+}
+.timeline-item:nth-child(even) {
+  padding-left: calc(50% + 30px);
+}
+/* =================== Linha do Tempo =================== */
+
+/* =================== Linha do Tempo - Pontos/Datas =================== */
+.timeline-dot {
+  height: 21px;
+  width: 21px;
+  background-color: var(--cor-texto);
+  box-shadow: 0 0 25px var(--cor-texto), 0 0 50px var(--cor-texto);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  top: 10px;
+}
+.timeline-date {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--cor-texto);
+  margin: 6px 0 15px;
+}
+.timeline-content {
+  background-color: var(--cor-fundo);
+  border: 3px solid var(--cor-secundaria);
+  padding: 30px 50px;
+  border-radius: 4rem;
+  box-shadow: 0 0 10px var(--cor-texto);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+/* =================== Linha do Tempo - Pontos/Datas =================== */
+
+/* =================== Animação - Box-Infos =================== */
+.timeline-content:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px var(--cor-texto);
+}
+.timeline-content h3 {
+  font-size: 20px;
+  color: var(--cor-texto);
+  margin: 0 0 10px;
+  font-weight: 500;
+}
+.timeline-content p {
+  color: var(--cor-texto);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+}
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--cor-secundaria);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--cor-fundo);
+  width: 50px;
+}
+/* =================== Animação - Box-Infos =================== */
+
+/* =================== Conhecimento =================== */
+
+/* =================== Serviços =================== */
+.services {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+.services h2 {
+  font-size: 8rem;
+  color: var(--cor-texto);
+  margin-bottom: 4rem;
+}
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 4rem;
+}
+.service-box {
+  background-color: var(--cor-fundo2);
+  height: 250px;
+  border-radius: 3rem;
+  border: 5px solid transparent;
+  box-shadow: 0 0 10px var(--cor-texto);
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+.service-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px var(--cor-texto);
+}
+.service-box .service-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  max-height: 200px;
+  justify-content: left;
+  align-items: center;
+  padding: 2rem 5rem;
+}
+.service-info h4 {
+  font-size: 2.6rem;
+  color: var(--cor-texto);
+  margin: 0 0 10px;
+  font-weight: 500;
+}
+.service-info p {
+  color: var(--cor-texto);
+  font-size: 1.6rem;
+  font-weight: 250;
+  line-height: 22px;
+  text-align: center;
+  margin-top: 2.8rem;
+}
+
+/* =================== Serviços =================== */
+
+/* =================== Portfolio =================== */
+
+.portfolio {
+  background-color: var(--cor-fundo2);
+}
+
+.main-text h2 {
+  font-size: 8rem;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  color: var(--cor-texto);
+  text-align: center;
+}
+
+/* =================== Botoes =================== */
+.fillter-buttons {
+  margin: 2rem;
+  text-align: center;
+}
+.fillter-buttons .btn {
+  background: transparent;
+  border: 2px solid var(--cor-secundaria);
+  cursor: pointer;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-left: 4rem;
+  color: var(--cor-texto);
+  transition: 0.3s ease-in-out;
+}
+.fillter-buttons .btn:hover {
+  color: var(--cor-texto);
+  transform: scale(1.05);
+  box-shadow: 0 0 30px var(--cor-texto);
+}
+/* =================== Botoes =================== */
+
+/* =================== Portfolio - Projetos =================== */
+
+.portfolio-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(270px, 1fr));
+  gap: 2rem;
+}
+
+.port-box {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--cor-fundo2);
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--cor-texto);
+  box-shadow: 0 0 10px var(--cor-texto);
+  margin-top: 4rem;
+}
+.port-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px var(--cor-texto);
+}
+
+.port-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.port-img img {
+  width: 100%;
+  opacity: 0.5;
+  height: 100%;
+  transition: 0.5s;
+}
+
+.port-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), var(--cor-secundaria));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  transition: 0.5s;
+  padding: 0 2rem;
+}
+.port-box:hover .port-content {
+  opacity: 1;
+}
+
+.port-box:hover .port-img img {
+  transform: scale(1.3);
+}
+
+.port-content h3 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.port-content p {
+  font-size: 1.6rem;
+  margin: 5px 0 15px 0;
+}
+
+.port-content a {
+  background: var(--cor-texto);
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  height: 30px;
+  border: 1px solid var(--cor-texto);
+  outline: 2px solid var(--cor-texto);
+}
+.port-content a i {
+  font-size: 1.8rem;
+}
+
+/* =================== Galeria responsiva =================== */
+
+@media (max-width: 768px) {
+  .portfolio-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+/* =================== Galeria responsiva =================== */
+
+/* =================== Portfolio - Projetos =================== */
+
+/* =================== Contato =================== */
+
+.contato {
+  background-color: var(--cor-fundo);
+}
+
+.contato h2 {
+  margin: 10rem;
+  color: var(--cor-texto);
+}
+
+.contato form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin: 5rem auto;
+  text-align: center;
+}
+
+.contato form .input-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contato form .input-box input,
+.contato form textarea {
+  width: 100%;
+  padding: 2.5rem;
+  font-size: 1.8rem;
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+  border-radius: 2rem;
+  border: 2px solid var(--cor-secundaria);
+  margin: 1.5rem 0;
+  resize: none;
+}
+.contato form .btn {
+  margin-top: 2rem;
+}
+/* =================== Contato =================== */
+
+/* =================== Footer =================== */
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 25px 0;
+  background-color: var(--cor-fundo2);
+}
+.footer .social {
+  text-align: center;
+  padding-bottom: 25px;
+  color: var(--cor-secundaria);
+}
+.footer .social a {
+  font-size: 25px;
+  color: var(--cor-texto);
+  border: 2px solid var(--cor-texto);
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0 10px;
+  transition: 0.3s ease-in-out;
+}
+.footer .social a:hover {
+  transform: scale(1.2) translateY(-10px);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  box-shadow: 0 0 25px var(--cor-secundaria);
+}
+
+.footer ul {
+  margin-top: 0;
+  padding: 0;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 0;
+  text-align: center;
+}
+.footer ul li a {
+  color: var(--cor-texto);
+  border-bottom: 3px solid transparent;
+  transition: 0.3s ease-in-out;
+}
+.footer ul li a:hover {
+  border-bottom: 3px solid var(--cor-texto);
+}
+.footer ul li {
+  display: inline-block;
+  padding: 0 15px;
+}
+.footer .copyright {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--cor-texto);
+}
+/* =================== Footer =================== */
+
+/* =================== Responsividade =================== */
+@media (max-width: 1285px) {
+  html {
+    font-size: 55%;
+  }
+  .services-container {
+    padding-bottom: 7rem;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 5rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .header {
+    padding: 2rem 3%;
+  }
+  .section {
+    padding: 10rem 3% 2rem;
+  }
+  .timeline-items::before {
+    left: 7px;
+  }
+  .timeline-item:nth-child(odd) {
+    padding-right: 0;
+    text-align: left;
+  }
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    padding-left: 37px;
+  }
+  .timeline-dot {
+    left: 0;
+    transform: none;
+  }
+  .services {
+    padding-bottom: 7rem;
+  }
+  .contato form {
+    flex-direction: column;
+  }
+  .footer {
+    padding: 2rem 3%;
+  }
+}
+
+@media (max-width: 895px) {
+  #menu-icon {
+    display: block;
+  }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 50%;
+    padding: 1rem 3%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    border-bottom-left-radius: 2rem;
+    border-left: 2px solid var(--cor-texto);
+    border-bottom: 2px solid var(--cor-texto);
+    display: none;
+  }
+  .navbar.active {
+    display: block;
+  }
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+    color: var(--cor-texto);
+  }
+  .home {
+    flex-direction: column-reverse;
+    margin: 5rem 4rem;
+  }
+  .home-content h3 {
+    font-size: 2.6rem;
+  }
+  .home-content h1 {
+    font-size: 8rem;
+    margin-top: 3rem;
+  }
+  .home-content p {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .home-img img {
+    width: 56vw;
+  }
+  .services h2 {
+    margin-bottom: 3rem;
+  }
+  .services-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+/* =================== Responsividade =================== */
