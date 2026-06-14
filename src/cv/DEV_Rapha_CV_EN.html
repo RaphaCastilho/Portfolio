@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Raphael Castilho — Quality Engineer</title>
+<style>
+/* ── VARIABLES ─────────────────────────────────── */
+:root {
+  --accent:        #5B21B6;
+  --accent-soft:   #EDE9FE;
+  --accent-border: #C4B5FD;
+  --text:          #0F172A;
+  --body:          #334155;
+  --muted:         #64748B;
+  --line:          #E2E8F0;
+  --chip-bg:       #F8FAFC;
+  --chip-border:   #E2E8F0;
+  --bg:            #F1F5F9;
+  --card:          #FFFFFF;
+  --green-soft:    #F0FDF4;
+  --green-border:  #BBF7D0;
+  --green-text:    #15803D;
+}
+
+/* ── RESET ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: 'Inter', 'Aptos', 'Segoe UI', system-ui, Arial, sans-serif;
+  color: var(--body);
+  line-height: 1.6;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── PAGE CONTAINER ────────────────────────────── */
+.page {
+  max-width: 900px;
+  margin: 32px auto;
+  padding: 48px 56px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow:
+    0 1px 2px rgba(0,0,0,.04),
+    0 8px 20px rgba(0,0,0,.05),
+    0 28px 52px rgba(0,0,0,.04);
+}
+
+/* ── HEADER ────────────────────────────────────── */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  color: var(--accent);
+  border-radius: 6px;
+  padding: 4px 11px;
+  font-size: 10.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
+}
+h1 { font-size: 36px; line-height: 1.08; margin: 12px 0 5px; color: var(--text); letter-spacing: -.035em; font-weight: 800; }
+.subtitle { font-size: 14.5px; font-weight: 500; color: var(--muted); margin: 0 0 12px; letter-spacing: -.01em; }
+.contacts { display: flex; flex-wrap: wrap; align-items: center; color: var(--muted); font-size: 12px; margin-bottom: 24px; }
+.contacts .sep { margin: 0 8px; color: var(--line); font-size: 13px; }
+
+/* ── DIVIDER ───────────────────────────────────── */
+.divider { height: 1px; background: var(--line); margin-bottom: 22px; }
+
+/* ── SECTION TITLE ─────────────────────────────── */
+.section-title {
+  display: flex; align-items: center; gap: 10px;
+  margin: 22px 0 10px; color: var(--muted);
+  font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+}
+.section-title::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+
+/* ── CARDS ─────────────────────────────────────── */
+.card { border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px; margin-bottom: 10px; background: var(--card); }
+
+/* ── SUMMARY ───────────────────────────────────── */
+.summary p { margin: 0 0 10px; color: var(--body); line-height: 1.72; font-size: 13.5px; }
+.summary p:last-child { margin-bottom: 0; }
+
+/* ── CHIPS ─────────────────────────────────────── */
+.chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+.chip {
+  display: inline-flex; align-items: center;
+  background: var(--chip-bg); border: 1px solid var(--chip-border);
+  border-radius: 6px; padding: 3px 9px; font-size: 11px;
+  color: var(--body); font-weight: 500; white-space: nowrap;
+  transition: border-color .15s, background .15s, color .15s; cursor: default;
+}
+.chip:hover { border-color: var(--accent-border); background: var(--accent-soft); color: var(--accent); }
+.chip.primary { background: var(--accent-soft); border-color: var(--accent-border); color: var(--accent); font-weight: 600; }
+.chip.primary:hover { background: #DDD6FE; border-color: #A78BFA; }
+.chip.green { background: var(--green-soft); border-color: var(--green-border); color: var(--green-text); font-weight: 600; }
+
+/* ── COMPETÊNCIAS — ROW LAYOUT ─────────────────── */
+.skill-rows { display: flex; flex-direction: column; }
+.skill-row {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.skill-row:first-child { padding-top: 0; }
+.skill-row:last-child { border-bottom: none; padding-bottom: 0; }
+.skill-row-label { font-size: 12px; font-weight: 700; color: var(--text); padding-top: 3px; letter-spacing: -.01em; }
+.skill-row .chips { margin-top: 0; }
+
+/* ── ECOSYSTEM GRID ────────────────────────────── */
+.eco-panel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.eco-group {
+  padding: 14px 16px;
+  border-right: 1px solid var(--line);
+}
+.eco-group:last-child { border-right: none; }
+.eco-label {
+  font-size: 9.5px; font-weight: 800; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
+}
+.eco-group .chips { margin-top: 0; gap: 4px; }
+
+/* ── EXPERIENCE ────────────────────────────────── */
+.job-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 2px; }
+.job-head h3 { margin: 0; color: var(--text); font-size: 14.5px; font-weight: 700; letter-spacing: -.01em; }
+.period {
+  color: var(--muted); font-size: 11px; font-weight: 600; white-space: nowrap;
+  background: var(--chip-bg); border: 1px solid var(--chip-border);
+  border-radius: 6px; padding: 3px 8px; flex-shrink: 0;
+}
+.role { font-size: 12.5px; font-weight: 500; color: var(--muted); margin: 3px 0 8px; }
+ul { margin: 6px 0 0; padding-left: 16px; }
+li { margin: 4px 0; color: var(--body); line-height: 1.52; font-size: 13px; }
+
+/* ── AMBIENTES ─────────────────────────────────── */
+.env-wrap { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* ── PROJECTS ──────────────────────────────────── */
+.project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.project h3 { margin: 0 0 8px; color: var(--text); font-size: 13px; font-weight: 700; }
+
+/* ── EDUCATION ─────────────────────────────────── */
+.edu-top { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+.edu-block h3 { margin: 0 0 6px; color: var(--text); font-size: 12px; font-weight: 700; letter-spacing: -.01em; }
+.edu-block p { margin: 0 0 3px; font-size: 12.5px; color: var(--body); line-height: 1.55; }
+.edu-block .edu-sub { font-size: 11px; color: var(--muted); margin: 0 0 8px; }
+
+.training-list { list-style: none; padding: 0; margin: 0; }
+.training-list li { padding: 6px 0; border-bottom: 1px solid var(--line); font-size: 12px; color: var(--body); margin: 0; }
+.training-list li:last-child { border-bottom: none; padding-bottom: 0; }
+.training-list .inst { display: block; font-size: 10.5px; color: var(--muted); margin-top: 1px; }
+
+.cert-list { list-style: none; padding: 0; margin: 0; }
+.cert-list li { padding: 5px 0; border-bottom: 1px solid var(--line); font-size: 12px; color: var(--body); margin: 0; line-height: 1.4; }
+.cert-list li:last-child { border-bottom: none; padding-bottom: 0; }
+.cert-list .inst { display: block; font-size: 10.5px; color: var(--muted); margin-top: 1px; }
+
+.lang-row { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 1px solid var(--line); font-size: 12.5px; }
+.lang-row:last-child { border-bottom: none; padding-bottom: 0; }
+.lang-row .lang-level { font-size: 11px; color: var(--muted); font-weight: 500; }
+
+/* ── HIGHLIGHTS ────────────────────────────────── */
+.highlights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 22px; margin: 0; padding: 0; list-style: none; }
+.highlights-grid li { font-size: 12.5px; color: var(--body); line-height: 1.52; padding-left: 13px; position: relative; margin: 0; }
+.highlights-grid li::before { content: '›'; position: absolute; left: 0; color: var(--accent); font-weight: 700; line-height: 1.52; }
+
+/* ── PRINT ─────────────────────────────────────── */
+@page { size: A4; margin: 0; }
+
+@media print {
+  html { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  body { background: #fff; font-size: 10px; }
+
+  .page { margin: 0; max-width: none; width: 100%; padding: 9mm 12mm; background: #fff; border: none; border-radius: 0; box-shadow: none; }
+
+  /* PAGE BREAKS */
+  .page-2 { break-before: page; page-break-before: always; }
+  .page-3 { break-before: page; page-break-before: always; }
+  .no-break { break-inside: avoid; page-break-inside: avoid; }
+
+  h1 { font-size: 25px; }
+  .subtitle { font-size: 12px; margin-bottom: 8px; }
+  .contacts { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; align-items: center; font-size: 8px; margin-bottom: 10px; gap: 0; overflow: hidden; }
+  .contacts span { white-space: nowrap; }
+  .contacts .sep { display: inline-block !important; margin: 0 5px; flex-shrink: 0; }
+  .eyebrow { font-size: 8.5px; padding: 3px 7px; }
+  .divider { margin-bottom: 12px; }
+  .section-title { margin: 13px 0 7px; font-size: 8px; }
+
+  .card { break-inside: avoid; page-break-inside: avoid; padding: 9px 12px; margin-bottom: 7px; border-radius: 8px; }
+
+  .chip, .chip.primary, .chip.green { font-size: 8.5px; padding: 2px 6px; border-radius: 4px; }
+  .chips { gap: 3px; margin-top: 6px; }
+
+  /* Skill rows print */
+  .skill-row { grid-template-columns: 130px 1fr; gap: 10px; padding: 8px 0; }
+  .skill-row-label { font-size: 9.5px; }
+
+  /* Ecosystem print */
+  .eco-panel { border-radius: 7px; }
+  .eco-group { padding: 9px 11px; }
+  .eco-label { font-size: 8px; margin-bottom: 7px; }
+
+  ul { margin-top: 4px; }
+  li { margin: 2px 0; font-size: 9.5px; line-height: 1.45; }
+  .job, .project { break-inside: avoid; page-break-inside: avoid; }
+  .period { font-size: 9px; }
+  .role { font-size: 10px; margin-bottom: 4px; }
+  .job-head h3 { font-size: 11.5px; }
+
+  .project-grid { gap: 7px; }
+  .project h3 { font-size: 10.5px; margin-bottom: 5px; }
+  .edu-top { gap: 7px; margin-bottom: 7px; }
+  .edu-block h3 { font-size: 10px; }
+  .edu-block p { font-size: 9.5px; }
+  .edu-block .edu-sub { font-size: 9px; }
+  .training-list li, .cert-list li { font-size: 9.5px; padding: 4px 0; }
+  .training-list .inst, .cert-list .inst { font-size: 8.5px; }
+  .lang-row { font-size: 9.5px; padding: 4px 0; }
+  .lang-row .lang-level { font-size: 9px; }
+  .highlights-grid { gap: 6px 16px; }
+  .highlights-grid li { font-size: 9.5px; }
+  .summary p { font-size: 10px; line-height: 1.65; margin-bottom: 6px; }
+  .env-wrap { gap: 4px; }
+}
+
+/* ── RESPONSIVE ────────────────────────────────── */
+@media (max-width: 720px) {
+  .page { padding: 28px 20px; margin: 10px; border-radius: 14px; }
+  h1 { font-size: 28px; }
+  .skill-row { grid-template-columns: 1fr; gap: 6px; }
+  .eco-panel { grid-template-columns: 1fr 1fr; }
+  .eco-group { border-right: none; border-bottom: 1px solid var(--line); }
+  .eco-group:nth-child(2n) { border-right: 1px solid var(--line); }
+  .project-grid, .edu-top, .highlights-grid { grid-template-columns: 1fr; }
+  .job-head { flex-direction: column; gap: 6px; }
+  .period { align-self: flex-start; }
+  .contacts { flex-direction: column; align-items: flex-start; gap: 3px; }
+  .contacts .sep { display: none; }
+}
+</style>
+</head>
+<body>
+<main class="page">
+
+  <!-- ══════════════ PÁGINA 1 ════════════════════ -->
+
+  <!-- HEADER ──────────────────────────────────── -->
+  <span class="eyebrow">Quality Engineering &bull; Automation &bull; Operational Systems</span>
+  <h1>Raphael Castilho Villela</h1>
+  <div class="subtitle">Quality Engineer &nbsp;&middot;&nbsp; Playwright Automation &nbsp;&middot;&nbsp; System Analysis</div>
+  <div class="contacts">
+    <span>castilho_raphael@hotmail.com</span>
+    <span class="sep">&middot;</span>
+    <span>+55 11 98480-6100</span>
+    <span class="sep">&middot;</span>
+    <span>Araçatuba, Brazil</span>
+    <span class="sep">&middot;</span>
+    <span>linkedin.com/in/raphael-castilho</span>
+    <span class="sep">&middot;</span>
+    <span>github.com/RaphaCastilho</span>
+  </div>
+  <div class="divider"></div>
+
+  <!-- RESUMO ──────────────────────────────────── -->
+  <div class="section-title no-break">Professional Summary</div>
+
+<section class="card summary no-break">
+    <p>Quality Engineer with experience in advanced troubleshooting, enterprise system analysis, test automation, and functional validation across SaaS platforms and corporate applications.</p>
+
+    <p>Works on bug investigation, behavioral analysis, critical workflow validation, and operational reliability in collaboration with development and product teams.</p>
+
+    <p>Experience with Playwright automation, API validation, log analysis, traceability, and software quality workflows focused on stability, reliability, and continuous improvement.</p>
+</section>
+
+
+  <!-- COMPETÊNCIAS ────────────────────────────── -->
+  <div class="section-title no-break">Technical Skills</div>
+  <section class="card no-break">
+    <div class="skill-rows">
+      <div class="skill-row">
+        <span class="skill-row-label">Quality Engineering</span>
+        <div class="chips">
+          <span class="chip primary">Functional Testing</span>
+          <span class="chip primary">Functional Test Design</span>
+          <span class="chip">Exploratory Testing</span>
+          <span class="chip">Bug Investigation</span>
+          <span class="chip">Bug Reporting</span>
+          <span class="chip">Regression Testing</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-row-label">Systems &amp; Troubleshooting</span>
+        <div class="chips">
+          <span class="chip primary">Troubleshooting</span>
+          <span class="chip primary">System Analysis</span>
+          <span class="chip">Log Analysis</span>
+          <span class="chip">Functional Validation</span>
+          <span class="chip">Incident Management</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-row-label">Automation &amp; Engineering</span>
+        <div class="chips">
+          <span class="chip primary">Playwright</span>
+          <span class="chip primary">JavaScript</span>
+          <span class="chip">REST APIs</span>
+          <span class="chip">API Testing</span>
+          <span class="chip">SQL</span>
+          <span class="chip">TypeScript</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <span class="skill-row-label">Automation Stack</span>
+        <div class="chips">
+          <span class="chip primary">Jira</span>
+          <span class="chip primary">JQL</span>
+          <span class="chip primary">Postman</span>
+          <span class="chip primary">Chrome DevTools</span>
+          <span class="chip">Git</span>
+          <span class="chip">GitHub</span>
+          <span class="chip">Node.js</span>
+          <span class="chip">Agile</span>
+          <span class="chip green">Playwright</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="section-title no-break">Automation Engineering</div>
+  <section class="card no-break">
+    <div class="chips">
+      <span class="chip green">Playwright E2E</span>
+      <span class="chip">Cross-browser Testing</span>
+      <span class="chip">API Validation</span>
+      <span class="chip">Regression Automation</span>
+      <span class="chip">Session/Auth Validation</span>
+      <span class="chip">Automation Workflows</span>
+      <span class="chip">Execution Analysis</span>
+      <span class="chip">Functional Reliability</span>
+    </div>
+  </section>
+
+
+  <!-- ECOSSISTEMA TÉCNICO ──────────────────────── -->
+  <div class="section-title no-break">Technical Ecosystem</div>
+  <div class="eco-panel no-break">
+    <div class="eco-group">
+      <div class="eco-label">QA &amp; Analysis</div>
+      <div class="chips">
+        <span class="chip primary">Jira</span>
+        <span class="chip primary">JQL</span>
+        <span class="chip primary">Postman</span>
+        <span class="chip primary">Chrome DevTools</span>
+        <span class="chip">API Testing</span>
+      </div>
+    </div>
+    <div class="eco-group">
+      <div class="eco-label">Front-End &amp; Web</div>
+      <div class="chips">
+        <span class="chip">HTML5</span>
+        <span class="chip">CSS3</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">Responsive Testing</span>
+        <span class="chip">Cross-browser Testing</span>
+      </div>
+    </div>
+    <div class="eco-group">
+      <div class="eco-label">Workflow &amp; Collab</div>
+      <div class="chips">
+        <span class="chip">Git</span>
+        <span class="chip">GitHub</span>
+        <span class="chip">Scrum</span>
+        <span class="chip">Kanban</span>
+        <span class="chip">Agile</span>
+      </div>
+    </div>
+    <div class="eco-group">
+      <div class="eco-label">Automation</div>
+      <div class="chips">
+        <span class="chip green">Playwright</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ PÁGINA 2 ════════════════════ -->
+  <div class="page-2">
+
+    <!-- EXPERIÊNCIA ────────────────────────────── -->
+    <div class="section-title">Professional Experience</div>
+
+    <section class="card job no-break">
+      <div class="job-head">
+        <h3>Brooks Hamburgueria</h3>
+        <span class="period">01/2019 &ndash; 01/2025</span>
+      </div>
+      <p class="role">Operational Coordinator</p>
+      <ul>
+        <li>Analyzed operational processes to improve efficiency, identify inconsistencies, and monitor performance indicators.</li>
+        <li>Diagnosed operational failures and structured continuous improvement flows based on data and metrics.</li>
+        <li>Standardized procedures, operational quality controls, and troubleshooting routines for critical processes.</li>
+        <li>Managed teams with focus on operational consistency and adherence to defined processes.</li>
+      </ul>
+      <div class="chips">
+        <span class="chip primary">Operational Analysis</span>
+        <span class="chip">Performance Indicators</span>
+        <span class="chip">Failure Diagnosis</span>
+        <span class="chip">Continuous Improvement</span>
+        <span class="chip">Operational Troubleshooting</span>
+      </div>
+    </section>
+
+    <section class="card job no-break">
+      <div class="job-head">
+        <h3>LINX</h3>
+        <span class="period">06/2016 &ndash; 07/2019</span>
+      </div>
+      <p class="role">L4 Support Engineer</p>
+      <ul>
+        <li>Analyzed and resolved critical incidents in complex enterprise applications.</li>
+        <li>Investigated systemic failures in direct collaboration with development and architecture teams.</li>
+        <li>Validated system behavior to identify bugs, inconsistencies, and regressions.</li>
+        <li>Performed advanced troubleshooting using log analysis, functional diagnosis, and failure reproduction.</li>
+        <li>Validated critical workflows before releases and production fixes.</li>
+        <li>Identified integration inconsistencies and application behavior issues in enterprise environments.</li>
+      </ul>
+      <div class="chips">
+        <span class="chip primary">Troubleshooting</span>
+        <span class="chip primary">System Analysis</span>
+        <span class="chip">Bug Investigation</span>
+        <span class="chip">Critical Incidents</span>
+        <span class="chip">Software Quality</span>
+        <span class="chip">Functional Validation</span>
+      </div>
+    </section>
+
+    <section class="card job no-break">
+      <div class="job-head">
+        <h3>Kairus Tecnologia</h3>
+        <span class="period">09/2014 &ndash; 05/2016</span>
+      </div>
+      <p class="role">Operations &amp; Systems Analyst</p>
+      <ul>
+        <li>Automated SaaS processes to improve operational efficiency and system consistency.</li>
+        <li>Analyzed system workflows and identified improvement opportunities.</li>
+        <li>Provided specialized technical support for management systems and internal users.</li>
+      </ul>
+      <div class="chips">
+        <span class="chip primary">SaaS</span>
+        <span class="chip">Process Automation</span>
+        <span class="chip">Management Systems</span>
+        <span class="chip">Workflow Analysis</span>
+      </div>
+    </section>
+
+    <!-- AMBIENTES DE ATUAÇÃO ─────────────────── -->
+    <div class="section-title">Operating Environments</div>
+    <section class="card no-break">
+      <div class="env-wrap">
+        <span class="chip">SaaS</span>
+        <span class="chip">CRM</span>
+        <span class="chip">Enterprise Applications</span>
+        <span class="chip">Web Systems</span>
+        <span class="chip">Critical Operations</span>
+        <span class="chip">Enterprise Support</span>
+        <span class="chip">Retail Tech</span>
+        <span class="chip">System Integrations</span>
+      </div>
+    </section>
+
+  </div><!-- /page-2 -->
+
+  <!-- ══════════════ PÁGINA 3 ════════════════════ -->
+  <div class="page-3">
+
+    <!-- PROJETOS INDEPENDENTES ─────────────────── -->
+    <div class="section-title">Independent Projects &amp; Engineering</div>
+    <div class="project-grid">
+      <section class="card project no-break">
+        <h3>Operational Management Dashboard</h3>
+        <ul>
+          <li>Responsive administrative dashboard built with HTML5, CSS3, and JavaScript.</li>
+          <li>Manual testing, functional validations, and user workflow verification.</li>
+          <li>Chrome DevTools inspection and cross-browser responsiveness validation.</li>
+        </ul>
+        <div class="chips">
+          <span class="chip primary">QA Manual</span>
+          <span class="chip">Front-End Debugging</span>
+          <span class="chip">HTML5</span>
+          <span class="chip">JavaScript</span>
+        </div>
+      </section>
+      <section class="card project no-break">
+        <h3>Operational Workflow Validation App</h3>
+        <ul>
+          <li>Interactive web application with LocalStorage data persistence.</li>
+          <li>Validated UI states, edge cases, and interface behaviors.</li>
+          <li>Exploratory testing focused on user experience and functional quality.</li>
+        </ul>
+        <div class="chips">
+          <span class="chip primary">JavaScript</span>
+          <span class="chip">Exploratory Testing</span>
+          <span class="chip">UI/UX</span>
+          <span class="chip">Web Applications</span>
+        </div>
+      </section>
+    </div>
+
+    <!-- FORMAÇÃO & CERTIFICAÇÕES ──────────────── -->
+    <div class="section-title">Education &amp; Certifications</div>
+
+    <div class="edu-top">
+      <section class="card edu-block no-break">
+        <h3>Education</h3>
+        <p>Bachelor's Degree in Business Administration</p>
+        <p class="edu-sub">Faculdade de Mantena &mdash; 2015</p>
+      </section>
+      <section class="card edu-block no-break">
+        <h3>Languages</h3>
+        <div class="lang-row"><span>Portuguese</span><span class="lang-level">Native</span></div>
+        <div class="lang-row"><span>English</span><span class="lang-level">Intermediate</span></div>
+        <div class="lang-row"><span>Spanish</span><span class="lang-level">Basic</span></div>
+      </section>
+    </div>
+
+    <div class="edu-top">
+      <section class="card edu-block no-break">
+        <h3>Continuing Education</h3>
+        <ul class="training-list">
+          <li>Accessibility with React<span class="inst">Rocketseat Faculdade de Tecnologia &mdash; 2025</span></li>
+          <li>Dev Global Starter Pack<span class="inst">Rocketseat Faculdade de Tecnologia &mdash; 2025</span></li>
+          <li>Agile Methodologies<span class="inst">Rocketseat Faculdade de Tecnologia &mdash; 2024</span></li>
+        </ul>
+      </section>
+      <section class="card edu-block no-break">
+        <h3>Certifications</h3>
+        <ul class="cert-list">
+          <li>Facebook Ads<span class="inst">ComSchool</span></li>
+          <li>Leadership &amp; People Management<span class="inst">Udemy</span></li>
+          <li>Successful Negotiation<span class="inst">University of Michigan</span></li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- DIFERENCIAIS ────────────────────────────── -->
+    <section class="card no-break">
+      <div class="section-title" style="margin:0 0 12px;">Technical Highlights</div>
+      <ul class="highlights-grid">
+        <li>Investigation and reproduction of bugs in corporate web applications.</li>
+        <li>Functional analysis with DevTools, logs, and behavioral system validation.</li>
+        <li>Clear technical communication across QA, support, and development teams.</li>
+        <li>Analytical profile focused on troubleshooting, traceability, and system quality.</li>
+      </ul>
+    </section>
+
+  </div><!-- /page-3 -->
+
+</main>
+</body>
+</html>
