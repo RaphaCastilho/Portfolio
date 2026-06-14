@@ -32,7 +32,7 @@
     <!--FONTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <!--FONTES -->
 
     <!--ICONES -->
@@ -223,49 +223,64 @@
         </div>
 
         <div class="project-filters" id="project-filters" aria-label="Filtros de projetos">
-          <button class="btn" type="button" data-filter="all">Todos</button>
-          <button class="btn" type="button" data-filter=".qa-automation">QA Automation</button>
-          <button class="btn" type="button" data-filter=".ops-system">Sistemas</button>
-          <button class="btn" type="button" data-filter=".analysis">Análise</button>
+          <button class="btn filter-button" type="button" data-filter="all">Todos</button>
+          <button class="btn filter-button" type="button" data-filter=".qa-system">QA Systems</button>
+          <button class="btn filter-button" type="button" data-filter=".automation">Automation</button>
+          <button class="btn filter-button" type="button" data-filter=".web-foundation">Web Foundations</button>
         </div>
 
         <div class="portfolio-gallery systems-grid" id="projects-grid">
-          <article class="port-box mix qa-automation">
-            <div class="system-panel" aria-label="Resumo técnico Playwright e k6">
-              <span>QA Automation</span>
-              <strong>Playwright + k6</strong>
-              <p>E2E, carga e sinais de pipeline para validar fluxo antes do release.</p>
+          <article class="project-card mix automation">
+            <div class="project-visual">
+              <div class="project-system-panel" aria-hidden="true">
+                <span>E2E Suite</span>
+                <strong>Playwright + k6</strong>
+              </div>
             </div>
-            <div class="port-content">
+            <div class="project-body">
+              <span class="card-label">Validation suite</span>
               <h3>Playwright + k6</h3>
-              <p>Suíte de testes E2E com Playwright e validações de carga, organizada para apoiar decisões de CI/CD.</p>
-              <a href="https://github.com/RaphaCastilho/playwright-serverest" target="_blank" rel="noopener noreferrer" aria-label="Abrir repositório Playwright + k6"><i class="bx bx-link"></i></a>
+              <p>Suíte de validação E2E e performance para exercitar fluxos, carga e confiabilidade de APIs e aplicações.</p>
+              <div class="tech-tags">
+                <span>Playwright</span><span>k6</span><span>E2E</span><span>Performance</span>
+              </div>
+              <a href="https://github.com/RaphaCastilho/playwright-serverest" target="_blank" rel="noopener noreferrer">Ver repositório</a>
             </div>
           </article>
 
-          <article class="port-box mix ops-system">
-            <div class="system-panel" aria-label="Resumo técnico Gestor Web">
-              <span>Operational System</span>
-              <strong>Gestor Web</strong>
-              <p>Cadastro, edição e controle de dados em uma interface de operação.</p>
+          <article class="project-card mix qa-system">
+            <div class="project-visual">
+              <div class="project-system-panel" aria-hidden="true">
+                <span>Ops Dashboard</span>
+                <strong>Operational Intelligence Dashboard</strong>
+              </div>
             </div>
-            <div class="port-content">
-              <h3>Gestor Web</h3>
-              <p>Sistema web para gerenciamento de registros, com foco em organização, manutenção e fluxo operacional.</p>
-              <a href="https://github.com/RaphaCastilho/DEV/tree/main/Gestor" target="_blank" rel="noopener noreferrer" aria-label="Abrir repositório Gestor Web"><i class="bx bx-link"></i></a>
+            <div class="project-body">
+              <span class="card-label">Operational dashboard</span>
+              <h3>Operational Intelligence Dashboard</h3>
+              <p>Aplicação de gestão reposicionada como painel operacional para controle, edição e validação de dados.</p>
+              <div class="tech-tags">
+                <span>JavaScript</span><span>UI states</span><span>Data validation</span>
+              </div>
+              <a href="https://github.com/RaphaCastilho/DEV/tree/main/Gestor" target="_blank" rel="noopener noreferrer">Ver repositório</a>
             </div>
           </article>
 
-          <article class="port-box mix analysis">
-            <div class="system-panel" aria-label="Resumo técnico App Checklist">
-              <span>Process Control</span>
-              <strong>App Checklist</strong>
-              <p>Listas, tarefas e acompanhamento de execução para rotinas de projeto.</p>
+          <article class="project-card mix qa-system">
+            <div class="project-visual">
+              <div class="project-system-panel" aria-hidden="true">
+                <span>Workflow</span>
+                <strong>Operational Workflow Validation System</strong>
+              </div>
             </div>
-            <div class="port-content">
-              <h3>App Checklist</h3>
-              <p>Aplicação para estruturar etapas, acompanhar pendências e dar visibilidade a rotinas de entrega.</p>
-              <a href="https://github.com/RaphaCastilho/DEV/tree/main/CheckList" target="_blank" rel="noopener noreferrer" aria-label="Abrir repositório App Checklist"><i class="bx bx-link"></i></a>
+            <div class="project-body">
+              <span class="card-label">Workflow validation</span>
+              <h3>Operational Workflow Validation System</h3>
+              <p>Aplicativo de checklist usado como base para validação de estados, persistência local e fluxos de produtividade.</p>
+              <div class="tech-tags">
+                <span>JavaScript</span><span>LocalStorage</span><span>UI validation</span>
+              </div>
+              <a href="https://github.com/RaphaCastilho/DEV/tree/main/CheckList" target="_blank" rel="noopener noreferrer">Ver repositório</a>
             </div>
           </article>
         </div>
