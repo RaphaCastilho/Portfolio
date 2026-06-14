@@ -6,21 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfólio de Raphael Castilho, desenvolvedor web focado em front-end, UX/UI e soluções digitais."
+      content="Portfólio de Raphael Castilho em Quality Engineering, automação Playwright, testes de API e sistemas operacionais de validação."
     />
     <meta
       name="keywords"
-      content="desenvolvedor web, frontend, portfólio, HTML, CSS, JavaScript"
+      content="quality engineering, QA automation, Playwright, API testing, testes automatizados, sistemas de validação, Raphael Castilho"
     />
+    <meta name="author" content="Raphael Castilho" />
 
-    <title>DEV.Rapha - Desenvolvedor Web</title>
-    <!--META DADOS -->
-    <!--ICONES -->
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
+    <!--OPEN GRAPH -->
+    <meta property="og:title" content="DEV.Rapha — Quality Engineering & Automation" />
+    <meta
+      property="og:description"
+      content="Portfólio de Raphael Castilho focado em engenharia de qualidade, automação Playwright, testes de API e confiabilidade operacional."
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://raphacastilho.github.io/Portfolio" />
+    <meta property="og:image" content="https://raphacastilho.github.io/Portfolio/src/img/Sentinel-Tech-QA.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!--OPEN GRAPH -->
+
+    <title>DEV.Rapha - Quality Engineering & Automation</title>
+    <!--META DADOS -->
+
+    <!--FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!--FONTES -->
+
     <!--ICONES -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <!--ICONES -->
+
     <!--CSS -->
     <link rel="stylesheet" href="style.css" />
     <!--CSS -->
@@ -30,17 +48,27 @@
       <a href="#home" class="logo">DEV. <span>Rapha</span></a>
 
       <!-- MENU DE NAVEGAÇÃO -->
-      <nav class="navbar">
-        <a href="#home" class="active" id="homenav">Início</a>
-        <a href="#conhecimento" id="educationnav">Conhecimento</a>
-        <a href="#services" id="servicesnav">Serviços</a>
-        <a href="#portfolio" id="portnav">Projetos</a>
-        <a href="#contato" id="contactnav">Contato</a>
+      <nav class="navbar" id="primary-navigation" aria-label="Navegação principal">
+        <a href="#home" class="active" id="nav-home">Início</a>
+        <a href="#about" id="nav-about">Perfil</a>
+        <a href="#automation" id="nav-automation">Automação</a>
+        <a href="#ecosystem" id="nav-ecosystem">Stack</a>
+        <a href="#projects" id="nav-projects">Sistemas</a>
+        <a href="#experience" id="nav-experience">Experiência</a>
+        <a href="#contact" id="nav-contact">Contato</a>
       </nav>
 
       <!-- ÍCONE DO MENU MOBILE -->
-      <div class="header-right"></div>
-      <i class="bx bx-menu" id="menu-icon"></i>
+      <button
+        class="menu-toggle"
+        id="menu-icon"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+      >
+        <i class="bx bx-menu" aria-hidden="true"></i>
+      </button>
 
       <!-- BOTÕES: MODO ESCURO + IDIOMA -->
       <div class="header-actions">
@@ -58,337 +86,326 @@
       </div>
     </header>
 
-    <!--HOME-->
-    <section class="home" id="home">
-      <!--Apresentação-->
-      <div class="home-content">
-        <h1 id="hometitle">Oi, sou o <span>Rapha!</span></h1>
-        <h3 class="text-animation" id="homesubtitle">Eu sou <span></span></h3>
-        <p id="homedescription">
-          Sou desenvolvedor Frontend em início de carreira, com foco em
-          construção de interfaces modernas, funcionais e bem estruturadas.
-          <br />Sou proativo, detalhista e com forte capacidade de organização e
-          liderança, características que desenvolvi ao longo de experiências
-          anteriores em gestão de pessoas e projetos. Valorizo o trabalho em
-          equipe, a comunicação clara e o compromisso com prazos e qualidade.
-        </p>
-        <!--Apresentação-->
-
-        <!--Icones-->
-        <div class="social-icons">
-          <a href="https://www.linkedin.com/in/raphael-castilho/"
-            ><i class="bx bxl-linkedin-square"></i
-          ></a>
-          <a href="https://github.com/RaphaCastilho"
-            ><i class="bx bxl-github"></i
-          ></a>
-          <a href="https://www.instagram.com/rapha.castilho/"
-            ><i class="bx bxl-instagram-alt"></i
-          ></a>
-        </div>
-        <!--Icones-->
-
-        <!--Botões-->
-        <div class="btn-group">
-          <a href="#contato" class="btn" id="hire">Contratar</a>
-        </div>
-      </div>
-      <!--Botões-->
-
-      <!--Imagem Lateral-->
-      <div class="home-img">
-        <img src="src/img/aiease_1748015024598.png" alt="home-img" />
-      </div>
-      <!--Imagem Lateral-->
-    </section>
-    <!--HOME-->
-
-    <!--Conhecimento-->
-    <section class="conhecimento" id="conhecimento">
-      <h2 class="heading" id="educationtitle">Conhecimento</h2>
-
-      <div class="timeline-items">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2024</div>
-          <div class="timeline-content">
-            <h3 id="educationtitle1">Liderança e Gestão de Pessoas</h3>
-            <p id="educationdescription1">
-              Curso de Liderança e Gestão de Pessoas com foco prático e
-              transformacional, abordando habilidades essenciais como
-              Comunicação, Escuta Ativa, Negociação, Gestão Ágil de Projetos
-              (SCRUM), Produtividade (GTD), Inteligência Emocional, Gestão de
-              Equipes Remotas e Multiculturais, Delegação, Feedback e Motivação.
-            </p>
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <p class="section-kicker" id="hero-kicker">Quality Engineering • Automation • Operational Systems</p>
+          <h1 id="hero-title">Engenharia de Qualidade para sistemas modernos.</h1>
+          <p id="hero-description">
+            Construo fluxos de validação, automação Playwright e análise operacional para aumentar confiabilidade, rastreabilidade e prontidão de release em aplicações web.
+          </p>
+          <div class="hero-tags" aria-label="Principais frentes técnicas">
+            <span>Playwright</span>
+            <span>QA Engineering</span>
+            <span>API Testing</span>
+            <span>Operational Systems</span>
+            <span>AI-assisted QA</span>
           </div>
+          <div class="hero-actions">
+            <a href="src/cv/DEV_Rapha_CV_PT.pdf" class="btn btn-primary" id="cv-download" target="_blank" rel="noopener noreferrer">Baixar CV</a>
+            <a href="https://www.linkedin.com/in/raphael-castilho/" class="btn btn-secondary" id="linkedin-cta" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="#contact" class="btn btn-ghost" id="contact-cta">Contato</a>
+          </div>
+          <a href="src/cv/DEV_Rapha_CV_PT.html" class="cv-web-link" id="cv-web" target="_blank" rel="noopener noreferrer">Ver versão web do CV</a>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2024</div>
-          <div class="timeline-content">
-            <h3 id="educationtitle2">
-              Negociações de sucesso: estratégias e habilidades essenciais -
-              Universidade de Michigan
-            </h3>
-            <p id="educationdescription2">
-              Curso prático em Estratégias de Negociação, abordando os quatro
-              estágios principais: planejamento, negociação, criação e execução.
-            </p>
+        <div class="ops-panel" aria-label="Painel visual de operações de qualidade">
+          <div class="ops-panel-header">
+            <span>Quality Ops</span>
+            <strong>Live validation map</strong>
+          </div>
+          <div class="ops-flow">
+            <div class="ops-node is-valid">E2E</div>
+            <div class="ops-line"></div>
+            <div class="ops-node">API</div>
+            <div class="ops-line"></div>
+            <div class="ops-node is-valid">Release</div>
+          </div>
+          <div class="ops-grid">
+            <article><span>Playwright E2E</span><strong>workflow coverage</strong></article>
+            <article><span>API validation</span><strong>contract signals</strong></article>
+            <article><span>Incident analysis</span><strong>root-cause flow</strong></article>
+            <article><span>AI workflows</span><strong>QA acceleration</strong></article>
           </div>
         </div>
+      </section>
 
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2025</div>
-          <div class="timeline-content">
-            <h3 id="educationtitle3">Desenvolvimento Front-End</h3>
-            <p id="educationdescription3">
-              Criação de interfaces modernas e responsivas com foco na
-              experiência do usuário, utilizando HTML, CSS e JavaScript.
-              Transformo ideias em designs funcionais, com código limpo e
-              otimizado.
-            </p>
-          </div>
+      <section class="operational-profile" id="about">
+        <div class="section-header">
+          <p class="section-kicker">Perfil</p>
+          <h2 id="about-title">Perfil Operacional</h2>
+          <p id="about-lead">
+            Atuo na interseção entre engenharia de qualidade, automação e análise operacional, transformando fluxos críticos em validações rastreáveis para apoiar decisões de release.
+          </p>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2025</div>
-          <div class="timeline-content">
-            <h3 id="educationtitle4">Desenvolvimento Back-End</h3>
-            <p id="educationdescription4">
-              Construção de APIs robustas e escaláveis com Node.js e Express,
-              integrando bancos de dados como MongoDB e MySQL. Foco em
-              performance, segurança e arquitetura eficiente para soluções
-              sólidas e modernas.
-            </p>
-          </div>
+        <div class="profile-grid" aria-label="Resumo do perfil operacional">
+          <article>
+            <h3>Qualidade como sistema</h3>
+            <p>Mapeio riscos, requisitos e sinais de falha para criar rotinas de validação que acompanham o ciclo real do produto.</p>
+          </article>
+          <article>
+            <h3>Entrega orientada por evidência</h3>
+            <p>Documento cenários, resultados e causa-raiz para reduzir retrabalho e dar clareza ao time antes de cada release.</p>
+          </article>
+          <article>
+            <h3>Automação com contexto</h3>
+            <p>Uso Playwright, testes de API e fluxos assistidos por IA para acelerar checagens sem perder leitura crítica do negócio.</p>
+          </article>
         </div>
-      </div>
-    </section>
-    <!--Conhecimento-->
+      </section>
 
-    <!--Serviços-->
-    <section class="services" id="services">
-      <h2 class="heading" id="servicestitle">Serviços</h2>
-
-      <div class="services-container">
-        <div class="service-box">
-          <div class="service-info">
-            <h4 id="servicestitle1">Desenvolvimento Web</h4>
-            <p id="servicesdescription1">
-              Criação de sites profissionais, personalizados para apresentar sua
-              marca ou vender seus produtos.<br />
-              Sites responsivos, rápidos e focados em gerar resultado.<br />
-              <strong>Sua presença digital</strong>, do jeito que o mercado
-              exige!
-            </p>
-          </div>
+      <section class="automation-engineering" id="automation">
+        <div class="section-header">
+          <p class="section-kicker">Automação</p>
+          <h2 id="automation-title">Automation Engineering</h2>
+          <p id="automation-lead">
+            Estruturo suítes de validação para cobrir jornadas críticas, contratos de API e sinais operacionais que indicam prontidão ou risco.
+          </p>
         </div>
 
-        <div class="service-box">
-          <div class="service-info">
-            <h4 id="servicestitle2">Desenvolvimento de App Web</h4>
-            <p id="servicesdescription2">
-              Aplicativos web responsivos, com foco na melhor experiência para o
-              usuário.<br />
-              Soluções práticas e acessíveis para transformar ideias em
-              plataformas digitais que funcionam em qualquer dispositivo.
-            </p>
-          </div>
+        <div class="automation-grid" id="automation-grid">
+          <article>
+            <h3>Playwright E2E</h3>
+            <p>Cenários focados em jornadas de usuário, regressão visual funcional e estabilidade de fluxos essenciais.</p>
+          </article>
+          <article>
+            <h3>API Testing</h3>
+            <p>Validação de contratos, respostas, status e dados para detectar quebras antes que cheguem à interface.</p>
+          </article>
+          <article>
+            <h3>Release Readiness</h3>
+            <p>Mapas de cobertura e evidências de execução para apoiar decisões de publicação com menos incerteza.</p>
+          </article>
+          <article>
+            <h3>AI-assisted QA</h3>
+            <p>Uso de IA para acelerar análise de cenários, documentação de testes e investigação inicial de falhas.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="technical-ecosystem" id="ecosystem">
+        <div class="section-header">
+          <p class="section-kicker">Stack</p>
+          <h2 id="ecosystem-title">Ecossistema Técnico</h2>
+          <p id="ecosystem-lead">
+            Combino ferramentas de qualidade, desenvolvimento e observabilidade para criar uma visão integrada do comportamento do sistema.
+          </p>
         </div>
 
-        <div class="service-box">
-          <div class="service-info">
-            <h4 id="servicestitle3">Landing Pages e Sites de Vendas</h4>
-            <p id="servicesdescription3">
-              Landing Pages estratégicas, pensadas para converter visitantes em
-              clientes. <br />Layouts modernos, rápidos e com foco total em
-              gerar vendas e oportunidades para o seu negócio.
-            </p>
-          </div>
+        <div class="ecosystem-grid" id="ecosystem-grid">
+          <article>
+            <h3>Test Automation</h3>
+            <p>Playwright, JavaScript, Node.js, testes E2E e organização de cenários por risco.</p>
+          </article>
+          <article>
+            <h3>API &amp; Data</h3>
+            <p>REST, validação de payloads, Postman, SQL e leitura de dados para investigação operacional.</p>
+          </article>
+          <article>
+            <h3>Delivery Signals</h3>
+            <p>Git, GitHub, pipelines, evidências de execução e documentação de critérios de aceite.</p>
+          </article>
+          <article>
+            <h3>Operational Analysis</h3>
+            <p>Mapeamento de incidentes, causa-raiz, priorização de riscos e melhoria contínua de fluxos.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="systems-projects" id="projects">
+        <div class="section-header">
+          <p class="section-kicker">Sistemas</p>
+          <h2 id="projects-title">Sistemas e Projetos</h2>
+          <p id="projects-lead">
+            Projetos focados em automação, validação e organização de operações digitais, com ênfase em rastreabilidade e entrega confiável.
+          </p>
         </div>
 
-        <div class="service-box">
-          <div class="service-info">
-            <h4 id="servicestitle4">Consultoria e Suporte Técnico</h4>
-            <p id="servicesdescription4">
-              Acompanhamento técnico completo, desde a escolha da melhor solução
-              até a manutenção do seu site ou app.<br />
-              Consultoria personalizada para garantir que sua presença online
-              esteja sempre atualizada e segura.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--Serviços-->
-
-    <!--Portfolio - Projetos-->
-    <section class="portfolio" id="portfolio">
-      <div class="main-text">
-        <h2 id="portfoliotitle">Projetos</h2>
-      </div>
-
-      <div class="container">
-        <div class="fillter-buttons">
-          <button class="btn" data-filter="all">Todos</button>
-          <button class="btn" data-filter=".webpage">Web Page</button>
-          <button class="btn" data-filter=".webapp">App Web</button>
-          <button class="btn" data-filter=".qa">QA &amp; Testing</button>
-        </div>
-      </div>
-
-      <div class="portfolio-gallery">
-        <div class="port-box mix webpage">
-          <div class="port-img">
-            <img src="src/img/Sentinel-Tech-QA.png" alt="Sentinel Tech QA" />
-          </div>
-          <div class="port-content">
-            <h3>Sentinel Tech - QA</h3>
-            <p>Site institucional para empresa de Quality Assurance, com design moderno e responsivo.</p>
-            <a href="https://github.com/RaphaCastilho/DEV/tree/main/Sentinel-Tech-QA" target="_blank" rel="noopener noreferrer"><i class="bx bx-link"></i></a>
-          </div>
+        <div class="project-filters" id="project-filters" aria-label="Filtros de projetos">
+          <button class="btn" type="button" data-filter="all">Todos</button>
+          <button class="btn" type="button" data-filter=".qa-automation">QA Automation</button>
+          <button class="btn" type="button" data-filter=".ops-system">Sistemas</button>
+          <button class="btn" type="button" data-filter=".analysis">Análise</button>
         </div>
 
-        <div class="port-box mix webpage">
-          <div class="port-img">
-            <img src="src/img/Cromo%20e%20Ruinas.png" alt="Cromo e Ruínas" />
-          </div>
-          <div class="port-content">
-            <h3>Cromo e Ruínas</h3>
-            <p>Site de uma história Cyberpunk narrada através de uma partida de RPG, com design imersivo e atmosfera futurista.</p>
-            <a href="https://github.com/RaphaCastilho/Projetos" target="_blank" rel="noopener noreferrer"><i class="bx bx-link"></i></a>
-          </div>
+        <div class="portfolio-gallery systems-grid" id="projects-grid">
+          <article class="port-box mix qa-automation">
+            <div class="system-panel" aria-label="Resumo técnico Playwright e k6">
+              <span>QA Automation</span>
+              <strong>Playwright + k6</strong>
+              <p>E2E, carga e sinais de pipeline para validar fluxo antes do release.</p>
+            </div>
+            <div class="port-content">
+              <h3>Playwright + k6</h3>
+              <p>Suíte de testes E2E com Playwright e validações de carga, organizada para apoiar decisões de CI/CD.</p>
+              <a href="https://github.com/RaphaCastilho/playwright-serverest" target="_blank" rel="noopener noreferrer" aria-label="Abrir repositório Playwright + k6"><i class="bx bx-link"></i></a>
+            </div>
+          </article>
+
+          <article class="port-box mix ops-system">
+            <div class="system-panel" aria-label="Resumo técnico Gestor Web">
+              <span>Operational System</span>
+              <strong>Gestor Web</strong>
+              <p>Cadastro, edição e controle de dados em uma interface de operação.</p>
+            </div>
+            <div class="port-content">
+              <h3>Gestor Web</h3>
+              <p>Sistema web para gerenciamento de registros, com foco em organização, manutenção e fluxo operacional.</p>
+              <a href="https://github.com/RaphaCastilho/DEV/tree/main/Gestor" target="_blank" rel="noopener noreferrer" aria-label="Abrir repositório Gestor Web"><i class="bx bx-link"></i></a>
+            </div>
+          </article>
+
+          <article class="port-box mix analysis">
+            <div class="system-panel" aria-label="Resumo técnico App Checklist">
+              <span>Process Control</span>
+              <strong>App Checklist</strong>
+              <p>Listas, tarefas e acompanhamento de execução para rotinas de projeto.</p>
+            </div>
+            <div class="port-content">
+              <h3>App Checklist</h3>
+              <p>Aplicação para estruturar etapas, acompanhar pendências e dar visibilidade a rotinas de entrega.</p>
+              <a href="https://github.com/RaphaCastilho/DEV/tree/main/CheckList" target="_blank" rel="noopener noreferrer" aria-label="Abrir repositório App Checklist"><i class="bx bx-link"></i></a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="experience" id="experience">
+        <div class="section-header">
+          <p class="section-kicker">Experiência</p>
+          <h2 id="experience-title">Experiência em Operações e Sistemas</h2>
+          <p id="experience-lead">
+            Experiência combinando gestão operacional, organização de processos e desenvolvimento técnico para criar rotinas mais claras, mensuráveis e confiáveis.
+          </p>
         </div>
 
-        <div class="port-box mix webapp">
-          <div class="port-img">
-            <img src="src/img/projeto-gestor.PNG" alt="Gestor Web" />
-          </div>
-          <div class="port-content">
-            <h3>Gestor Web</h3>
-            <p>Aplicativo web de gestão com cadastro, edição e controle de dados em tempo real.</p>
-            <a href="https://github.com/RaphaCastilho/DEV/tree/main/Gestor" target="_blank" rel="noopener noreferrer"><i class="bx bx-link"></i></a>
-          </div>
+        <div class="experience-list" id="experience-list">
+          <article>
+            <span>Operações</span>
+            <h3>Gestão de fluxos e equipes</h3>
+            <p>Coordenação de prioridades, comunicação entre áreas e acompanhamento de entregas com foco em clareza e consistência.</p>
+          </article>
+          <article>
+            <span>Qualidade</span>
+            <h3>Validação e melhoria contínua</h3>
+            <p>Construção de rotinas de conferência, documentação de desvios e melhoria de processos a partir de evidências.</p>
+          </article>
+          <article>
+            <span>Sistemas</span>
+            <h3>Automação aplicada ao trabalho real</h3>
+            <p>Uso de ferramentas digitais para reduzir tarefas repetitivas e aumentar confiabilidade em operações web.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="section-header">
+          <p class="section-kicker">Contato</p>
+          <h2 id="contact-title">Falar sobre oportunidade</h2>
+          <p id="contact-lead">
+            Quer conversar sobre qualidade, automação ou operações digitais? Envie uma mensagem com contexto da oportunidade.
+          </p>
         </div>
 
-        <div class="port-box mix webapp">
-          <div class="port-img">
-            <img src="src/img/projeto-checklist.PNG" alt="App CheckList" />
-          </div>
-          <div class="port-content">
-            <h3>App CheckList</h3>
-            <p>Aplicativo responsivo para criação e gerenciamento de listas e tarefas de projetos.</p>
-            <a href="https://github.com/RaphaCastilho/DEV/tree/main/CheckList" target="_blank" rel="noopener noreferrer"><i class="bx bx-link"></i></a>
-          </div>
-        </div>
+        <form
+          action="https://formsubmit.co/castilho_raphael@hotmail.com"
+          method="POST"
+        >
+          <input type="hidden" name="_next" value="https://raphacastilho.github.io/Portfolio" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="Novo contato — DEV.Rapha" />
 
-        <div class="port-box mix qa">
-          <div class="port-img">
-            <img src="src/img/projeto-playwright.PNG" alt="Playwright + k6" />
+          <div class="input-group">
+            <div class="input-box">
+              <label for="contact-name" class="sr-only">Nome Completo</label>
+              <input
+                type="text"
+                name="Nome"
+                placeholder="Nome Completo"
+                id="contact-name"
+                required
+              />
+              <label for="contact-email" class="sr-only">Email</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                id="contact-email"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <label for="contact-phone" class="sr-only">Telefone</label>
+              <input
+                type="tel"
+                name="Telefone"
+                placeholder="Telefone"
+                id="contact-phone"
+              />
+              <label for="contact-subject" class="sr-only">Assunto</label>
+              <input
+                type="text"
+                name="Assunto"
+                placeholder="Assunto"
+                id="contact-subject"
+              />
+            </div>
           </div>
-          <div class="port-content">
-            <h3>Playwright + k6</h3>
-            <p>Suite de testes E2E com Playwright e testes de carga com k6, integrados ao Jenkins CI/CD.</p>
-            <a href="https://github.com/RaphaCastilho/playwright-serverest" target="_blank" rel="noopener noreferrer"><i class="bx bx-link"></i></a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--Portfolio - Projetos-->
 
-    <!--Contato-->
-    <section class="contato" id="contato">
-      <h2 class="heading" id="contacttitle">Entrar em <span>Contato</span></h2>
-
-      <form
-        action="https://formsubmit.co/castilho_raphael@hotmail.com"
-        method="POST"
-      >
-        <div class="input-group">
-          <div class="input-box">
-            <input
-              type="text"
-              name="Nome"
-              placeholder="Nome Completo"
-              id="contactname"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="email"
-              id="contactemail"
+          <div class="input-group-2">
+            <label for="contact-message" class="sr-only">Sua Mensagem</label>
+            <textarea
+              name="Mensagem"
+              id="contact-message"
+              cols="30"
+              rows="10"
+              placeholder="Sua Mensagem"
               required
+            ></textarea>
+            <input
+              type="submit"
+              value="Enviar mensagem"
+              class="btn btn-primary"
+              id="contact-button"
             />
           </div>
-          <div class="input-box">
-            <input
-              type="tel"
-              name="Telefone"
-              placeholder="Telefone"
-              id="contactphone"
-            />
-            <input
-              type="text"
-              name="Assunto"
-              placeholder="Assunto"
-              id="contactsubject"
-            />
-          </div>
-        </div>
-
-        <div class="input-group-2">
-          <textarea
-            name="Mensagem"
-            id="contactmessage"
-            cols="30"
-            rows="10"
-            placeholder="Sua Mensagem"
-          ></textarea>
-          <input
-            type="submit"
-            value="Enviar Mensagem"
-            class="btn"
-            id="contactbutton"
-          />
-        </div>
-      </form>
-    </section>
+        </form>
+      </section>
+    </main>
 
     <footer class="footer">
       <div class="social">
-        <a href="https://www.linkedin.com/in/raphael-castilho/"
+        <a href="https://www.linkedin.com/in/raphael-castilho/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Raphael Castilho"
           ><i class="bx bxl-linkedin-square"></i
         ></a>
-        <a href="https://github.com/RaphaCastilho"
+        <a href="https://github.com/RaphaCastilho" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Raphael Castilho"
           ><i class="bx bxl-github"></i
         ></a>
-        <a href="https://www.instagram.com/rapha.castilho/"
-          ><i class="bx bxl-instagram-alt"> </i
+        <a href="https://www.instagram.com/rapha.castilho/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Raphael Castilho"
+          ><i class="bx bxl-instagram-alt"></i
         ></a>
       </div>
 
       <ul class="list">
         <li>
-          <a href="#home" id="footerhome">Início</a>
+          <a href="#home" id="footer-home">Início</a>
         </li>
 
         <li>
-          <a href="#services" id="footerservice">Serviços</a>
+          <a href="#projects" id="footer-projects">Sistemas</a>
         </li>
 
         <li>
-          <a href="#contato" id="footercontact">Contato</a>
+          <a href="#contact" id="footer-contact">Contato</a>
         </li>
       </ul>
-      <p class="copyright" id="footercopy">
-        © DEV.Rapha 2025 - Todos os direitos reservados
+      <p class="copyright" id="footer-copy">
+        © DEV.Rapha 2026 - Todos os direitos reservados
       </p>
     </footer>
 
-    <script src="mixitup.min.js"></script>
-    <script src="script.js"></script>
+    <script src="mixitup.min.js" defer></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
