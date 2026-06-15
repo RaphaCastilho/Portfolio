@@ -102,3 +102,21 @@ test("all local image and stylesheet references in index.html exist", () => {
     assert.ok(existsSync(localPath), `missing local asset: ${ref}`);
   }
 });
+
+test("published CV PDF files exist and are valid PDFs", () => {
+  for (const file of [
+    "src/cv/DEV_Rapha_CV_PT.pdf",
+    "src/cv/DEV_Rapha_CV_EN.pdf"
+  ]) {
+    const pdfPath = join(root, file);
+    assert.ok(existsSync(pdfPath), `missing ${file}`);
+
+    const bytes = readFileSync(pdfPath);
+    assert.equal(
+      bytes.subarray(0, 5).toString("latin1"),
+      "%PDF-",
+      `${file} is not a valid PDF`
+    );
+    assert.ok(bytes.length > 10 * 1024, `${file} looks too small to be a real CV`);
+  }
+});
