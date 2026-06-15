@@ -90,8 +90,8 @@ const content = {
           image: "src/img/Sentinel-Tech-QA.png",
           imageAlt: "Screenshot do projeto Sentinel Tech QA",
           panelLabel: "QA Ops",
-          url: "https://github.com/RaphaCastilho/DEV/tree/main/Sentinel-Tech-QA",
-          linkLabel: "Ver repositório",
+          url: "",
+          linkLabel: "Repositório em breve",
         },
         {
           category: "automation",
@@ -102,8 +102,8 @@ const content = {
           image: "",
           imageAlt: "",
           panelLabel: "E2E Suite",
-          url: "https://github.com/RaphaCastilho/playwright-serverest",
-          linkLabel: "Ver repositório",
+          url: "",
+          linkLabel: "Repositório em breve",
         },
         {
           category: "qa-system",
@@ -114,8 +114,8 @@ const content = {
           image: "src/img/projeto-gestor.PNG",
           imageAlt: "Screenshot do projeto Gestor Web",
           panelLabel: "Ops Dashboard",
-          url: "https://github.com/RaphaCastilho/DEV/tree/main/Gestor",
-          linkLabel: "Ver repositório",
+          url: "",
+          linkLabel: "Repositório em breve",
         },
         {
           category: "qa-system",
@@ -126,8 +126,8 @@ const content = {
           image: "src/img/projeto-checklist.PNG",
           imageAlt: "Screenshot do projeto Checklist",
           panelLabel: "Workflow",
-          url: "https://github.com/RaphaCastilho/DEV/tree/main/CheckList",
-          linkLabel: "Ver repositório",
+          url: "",
+          linkLabel: "Repositório em breve",
         },
         {
           category: "web-foundation",
@@ -138,8 +138,8 @@ const content = {
           image: "src/img/Cromo%20e%20Ruinas.png",
           imageAlt: "Screenshot do projeto Cromo e Ruínas",
           panelLabel: "Web UI",
-          url: "https://github.com/RaphaCastilho/Projetos",
-          linkLabel: "Ver repositório",
+          url: "",
+          linkLabel: "Repositório em breve",
         },
       ],
     },
@@ -287,8 +287,8 @@ const content = {
           image: "src/img/Sentinel-Tech-QA.png",
           imageAlt: "Sentinel Tech QA project screenshot",
           panelLabel: "QA Ops",
-          url: "https://github.com/RaphaCastilho/DEV/tree/main/Sentinel-Tech-QA",
-          linkLabel: "View repository",
+          url: "",
+          linkLabel: "Repository coming soon",
         },
         {
           category: "automation",
@@ -300,8 +300,8 @@ const content = {
           image: "",
           imageAlt: "",
           panelLabel: "E2E Suite",
-          url: "https://github.com/RaphaCastilho/playwright-serverest",
-          linkLabel: "View repository",
+          url: "",
+          linkLabel: "Repository coming soon",
         },
         {
           category: "qa-system",
@@ -312,8 +312,8 @@ const content = {
           image: "src/img/projeto-gestor.PNG",
           imageAlt: "Gestor Web project screenshot",
           panelLabel: "Ops Dashboard",
-          url: "https://github.com/RaphaCastilho/DEV/tree/main/Gestor",
-          linkLabel: "View repository",
+          url: "",
+          linkLabel: "Repository coming soon",
         },
         {
           category: "qa-system",
@@ -324,8 +324,8 @@ const content = {
           image: "src/img/projeto-checklist.PNG",
           imageAlt: "Checklist project screenshot",
           panelLabel: "Workflow",
-          url: "https://github.com/RaphaCastilho/DEV/tree/main/CheckList",
-          linkLabel: "View repository",
+          url: "",
+          linkLabel: "Repository coming soon",
         },
         {
           category: "web-foundation",
@@ -336,8 +336,8 @@ const content = {
           image: "src/img/Cromo%20e%20Ruinas.png",
           imageAlt: "Cromo e Ruínas project screenshot",
           panelLabel: "Web UI",
-          url: "https://github.com/RaphaCastilho/Projetos",
-          linkLabel: "View repository",
+          url: "",
+          linkLabel: "Repository coming soon",
         },
       ],
     },
@@ -463,6 +463,10 @@ function renderProject(project) {
     ? `<img src="${escapeHtml(project.image)}" alt="${escapeHtml(project.imageAlt)}" loading="lazy" />`
     : `<div class="project-system-panel" aria-hidden="true"><span>${escapeHtml(project.panelLabel)}</span><strong>${escapeHtml(project.title)}</strong></div>`;
 
+  const linkMarkup = project.url
+    ? `<a href="${escapeHtml(project.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(project.linkLabel)}</a>`
+    : `<span class="project-status">${escapeHtml(project.linkLabel)}</span>`;
+
   return `
     <article class="project-card mix ${escapeHtml(project.category)}">
       <div class="project-visual">${imageMarkup}</div>
@@ -473,7 +477,7 @@ function renderProject(project) {
         <div class="tech-tags">
           ${renderTags(project.stack)}
         </div>
-        <a href="${escapeHtml(project.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(project.linkLabel)}</a>
+        ${linkMarkup}
       </div>
     </article>
   `;
