@@ -90,8 +90,8 @@ const content = {
           image: "src/img/Sentinel-Tech-QA.png",
           imageAlt: "Screenshot do projeto Sentinel Tech QA",
           panelLabel: "QA Ops",
-          url: "",
-          linkLabel: "Repositório em breve",
+          url: "https://github.com/SentinelQAtech/sentinel-website",
+          linkLabel: "Ver repositório",
         },
         {
           category: "automation",
@@ -287,8 +287,8 @@ const content = {
           image: "src/img/Sentinel-Tech-QA.png",
           imageAlt: "Sentinel Tech QA project screenshot",
           panelLabel: "QA Ops",
-          url: "",
-          linkLabel: "Repository coming soon",
+          url: "https://github.com/SentinelQAtech/sentinel-website",
+          linkLabel: "View repository",
         },
         {
           category: "automation",
