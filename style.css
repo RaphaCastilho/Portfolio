@@ -848,7 +848,7 @@ body.light .ops-panel {
   flex-direction: column;
   gap: 1.25rem;
 }
-.contact input,
+.contact input:not([type="submit"]),
 .contact textarea {
   width: 100%;
   padding: 0.95rem 1.1rem;
@@ -863,7 +863,7 @@ body.light .ops-panel {
 .contact textarea::placeholder {
   color: var(--text-soft);
 }
-.contact input:focus,
+.contact input:not([type="submit"]):focus,
 .contact textarea:focus {
   outline: none;
   border-color: var(--accent);
