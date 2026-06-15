@@ -193,7 +193,7 @@ const content = {
     footer: {
       home: "Início",
       contact: "Contato",
-      copy: "© DEV.Rapha 2026 - Quality Engineering & Automation",
+      copy: "© Rapha.QA 2026 - Quality Engineering & Automation",
     },
   },
   "en-US": {
@@ -391,7 +391,7 @@ const content = {
     footer: {
       home: "Home",
       contact: "Contact",
-      copy: "© DEV.Rapha 2026 - Quality Engineering & Automation",
+      copy: "© Rapha.QA 2026 - Quality Engineering & Automation",
     },
   },
 };

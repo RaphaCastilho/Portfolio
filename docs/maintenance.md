@@ -1,4 +1,4 @@
-# Guia de Manutenção — DEV.Rapha Portfolio
+# Guia de Manutenção — Rapha.QA Portfolio
 
 Este documento descreve como manter o portfólio com segurança: editar conteúdo bilíngue,
 regenerar os PDFs de CV, rodar os testes e publicar no GitHub Pages.

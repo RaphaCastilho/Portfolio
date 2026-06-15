@@ -1,4 +1,4 @@
-# DEV.Rapha — Quality Engineering Portfolio
+# Rapha.QA — Quality Engineering Portfolio
 
 Portfólio profissional de **Raphael Castilho**, focado em **Quality Engineering, Playwright Automation, Operational Systems, validação de API e fluxos modernos de QA**.
 
