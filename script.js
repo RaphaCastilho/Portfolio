@@ -102,8 +102,8 @@ const content = {
           image: "",
           imageAlt: "",
           panelLabel: "E2E Suite",
-          url: "",
-          linkLabel: "Repositório em breve",
+          url: "https://github.com/RaphaCastilho/playwright-serverest",
+          linkLabel: "Ver repositório",
         },
         {
           category: "qa-system",
@@ -300,8 +300,8 @@ const content = {
           image: "",
           imageAlt: "",
           panelLabel: "E2E Suite",
-          url: "",
-          linkLabel: "Repository coming soon",
+          url: "https://github.com/RaphaCastilho/playwright-serverest",
+          linkLabel: "View repository",
         },
         {
           category: "qa-system",
