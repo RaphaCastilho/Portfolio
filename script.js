@@ -95,18 +95,6 @@ const content = {
         },
         {
           category: "automation",
-          type: "Validation suite",
-          title: "Playwright + k6",
-          description: "Suíte de validação E2E e performance para exercitar fluxos, carga e confiabilidade de APIs e aplicações.",
-          stack: ["Playwright", "k6", "E2E", "Performance"],
-          image: "",
-          imageAlt: "",
-          panelLabel: "E2E Suite",
-          url: "https://github.com/RaphaCastilho/playwright-serverest",
-          linkLabel: "Ver repositório",
-        },
-        {
-          category: "automation",
           type: "Automation showcase",
           title: "Playwright QA Lab",
           description: "90+ testes Playwright com dashboard interativo, CI/CD, GitHub Pages. Suítes: smoke, conteúdo, interação, responsivo, API mocking e acessibilidade.",
@@ -302,18 +290,6 @@ const content = {
           url: "https://github.com/SentinelQAtech/sentinel-website",
           linkLabel: "View repository",
         },
-        {
-          category: "automation",
-          type: "Validation suite",
-          title: "Playwright + k6",
-          description:
-            "An E2E and performance validation suite for exercising workflows, load, and reliability signals across APIs and applications.",
-          stack: ["Playwright", "k6", "E2E", "Performance"],
-          image: "",
-          imageAlt: "",
-          panelLabel: "E2E Suite",
-          url: "https://github.com/RaphaCastilho/playwright-serverest",
-          linkLabel: "View repository",
         },
         {
           category: "automation",
