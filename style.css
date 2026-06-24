@@ -782,6 +782,10 @@ body.light .ops-panel {
   border-radius: 50%;
   background: var(--text-soft);
 }
+.project-live {
+  color: var(--accent) !important;
+  font-weight: 600;
+}
 
 /* =================== EXPERIÊNCIA =================== */
 .experience-list {

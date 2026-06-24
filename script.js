@@ -103,6 +103,7 @@ const content = {
           panelLabel: "Portfolio",
           url: "https://github.com/RaphaCastilho/Portfolio",
           linkLabel: "Ver repositório",
+          liveUrl: "https://raphacastilho.github.io/Portfolio",
         },
         {
           category: "automation",
@@ -110,11 +111,12 @@ const content = {
           title: "Playwright QA Lab",
           description: "90+ testes Playwright com dashboard interativo, CI/CD, GitHub Pages. Suítes: smoke, conteúdo, interação, responsivo, API mocking e acessibilidade.",
           stack: ["Playwright", "JavaScript", "CI/CD", "GitHub Pages", "Dashboard"],
-          image: "",
-          imageAlt: "",
+          image: "src/img/qa-lab-dashboard.png",
+          imageAlt: "Screenshot do dashboard do Playwright QA Lab",
           panelLabel: "QA Lab",
           url: "https://github.com/RaphaCastilho/qa-test-lab",
           linkLabel: "Ver repositório",
+          liveUrl: "https://raphacastilho.github.io/qa-test-lab/",
         },
       ],
     },
@@ -275,6 +277,7 @@ const content = {
           panelLabel: "Portfolio",
           url: "https://github.com/RaphaCastilho/Portfolio",
           linkLabel: "View repository",
+          liveUrl: "https://raphacastilho.github.io/Portfolio",
         },
         {
           category: "automation",
@@ -282,11 +285,12 @@ const content = {
           title: "Playwright QA Lab",
           description: "90+ Playwright tests with interactive dashboard, CI/CD, GitHub Pages. Suites: smoke, content, interaction, responsive, API mocking, and accessibility.",
           stack: ["Playwright", "JavaScript", "CI/CD", "GitHub Pages", "Dashboard"],
-          image: "",
-          imageAlt: "",
+          image: "src/img/qa-lab-dashboard.png",
+          imageAlt: "Playwright QA Lab dashboard screenshot",
           panelLabel: "QA Lab",
           url: "https://github.com/RaphaCastilho/qa-test-lab",
           linkLabel: "View repository",
+          liveUrl: "https://raphacastilho.github.io/qa-test-lab/",
         },
       ],
     },
@@ -413,7 +417,7 @@ function renderProject(project) {
     : `<div class="project-system-panel" aria-hidden="true"><span>${escapeHtml(project.panelLabel)}</span><strong>${escapeHtml(project.title)}</strong></div>`;
 
   const linkMarkup = project.url
-    ? `<a href="${escapeHtml(project.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(project.linkLabel)}</a>`
+    ? `<a href="${escapeHtml(project.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(project.linkLabel)}</a>${project.liveUrl ? `<span style="margin:0 8px;color:var(--text-color);opacity:.3;">·</span><a href="${escapeHtml(project.liveUrl)}" target="_blank" rel="noopener noreferrer" class="project-live">Live →</a>` : ''}`
     : `<span class="project-status">${escapeHtml(project.linkLabel)}</span>`;
 
   return `
