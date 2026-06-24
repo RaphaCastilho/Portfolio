@@ -361,16 +361,17 @@ section {
 
 /* hero metrics bar */
 .hero-metrics {
-  margin-top: 2rem;
+  margin-top: 1.25rem;
   padding: 0.75rem 1.25rem;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface-soft);
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   letter-spacing: 0.02em;
   color: var(--text-muted);
-  font-weight: 500;
+  font-weight: 600;
+  word-spacing: 0.08em;
 }
 
 /* painel operacional (lado direito do hero) */
@@ -638,7 +639,7 @@ body.light .ops-panel {
 /* =================== ECOSSISTEMA TÉCNICO =================== */
 .ecosystem-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
 }
 .ecosystem-grid > article {
@@ -1022,10 +1023,16 @@ body.light .ops-panel {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
+  .ecosystem-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 600px) {
   .input-group {
+    grid-template-columns: 1fr;
+  }
+  .ecosystem-grid {
     grid-template-columns: 1fr;
   }
   .hero-actions {
