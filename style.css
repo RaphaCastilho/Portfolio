@@ -298,6 +298,12 @@ section {
   border-radius: 2px;
   content: "";
 }
+#hero-kicker {
+  text-wrap: pretty;
+}
+#hero-kicker::before {
+  display: none;
+}
 
 .hero-content h1 {
   margin: 1.25rem 0 1.25rem;
@@ -307,6 +313,14 @@ section {
   letter-spacing: -0.022em;
   text-wrap: balance;
   overflow-wrap: break-word;
+}
+.hero-sub {
+  font-size: clamp(1.25rem, 2.6vw, 2.1rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 0.2rem;
 }
 .hero-content > p {
   max-width: 58ch;
@@ -781,49 +795,37 @@ body.light .ops-panel {
   gap: 1.25rem;
 }
 .experience-list > article {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1.5rem 2rem;
   padding: 1.5rem 1.75rem;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
 }
-.experience-meta {
-  padding-top: 0.15rem;
-}
-.experience-period {
-  display: inline-flex;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.03em;
-  padding: 3px 10px;
-  border-radius: 4px;
-  background: var(--surface-soft);
-  color: var(--text-soft);
-  white-space: nowrap;
-}
-.experience-main {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
 .experience-header {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0.3rem;
+  margin-bottom: 0.85rem;
 }
 .experience-role {
-  order: -1;
-  color: var(--accent);
-  font-size: 0.82rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
-.experience-list h3 {
-  margin: 0;
   font-size: 1.2rem;
   font-weight: 600;
+  color: var(--text);
+}
+.experience-meta {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+.experience-period {
+  display: inline;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.02em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--surface-soft);
+  color: var(--text-soft);
+  margin-left: 0.5rem;
+  white-space: nowrap;
 }
 .experience-list ul {
   list-style: none;
@@ -994,10 +996,6 @@ body.light .ops-panel {
   }
   .navbar a::after {
     display: none;
-  }
-  .experience-list > article {
-    grid-template-columns: 1fr;
-    gap: 1rem;
   }
   .ecosystem-grid {
     grid-template-columns: repeat(2, 1fr);

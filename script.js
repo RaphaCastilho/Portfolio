@@ -17,7 +17,7 @@ const content = {
     },
     hero: {
       kicker: "Quality Engineering • Automation • Operational Systems",
-      title: "QA Engineering: automação, validação e release readiness.",
+      title: 'QA Engineering: <span class="hero-sub">automação, validação e release readiness.</span>',
       description:
         "Construo fluxos de validação, automação Playwright e análise operacional para aumentar confiabilidade, rastreabilidade e prontidão de release em aplicações web.",
       tags: ["Playwright", "QA Engineering", "API Testing", "Operational Systems", "AI-assisted QA"],
@@ -193,7 +193,7 @@ const content = {
     },
     hero: {
       kicker: "Quality Engineering • Automation • Operational Systems",
-      title: "QA Engineering: automation, validation, and release readiness.",
+      title: 'QA Engineering: <span class="hero-sub">automation, validation, and release readiness.</span>',
       description:
         "I build validation workflows, Playwright automation, and operational analysis practices that improve reliability, traceability, and release readiness for web applications.",
       tags: ["Playwright", "QA Engineering", "API Testing", "Operational Systems", "AI-assisted QA"],
@@ -363,6 +363,10 @@ function setText(id, value) {
   const element = byId(id);
   if (element) element.textContent = value;
 }
+function setHTML(id, html) {
+  const element = byId(id);
+  if (element) element.innerHTML = html;
+}
 
 function setHref(id, value) {
   const element = byId(id);
@@ -443,18 +447,13 @@ function renderProject(project) {
 function renderExperienceItem(item) {
   return `
     <article class="experience-item">
-      <div class="experience-meta">
-        <span class="experience-period">${escapeHtml(item.period)}</span>
+      <div class="experience-header">
+        <p class="experience-role">${escapeHtml(item.role)}</p>
+        <p class="experience-meta">${escapeHtml(item.company)} <span class="experience-period">${escapeHtml(item.period)}</span></p>
       </div>
-      <div class="experience-main">
-        <div class="experience-header">
-          <p class="experience-role">${escapeHtml(item.role)}</p>
-          <h3>${escapeHtml(item.company)}</h3>
-        </div>
-        <ul>
-          ${item.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}
-        </ul>
-      </div>
+      <ul>
+        ${item.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}
+      </ul>
     </article>
   `;
 }
@@ -578,7 +577,7 @@ function applyLanguage(lang) {
   setText("nav-contact", t.nav.contact);
 
   setText("hero-kicker", t.hero.kicker);
-  setText("hero-title", t.hero.title);
+  setHTML("hero-title", t.hero.title);
   setText("hero-description", t.hero.description);
   updateHeroTags(t.hero.tags);
   setText("cv-download", t.cv.downloadLabel);
