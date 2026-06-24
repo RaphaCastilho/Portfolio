@@ -17,10 +17,11 @@ const content = {
     },
     hero: {
       kicker: "Quality Engineering • Automation • Operational Systems",
-      title: "Engenharia de Qualidade para sistemas modernos.",
+      title: "QA Engineering: automação, validação e release readiness.",
       description:
         "Construo fluxos de validação, automação Playwright e análise operacional para aumentar confiabilidade, rastreabilidade e prontidão de release em aplicações web.",
       tags: ["Playwright", "QA Engineering", "API Testing", "Operational Systems", "AI-assisted QA"],
+      metrics: "90+ testes · 6 suítes · 2 projetos live · CI/CD ativo",
       linkedin: "LinkedIn",
       contact: "Contato",
     },
@@ -81,6 +82,19 @@ const content = {
       ],
       items: [
         {
+          category: "automation",
+          type: "Automation showcase",
+          title: "Playwright QA Lab",
+          description: "90+ testes Playwright com dashboard interativo, CI/CD, GitHub Pages. Suítes: smoke, conteúdo, interação, responsivo, API mocking e acessibilidade.",
+          stack: ["Playwright", "JavaScript", "CI/CD", "GitHub Pages", "Dashboard"],
+          image: "src/img/qa-lab-dashboard.png",
+          imageAlt: "Screenshot do dashboard do Playwright QA Lab",
+          panelLabel: "QA Lab",
+          url: "https://github.com/RaphaCastilho/qa-test-lab",
+          linkLabel: "Ver repositório",
+          liveUrl: "https://raphacastilho.github.io/qa-test-lab/",
+        },
+        {
           category: "qa-system",
           type: "Flagship ecosystem",
           title: "Sentinel Tech QA",
@@ -104,19 +118,6 @@ const content = {
           url: "https://github.com/RaphaCastilho/Portfolio",
           linkLabel: "Ver repositório",
           liveUrl: "https://raphacastilho.github.io/Portfolio",
-        },
-        {
-          category: "automation",
-          type: "Automation showcase",
-          title: "Playwright QA Lab",
-          description: "90+ testes Playwright com dashboard interativo, CI/CD, GitHub Pages. Suítes: smoke, conteúdo, interação, responsivo, API mocking e acessibilidade.",
-          stack: ["Playwright", "JavaScript", "CI/CD", "GitHub Pages", "Dashboard"],
-          image: "src/img/qa-lab-dashboard.png",
-          imageAlt: "Screenshot do dashboard do Playwright QA Lab",
-          panelLabel: "QA Lab",
-          url: "https://github.com/RaphaCastilho/qa-test-lab",
-          linkLabel: "Ver repositório",
-          liveUrl: "https://raphacastilho.github.io/qa-test-lab/",
         },
       ],
     },
@@ -191,10 +192,11 @@ const content = {
     },
     hero: {
       kicker: "Quality Engineering • Automation • Operational Systems",
-      title: "Quality Engineering for modern systems.",
+      title: "QA Engineering: automation, validation, and release readiness.",
       description:
         "I build validation workflows, Playwright automation, and operational analysis practices that improve reliability, traceability, and release readiness for web applications.",
       tags: ["Playwright", "QA Engineering", "API Testing", "Operational Systems", "AI-assisted QA"],
+      metrics: "90+ tests · 6 suites · 2 live projects · CI/CD active",
       linkedin: "LinkedIn",
       contact: "Contact",
     },
@@ -255,6 +257,19 @@ const content = {
       ],
       items: [
         {
+          category: "automation",
+          type: "Automation showcase",
+          title: "Playwright QA Lab",
+          description: "90+ Playwright tests with interactive dashboard, CI/CD, GitHub Pages. Suites: smoke, content, interaction, responsive, API mocking, and accessibility.",
+          stack: ["Playwright", "JavaScript", "CI/CD", "GitHub Pages", "Dashboard"],
+          image: "src/img/qa-lab-dashboard.png",
+          imageAlt: "Playwright QA Lab dashboard screenshot",
+          panelLabel: "QA Lab",
+          url: "https://github.com/RaphaCastilho/qa-test-lab",
+          linkLabel: "View repository",
+          liveUrl: "https://raphacastilho.github.io/qa-test-lab/",
+        },
+        {
           category: "qa-system",
           type: "Flagship ecosystem",
           title: "Sentinel Tech QA",
@@ -278,19 +293,6 @@ const content = {
           url: "https://github.com/RaphaCastilho/Portfolio",
           linkLabel: "View repository",
           liveUrl: "https://raphacastilho.github.io/Portfolio",
-        },
-        {
-          category: "automation",
-          type: "Automation showcase",
-          title: "Playwright QA Lab",
-          description: "90+ Playwright tests with interactive dashboard, CI/CD, GitHub Pages. Suites: smoke, content, interaction, responsive, API mocking, and accessibility.",
-          stack: ["Playwright", "JavaScript", "CI/CD", "GitHub Pages", "Dashboard"],
-          image: "src/img/qa-lab-dashboard.png",
-          imageAlt: "Playwright QA Lab dashboard screenshot",
-          panelLabel: "QA Lab",
-          url: "https://github.com/RaphaCastilho/qa-test-lab",
-          linkLabel: "View repository",
-          liveUrl: "https://raphacastilho.github.io/qa-test-lab/",
         },
       ],
     },
@@ -579,6 +581,7 @@ function applyLanguage(lang) {
   setHref("cv-web", t.cv.web);
   setText("linkedin-cta", t.hero.linkedin);
   setText("contact-cta", t.hero.contact);
+  setText("hero-metrics", t.hero.metrics);
 
   setText("about-title", t.about.title);
   setText("about-lead", t.about.lead);
