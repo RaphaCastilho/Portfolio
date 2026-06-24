@@ -669,26 +669,28 @@ function setupActiveNavOnScroll() {
   const sections = sectionIds.map((id) => byId(id)).filter(Boolean);
   const navLinks = document.querySelectorAll("header nav a");
 
-  function updateActiveLink() {
-    let activeId = sections[0]?.id || "";
-    const scrollPosition = window.scrollY;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      let mostVisible = null;
+      let maxRatio = 0;
 
-    sections.forEach((section) => {
-      const offset = section.offsetTop - 160;
-      const height = section.offsetHeight;
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > maxRatio) {
+          maxRatio = entry.intersectionRatio;
+          mostVisible = entry.target;
+        }
+      });
 
-      if (scrollPosition >= offset && scrollPosition < offset + height) {
-        activeId = section.id;
+      if (mostVisible) {
+        navLinks.forEach((link) => {
+          link.classList.toggle("active", link.getAttribute("href") === `#${mostVisible.id}`);
+        });
       }
-    });
+    },
+    { rootMargin: "-96px 0px -40% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] }
+  );
 
-    navLinks.forEach((link) => {
-      link.classList.toggle("active", link.getAttribute("href") === `#${activeId}`);
-    });
-  }
-
-  window.addEventListener("scroll", updateActiveLink);
-  updateActiveLink();
+  sections.forEach((section) => observer.observe(section));
 }
 
 document.addEventListener("DOMContentLoaded", () => {
