@@ -443,14 +443,18 @@ function renderProject(project) {
 function renderExperienceItem(item) {
   return `
     <article class="experience-item">
-      <div>
+      <div class="experience-meta">
         <span class="experience-period">${escapeHtml(item.period)}</span>
-        <h3>${escapeHtml(item.company)}</h3>
-        <p class="experience-role">${escapeHtml(item.role)}</p>
       </div>
-      <ul>
-        ${item.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}
-      </ul>
+      <div class="experience-main">
+        <div class="experience-header">
+          <p class="experience-role">${escapeHtml(item.role)}</p>
+          <h3>${escapeHtml(item.company)}</h3>
+        </div>
+        <ul>
+          ${item.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}
+        </ul>
+      </div>
     </article>
   `;
 }
