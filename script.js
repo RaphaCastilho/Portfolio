@@ -17,11 +17,12 @@ const content = {
     },
     hero: {
       kicker: "Quality Engineering • Automation • Operational Systems",
-      title: 'QA Engineering: <span class="hero-sub">automação, validação e release readiness.</span>',
+      title: "QA Engineering",
+      subtitle: "focado em qualidade e confiabilidade.",
       description:
-        "Construo fluxos de validação, automação Playwright e análise operacional para aumentar confiabilidade, rastreabilidade e prontidão de release em aplicações web.",
+        "Atuo na validação de aplicações web com automação Playwright, testes de API e análise operacional para garantir releases confiáveis e experiências consistentes.",
       tags: ["Playwright", "QA Engineering", "API Testing", "Operational Systems", "AI-assisted QA"],
-      metrics: "90+ testes · 6 suítes · 2 projetos live · CI/CD ativo",
+      metrics: "90+ testes · 6 suítes · 2 projetos · CI/CD ativo",
       linkedin: "LinkedIn",
       contact: "Contato",
     },
@@ -193,11 +194,12 @@ const content = {
     },
     hero: {
       kicker: "Quality Engineering • Automation • Operational Systems",
-      title: 'QA Engineering: <span class="hero-sub">automation, validation, and release readiness.</span>',
+      title: "QA Engineering",
+      subtitle: "focused on quality and reliability.",
       description:
-        "I build validation workflows, Playwright automation, and operational analysis practices that improve reliability, traceability, and release readiness for web applications.",
+        "I validate web applications through Playwright automation, API testing, and operational analysis to ensure reliable releases and consistent experiences.",
       tags: ["Playwright", "QA Engineering", "API Testing", "Operational Systems", "AI-assisted QA"],
-      metrics: "90+ tests · 6 suites · 2 live projects · CI/CD active",
+      metrics: "90+ tests · 6 suites · 2 projects · CI/CD active",
       linkedin: "LinkedIn",
       contact: "Contact",
     },
@@ -362,10 +364,6 @@ function byId(id) {
 function setText(id, value) {
   const element = byId(id);
   if (element) element.textContent = value;
-}
-function setHTML(id, html) {
-  const element = byId(id);
-  if (element) element.innerHTML = html;
 }
 
 function setHref(id, value) {
@@ -577,7 +575,8 @@ function applyLanguage(lang) {
   setText("nav-contact", t.nav.contact);
 
   setText("hero-kicker", t.hero.kicker);
-  setHTML("hero-title", t.hero.title);
+  setText("hero-title", t.hero.title);
+  setText("hero-subtitle", t.hero.subtitle);
   setText("hero-description", t.hero.description);
   updateHeroTags(t.hero.tags);
   setText("cv-download", t.cv.downloadLabel);
