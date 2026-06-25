@@ -652,7 +652,10 @@ const externalIcon = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none
 
 function renderProject(project) {
   const imageMarkup = project.image
-    ? `<img src="${escapeHtml(project.image)}" alt="${escapeHtml(project.imageAlt)}" loading="lazy" />`
+    ? `<picture>
+        <source srcset="${escapeHtml(project.image.replace(/\.(png|jpe?g)$/i, ".webp"))}" type="image/webp" />
+        <img src="${escapeHtml(project.image)}" alt="${escapeHtml(project.imageAlt)}" loading="lazy" />
+       </picture>`
     : `<div class="project-cover-text" aria-hidden="true">
         <span class="proj-cover-eyebrow">${escapeHtml(project.panelLabel)}</span>
         <strong class="proj-cover-title">${escapeHtml(project.title)}</strong>

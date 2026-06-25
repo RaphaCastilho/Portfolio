@@ -28,6 +28,24 @@
     <meta name="twitter:card" content="summary_large_image" />
     <!--OPEN GRAPH -->
 
+    <!--STRUCTURED DATA (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Raphael Castilho",
+        "jobTitle": "Quality Engineering & Automation",
+        "url": "https://raphacastilho.github.io/Portfolio/",
+        "image": "https://raphacastilho.github.io/Portfolio/src/img/qa-lab-dashboard.png",
+        "sameAs": [
+          "https://github.com/RaphaCastilho",
+          "https://www.linkedin.com/in/raphael-castilho/"
+        ],
+        "knowsAbout": ["Quality Engineering", "Test Automation", "Playwright", "API Testing", "CI/CD"]
+      }
+    </script>
+    <!--STRUCTURED DATA -->
+
     <!--FAVICON -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon-32.png" />
@@ -40,7 +58,7 @@
     <!--FONTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <!--FONTES -->
 
     <!--ICONES -->
@@ -52,6 +70,7 @@
     <!--CSS -->
   </head>
   <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <header class="header">
       <a href="#home" class="logo">Rapha.<span>QA</span></a>
 
@@ -89,12 +108,14 @@
             src="src/img/united-states-of-america-flag.svg"
             alt="English"
             id="lang-flag"
+            width="22"
+            height="15"
           />
         </button>
       </div>
     </header>
 
-    <main>
+    <main id="conteudo">
       <section class="hero" id="home">
         <div class="hero-content">
           <p class="hero-eyebrow" id="hero-kicker">Quality Engineering • Automation • Operational Systems</p>
@@ -498,7 +519,10 @@
 
           <article class="project-card mix automation">
             <div class="project-visual">
-              <img src="src/img/qa-lab-dashboard.png" alt="Screenshot do dashboard do Playwright QA Lab" loading="lazy" />
+              <picture>
+                <source srcset="src/img/qa-lab-dashboard.webp" type="image/webp" />
+                <img src="src/img/qa-lab-dashboard.png" alt="Screenshot do dashboard do Playwright QA Lab" loading="lazy" width="1280" height="800" />
+              </picture>
             </div>
             <div class="project-body">
               <p class="proj-eyebrow">Automation Showcase</p>
@@ -522,7 +546,10 @@
 
           <article class="project-card mix qa-system">
             <div class="project-visual">
-              <img src="src/img/Sentinel-Tech-QA.png" alt="Screenshot do projeto Sentinel Tech QA" loading="lazy" />
+              <picture>
+                <source srcset="src/img/Sentinel-Tech-QA.webp" type="image/webp" />
+                <img src="src/img/Sentinel-Tech-QA.png" alt="Screenshot do projeto Sentinel Tech QA" loading="lazy" width="1506" height="909" />
+              </picture>
             </div>
             <div class="project-body">
               <p class="proj-eyebrow">Flagship Ecosystem</p>
