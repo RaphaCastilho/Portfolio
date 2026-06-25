@@ -1239,23 +1239,6 @@ section {
   }
 }
 
-
-/* =================== HERO REFINEMENT OVERRIDES =================== */
-@media (max-width: 1180px) {
-  .hero {
-    grid-template-columns: 1fr;
-    max-width: 980px;
-    min-height: auto;
-    padding: 100px 32px 56px;
-    gap: 3rem;
-  }
-
-  .ops-panel {
-    justify-self: start;
-    max-width: 100%;
-  }
-}
-
 @media (max-width: 700px) {
   .hero {
     padding: 90px 20px 40px;
@@ -1312,10 +1295,18 @@ section {
   }
 
   .hero-metrics {
-    flex-wrap: wrap;
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .hero-metric-item {
-    flex: 1 1 40%;
+  .input-group {
+    grid-template-columns: 1fr;
+  }
+
+  .ecosystem-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer .list {
+    gap: 1rem;
   }
 }
