@@ -1,1 +1,8 @@
 .superpowers/
+.claude/
+
+# Backups / cópias locais
+* - Copia.*
+*- Copia.*
+*-Copia.*
+*.bak
