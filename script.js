@@ -392,8 +392,20 @@ function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, (character) => entities[character]);
 }
 
+const tagIcons = {
+  "Playwright": "bx-code-alt",
+  "QA Engineering": "bx-shield-quarter",
+  "API Testing": "bx-link",
+  "Operational Systems": "bx-cog",
+  "AI-assisted QA": "bx-chip",
+};
+
 function renderTags(items) {
-  return items.map((item) => `<span>${escapeHtml(item)}</span>`).join("");
+  return items.map((item) => {
+    const iconClass = tagIcons[item];
+    const icon = iconClass ? `<i class="bx ${iconClass}"></i>` : "";
+    return `<span>${icon}${escapeHtml(item)}</span>`;
+  }).join("");
 }
 
 function renderAutomationItem(item) {
@@ -585,7 +597,6 @@ function applyLanguage(lang) {
   setHref("cv-web", t.cv.web);
   setText("linkedin-cta", t.hero.linkedin);
   setText("contact-cta", t.hero.contact);
-  setText("hero-metrics", t.hero.metrics);
 
   setText("about-title", t.about.title);
   setText("about-lead", t.about.lead);
