@@ -85,14 +85,15 @@ const content = {
         { label: "Todos", value: "all" },
         { label: "QA Systems", value: ".qa-system" },
         { label: "Automation", value: ".automation" },
+        { label: "Portfolio", value: ".portfolio" },
       ],
       items: [
         {
           category: "automation",
-          type: "Automation showcase",
+          type: "Automation Showcase",
           title: "Playwright QA Lab",
-          description: "90+ testes Playwright com dashboard interativo, CI/CD, GitHub Pages. Suítes: smoke, conteúdo, interação, responsivo, API mocking e acessibilidade.",
-          stack: ["Playwright", "JavaScript", "CI/CD", "GitHub Pages", "Dashboard"],
+          description: "Dashboard interativo para acompanhamento de testes E2E, métricas de qualidade e integração contínua.",
+          stack: ["Playwright", "CI/CD", "GitHub Pages", "Dashboard"],
           image: "src/img/qa-lab-dashboard.png",
           imageAlt: "Screenshot do dashboard do Playwright QA Lab",
           panelLabel: "QA Lab",
@@ -102,7 +103,7 @@ const content = {
         },
         {
           category: "qa-system",
-          type: "Flagship ecosystem",
+          type: "Flagship Ecosystem",
           title: "Sentinel Tech QA",
           description: "Plataforma institucional e ecossistema de qualidade para comunicar QA, automação e fluxos assistidos por IA.",
           stack: ["QA", "Automation", "AI-assisted workflows", "Web"],
@@ -113,14 +114,14 @@ const content = {
           linkLabel: "Ver repositório",
         },
         {
-          category: "qa-system",
-          type: "Flagship ecosystem",
-          title: "Rapha.QA — Portfolio",
-          description: "Portfólio bilíngue (PT/EN) de Quality Engineering com tema escuro, cards interativos, filtros por categoria e integração com CV e LinkedIn.",
-          stack: ["HTML", "CSS", "JavaScript", "MixItUp", "GitHub Pages"],
+          category: "portfolio",
+          type: "Flagship Ecosystem",
+          title: "Rapha.QA — Portfólio",
+          description: "Portfólio bilíngue de Quality Engineering com tema escuro, cards interativos e integração com CV e LinkedIn.",
+          stack: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
           image: "",
           imageAlt: "",
-          panelLabel: "Portfolio",
+          panelLabel: "Portfólio",
           url: "https://github.com/RaphaCastilho/Portfolio",
           linkLabel: "Ver repositório",
           liveUrl: "https://raphacastilho.github.io/Portfolio",
@@ -266,14 +267,15 @@ const content = {
         { label: "All", value: "all" },
         { label: "QA Systems", value: ".qa-system" },
         { label: "Automation", value: ".automation" },
+        { label: "Portfolio", value: ".portfolio" },
       ],
       items: [
         {
           category: "automation",
-          type: "Automation showcase",
+          type: "Automation Showcase",
           title: "Playwright QA Lab",
-          description: "90+ Playwright tests with interactive dashboard, CI/CD, GitHub Pages. Suites: smoke, content, interaction, responsive, API mocking, and accessibility.",
-          stack: ["Playwright", "JavaScript", "CI/CD", "GitHub Pages", "Dashboard"],
+          description: "Interactive dashboard for E2E test tracking, quality metrics, and continuous integration.",
+          stack: ["Playwright", "CI/CD", "GitHub Pages", "Dashboard"],
           image: "src/img/qa-lab-dashboard.png",
           imageAlt: "Playwright QA Lab dashboard screenshot",
           panelLabel: "QA Lab",
@@ -283,7 +285,7 @@ const content = {
         },
         {
           category: "qa-system",
-          type: "Flagship ecosystem",
+          type: "Flagship Ecosystem",
           title: "Sentinel Tech QA",
           description: "A quality-focused platform and ecosystem communicating QA, automation, and AI-assisted workflows.",
           stack: ["QA", "Automation", "AI-assisted workflows", "Web"],
@@ -294,11 +296,11 @@ const content = {
           linkLabel: "View repository",
         },
         {
-          category: "qa-system",
-          type: "Flagship ecosystem",
+          category: "portfolio",
+          type: "Flagship Ecosystem",
           title: "Rapha.QA — Portfolio",
-          description: "Bilingual (PT/EN) Quality Engineering portfolio with dark theme, interactive cards, category filters, and CV/LinkedIn integration.",
-          stack: ["HTML", "CSS", "JavaScript", "MixItUp", "GitHub Pages"],
+          description: "Bilingual Quality Engineering portfolio with dark theme, interactive cards, and CV/LinkedIn integration.",
+          stack: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
           image: "",
           imageAlt: "",
           panelLabel: "Portfolio",
@@ -438,26 +440,41 @@ function renderEcosystemGroup(group) {
   `;
 }
 
+const githubIcon = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.59 2 12.25c0 4.54 2.87 8.39 6.84 9.75.5.09.68-.22.68-.49v-1.72c-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0112 7.4c.85 0 1.7.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49C19.13 20.64 22 16.79 22 12.25 22 6.59 17.52 2 12 2z"/></svg>';
+const externalIcon = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
 function renderProject(project) {
   const imageMarkup = project.image
     ? `<img src="${escapeHtml(project.image)}" alt="${escapeHtml(project.imageAlt)}" loading="lazy" />`
-    : `<div class="project-system-panel" aria-hidden="true"><span>${escapeHtml(project.panelLabel)}</span><strong>${escapeHtml(project.title)}</strong></div>`;
+    : `<div class="project-cover-text" aria-hidden="true">
+        <span class="proj-cover-eyebrow">${escapeHtml(project.panelLabel)}</span>
+        <strong class="proj-cover-title">${escapeHtml(project.title)}</strong>
+        <span class="proj-cover-sub">Quality Engineer</span>
+        <div class="proj-cover-divider"></div>
+       </div>`;
 
-  const linkMarkup = project.url
-    ? `<a href="${escapeHtml(project.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(project.linkLabel)}</a>${project.liveUrl ? `<span style="margin:0 8px;color:var(--text-color);opacity:.3;">·</span><a href="${escapeHtml(project.liveUrl)}" target="_blank" rel="noopener noreferrer" class="project-live">Live →</a>` : ''}`
-    : `<span class="project-status">${escapeHtml(project.linkLabel)}</span>`;
+  const visualClass = project.image ? "project-visual" : "project-visual project-visual-dark";
+
+  const githubLink = project.url
+    ? `<a href="${escapeHtml(project.url)}" target="_blank" rel="noopener noreferrer" class="proj-link">${githubIcon}GitHub</a>`
+    : "";
+
+  const liveLink = project.liveUrl
+    ? `<a href="${escapeHtml(project.liveUrl)}" target="_blank" rel="noopener noreferrer" class="proj-link proj-link-live">Live Demo ${externalIcon}</a>`
+    : `<span class="proj-link-disabled">Em desenvolvimento</span>`;
 
   return `
     <article class="project-card mix ${escapeHtml(project.category)}">
-      <div class="project-visual">${imageMarkup}</div>
+      <div class="${visualClass}">${imageMarkup}</div>
       <div class="project-body">
-        <span class="card-label">${escapeHtml(project.type)}</span>
+        <p class="proj-eyebrow">${escapeHtml(project.type)}</p>
         <h3>${escapeHtml(project.title)}</h3>
-        <p>${escapeHtml(project.description)}</p>
-        <div class="tech-tags">
-          ${renderTags(project.stack)}
-        </div>
-        ${linkMarkup}
+        <p class="proj-desc">${escapeHtml(project.description)}</p>
+        <div class="tech-tags">${renderTags(project.stack)}</div>
+      </div>
+      <div class="project-footer">
+        ${githubLink}
+        ${liveLink}
       </div>
     </article>
   `;
