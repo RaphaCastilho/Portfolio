@@ -25,18 +25,36 @@ const content = {
       metrics: "90+ testes · 6 suítes · 2 projetos · CI/CD ativo",
       linkedin: "LinkedIn",
       contact: "Contato",
+      opsSubtitle: "O que eu entrego",
+      opsDesc1: "Cobertura de fluxos críticos e jornadas completas.",
+      opsDesc2: "Validações de contrato, regras e integrações.",
+      opsDesc3: "Análise de causa raiz e melhoria contínua.",
+      opsDesc4: "Automação inteligente para acelerar entregas.",
+      metricLabel1: "testes",
+      metricLabel2: "suítes",
+      metricLabel3: "projetos live",
+      metricLabel4: "ativo",
     },
+    toolsStripLabel: "Tecnologias e\nFerramentas",
     about: {
-      title: "Perfil Operacional",
-      lead: "Atuo na interseção entre qualidade de software, análise sistêmica e operação. Minha experiência combina troubleshooting enterprise, validação funcional, automação Playwright e leitura de fluxos críticos para apoiar times que precisam entregar software com mais confiabilidade.",
-      highlights: [
-        "Investigação e reprodução de bugs em aplicações web corporativas.",
-        "Validação de fluxos funcionais, regressão, estados de UI e integrações.",
-        "Comunicação técnica entre suporte, produto, QA e desenvolvimento.",
-        "Mentalidade orientada a rastreabilidade, estabilidade e melhoria contínua.",
-      ],
+      kicker: "Sobre Mim",
+      titleLine: "de qualidade.",
+      lead: "Minha experiência combina QA, automação, investigação de falhas, análise operacional e colaboração multidisciplinar para aumentar a confiabilidade das entregas e reduzir riscos antes do release.",
+      cardTitle1: "Investigação",
+      cardDesc1: "Investigação e reprodução de bugs complexos em aplicações web corporativas. Isolamento de causa raiz e documentação clara para acelerar a resolução.",
+      cardTitle2: "Validação",
+      cardDesc2: "Validação de fluxos funcionais, regressão, estados de UI e integrações entre sistemas. Garantia de que o produto entrega o que foi planejado, em todas as camadas.",
+      cardTitle3: "Colaboração",
+      cardDesc3: "Comunicação técnica eficiente entre suporte, produto, QA e desenvolvimento. Trabalho conjunto para entender, priorizar e resolver problemas com agilidade.",
+      cardTitle4: "Melhoria Contínua",
+      cardDesc4: "Mentalidade orientada a dados, rastreabilidade, estabilidade e qualidade contínua. Processos e automações que evoluem junto com o produto e com o time.",
+      highlights: [],
     },
     automation: {
+      kicker: "Automação",
+      benefit1: "Cobertura inteligente dos fluxos críticos",
+      benefit2: "Feedback rápido para times de desenvolvimento",
+      benefit3: "Qualidade contínua em cada etapa do ciclo",
       title: "Automation Engineering",
       lead: "Desenho e implemento soluções de automação confiáveis para validar o que importa, reduzir riscos de regressão e acelerar entregas com segurança e previsibilidade.",
       items: [
@@ -67,8 +85,10 @@ const content = {
       ],
     },
     ecosystem: {
+      kicker: "Stack",
       title: "Ecossistema Técnico",
       lead: "Ferramentas organizadas por capacidade operacional, não por lista genérica de ferramentas.",
+      note: "Stack em constante evolução para acompanhar tecnologia e necessidades do negócio.",
       groups: [
         {
           title: "QA & Analysis",
@@ -109,8 +129,11 @@ const content = {
       ],
     },
     projects: {
+      kicker: "Sistemas",
       title: "Sistemas e Projetos",
       lead: "Projetos reposicionados como sistemas de validação, operação e aprendizado técnico aplicado.",
+      note: "Mais projetos e experimentos em constante evolução.",
+      inDev: "Em desenvolvimento",
       filters: [
         { label: "Todos", value: "all" },
         { label: "QA Systems", value: ".qa-system" },
@@ -159,8 +182,16 @@ const content = {
       ],
     },
     experience: {
+      kicker: "Experiência",
+      titleSpan1: "operações",
+      titleSpan2: "qualidade.",
       title: "Minha trajetória em operações e qualidade.",
       lead: "Atuei por anos em operações críticas, suporte e análise de sistemas, evoluindo de ambientes de alta complexidade até me especializar em qualidade de software e automação.",
+      skill1: "Investigação de incidentes",
+      skill2: "Análise de sistemas",
+      skill3: "Operações e indicadores",
+      skill4: "Engenharia de qualidade",
+      note: "Evolução contínua em qualidade, automação e excelência operacional.",
       items: [
         {
           company: "",
@@ -217,16 +248,33 @@ const content = {
       ],
     },
     contact: {
+      kicker: "Contato",
+      titleSpan: "juntos.",
       title: "Vamos construir qualidade juntos.",
       lead: "Estou aberto a novas oportunidades PJ em QA, automação, Quality Engineering e validação de sistemas.",
+      perk1: "Disponível para projetos e parcerias",
+      perk2: "Atuação 100% remota",
+      perk3: "Resposta em até 24h",
       channelsLabel: "Escolha o melhor canal para conversar",
       emailDesc: "Enviar mensagem",
       linkedinDesc: "Vamos nos conectar",
       githubDesc: "Ver meus projetos",
       cvDesc: "Download do CV",
+      ctaEmail: "Enviar e-mail",
+      ctaMessage: "Enviar mensagem",
       barTitle: "Foco em qualidade, automação e eficiência.",
       barSub: "Pronto para agregar valor ao seu time e aos seus produtos.",
       statusLabel: "Disponível para novos desafios",
+      modalEyebrow: "Contato",
+      modalTitle: "Enviar mensagem",
+      modalLabelName: "Nome",
+      modalLabelEmail: "E-mail",
+      modalLabelSubject: "Assunto",
+      modalLabelMessage: "Mensagem",
+      modalPlaceholderName: "Seu nome",
+      modalPlaceholderSubject: "Sobre qual oportunidade?",
+      modalPlaceholderMessage: "Conte brevemente sobre a oportunidade...",
+      modalSubmit: "Enviar mensagem",
       button: "Enviar e-mail",
     },
     footer: {
@@ -261,18 +309,36 @@ const content = {
       metrics: "90+ tests · 6 suites · 2 projects · CI/CD active",
       linkedin: "LinkedIn",
       contact: "Contact",
+      opsSubtitle: "What I deliver",
+      opsDesc1: "Coverage of critical flows and complete user journeys.",
+      opsDesc2: "Contract validation, rules, and integrations.",
+      opsDesc3: "Root cause analysis and continuous improvement.",
+      opsDesc4: "Intelligent automation to accelerate delivery.",
+      metricLabel1: "tests",
+      metricLabel2: "suites",
+      metricLabel3: "live projects",
+      metricLabel4: "active",
     },
+    toolsStripLabel: "Technologies &\nTools",
     about: {
-      title: "Operational Profile",
-      lead: "I work at the intersection of software quality, system analysis, and operations. My background combines enterprise troubleshooting, functional validation, Playwright automation, and critical workflow analysis for teams that need more reliable software delivery.",
-      highlights: [
-        "Bug investigation and reproduction in enterprise web applications.",
-        "Functional flow validation, regression analysis, UI states, and integrations.",
-        "Technical communication across support, product, QA, and engineering teams.",
-        "Traceability, stability, and continuous improvement mindset.",
-      ],
+      kicker: "About Me",
+      titleLine: "of quality.",
+      lead: "My background combines QA, automation, incident investigation, operational analysis, and cross-functional collaboration to increase delivery reliability and reduce risk before release.",
+      cardTitle1: "Investigation",
+      cardDesc1: "Investigation and reproduction of complex bugs in enterprise web applications. Root cause isolation and clear documentation to speed up resolution.",
+      cardTitle2: "Validation",
+      cardDesc2: "Validation of functional flows, regression, UI states, and system integrations. Ensuring the product delivers what was planned, across all layers.",
+      cardTitle3: "Collaboration",
+      cardDesc3: "Efficient technical communication between support, product, QA, and engineering. Working together to understand, prioritize, and resolve issues quickly.",
+      cardTitle4: "Continuous Improvement",
+      cardDesc4: "Data-driven mindset focused on traceability, stability, and ongoing quality. Processes and automations that evolve alongside the product and the team.",
+      highlights: [],
     },
     automation: {
+      kicker: "Automation",
+      benefit1: "Intelligent coverage of critical flows",
+      benefit2: "Fast feedback for development teams",
+      benefit3: "Continuous quality at every stage of the cycle",
       title: "Automation Engineering",
       lead: "I design and implement reliable automation solutions to validate what matters, reduce regression risks, and accelerate delivery with safety and predictability.",
       items: [
@@ -303,8 +369,10 @@ const content = {
       ],
     },
     ecosystem: {
+      kicker: "Stack",
       title: "Technical Ecosystem",
       lead: "Tools organized by operational capability, not a generic tool list.",
+      note: "Stack constantly evolving to keep up with technology and business needs.",
       groups: [
         {
           title: "QA & Analysis",
@@ -345,8 +413,11 @@ const content = {
       ],
     },
     projects: {
+      kicker: "Systems",
       title: "Systems and Projects",
       lead: "Projects reframed as validation systems, operational tools, and applied technical learning.",
+      note: "More projects and experiments in constant evolution.",
+      inDev: "In development",
       filters: [
         { label: "All", value: "all" },
         { label: "QA Systems", value: ".qa-system" },
@@ -395,8 +466,16 @@ const content = {
       ],
     },
     experience: {
+      kicker: "Experience",
+      titleSpan1: "operations",
+      titleSpan2: "quality.",
       title: "My journey through operations and quality.",
       lead: "I spent years in critical operations, support, and systems analysis, evolving from high-complexity environments to specializing in software quality and automation.",
+      skill1: "Incident investigation",
+      skill2: "Systems analysis",
+      skill3: "Operations and metrics",
+      skill4: "Quality engineering",
+      note: "Continuous evolution in quality, automation, and operational excellence.",
       items: [
         {
           company: "",
@@ -453,16 +532,33 @@ const content = {
       ],
     },
     contact: {
+      kicker: "Contact",
+      titleSpan: "together.",
       title: "Let's build quality together.",
-      lead: "Open to PJ opportunities in QA, automation, Quality Engineering and system validation.",
+      lead: "Open to freelance opportunities in QA, automation, Quality Engineering, and system validation.",
+      perk1: "Available for projects and partnerships",
+      perk2: "100% remote",
+      perk3: "Response within 24h",
       channelsLabel: "Choose the best channel to connect",
       emailDesc: "Send a message",
       linkedinDesc: "Let's connect",
       githubDesc: "View my projects",
       cvDesc: "Download CV",
+      ctaEmail: "Send e-mail",
+      ctaMessage: "Send message",
       barTitle: "Focused on quality, automation and efficiency.",
       barSub: "Ready to add value to your team and your products.",
       statusLabel: "Available for new challenges",
+      modalEyebrow: "Contact",
+      modalTitle: "Send a message",
+      modalLabelName: "Name",
+      modalLabelEmail: "E-mail",
+      modalLabelSubject: "Subject",
+      modalLabelMessage: "Message",
+      modalPlaceholderName: "Your name",
+      modalPlaceholderSubject: "What opportunity is this about?",
+      modalPlaceholderMessage: "Briefly describe the opportunity...",
+      modalSubmit: "Send message",
       button: "Send e-mail",
     },
     footer: {
@@ -738,6 +834,15 @@ function applyLanguage(lang) {
   setText("hero-subtitle", t.hero.subtitle);
   setText("hero-description", t.hero.description);
   updateHeroTags(t.hero.tags);
+  setText("ops-subtitle", t.hero.opsSubtitle);
+  setText("ops-desc-1", t.hero.opsDesc1);
+  setText("ops-desc-2", t.hero.opsDesc2);
+  setText("ops-desc-3", t.hero.opsDesc3);
+  setText("ops-desc-4", t.hero.opsDesc4);
+  setText("metric-label-1", t.hero.metricLabel1);
+  setText("metric-label-2", t.hero.metricLabel2);
+  setText("metric-label-3", t.hero.metricLabel3);
+  setText("metric-label-4", t.hero.metricLabel4);
   setText("cv-download", t.cv.downloadLabel);
   setHref("cv-download", t.cv.pdf);
   setText("cv-web", t.cv.webLabel);
@@ -745,27 +850,81 @@ function applyLanguage(lang) {
   setText("linkedin-cta", t.hero.linkedin);
   setText("contact-cta", t.hero.contact);
 
-  setText("about-title", t.about.title);
+  // tools strip
+  const toolsLabel = byId("tools-strip-label");
+  if (toolsLabel) toolsLabel.innerHTML = t.toolsStripLabel.replace("\n", "<br />");
+
+  // about
+  setText("about-kicker", t.about.kicker);
   setText("about-lead", t.about.lead);
-  setText("automation-title", t.automation.title);
+  if (t.about.titleLine) setText("about-title-span", t.about.titleLine);
+  setText("about-card-title-1", t.about.cardTitle1);
+  setText("about-card-desc-1", t.about.cardDesc1);
+  setText("about-card-title-2", t.about.cardTitle2);
+  setText("about-card-desc-2", t.about.cardDesc2);
+  setText("about-card-title-3", t.about.cardTitle3);
+  setText("about-card-desc-3", t.about.cardDesc3);
+  setText("about-card-title-4", t.about.cardTitle4);
+  setText("about-card-desc-4", t.about.cardDesc4);
+
+  // automation
+  setText("auto-kicker", t.automation.kicker);
   setText("automation-lead", t.automation.lead);
+  setText("auto-benefit-1", t.automation.benefit1);
+  setText("auto-benefit-2", t.automation.benefit2);
+  setText("auto-benefit-3", t.automation.benefit3);
+
+  // ecosystem
+  setText("eco-kicker", t.ecosystem.kicker);
   setText("ecosystem-title", t.ecosystem.title);
   setText("ecosystem-lead", t.ecosystem.lead);
+
+  // projects
+  setText("projects-kicker", t.projects.kicker);
   setText("projects-title", t.projects.title);
   setText("projects-lead", t.projects.lead);
+
+  // experience
+  setText("exp-kicker", t.experience.kicker);
   setText("experience-title", t.experience.title);
   setText("experience-lead", t.experience.lead);
+  setText("exp-skill-1", t.experience.skill1);
+  setText("exp-skill-2", t.experience.skill2);
+  setText("exp-skill-3", t.experience.skill3);
+  setText("exp-skill-4", t.experience.skill4);
+
+  // contact
+  setText("contact-kicker", t.contact.kicker);
   setText("contact-title", t.contact.title);
   setText("contact-lead", t.contact.lead);
-  setText("contact-channels-label", t.contact.channelsLabel || "Escolha o melhor canal para conversar");
-  setText("contact-email-desc", t.contact.emailDesc || "Enviar mensagem");
-  setText("contact-linkedin-desc", t.contact.linkedinDesc || "Vamos nos conectar");
-  setText("contact-github-desc", t.contact.githubDesc || "Ver meus projetos");
-  setText("contact-cv-desc", t.contact.cvDesc || "Download do CV");
-  setText("contact-bar-title", t.contact.barTitle || "Foco em qualidade, automação e eficiência.");
-  setText("contact-bar-sub", t.contact.barSub || "Pronto para agregar valor ao seu time e aos seus produtos.");
-  setText("contact-status-label", t.contact.statusLabel || "Disponível para novos desafios");
+  setText("contact-perk-1", t.contact.perk1);
+  setText("contact-perk-2", t.contact.perk2);
+  setText("contact-perk-3", t.contact.perk3);
+  setText("contact-channels-label", t.contact.channelsLabel);
+  setText("contact-email-desc", t.contact.emailDesc);
+  setText("contact-linkedin-desc", t.contact.linkedinDesc);
+  setText("contact-github-desc", t.contact.githubDesc);
+  setText("contact-cv-desc", t.contact.cvDesc);
+  setText("contact-bar-title", t.contact.barTitle);
+  setText("contact-bar-sub", t.contact.barSub);
+  setText("contact-status-label", t.contact.statusLabel);
+  // modal
+  setText("modal-eyebrow", t.contact.modalEyebrow);
+  setText("modal-title", t.contact.modalTitle);
+  setText("modal-submit-label", t.contact.modalSubmit);
+  setText("contact-cta-message", t.contact.ctaMessage);
   setHref("cv-download", t.cv.pdf);
+
+  // about title - rebuild with line
+  const aboutTitleEl = byId("about-title");
+  if (aboutTitleEl) {
+    const lang = document.documentElement.lang;
+    if (lang === "en-US") {
+      aboutTitleEl.innerHTML = 'How I work<br>in quality<br><span id="about-title-span">' + escapeHtml(t.about.titleLine) + '</span>';
+    } else {
+      aboutTitleEl.innerHTML = 'Como atuo<br>na engenharia<br><span id="about-title-span">' + escapeHtml(t.about.titleLine) + '</span>';
+    }
+  }
 
   updateAboutHighlights(t.about.highlights);
   renderList("automation-grid", t.automation.items, renderAutomationItem);

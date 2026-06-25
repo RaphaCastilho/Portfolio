@@ -113,58 +113,58 @@
 
         <div class="ops-panel" aria-label="Painel visual de operações de qualidade">
           <div class="ops-panel-header">
-            <span>QUALITY OPS</span>
-            <strong>O que eu entrego</strong>
+            <span id="ops-kicker">QUALITY OPS</span>
+            <strong id="ops-subtitle">O que eu entrego</strong>
           </div>
           <div class="ops-grid">
             <article>
               <i class="bx bx-layout ops-card-icon"></i>
               <span class="ops-card-title">Playwright E2E</span>
-              <p class="ops-card-desc">Cobertura de fluxos críticos e jornadas completas.</p>
+              <p class="ops-card-desc" id="ops-desc-1">Cobertura de fluxos críticos e jornadas completas.</p>
             </article>
             <article>
               <i class="bx bx-cloud-upload ops-card-icon"></i>
               <span class="ops-card-title">API Validation</span>
-              <p class="ops-card-desc">Validações de contrato, regras e integrações.</p>
+              <p class="ops-card-desc" id="ops-desc-2">Validações de contrato, regras e integrações.</p>
             </article>
             <article>
               <i class="bx bx-pulse ops-card-icon"></i>
               <span class="ops-card-title">Incident Analysis</span>
-              <p class="ops-card-desc">Análise de causa raiz e melhoria contínua.</p>
+              <p class="ops-card-desc" id="ops-desc-3">Análise de causa raiz e melhoria contínua.</p>
             </article>
             <article>
               <i class="bx bx-bot ops-card-icon"></i>
               <span class="ops-card-title">AI Workflows</span>
-              <p class="ops-card-desc">Automação inteligente para acelerar entregas.</p>
+              <p class="ops-card-desc" id="ops-desc-4">Automação inteligente para acelerar entregas.</p>
             </article>
           </div>
           <div class="hero-metrics" id="hero-metrics">
             <div class="hero-metric-item">
               <i class="bx bx-check-circle hero-metric-icon"></i>
               <span class="hero-metric-value">90+</span>
-              <span class="hero-metric-label">testes</span>
+              <span class="hero-metric-label" id="metric-label-1">testes</span>
             </div>
             <div class="hero-metric-item">
               <i class="bx bx-collection hero-metric-icon"></i>
               <span class="hero-metric-value">6</span>
-              <span class="hero-metric-label">suítes</span>
+              <span class="hero-metric-label" id="metric-label-2">suítes</span>
             </div>
             <div class="hero-metric-item">
               <i class="bx bx-rocket hero-metric-icon"></i>
               <span class="hero-metric-value">2</span>
-              <span class="hero-metric-label">projetos live</span>
+              <span class="hero-metric-label" id="metric-label-3">projetos live</span>
             </div>
             <div class="hero-metric-item">
               <i class="bx bx-code-block hero-metric-icon"></i>
               <span class="hero-metric-value">CI/CD</span>
-              <span class="hero-metric-label">ativo</span>
+              <span class="hero-metric-label" id="metric-label-4">ativo</span>
             </div>
           </div>
         </div>
       </section>
       <section class="tools-strip" aria-label="Tecnologias e ferramentas">
   <div class="tools-strip-inner">
-    <p class="tools-strip-title">Tecnologias e<br />Ferramentas</p>
+    <p class="tools-strip-title" id="tools-strip-label">Tecnologias e<br />Ferramentas</p>
 
     <div class="tools-strip-list">
       <span class="tools-strip-item">
@@ -248,7 +248,7 @@
           <!-- Coluna esquerda -->
           <div class="about-left">
             <p class="about-eyebrow" id="about-kicker">Sobre Mim</p>
-            <h2 class="about-title" id="about-title">Como atuo<br>na engenharia<br><span>de qualidade.</span></h2>
+            <h2 class="about-title" id="about-title">Como atuo<br>na engenharia<br><span id="about-title-span">de qualidade.</span></h2>
             <div class="about-divider"></div>
             <p class="about-lead" id="about-lead">
               Minha experiência combina QA, automação, investigação de falhas, análise operacional e colaboração multidisciplinar para aumentar a confiabilidade das entregas e reduzir riscos antes do release.
@@ -265,8 +265,8 @@
                   <path d="M5 5l1.5 1.5M19 5l-1.5 1.5M5 19l1.5-1.5M19 19l-1.5-1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
               </div>
-              <h3>Investigação</h3>
-              <p>Investigação e reprodução de bugs complexos em aplicações web corporativas. Isolamento de causa raiz e documentação clara para acelerar a resolução.</p>
+              <h3 id="about-card-title-1">Investigação</h3>
+              <p id="about-card-desc-1">Investigação e reprodução de bugs complexos em aplicações web corporativas. Isolamento de causa raiz e documentação clara para acelerar a resolução.</p>
             </article>
             <article class="about-card">
               <div class="about-card-icon">
@@ -275,8 +275,8 @@
                   <path d="M18 4l2 4-4-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
-              <h3>Validação</h3>
-              <p>Validação de fluxos funcionais, regressão, estados de UI e integrações entre sistemas. Garantia de que o produto entrega o que foi planejado, em todas as camadas.</p>
+              <h3 id="about-card-title-2">Validação</h3>
+              <p id="about-card-desc-2">Validação de fluxos funcionais, regressão, estados de UI e integrações entre sistemas. Garantia de que o produto entrega o que foi planejado, em todas as camadas.</p>
             </article>
             <article class="about-card">
               <div class="about-card-icon">
@@ -287,8 +287,8 @@
                   <path d="M16 14c1.8.3 4 1.4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
               </div>
-              <h3>Colaboração</h3>
-              <p>Comunicação técnica eficiente entre suporte, produto, QA e desenvolvimento. Trabalho conjunto para entender, priorizar e resolver problemas com agilidade.</p>
+              <h3 id="about-card-title-3">Colaboração</h3>
+              <p id="about-card-desc-3">Comunicação técnica eficiente entre suporte, produto, QA e desenvolvimento. Trabalho conjunto para entender, priorizar e resolver problemas com agilidade.</p>
             </article>
             <article class="about-card">
               <div class="about-card-icon">
@@ -297,8 +297,8 @@
                   <path d="M17 7h4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
-              <h3>Melhoria Contínua</h3>
-              <p>Mentalidade orientada a dados, rastreabilidade, estabilidade e qualidade contínua. Processos e automações que evoluem junto com o produto e com o time.</p>
+              <h3 id="about-card-title-4">Melhoria Contínua</h3>
+              <p id="about-card-desc-4">Mentalidade orientada a dados, rastreabilidade, estabilidade e qualidade contínua. Processos e automações que evoluem junto com o produto e com o time.</p>
             </article>
           </div>
 
@@ -311,7 +311,7 @@
           <!-- Coluna esquerda -->
           <div class="auto-left">
             <p class="auto-eyebrow" id="auto-kicker">Automação</p>
-            <h2 class="auto-title" id="automation-title">Automação<br>como <span>engenharia<br>de qualidade.</span></h2>
+            <h2 class="auto-title" id="automation-title">Automação<br>como <span id="auto-title-span">engenharia<br>de qualidade.</span></h2>
             <div class="auto-divider"></div>
             <p class="auto-lead" id="automation-lead">
               Desenho e implemento soluções de automação confiáveis para validar o que importa, reduzir riscos de regressão e acelerar entregas com segurança e previsibilidade.
@@ -319,15 +319,15 @@
             <ul class="auto-benefits" aria-label="Benefícios da abordagem">
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Cobertura inteligente dos fluxos críticos
+                <span id="auto-benefit-1">Cobertura inteligente dos fluxos críticos</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Feedback rápido para times de desenvolvimento
+                <span id="auto-benefit-2">Feedback rápido para times de desenvolvimento</span>
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Qualidade contínua em cada etapa do ciclo
+                <span id="auto-benefit-3">Qualidade contínua em cada etapa do ciclo</span>
               </li>
             </ul>
           </div>
@@ -577,7 +577,7 @@
           <!-- Coluna esquerda -->
           <div class="exp-left">
             <p class="exp-eyebrow" id="exp-kicker">Experiência</p>
-            <h2 class="exp-title" id="experience-title">Minha trajetória<br>em <span>operações</span><br>e <span>qualidade.</span></h2>
+            <h2 class="exp-title" id="experience-title">Minha trajetória<br>em <span id="exp-title-span1">operações</span><br>e <span id="exp-title-span2">qualidade.</span></h2>
             <div class="exp-divider"></div>
             <p class="exp-lead" id="experience-lead">
               Atuei por anos em operações críticas, suporte e análise de sistemas, evoluindo de ambientes de alta complexidade até me especializar em qualidade de software e automação.
@@ -585,19 +585,19 @@
             <ul class="exp-skills">
               <li>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Investigação de incidentes
+                <span id="exp-skill-1">Investigação de incidentes</span>
               </li>
               <li>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Análise de sistemas
+                <span id="exp-skill-2">Análise de sistemas</span>
               </li>
               <li>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Operações e indicadores
+                <span id="exp-skill-3">Operações e indicadores</span>
               </li>
               <li>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Engenharia de qualidade
+                <span id="exp-skill-4">Engenharia de qualidade</span>
               </li>
             </ul>
           </div>
@@ -716,7 +716,7 @@
           <!-- Coluna esquerda -->
           <div class="contact-left">
             <p class="contact-eyebrow" id="contact-kicker">Contato</p>
-            <h2 class="contact-title" id="contact-title">Vamos construir<br>qualidade<br><span>juntos.</span></h2>
+            <h2 class="contact-title" id="contact-title">Vamos construir<br>qualidade<br><span id="contact-title-span">juntos.</span></h2>
             <div class="contact-divider"></div>
             <p class="contact-lead" id="contact-lead">
               Estou aberto a novas oportunidades PJ em QA, automação, Quality Engineering e validação de sistemas.
@@ -724,15 +724,15 @@
             <ul class="contact-perks">
               <li>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Disponível para projetos e parcerias
+                <span id="contact-perk-1">Disponível para projetos e parcerias</span>
               </li>
               <li>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Atuação 100% remota
+                <span id="contact-perk-2">Atuação 100% remota</span>
               </li>
               <li>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Resposta em até 24h
+                <span id="contact-perk-3">Resposta em até 24h</span>
               </li>
             </ul>
           </div>
@@ -795,7 +795,7 @@
               </a>
               <button type="button" class="btn btn-secondary contact-cta-btn" id="open-contact-modal" aria-haspopup="dialog">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-                Enviar mensagem
+                <span id="contact-cta-message">Enviar mensagem</span>
               </button>
             </div>
           </div>
@@ -825,7 +825,7 @@
       <div class="modal-card">
         <div class="modal-header">
           <div>
-            <p class="modal-eyebrow">Contato</p>
+            <p class="modal-eyebrow" id="modal-eyebrow">Contato</p>
             <h3 class="modal-title" id="modal-title">Enviar mensagem</h3>
           </div>
           <button class="modal-close" id="close-contact-modal" aria-label="Fechar">
@@ -840,28 +840,28 @@
 
           <div class="modal-row">
             <div class="modal-field">
-              <label for="modal-name">Nome</label>
+              <label for="modal-name" id="modal-label-name">Nome</label>
               <input type="text" id="modal-name" name="Nome" placeholder="Seu nome" required />
             </div>
             <div class="modal-field">
-              <label for="modal-email">E-mail</label>
+              <label for="modal-email" id="modal-label-email">E-mail</label>
               <input type="email" id="modal-email" name="email" placeholder="seu@email.com" required />
             </div>
           </div>
 
           <div class="modal-field">
-            <label for="modal-subject">Assunto</label>
+            <label for="modal-subject" id="modal-label-subject">Assunto</label>
             <input type="text" id="modal-subject" name="Assunto" placeholder="Sobre qual oportunidade?" />
           </div>
 
           <div class="modal-field">
-            <label for="modal-message">Mensagem</label>
+            <label for="modal-message" id="modal-label-message">Mensagem</label>
             <textarea id="modal-message" name="Mensagem" rows="5" placeholder="Conte brevemente sobre a oportunidade..." required></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary modal-submit">
+          <button type="submit" class="btn btn-primary modal-submit" id="modal-submit">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 8l10 6 10-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            Enviar mensagem
+            <span id="modal-submit-label">Enviar mensagem</span>
           </button>
         </form>
       </div>
