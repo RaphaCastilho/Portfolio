@@ -275,11 +275,11 @@ section {
 .hero {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 86px 64px 48px;
+  padding: 72px 64px 40px;
   min-height: auto;
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(520px, 0.9fr);
-  gap: 64px;
+  grid-template-columns: minmax(0, 1.1fr) minmax(480px, 0.9fr);
+  gap: 56px;
   align-items: start;
 }
 
@@ -288,16 +288,16 @@ section {
 }
 
 .hero-eyebrow {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--text-soft);
-  margin-bottom: 40px;
+  color: var(--accent);
+  margin-bottom: 28px;
 }
 
 .hero-content h1 {
-  font-size: clamp(58px, 5.6vw, 86px);
+  font-size: clamp(52px, 5vw, 78px);
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: -0.06em;
@@ -307,8 +307,8 @@ section {
 
 #hero-subtitle {
   max-width: 650px;
-  margin-top: 18px;
-  font-size: clamp(42px, 4.1vw, 62px);
+  margin-top: 14px;
+  font-size: clamp(36px, 3.6vw, 56px);
   font-weight: 700;
   line-height: 1.08;
   letter-spacing: -0.055em;
@@ -316,97 +316,116 @@ section {
 }
 
 .hero-divider {
-  width: 112px;
+  width: 96px;
   height: 2px;
-  margin: 34px 0 28px;
+  margin: 24px 0 20px;
   background: linear-gradient(90deg, var(--accent) 0%, rgba(91, 124, 250, 0) 100%);
   border-radius: 999px;
 }
 
 #hero-description {
-  max-width: 660px;
+  max-width: 620px;
   margin: 0;
-  font-size: 21px;
-  line-height: 1.75;
+  font-size: 18px;
+  line-height: 1.7;
   color: var(--text-muted);
 }
 
 .hero-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 36px;
+  gap: 10px;
+  margin-top: 24px;
 }
 
 .hero-tags span {
   display: inline-flex;
   align-items: center;
-  min-height: 48px;
-  padding: 0 20px;
-  font-size: 16px;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 16px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--text-muted);
   background: rgba(18, 26, 42, 0.72);
   border: 1px solid var(--line);
   border-radius: 999px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.hero-tags span:hover {
+  border-color: var(--line-strong);
+  color: var(--text);
+}
+
+.hero-tags span i {
+  font-size: 15px;
+  color: var(--accent);
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 22px;
-  margin-top: 36px;
-  margin-bottom: 24px;
+  gap: 14px;
+  margin-top: 28px;
+  margin-bottom: 20px;
 }
 
 .hero-actions .btn {
-  min-height: 64px;
-  padding: 0 26px;
+  min-height: 52px;
+  padding: 0 22px;
   border-radius: 10px;
-  font-size: 19px;
+  font-size: 16px;
+  gap: 8px;
 }
 
 .cv-web-link {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.cv-web-link:hover {
+  color: var(--text);
 }
 
 /* =================== QA OPS PANEL =================== */
 .ops-panel {
   width: 100%;
-  max-width: 582px;
+  max-width: 560px;
   justify-self: end;
-  padding: 32px;
+  padding: 28px;
   background:
     radial-gradient(circle at 20% 0%, rgba(91, 124, 250, 0.08), transparent 36%),
     var(--surface);
   border: 1px solid var(--line-strong);
-  border-radius: 24px;
+  border-radius: 20px;
   box-shadow: var(--shadow);
 }
 
 .ops-panel-header {
-  padding-bottom: 22px;
-  margin-bottom: 26px;
+  padding-bottom: 18px;
+  margin-bottom: 20px;
   border-bottom: 1px solid var(--line);
 }
 
 .ops-panel-header span {
   display: block;
-  font-size: 22px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.24em;
+  text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 }
 
 .ops-panel-header strong {
   display: block;
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--text);
   line-height: 1.15;
@@ -415,158 +434,54 @@ section {
 .ops-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: 12px;
 }
 
 .ops-grid article {
-  height: 164px;
-  padding: 24px 22px;
+  padding: 18px 16px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 10px;
+  gap: 8px;
   background:
-    radial-gradient(circle at 20% 0%, rgba(91, 124, 250, 0.08), transparent 42%),
+    radial-gradient(circle at 20% 0%, rgba(91, 124, 250, 0.06), transparent 42%),
     var(--surface-soft);
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: 12px;
+  transition: border-color 0.2s ease;
+}
+
+.ops-grid article:hover {
+  border-color: var(--line-strong);
+}
+
+.ops-card-icon {
+  font-size: 22px;
+  color: var(--accent);
+  margin-bottom: 2px;
 }
 
 .ops-card-title {
-  font-size: 16px;
-  font-weight: 800;
+  font-size: 15px;
+  font-weight: 700;
   color: var(--text);
 }
 
 .ops-card-desc {
   margin: 0;
-  font-size: 15px;
-  line-height: 1.55;
+  font-size: 13px;
+  line-height: 1.5;
   color: var(--text-muted);
 }
 
 .hero-metrics {
-  margin-top: 24px;
-  padding: 24px 22px;
-  height: 150px;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  align-items: center;
-  gap: 8px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: var(--surface-soft);
-  overflow: visible;
-}
-
-.hero-metric-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  min-width: 0;
-  border-right: none;
-  text-align: center;
-}
-
-.hero-metric-value {
-  display: block;
-  font-size: 28px;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.04em;
-  color: var(--text);
-  white-space: nowrap;
-}
-
-.hero-metric-label {
-  display: block;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-muted);
-  line-height: 1.2;
-  white-space: nowrap;
-}
-
-/* =================== RESPONSIVO HERO =================== */
-@media (max-width: 1180px) {
-  .hero {
-    grid-template-columns: 1fr;
-    padding: 110px 32px 64px;
-    gap: 56px;
-  }
-
-  .ops-panel {
-    justify-self: start;
-    max-width: 620px;
-  }
-}
-
-@media (max-width: 700px) {
-  .hero {
-    padding: 96px 20px 48px;
-  }
-
-  .hero-eyebrow {
-    font-size: 12px;
-    letter-spacing: 0.18em;
-    margin-bottom: 32px;
-  }
-
-  .hero-content h1 {
-    font-size: clamp(44px, 16vw, 64px);
-  }
-
-  #hero-subtitle {
-    font-size: clamp(34px, 12vw, 48px);
-  }
-
-  #hero-description {
-    font-size: 17px;
-  }
-
-  .hero-tags span {
-    min-height: 40px;
-    font-size: 14px;
-  }
-
-  .hero-actions {
-    gap: 12px;
-  }
-
-  .hero-actions .btn {
-    width: 100%;
-    min-height: 54px;
-    font-size: 16px;
-  }
-
-  .ops-panel {
-    padding: 22px;
-  }
-
-  .ops-grid,
-  .hero-metrics {
-    grid-template-columns: 1fr;
-    height: auto;
-  }
-
-  .ops-grid article {
-    height: auto;
-    min-height: 120px;
-  }
-}
-
-.hero-metrics {
-  margin-top: 24px;
-  padding: 24px 28px;
-  min-height: 150px;
+  margin-top: 12px;
+  padding: 18px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 22px;
+  gap: 8px;
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: 12px;
   background: var(--surface-soft);
 }
 
@@ -577,14 +492,19 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: 4px;
   text-align: center;
-  border-right: none !important;
+}
+
+.hero-metric-icon {
+  font-size: 20px;
+  color: var(--accent);
+  margin-bottom: 2px;
 }
 
 .hero-metric-value {
   display: block;
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.04em;
@@ -594,11 +514,86 @@ section {
 
 .hero-metric-label {
   display: block;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--text-muted);
   line-height: 1.2;
   white-space: nowrap;
+}
+
+/* =================== RESPONSIVO HERO =================== */
+@media (max-width: 1180px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 100px 32px 56px;
+    gap: 48px;
+  }
+
+  .ops-panel {
+    justify-self: start;
+    max-width: 620px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    padding: 90px 20px 40px;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    margin-bottom: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(40px, 14vw, 58px);
+  }
+
+  #hero-subtitle {
+    font-size: clamp(28px, 10vw, 42px);
+  }
+
+  #hero-description {
+    font-size: 16px;
+  }
+
+  .hero-tags span {
+    min-height: 36px;
+    font-size: 13px;
+  }
+
+  .hero-actions {
+    gap: 10px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    min-height: 48px;
+    font-size: 15px;
+  }
+
+  .ops-panel {
+    padding: 18px;
+  }
+
+  .ops-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .ops-grid article {
+    height: auto;
+    min-height: auto;
+  }
+
+  .hero-metrics {
+    flex-wrap: wrap;
+  }
+
+  .hero-metric-item {
+    flex: 1 1 40%;
+  }
 }
 
 /* =================== TECNOLOGIA E FERRAMENTAS =================== */
@@ -643,15 +638,27 @@ section {
 .tools-strip-item {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-size: 18px;
+  gap: 8px;
+  font-size: 15px;
   font-weight: 500;
-  opacity: 0.72;
+  opacity: 0.78;
+  transition: opacity 0.2s ease;
+}
+
+.tools-strip-item:hover {
+  opacity: 1;
+}
+
+.tools-strip-item svg {
+  width: 22px;
+  height: 22px;
+  color: var(--accent);
+  flex-shrink: 0;
 }
 
 .tools-strip-item i {
-  font-size: 28px;
-  color: var(--text-soft);
+  font-size: 22px;
+  color: var(--accent);
 }
 
 @media (max-width: 900px) {
@@ -1193,21 +1200,10 @@ section {
     grid-template-columns: 1fr;
     min-height: auto;
     gap: 3rem;
-    padding: 120px 32px 64px;
+    padding: 110px 32px 56px;
   }
   .ops-panel {
     max-width: 100%;
-  }
-  .hero-metrics {
-    height: auto;
-    padding: 16px 0;
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .hero-metric-value {
-    font-size: 36px;
-  }
-  .hero-metric-label {
-    font-size: 12px;
   }
 }
 
@@ -1314,8 +1310,8 @@ section {
     grid-template-columns: 1fr;
     max-width: 980px;
     min-height: auto;
-    padding: 120px 32px 72px;
-    gap: 3.5rem;
+    padding: 100px 32px 56px;
+    gap: 3rem;
   }
 
   .ops-panel {
@@ -1326,34 +1322,34 @@ section {
 
 @media (max-width: 700px) {
   .hero {
-    padding: 104px 20px 52px;
+    padding: 90px 20px 40px;
   }
 
   .hero-eyebrow {
-    letter-spacing: 0.2em;
-    margin-bottom: 1.5rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 1.25rem;
   }
 
   .hero-content h1 {
-    font-size: clamp(3.2rem, 18vw, 4.6rem);
+    font-size: clamp(2.8rem, 14vw, 4rem);
   }
 
   #hero-subtitle {
-    font-size: clamp(2.25rem, 12vw, 3.4rem);
+    font-size: clamp(2rem, 10vw, 3rem);
   }
 
   .hero-divider {
-    margin: 2rem 0;
+    margin: 1.5rem 0;
   }
 
   .hero-tags {
-    gap: 0.55rem;
-    margin-top: 2rem;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
   }
 
   .hero-tags span {
     min-height: 34px;
-    padding: 0.4rem 0.78rem;
+    padding: 0.35rem 0.75rem;
     font-size: 0.78rem;
   }
 
@@ -1367,8 +1363,8 @@ section {
   }
 
   .ops-panel {
-    padding: 1.25rem;
-    border-radius: 22px;
+    padding: 1.1rem;
+    border-radius: 18px;
   }
 
   .ops-grid {
@@ -1380,15 +1376,10 @@ section {
   }
 
   .hero-metrics {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    flex-wrap: wrap;
   }
 
-  .hero-metric-item:nth-child(2) {
-    border-right: none;
-  }
-
-  .hero-metric-item:nth-child(3),
-  .hero-metric-item:nth-child(4) {
-    border-top: 1px solid var(--line);
+  .hero-metric-item {
+    flex: 1 1 40%;
   }
 }
