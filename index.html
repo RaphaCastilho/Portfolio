@@ -243,27 +243,65 @@
 
 
       <section class="operational-profile" id="about">
-        <div class="section-header">
-          <p class="section-kicker">Perfil</p>
-          <h2 id="about-title">Perfil Operacional</h2>
-          <p id="about-lead">
-            Atuo na interseção entre engenharia de qualidade, automação e análise operacional, transformando fluxos críticos em validações rastreáveis para apoiar decisões de release.
-          </p>
-        </div>
+        <div class="about-layout">
 
-        <div class="profile-grid" aria-label="Resumo do perfil operacional">
-          <article>
-            <h3>Qualidade como sistema</h3>
-            <p>Mapeio riscos, requisitos e sinais de falha para criar rotinas de validação que acompanham o ciclo real do produto.</p>
-          </article>
-          <article>
-            <h3>Entrega orientada por evidência</h3>
-            <p>Documento cenários, resultados e causa-raiz para reduzir retrabalho e dar clareza ao time antes de cada release.</p>
-          </article>
-          <article>
-            <h3>Automação com contexto</h3>
-            <p>Uso Playwright, testes de API e fluxos assistidos por IA para acelerar checagens sem perder leitura crítica do negócio.</p>
-          </article>
+          <!-- Coluna esquerda -->
+          <div class="about-left">
+            <p class="about-eyebrow" id="about-kicker">Sobre Mim</p>
+            <h2 class="about-title" id="about-title">Como atuo<br>na engenharia<br><span>de qualidade.</span></h2>
+            <div class="about-divider"></div>
+            <p class="about-lead" id="about-lead">
+              Minha experiência combina QA, automação, investigação de falhas, análise operacional e colaboração multidisciplinar para aumentar a confiabilidade das entregas e reduzir riscos antes do release.
+            </p>
+          </div>
+
+          <!-- Coluna direita: grid 2x2 -->
+          <div class="about-grid" aria-label="Resumo do perfil operacional">
+            <article class="about-card">
+              <div class="about-card-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M12 8v4l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M5 5l1.5 1.5M19 5l-1.5 1.5M5 19l1.5-1.5M19 19l-1.5-1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Investigação</h3>
+              <p>Investigação e reprodução de bugs complexos em aplicações web corporativas. Isolamento de causa raiz e documentação clara para acelerar a resolução.</p>
+            </article>
+            <article class="about-card">
+              <div class="about-card-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 12a8 8 0 0 1 14.93-4M20 12a8 8 0 0 1-14.93 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M18 4l2 4-4-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>Validação</h3>
+              <p>Validação de fluxos funcionais, regressão, estados de UI e integrações entre sistemas. Garantia de que o produto entrega o que foi planejado, em todas as camadas.</p>
+            </article>
+            <article class="about-card">
+              <div class="about-card-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="9" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="16" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M3 18c0-3 2.7-5 6-5s6 2 6 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M16 14c1.8.3 4 1.4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Colaboração</h3>
+              <p>Comunicação técnica eficiente entre suporte, produto, QA e desenvolvimento. Trabalho conjunto para entender, priorizar e resolver problemas com agilidade.</p>
+            </article>
+            <article class="about-card">
+              <div class="about-card-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M3 17l5-5 4 4 9-10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M17 7h4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>Melhoria Contínua</h3>
+              <p>Mentalidade orientada a dados, rastreabilidade, estabilidade e qualidade contínua. Processos e automações que evoluem junto com o produto e com o time.</p>
+            </article>
+          </div>
+
         </div>
       </section>
 

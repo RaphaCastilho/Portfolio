@@ -479,9 +479,9 @@ function updateHeroTags(tags) {
 }
 
 function updateAboutHighlights(highlights) {
-  const container = byId("about-highlights") || document.querySelector("#about .profile-grid");
+  // profile-grid foi substituído pelo about-grid na refatoração — não sobrescrever
+  const container = byId("about-highlights");
   if (!container) return;
-  container.id = container.id || "about-highlights";
   container.innerHTML = "";
 
   highlights.forEach((highlight, index) => {
