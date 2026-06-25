@@ -1212,7 +1212,7 @@ section {
 
 /* cabeçalho centralizado */
 .eco-header {
-  text-align: center;
+  text-align: left;
   margin-bottom: 48px;
 }
 
@@ -1245,7 +1245,7 @@ section {
   line-height: 1.65;
   color: var(--text-muted);
   max-width: 52ch;
-  margin: 0 auto;
+  margin: 0;
 }
 
 /* grid 3x2 */
