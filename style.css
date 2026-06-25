@@ -275,12 +275,12 @@ section {
 .hero {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 86px 64px 32px;
+  padding: 86px 64px 48px;
   min-height: auto;
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(520px, 0.9fr);
-  gap: 88px;
-  align-items: center;
+  gap: 64px;
+  align-items: start;
 }
 
 .hero-content {
@@ -605,7 +605,7 @@ section {
 
 .tools-strip {
   max-width: 1400px;
-  margin: -8px auto 64px;
+  margin: 0 auto 64px;
   padding: 0 64px;
 }
 
