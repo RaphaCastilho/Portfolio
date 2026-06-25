@@ -487,10 +487,9 @@ section {
 
 .hero-metrics {
   margin-top: 12px;
-  padding: 20px 16px;
+  padding: 14px 8px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 4px;
   border: 1px solid var(--line);
   border-radius: 12px;
   background: var(--surface-soft);
@@ -502,34 +501,42 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 4px;
   text-align: center;
-  padding: 10px 4px;
+  padding: 8px 12px;
+  border-right: 1px solid rgba(148, 163, 184, 0.10);
+}
+
+.hero-metric-item:last-child {
+  border-right: none;
 }
 
 .hero-metric-icon {
-  font-size: 22px;
+  font-size: 20px;
   color: var(--accent);
   line-height: 1;
+  opacity: 0.85;
 }
 
 .hero-metric-value {
   display: block;
-  font-size: 26px;
-  font-weight: 800;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
   line-height: 1;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
   color: var(--text);
   white-space: nowrap;
 }
 
 .hero-metric-label {
   display: block;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-soft);
   line-height: 1.2;
   white-space: nowrap;
+  letter-spacing: 0.02em;
 }
 
 /* =================== RESPONSIVO HERO =================== */
