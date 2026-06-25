@@ -805,6 +805,36 @@ function applyTheme(theme) {
   saveToLocalStorage("theme", active);
 }
 
+function setupContactModal() {
+  const modal = byId("contact-modal");
+  const openBtn = byId("open-contact-modal");
+  const closeBtn = byId("close-contact-modal");
+  if (!modal || !openBtn || !closeBtn) return;
+
+  function openModal() {
+    modal.removeAttribute("hidden");
+    document.body.style.overflow = "hidden";
+    closeBtn.focus();
+  }
+
+  function closeModal() {
+    modal.setAttribute("hidden", "");
+    document.body.style.overflow = "";
+    openBtn.focus();
+  }
+
+  openBtn.addEventListener("click", openModal);
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !modal.hasAttribute("hidden")) closeModal();
+  });
+}
+
 function setupMobileMenu() {
   const menuButton = byId("menu-icon");
   const navbar = document.querySelector(".navbar");
@@ -864,6 +894,7 @@ function setupActiveNavOnScroll() {
 document.addEventListener("DOMContentLoaded", () => {
   setupMobileMenu();
   setupActiveNavOnScroll();
+  setupContactModal();
 
   const langToggle = byId("lang-toggle");
   if (langToggle) langToggle.addEventListener("click", toggleLanguage);
