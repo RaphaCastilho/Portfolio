@@ -322,7 +322,7 @@ const content = {
     toolsStripLabel: "Technologies &\nTools",
     about: {
       kicker: "About Me",
-      titleLine: "of quality.",
+      titleLine: "engineering.",
       lead: "My background combines QA, automation, incident investigation, operational analysis, and cross-functional collaboration to increase delivery reliability and reduce risk before release.",
       cardTitle1: "Investigation",
       cardDesc1: "Investigation and reproduction of complex bugs in enterprise web applications. Root cause isolation and clear documentation to speed up resolution.",
