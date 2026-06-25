@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gerador de Favicons — Rapha.QA</title>
+  <style>
+    body { font-family: monospace; background: #0B0F19; color: #a7b1c2; padding: 24px; }
+    h1 { color: #5B7CFA; margin-bottom: 8px; }
+    p { margin-bottom: 24px; font-size: 14px; }
+    .grid { display: flex; flex-wrap: wrap; gap: 16px; }
+    .item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    canvas { border-radius: 8px; background: #0e1422; }
+    a { color: #5B7CFA; font-size: 12px; }
+    .done { color: #22c55e; font-size: 13px; margin-top: 24px; }
+  </style>
+</head>
+<body>
+  <h1>Gerador de Favicons — Rapha.QA</h1>
+  <p>Clique em cada link para baixar o PNG correspondente. Salve na pasta <code>src/img/</code> do portfolio.</p>
+  <div class="grid" id="grid"></div>
+  <p class="done" id="done"></p>
+
+  <script>
+    const SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+      <rect width="512" height="512" rx="110" ry="110" fill="#0B0F19"/>
+      <text x="30" y="360" font-family="Arial, sans-serif" font-size="310" font-weight="900" fill="#FFFFFF" letter-spacing="-10">Q</text>
+      <text x="268" y="360" font-family="Arial, sans-serif" font-size="310" font-weight="900" fill="#5B7CFA" letter-spacing="-10">A</text>
+    </svg>`;
+
+    const sizes = [
+      { size: 16,  name: "favicon-16.png" },
+      { size: 32,  name: "favicon-32.png" },
+      { size: 48,  name: "favicon-48.png" },
+      { size: 64,  name: "favicon-64.png" },
+      { size: 128, name: "favicon-128.png" },
+      { size: 180, name: "favicon-180.png" },
+      { size: 192, name: "favicon-192.png" },
+      { size: 512, name: "favicon-512.png" },
+    ];
+
+    const grid = document.getElementById("grid");
+    let done = 0;
+
+    const blob = new Blob([SVG], { type: "image/svg+xml" });
+    const url = URL.createObjectURL(blob);
+    const img = new Image();
+
+    img.onload = () => {
+      sizes.forEach(({ size, name }) => {
+        const canvas = document.createElement("canvas");
+        canvas.width = size;
+        canvas.height = size;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, size, size);
+
+        canvas.toBlob(blob => {
+          const blobUrl = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = blobUrl;
+          a.download = name;
+          a.textContent = `⬇ ${name} (${size}x${size})`;
+
+          const div = document.createElement("div");
+          div.className = "item";
+
+          const preview = document.createElement("canvas");
+          const previewSize = Math.min(size, 96);
+          preview.width = previewSize;
+          preview.height = previewSize;
+          const pctx = preview.getContext("2d");
+          pctx.drawImage(img, 0, 0, previewSize, previewSize);
+
+          div.appendChild(preview);
+          div.appendChild(document.createTextNode(`${size}×${size}`));
+          div.appendChild(a);
+          grid.appendChild(div);
+
+          done++;
+          if (done === sizes.length) {
+            document.getElementById("done").textContent =
+              "✓ Todos os tamanhos gerados. Baixe cada arquivo e salve em src/img/.";
+          }
+        }, "image/png");
+      });
+    };
+
+    img.src = url;
+  </script>
+</body>
+</html>
