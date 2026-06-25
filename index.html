@@ -306,31 +306,68 @@
       </section>
 
       <section class="automation-engineering" id="automation">
-        <div class="section-header">
-          <p class="section-kicker">Automação</p>
-          <h2 id="automation-title">Automation Engineering</h2>
-          <p id="automation-lead">
-            Estruturo suítes de validação para cobrir jornadas críticas, contratos de API e sinais operacionais que indicam prontidão ou risco.
-          </p>
-        </div>
+        <div class="auto-layout">
 
-        <div class="automation-grid" id="automation-grid">
-          <article>
-            <h3>Playwright E2E</h3>
-            <p>Cenários focados em jornadas de usuário, regressão visual funcional e estabilidade de fluxos essenciais.</p>
-          </article>
-          <article>
-            <h3>API Testing</h3>
-            <p>Validação de contratos, respostas, status e dados para detectar quebras antes que cheguem à interface.</p>
-          </article>
-          <article>
-            <h3>Release Readiness</h3>
-            <p>Mapas de cobertura e evidências de execução para apoiar decisões de publicação com menos incerteza.</p>
-          </article>
-          <article>
-            <h3>AI-assisted QA</h3>
-            <p>Uso de IA para acelerar análise de cenários, documentação de testes e investigação inicial de falhas.</p>
-          </article>
+          <!-- Coluna esquerda -->
+          <div class="auto-left">
+            <p class="auto-eyebrow" id="auto-kicker">Automação</p>
+            <h2 class="auto-title" id="automation-title">Automação<br>como <span>engenharia<br>de qualidade.</span></h2>
+            <div class="auto-divider"></div>
+            <p class="auto-lead" id="automation-lead">
+              Desenho e implemento soluções de automação confiáveis para validar o que importa, reduzir riscos de regressão e acelerar entregas com segurança e previsibilidade.
+            </p>
+            <ul class="auto-benefits" aria-label="Benefícios da abordagem">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Cobertura inteligente dos fluxos críticos
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Feedback rápido para times de desenvolvimento
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Qualidade contínua em cada etapa do ciclo
+              </li>
+            </ul>
+          </div>
+
+          <!-- Coluna direita: grid 2x2 -->
+          <div class="auto-grid" id="automation-grid">
+            <article class="auto-card">
+              <div class="auto-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 6l-4 6 4 6M16 6l4 6-4 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <p class="auto-card-eyebrow">Playwright E2E</p>
+              <h3>Fluxos críticos automatizados</h3>
+              <p>Automação de jornadas reais, estados da interface, autenticação e comportamento cross-browser com Playwright.</p>
+            </article>
+            <article class="auto-card">
+              <div class="auto-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18A9 9 0 0 0 12 3z" stroke="currentColor" stroke-width="1.5"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <p class="auto-card-eyebrow">API Validation</p>
+              <h3>Contratos e respostas confiáveis</h3>
+              <p>Validação de endpoints, payloads, status codes e consistência funcional entre camadas.</p>
+            </article>
+            <article class="auto-card">
+              <div class="auto-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14.93-4M20 12a8 8 0 0 1-14.93 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M18 4l2 4-4-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <p class="auto-card-eyebrow">Regression Strategy</p>
+              <h3>Cobertura contra regressões</h3>
+              <p>Organização de suítes para proteger funcionalidades principais e reduzir risco em mudanças.</p>
+            </article>
+            <article class="auto-card">
+              <div class="auto-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 8V6a4 4 0 0 1 8 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="14" r="1.5" fill="currentColor"/></svg>
+              </div>
+              <p class="auto-card-eyebrow">AI-Assisted QA</p>
+              <h3>Aceleração com IA</h3>
+              <p>Uso de IA para apoiar análise, documentação, geração de cenários e investigação técnica com revisão humana.</p>
+            </article>
+          </div>
+
         </div>
       </section>
 

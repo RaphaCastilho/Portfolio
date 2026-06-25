@@ -38,27 +38,31 @@ const content = {
     },
     automation: {
       title: "Automation Engineering",
-      lead: "Automação como camada de confiança operacional: fluxos E2E, validação de API, regressão e sinais de prontidão para release.",
+      lead: "Desenho e implemento soluções de automação confiáveis para validar o que importa, reduzir riscos de regressão e acelerar entregas com segurança e previsibilidade.",
       items: [
         {
           label: "Playwright E2E",
           title: "Fluxos críticos automatizados",
-          description: "Cenários que validam jornadas reais, estados da interface, autenticação e comportamento cross-browser.",
+          description: "Automação de jornadas reais, estados da interface, autenticação e comportamento cross-browser com Playwright.",
+          icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 6l-4 6 4 6M16 6l4 6-4 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
         },
         {
           label: "API Validation",
           title: "Contratos e respostas confiáveis",
           description: "Validação de endpoints, payloads, status codes e consistência funcional entre camadas.",
+          icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 1 0 0 18A9 9 0 0 0 12 3z" stroke="currentColor" stroke-width="1.5"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
         },
         {
           label: "Regression Strategy",
           title: "Cobertura contra regressões",
           description: "Organização de suítes para proteger funcionalidades principais e reduzir risco em mudanças.",
+          icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 0 1 14.93-4M20 12a8 8 0 0 1-14.93 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M18 4l2 4-4-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
         },
         {
-          label: "AI-assisted QA",
+          label: "AI-Assisted QA",
           title: "Aceleração com IA",
           description: "Uso de IA para apoiar análise, documentação, geração de cenários e investigação técnica com revisão humana.",
+          icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 8V6a4 4 0 0 1 8 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="14" r="1.5" fill="currentColor"/></svg>',
         },
       ],
     },
@@ -215,27 +219,31 @@ const content = {
     },
     automation: {
       title: "Automation Engineering",
-      lead: "Automation as an operational confidence layer: E2E flows, API validation, regression coverage, and release readiness signals.",
+      lead: "I design and implement reliable automation solutions to validate what matters, reduce regression risks, and accelerate delivery with safety and predictability.",
       items: [
         {
           label: "Playwright E2E",
           title: "Automated critical workflows",
-          description: "Scenarios that validate real user journeys, UI states, authentication, and cross-browser behavior.",
+          description: "Automation of real user journeys, UI states, authentication, and cross-browser behavior with Playwright.",
+          icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 6l-4 6 4 6M16 6l4 6-4 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
         },
         {
           label: "API Validation",
           title: "Reliable contracts and responses",
           description: "Endpoint, payload, status code, and functional consistency checks across system layers.",
+          icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 1 0 0 18A9 9 0 0 0 12 3z" stroke="currentColor" stroke-width="1.5"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
         },
         {
           label: "Regression Strategy",
           title: "Coverage against regressions",
           description: "Suite organization to protect core functionality and reduce change risk.",
+          icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 0 1 14.93-4M20 12a8 8 0 0 1-14.93 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M18 4l2 4-4-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
         },
         {
-          label: "AI-assisted QA",
+          label: "AI-Assisted QA",
           title: "AI-enabled acceleration",
           description: "AI support for analysis, documentation, scenario generation, and technical investigation with human review.",
+          icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 8V6a4 4 0 0 1 8 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="14" r="1.5" fill="currentColor"/></svg>',
         },
       ],
     },
@@ -410,8 +418,9 @@ function renderTags(items) {
 
 function renderAutomationItem(item) {
   return `
-    <article class="automation-card">
-      <span class="card-label">${escapeHtml(item.label)}</span>
+    <article class="auto-card">
+      <div class="auto-card-icon">${item.icon || ""}</div>
+      <p class="auto-card-eyebrow">${escapeHtml(item.label)}</p>
       <h3>${escapeHtml(item.title)}</h3>
       <p>${escapeHtml(item.description)}</p>
     </article>

@@ -933,32 +933,156 @@ section {
 }
 
 /* =================== AUTOMATION ENGINEERING =================== */
-.automation-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.25rem;
+.automation-engineering {
+  background-color: var(--bg);
 }
-.automation-grid > article {
+
+.auto-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 72px;
+  align-items: start;
+}
+
+.auto-left {
+  padding-top: 4px;
+}
+
+.auto-eyebrow {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.auto-title {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 3.4vw, 48px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  margin: 0;
+}
+
+.auto-title span {
+  color: var(--text-muted);
+}
+
+.auto-divider {
+  width: 48px;
+  height: 2px;
+  margin: 28px 0 24px;
+  background: linear-gradient(90deg, var(--accent) 0%, rgba(91, 124, 250, 0) 100%);
+  border-radius: 999px;
+}
+
+.auto-lead {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--text-muted);
+  max-width: 38ch;
+  margin-bottom: 28px;
+}
+
+.auto-benefits {
+  list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
-  padding: 1.6rem;
+  gap: 12px;
+}
+
+.auto-benefits li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.auto-benefits li svg {
+  flex-shrink: 0;
+  color: var(--accent);
+  opacity: 0.85;
+}
+
+/* grid 2x2 */
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.auto-card {
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
-.automation-grid > article:hover {
+
+.auto-card:hover {
   border-color: var(--line-strong);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
-.automation-grid h3 {
-  font-size: 1.15rem;
+
+.auto-card-icon {
+  color: var(--accent);
+  opacity: 0.85;
+  margin-bottom: 2px;
+  display: flex;
+}
+
+.auto-card-eyebrow {
+  font-family: var(--font-display);
+  font-size: 10px;
   font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
-.automation-grid p {
+
+.auto-card h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.auto-card p {
+  font-size: 13.5px;
+  line-height: 1.6;
   color: var(--text-muted);
-  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* responsivo */
+@media (max-width: 900px) {
+  .auto-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .auto-lead {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .auto-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* =================== ECOSSISTEMA TÉCNICO =================== */
