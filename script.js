@@ -217,14 +217,17 @@ const content = {
       ],
     },
     contact: {
-      title: "Falar sobre oportunidade",
-      lead: "Aberto a oportunidades PJ em QA, Automation, Quality Engineering e validação de sistemas.",
-      name: "Nome completo",
-      email: "Email",
-      phone: "Telefone",
-      subject: "Assunto",
-      message: "Conte rapidamente sobre a oportunidade",
-      button: "Enviar mensagem",
+      title: "Vamos construir qualidade juntos.",
+      lead: "Estou aberto a novas oportunidades PJ em QA, automação, Quality Engineering e validação de sistemas.",
+      channelsLabel: "Escolha o melhor canal para conversar",
+      emailDesc: "Enviar mensagem",
+      linkedinDesc: "Vamos nos conectar",
+      githubDesc: "Ver meus projetos",
+      cvDesc: "Download do CV",
+      barTitle: "Foco em qualidade, automação e eficiência.",
+      barSub: "Pronto para agregar valor ao seu time e aos seus produtos.",
+      statusLabel: "Disponível para novos desafios",
+      button: "Enviar e-mail",
     },
     footer: {
       home: "Início",
@@ -450,14 +453,17 @@ const content = {
       ],
     },
     contact: {
-      title: "Discuss an opportunity",
-      lead: "Open to contractor opportunities in QA, Automation, Quality Engineering, and system validation.",
-      name: "Full name",
-      email: "Email",
-      phone: "Phone",
-      subject: "Subject",
-      message: "Briefly describe the opportunity",
-      button: "Send message",
+      title: "Let's build quality together.",
+      lead: "Open to PJ opportunities in QA, automation, Quality Engineering and system validation.",
+      channelsLabel: "Choose the best channel to connect",
+      emailDesc: "Send a message",
+      linkedinDesc: "Let's connect",
+      githubDesc: "View my projects",
+      cvDesc: "Download CV",
+      barTitle: "Focused on quality, automation and efficiency.",
+      barSub: "Ready to add value to your team and your products.",
+      statusLabel: "Available for new challenges",
+      button: "Send e-mail",
     },
     footer: {
       home: "Home",
@@ -751,6 +757,15 @@ function applyLanguage(lang) {
   setText("experience-lead", t.experience.lead);
   setText("contact-title", t.contact.title);
   setText("contact-lead", t.contact.lead);
+  setText("contact-channels-label", t.contact.channelsLabel || "Escolha o melhor canal para conversar");
+  setText("contact-email-desc", t.contact.emailDesc || "Enviar mensagem");
+  setText("contact-linkedin-desc", t.contact.linkedinDesc || "Vamos nos conectar");
+  setText("contact-github-desc", t.contact.githubDesc || "Ver meus projetos");
+  setText("contact-cv-desc", t.contact.cvDesc || "Download do CV");
+  setText("contact-bar-title", t.contact.barTitle || "Foco em qualidade, automação e eficiência.");
+  setText("contact-bar-sub", t.contact.barSub || "Pronto para agregar valor ao seu time e aos seus produtos.");
+  setText("contact-status-label", t.contact.statusLabel || "Disponível para novos desafios");
+  setHref("cv-download", t.cv.pdf);
 
   updateAboutHighlights(t.about.highlights);
   renderList("automation-grid", t.automation.items, renderAutomationItem);
@@ -759,7 +774,6 @@ function applyLanguage(lang) {
   renderList("projects-grid", t.projects.items, renderProject);
   renderList("experience-list", t.experience.items, renderExperienceItem);
 
-  updateContactLabels(t.contact);
   setText("footer-home", t.footer.home);
   setText("footer-projects", t.nav.projects);
   setText("footer-contact", t.footer.contact);

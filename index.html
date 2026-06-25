@@ -711,77 +711,112 @@
       </section>
 
       <section class="contact" id="contact">
-        <div class="section-header">
-          <p class="section-kicker">Contato</p>
-          <h2 id="contact-title">Falar sobre oportunidade</h2>
-          <p id="contact-lead">
-            Quer conversar sobre qualidade, automação ou operações digitais? Envie uma mensagem com contexto da oportunidade.
-          </p>
+        <div class="contact-layout">
+
+          <!-- Coluna esquerda -->
+          <div class="contact-left">
+            <p class="contact-eyebrow" id="contact-kicker">Contato</p>
+            <h2 class="contact-title" id="contact-title">Vamos construir<br>qualidade<br><span>juntos.</span></h2>
+            <div class="contact-divider"></div>
+            <p class="contact-lead" id="contact-lead">
+              Estou aberto a novas oportunidades PJ em QA, automação, Quality Engineering e validação de sistemas.
+            </p>
+            <ul class="contact-perks">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Disponível para projetos e parcerias
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Atuação 100% remota
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Resposta em até 24h
+              </li>
+            </ul>
+          </div>
+
+          <!-- Coluna direita -->
+          <div class="contact-right">
+            <p class="contact-channels-title" id="contact-channels-label">Escolha o melhor canal para conversar</p>
+
+            <div class="contact-channels">
+              <a href="mailto:castilho_raphael@hotmail.com" class="channel-card" aria-label="Enviar e-mail">
+                <div class="channel-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 8l10 6 10-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </div>
+                <div class="channel-card-body">
+                  <span class="channel-name">E-mail</span>
+                  <span class="channel-desc" id="contact-email-desc">Enviar mensagem</span>
+                </div>
+                <svg class="channel-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+
+              <a href="https://www.linkedin.com/in/raphael-castilho/" target="_blank" rel="noopener noreferrer" class="channel-card" aria-label="LinkedIn">
+                <div class="channel-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                </div>
+                <div class="channel-card-body">
+                  <span class="channel-name">LinkedIn</span>
+                  <span class="channel-desc" id="contact-linkedin-desc">Vamos nos conectar</span>
+                </div>
+                <svg class="channel-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+
+              <a href="https://github.com/RaphaCastilho" target="_blank" rel="noopener noreferrer" class="channel-card" aria-label="GitHub">
+                <div class="channel-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.59 2 12.25c0 4.54 2.87 8.39 6.84 9.75.5.09.68-.22.68-.49v-1.72c-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0112 7.4c.85 0 1.7.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49C19.13 20.64 22 16.79 22 12.25 22 6.59 17.52 2 12 2z"/></svg>
+                </div>
+                <div class="channel-card-body">
+                  <span class="channel-name">GitHub</span>
+                  <span class="channel-desc" id="contact-github-desc">Ver meus projetos</span>
+                </div>
+                <svg class="channel-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+
+              <a href="src/cv/DEV_Rapha_CV_PT.pdf" target="_blank" rel="noopener noreferrer" class="channel-card" id="cv-download" aria-label="Download CV">
+                <div class="channel-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M14 2v6h6M12 18v-6M9 15l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="channel-card-body">
+                  <span class="channel-name">Currículo</span>
+                  <span class="channel-desc" id="contact-cv-desc">Download do CV</span>
+                </div>
+                <svg class="channel-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+
+            <!-- CTAs principais -->
+            <div class="contact-ctas">
+              <a href="mailto:castilho_raphael@hotmail.com" class="btn btn-primary contact-cta-btn" id="contact-cta">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 8l10 6 10-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                Enviar e-mail
+              </a>
+              <a href="https://www.linkedin.com/in/raphael-castilho/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary contact-cta-btn" id="linkedin-cta">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                Abrir LinkedIn
+              </a>
+            </div>
+          </div>
+
         </div>
 
-        <form
-          action="https://formsubmit.co/castilho_raphael@hotmail.com"
-          method="POST"
-        >
-          <input type="hidden" name="_next" value="https://raphacastilho.github.io/Portfolio" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_subject" value="Novo contato — Rapha.QA" />
-
-          <div class="input-group">
-            <div class="input-box">
-              <label for="contact-name" class="sr-only">Nome Completo</label>
-              <input
-                type="text"
-                name="Nome"
-                placeholder="Nome Completo"
-                id="contact-name"
-                required
-              />
-              <label for="contact-email" class="sr-only">Email</label>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                id="contact-email"
-                required
-              />
-            </div>
-            <div class="input-box">
-              <label for="contact-phone" class="sr-only">Telefone</label>
-              <input
-                type="tel"
-                name="Telefone"
-                placeholder="Telefone"
-                id="contact-phone"
-              />
-              <label for="contact-subject" class="sr-only">Assunto</label>
-              <input
-                type="text"
-                name="Assunto"
-                placeholder="Assunto"
-                id="contact-subject"
-              />
+        <!-- Barra informativa inferior -->
+        <div class="contact-bar">
+          <div class="contact-bar-left">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            <div>
+              <p class="contact-bar-title" id="contact-bar-title">Foco em qualidade, automação e eficiência.</p>
+              <p class="contact-bar-sub" id="contact-bar-sub">Pronto para agregar valor ao seu time e aos seus produtos.</p>
             </div>
           </div>
-
-          <div class="input-group-2">
-            <label for="contact-message" class="sr-only">Sua Mensagem</label>
-            <textarea
-              name="Mensagem"
-              id="contact-message"
-              cols="30"
-              rows="10"
-              placeholder="Sua Mensagem"
-              required
-            ></textarea>
-            <input
-              type="submit"
-              value="Enviar mensagem"
-              class="btn btn-primary"
-              id="contact-button"
-            />
+          <div class="contact-bar-status">
+            <span class="contact-status-dot"></span>
+            <span id="contact-status-label">Disponível para novos desafios</span>
           </div>
-        </form>
+        </div>
+
       </section>
     </main>
 
