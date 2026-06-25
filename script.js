@@ -68,14 +68,44 @@ const content = {
     },
     ecosystem: {
       title: "Ecossistema Técnico",
-      lead: "Stack organizada por capacidade operacional, não por lista genérica de ferramentas.",
+      lead: "Ferramentas organizadas por capacidade operacional, não por lista genérica de ferramentas.",
       groups: [
-        { title: "QA & Analysis", items: ["Functional Testing", "Exploratory Testing", "Bug Investigation", "Regression Testing", "Test Planning"] },
-        { title: "Automation", items: ["Playwright", "JavaScript", "TypeScript", "Node.js", "E2E Workflows"] },
-        { title: "API & Systems", items: ["REST APIs", "API Testing", "Postman", "Chrome DevTools", "Logs", "SQL"] },
-        { title: "CI/CD & DevOps", items: ["GitHub Actions", "CI/CD Pipelines", "Jenkins", "GitHub Pages", "Deploy Automation"] },
-        { title: "Workflow & Collaboration", items: ["Jira", "JQL", "Git", "GitHub", "Agile", "Documentation"] },
-        { title: "Web Foundations", items: ["HTML", "CSS", "Responsive Testing", "Front-end Debugging"] },
+        {
+          title: "QA & Analysis",
+          description: "Estratégias e técnicas para garantir qualidade em todas as camadas do produto.",
+          icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M21 21l-4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
+          items: ["Functional Testing", "Exploratory Testing", "Bug Investigation", "Regression Testing", "Test Planning"],
+        },
+        {
+          title: "Automation",
+          description: "Automação de testes e validações para aceleração de ciclos e confiabilidade.",
+          icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 6l-4 6 4 6M16 6l4 6-4 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+          items: ["Playwright", "JavaScript", "TypeScript", "Node.js", "E2E Workflows"],
+        },
+        {
+          title: "API & Systems",
+          description: "Testes e integração de APIs e sistemas para garantir estabilidade e segurança.",
+          icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
+          items: ["REST APIs", "API Testing", "Postman", "Chrome DevTools", "Logs", "SQL"],
+        },
+        {
+          title: "CI/CD & DevOps",
+          description: "Integração contínua e entrega automatizada com qualidade em cada etapa.",
+          icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15 8h6l-5 4 2 6-6-4-6 4 2-6L3 8h6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
+          items: ["GitHub Actions", "CI/CD Pipelines", "Jenkins", "GitHub Pages", "Deploy Automation"],
+        },
+        {
+          title: "Workflow & Collaboration",
+          description: "Gestão de tarefas, documentação e colaboração para mais eficiência e alinhamento.",
+          icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 18c0-3 2.7-5 6-5s6 2 6 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M16 14c1.8.3 4 1.4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
+          items: ["Jira", "JQL", "Git", "GitHub", "Agile", "Documentation"],
+        },
+        {
+          title: "Web Foundations",
+          description: "Fundamentos e boas práticas para construção, teste e depuração de aplicações web.",
+          icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" stroke="currentColor" stroke-width="1.5"/></svg>',
+          items: ["HTML", "CSS", "Responsive Testing", "Front-end Debugging"],
+        },
       ],
     },
     projects: {
@@ -271,14 +301,44 @@ const content = {
     },
     ecosystem: {
       title: "Technical Ecosystem",
-      lead: "A stack organized by operational capability, not a generic tool list.",
+      lead: "Tools organized by operational capability, not a generic tool list.",
       groups: [
-        { title: "QA & Analysis", items: ["Functional Testing", "Exploratory Testing", "Bug Investigation", "Regression Testing", "Test Planning"] },
-        { title: "Automation", items: ["Playwright", "JavaScript", "TypeScript", "Node.js", "E2E Workflows"] },
-        { title: "API & Systems", items: ["REST APIs", "API Testing", "Postman", "Chrome DevTools", "Logs", "SQL"] },
-        { title: "CI/CD & DevOps", items: ["GitHub Actions", "CI/CD Pipelines", "Jenkins", "GitHub Pages", "Deploy Automation"] },
-        { title: "Workflow & Collaboration", items: ["Jira", "JQL", "Git", "GitHub", "Agile", "Documentation"] },
-        { title: "Web Foundations", items: ["HTML", "CSS", "Responsive Testing", "Front-end Debugging"] },
+        {
+          title: "QA & Analysis",
+          description: "Strategies and techniques to ensure quality across all product layers.",
+          icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M21 21l-4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
+          items: ["Functional Testing", "Exploratory Testing", "Bug Investigation", "Regression Testing", "Test Planning"],
+        },
+        {
+          title: "Automation",
+          description: "Test and validation automation to accelerate cycles and improve reliability.",
+          icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 6l-4 6 4 6M16 6l4 6-4 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+          items: ["Playwright", "JavaScript", "TypeScript", "Node.js", "E2E Workflows"],
+        },
+        {
+          title: "API & Systems",
+          description: "API and system testing and integration to ensure stability and security.",
+          icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
+          items: ["REST APIs", "API Testing", "Postman", "Chrome DevTools", "Logs", "SQL"],
+        },
+        {
+          title: "CI/CD & DevOps",
+          description: "Continuous integration and automated delivery with quality at every step.",
+          icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15 8h6l-5 4 2 6-6-4-6 4 2-6L3 8h6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
+          items: ["GitHub Actions", "CI/CD Pipelines", "Jenkins", "GitHub Pages", "Deploy Automation"],
+        },
+        {
+          title: "Workflow & Collaboration",
+          description: "Task management, documentation and collaboration for efficiency and alignment.",
+          icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 18c0-3 2.7-5 6-5s6 2 6 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M16 14c1.8.3 4 1.4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
+          items: ["Jira", "JQL", "Git", "GitHub", "Agile", "Documentation"],
+        },
+        {
+          title: "Web Foundations",
+          description: "Fundamentals and best practices for building, testing and debugging web apps.",
+          icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" stroke="currentColor" stroke-width="1.5"/></svg>',
+          items: ["HTML", "CSS", "Responsive Testing", "Front-end Debugging"],
+        },
       ],
     },
     projects: {
@@ -472,12 +532,15 @@ function renderAutomationItem(item) {
 }
 
 function renderEcosystemGroup(group) {
+  const chips = (group.items || []).map(i => `<span>${escapeHtml(i)}</span>`).join("");
   return `
-    <article class="ecosystem-group">
-      <h3>${escapeHtml(group.title)}</h3>
-      <div class="tech-tags">
-        ${renderTags(group.items)}
+    <article class="eco-card">
+      <div class="eco-card-header">
+        <div class="eco-card-icon">${group.icon || ""}</div>
+        <h3>${escapeHtml(group.title)}</h3>
       </div>
+      <p>${escapeHtml(group.description || "")}</p>
+      <div class="eco-chips">${chips}</div>
     </article>
   `;
 }
