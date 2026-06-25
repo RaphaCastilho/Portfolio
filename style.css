@@ -70,11 +70,10 @@ body.light {
   color-scheme: light;
 }
 
-body.light {
+body.light::before {
   background:
     radial-gradient(ellipse 900px 700px at 15% 10%, rgba(91, 124, 250, 0.04), transparent 70%),
-    radial-gradient(ellipse 600px 500px at 85% 60%, rgba(91, 124, 250, 0.03), transparent 70%),
-    var(--bg);
+    radial-gradient(ellipse 600px 500px at 85% 60%, rgba(91, 124, 250, 0.03), transparent 70%);
 }
 
 /* =======================================================================
@@ -191,20 +190,42 @@ html {
   }
 }
 
+/* respeita usuários com sensibilidade a movimento (WCAG 2.3.3):
+   neutraliza animações, transições e parallax */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 body {
-  background:
-    radial-gradient(ellipse 900px 700px at 15% 10%, rgba(91, 124, 250, 0.07), transparent 70%),
-    radial-gradient(ellipse 700px 600px at 88% 35%, rgba(91, 124, 250, 0.05), transparent 70%),
-    radial-gradient(ellipse 600px 500px at 10% 80%, rgba(91, 124, 250, 0.04), transparent 70%),
-    radial-gradient(ellipse 500px 400px at 75% 90%, rgba(91, 124, 250, 0.03), transparent 70%),
-    var(--bg);
-  background-attachment: fixed;
+  background: var(--bg);
   color: var(--text);
   font-size: 1rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+/* camada de gradientes ambiente fixa atrás do conteúdo — substitui
+   background-attachment: fixed (que causa repaint/jank no scroll mobile) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 900px 700px at 15% 10%, rgba(91, 124, 250, 0.07), transparent 70%),
+    radial-gradient(ellipse 700px 600px at 88% 35%, rgba(91, 124, 250, 0.05), transparent 70%),
+    radial-gradient(ellipse 600px 500px at 10% 80%, rgba(91, 124, 250, 0.04), transparent 70%),
+    radial-gradient(ellipse 500px 400px at 75% 90%, rgba(91, 124, 250, 0.03), transparent 70%);
 }
 
 img {

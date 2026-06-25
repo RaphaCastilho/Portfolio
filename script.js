@@ -1,5 +1,6 @@
 const content = {
   "pt-BR": {
+    metaTitle: "Raphael Castilho — Engenharia de Qualidade & Automação",
     nav: {
       home: "Início",
       about: "Perfil",
@@ -284,6 +285,7 @@ const content = {
     },
   },
   "en-US": {
+    metaTitle: "Raphael Castilho — Quality Engineering & Automation",
     nav: {
       home: "Home",
       about: "Profile",
@@ -824,6 +826,8 @@ function applyLanguage(lang) {
   document.documentElement.lang = active;
   saveToLocalStorage("siteLang", active);
 
+  if (t.metaTitle) document.title = t.metaTitle;
+
   setText("nav-home", t.nav.home);
   setText("nav-about", t.nav.about);
   setText("nav-automation", t.nav.automation);
@@ -963,6 +967,10 @@ function applyTheme(theme) {
     themeIcon.classList.toggle("bx-sun", active === "light");
     themeIcon.classList.toggle("bx-moon", active !== "light");
   }
+
+  // barra do navegador acompanha o tema exibido (toggle manual, não só o SO)
+  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+  if (themeColorMeta) themeColorMeta.content = active === "light" ? "#f3f6fb" : "#080b12";
 
   saveToLocalStorage("theme", active);
 }

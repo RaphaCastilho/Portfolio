@@ -4,7 +4,7 @@
     <!--META DADOS -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Raphael Castilho — Quality Engineering &amp; Automation</title>
+    <title>Raphael Castilho — Engenharia de Qualidade &amp; Automação</title>
     <meta
       name="description"
       content="Portfólio de Raphael Castilho em Quality Engineering, automação Playwright, testes de API e sistemas operacionais de validação."
@@ -17,15 +17,24 @@
     <link rel="canonical" href="https://raphacastilho.github.io/Portfolio/" />
 
     <!--OPEN GRAPH -->
+    <meta property="og:site_name" content="Rapha.QA" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:locale:alternate" content="en_US" />
     <meta property="og:title" content="Rapha.QA — Quality Engineering & Automation" />
     <meta
       property="og:description"
       content="Portfólio de Raphael Castilho focado em engenharia de qualidade, automação Playwright, testes de API e confiabilidade operacional."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://raphacastilho.github.io/Portfolio" />
+    <meta property="og:url" content="https://raphacastilho.github.io/Portfolio/" />
     <meta property="og:image" content="https://raphacastilho.github.io/Portfolio/src/img/qa-lab-dashboard.png" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="800" />
+    <meta property="og:image:alt" content="Dashboard de Quality Engineering do portfólio Rapha.QA" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Rapha.QA — Quality Engineering & Automation" />
+    <meta name="twitter:description" content="Portfólio de Raphael Castilho focado em engenharia de qualidade, automação Playwright, testes de API e confiabilidade operacional." />
+    <meta name="twitter:image" content="https://raphacastilho.github.io/Portfolio/src/img/qa-lab-dashboard.png" />
     <!--OPEN GRAPH -->
 
     <!--STRUCTURED DATA (JSON-LD) -->
@@ -55,14 +64,15 @@
     <meta name="theme-color" content="#080b12" />
     <!--FAVICON -->
 
-    <!--FONTES -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!--FONTES (self-hosted — sem dependência de CDN externo) -->
+    <link rel="preload" href="src/vendor/fonts/inter-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="src/vendor/fonts/geist-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="src/vendor/fonts/fonts.css" />
     <!--FONTES -->
 
-    <!--ICONES -->
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <!--ICONES (Boxicons subset self-hosted — apenas os ícones usados) -->
+    <link rel="preload" href="src/vendor/boxicons/boxicons-subset.woff2" as="font" type="font/woff2" crossorigin />
+    <link href="src/vendor/boxicons/boxicons-subset.css" rel="stylesheet" />
     <!--ICONES -->
 
     <!--CSS -->
