@@ -133,7 +133,7 @@ const content = {
       lead: "Atuei por anos em operações críticas, suporte e análise de sistemas, evoluindo de ambientes de alta complexidade até me especializar em qualidade de software e automação.",
       items: [
         {
-          company: "ScrumLaunch",
+          company: "",
           period: "2025 — Presente",
           role: "QA Engineer",
           badges: ["QA", "Automação", "Playwright", "CI/CD"],
@@ -336,7 +336,7 @@ const content = {
       lead: "I spent years in critical operations, support, and systems analysis, evolving from high-complexity environments to specializing in software quality and automation.",
       items: [
         {
-          company: "ScrumLaunch",
+          company: "",
           period: "2025 — Present",
           role: "QA Engineer",
           badges: ["QA", "Automation", "Playwright", "CI/CD"],
@@ -536,7 +536,7 @@ function renderExperienceItem(item) {
           <div class="exp-card-meta">
             <span class="exp-period">${escapeHtml(item.period)}</span>
             <h3 class="exp-role">${escapeHtml(item.role)}</h3>
-            <span class="exp-company">${escapeHtml(item.company)}</span>
+            ${item.company ? `<span class="exp-company">${escapeHtml(item.company)}</span>` : ""}
             <div class="exp-badges">${badges}</div>
           </div>
           <ul class="exp-bullets">${bullets}</ul>
