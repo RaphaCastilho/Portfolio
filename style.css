@@ -6,20 +6,20 @@
 
 /* =================== TOKENS =================== */
 :root {
-  /* superfícies */
-  --bg: #05070d;
-  --bg-elevated: #090d16;
-  --surface: #0e1422;
-  --surface-soft: #121a2a;
+  /* superfícies — levemente mais azuladas, menos preto puro */
+  --bg: #080b12;
+  --bg-elevated: #0b0f1a;
+  --surface: #0f1521;
+  --surface-soft: #131d2e;
 
-  /* linhas / divisores */
-  --line: rgba(148, 163, 184, 0.16);
-  --line-strong: rgba(148, 163, 184, 0.3);
+  /* linhas / divisores — mais suaves */
+  --line: rgba(148, 163, 184, 0.10);
+  --line-strong: rgba(148, 163, 184, 0.22);
 
   /* texto */
-  --text: #f8fafc;
-  --text-muted: #a7b1c2;
-  --text-soft: #748093;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-soft: #64748b;
 
   /* acentos (uso controlado) */
   --accent: #5b7cfa;
@@ -28,9 +28,12 @@
   --success: #22c55e;
   --danger: #ef4444;
 
-  /* sombra / raio / layout */
-  --shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
-  --shadow-sm: 0 8px 30px rgba(0, 0, 0, 0.28);
+  /* sombra — mais suave e com tom azulado */
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(91, 124, 250, 0.04);
+  --shadow-sm: 0 8px 32px rgba(0, 0, 0, 0.32), 0 0 0 1px rgba(91, 124, 250, 0.04);
+  --shadow-glow: 0 0 60px rgba(91, 124, 250, 0.08);
+
+  /* raio / layout */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 18px;
@@ -50,14 +53,22 @@ body.light {
   --bg-elevated: #e6eaf2;
   --surface: #ffffff;
   --surface-soft: #f3f5fa;
-  --line: rgba(15, 23, 42, 0.12);
-  --line-strong: rgba(15, 23, 42, 0.22);
+  --line: rgba(15, 23, 42, 0.10);
+  --line-strong: rgba(15, 23, 42, 0.20);
   --text: #0b1220;
   --text-muted: #475467;
   --text-soft: #667085;
-  --shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
-  --shadow-sm: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow: 0 24px 60px rgba(15, 23, 42, 0.10);
+  --shadow-sm: 0 8px 24px rgba(15, 23, 42, 0.07);
+  --shadow-glow: none;
   color-scheme: light;
+}
+
+body.light {
+  background:
+    radial-gradient(ellipse 900px 700px at 15% 10%, rgba(91, 124, 250, 0.04), transparent 70%),
+    radial-gradient(ellipse 600px 500px at 85% 60%, rgba(91, 124, 250, 0.03), transparent 70%),
+    var(--bg);
 }
 
 /* =================== RESET & BASE =================== */
@@ -83,7 +94,13 @@ html {
 }
 
 body {
-  background-color: var(--bg);
+  background:
+    radial-gradient(ellipse 900px 700px at 15% 10%, rgba(91, 124, 250, 0.07), transparent 70%),
+    radial-gradient(ellipse 700px 600px at 88% 35%, rgba(91, 124, 250, 0.05), transparent 70%),
+    radial-gradient(ellipse 600px 500px at 10% 80%, rgba(91, 124, 250, 0.04), transparent 70%),
+    radial-gradient(ellipse 500px 400px at 75% 90%, rgba(91, 124, 250, 0.03), transparent 70%),
+    var(--bg);
+  background-attachment: fixed;
   color: var(--text);
   font-size: 1rem;
   line-height: 1.6;
@@ -175,9 +192,11 @@ section {
   gap: 1.5rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background: color-mix(in srgb, var(--bg) 78%, transparent);
-  backdrop-filter: saturate(140%) blur(14px);
-  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  backdrop-filter: saturate(160%) blur(20px);
+  -webkit-backdrop-filter: saturate(160%) blur(20px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+  box-shadow: 0 1px 0 rgba(91, 124, 250, 0.04);
 }
 
 .logo {
@@ -412,11 +431,11 @@ section {
   justify-self: end;
   padding: 28px;
   background:
-    radial-gradient(circle at 20% 0%, rgba(91, 124, 250, 0.08), transparent 36%),
+    radial-gradient(circle at 20% 0%, rgba(91, 124, 250, 0.10), transparent 50%),
     var(--surface);
-  border: 1px solid var(--line-strong);
+  border: 1px solid rgba(91, 124, 250, 0.12);
   border-radius: 20px;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow), var(--shadow-glow);
 }
 
 .ops-panel-header {
@@ -455,15 +474,15 @@ section {
   flex-direction: column;
   gap: 8px;
   background:
-    radial-gradient(circle at 20% 0%, rgba(91, 124, 250, 0.06), transparent 42%),
+    radial-gradient(circle at 20% 0%, rgba(91, 124, 250, 0.08), transparent 52%),
     var(--surface-soft);
-  border: 1px solid var(--line);
+  border: 1px solid rgba(91, 124, 250, 0.10);
   border-radius: 12px;
   transition: border-color 0.2s ease;
 }
 
 .ops-grid article:hover {
-  border-color: var(--line-strong);
+  border-color: rgba(91, 124, 250, 0.22);
 }
 
 .ops-card-icon {
@@ -625,11 +644,12 @@ section {
   grid-template-columns: 170px 1fr;
   align-items: center;
   gap: 42px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(91, 124, 250, 0.10);
   border-radius: 16px;
   background:
-    radial-gradient(circle at 10% 0%, rgba(91, 124, 250, 0.08), transparent 34%),
+    radial-gradient(circle at 5% 50%, rgba(91, 124, 250, 0.07), transparent 50%),
     var(--surface);
+  box-shadow: 0 1px 0 rgba(91, 124, 250, 0.04) inset;
 }
 
 .tools-strip-title {
@@ -874,14 +894,15 @@ section {
   flex-direction: column;
   gap: 14px;
   background: var(--surface);
-  border: 1px solid var(--line);
+  border: 1px solid rgba(148, 163, 184, 0.09);
   border-radius: var(--radius-md);
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .about-card:hover {
-  border-color: var(--line-strong);
+  border-color: rgba(91, 124, 250, 0.20);
   transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.24), 0 0 24px rgba(91, 124, 250, 0.06);
 }
 
 .about-card-icon {
@@ -1024,14 +1045,15 @@ section {
   flex-direction: column;
   gap: 10px;
   background: var(--surface);
-  border: 1px solid var(--line);
+  border: 1px solid rgba(148, 163, 184, 0.09);
   border-radius: var(--radius-md);
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .auto-card:hover {
-  border-color: var(--line-strong);
+  border-color: rgba(91, 124, 250, 0.20);
   transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.24), 0 0 24px rgba(91, 124, 250, 0.06);
 }
 
 .auto-card-icon {
@@ -1142,14 +1164,15 @@ section {
   gap: 12px;
   padding: 24px 22px;
   background: var(--surface);
-  border: 1px solid var(--line);
+  border: 1px solid rgba(148, 163, 184, 0.09);
   border-radius: var(--radius-md);
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .eco-card:hover {
-  border-color: var(--line-strong);
+  border-color: rgba(91, 124, 250, 0.20);
   transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.24), 0 0 24px rgba(91, 124, 250, 0.06);
 }
 
 /* header do card: ícone + título inline */
@@ -1338,15 +1361,15 @@ section {
   flex-direction: column;
   overflow: hidden;
   background: var(--surface);
-  border: 1px solid var(--line);
+  border: 1px solid rgba(148, 163, 184, 0.09);
   border-radius: var(--radius-lg);
   transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .project-card:hover {
-  border-color: var(--line-strong);
+  border-color: rgba(91, 124, 250, 0.22);
   transform: translateY(-3px);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.3), 0 0 32px rgba(91, 124, 250, 0.06);
 }
 
 /* capa */
@@ -1668,13 +1691,14 @@ section {
   min-width: 0;
   padding: 20px 22px;
   background: var(--surface);
-  border: 1px solid var(--line);
+  border: 1px solid rgba(148, 163, 184, 0.09);
   border-radius: var(--radius-md);
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .exp-card:hover .exp-card-body {
-  border-color: var(--line-strong);
+  border-color: rgba(91, 124, 250, 0.18);
+  box-shadow: 0 0 24px rgba(91, 124, 250, 0.05);
 }
 
 .exp-card-top {
@@ -1919,17 +1943,18 @@ section {
   gap: 14px;
   padding: 18px 16px;
   background: var(--surface);
-  border: 1px solid var(--line);
+  border: 1px solid rgba(148, 163, 184, 0.09);
   border-radius: var(--radius-md);
   text-decoration: none;
-  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
   position: relative;
 }
 
 .channel-card:hover {
-  border-color: var(--line-strong);
+  border-color: rgba(91, 124, 250, 0.22);
   transform: translateY(-2px);
   background: var(--surface-soft);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2), 0 0 16px rgba(91, 124, 250, 0.06);
 }
 
 .channel-card-icon {
@@ -2001,9 +2026,10 @@ section {
   gap: 24px;
   padding: 20px 24px;
   background: var(--surface);
-  border: 1px solid var(--line);
+  border: 1px solid rgba(91, 124, 250, 0.10);
   border-radius: var(--radius-md);
   flex-wrap: wrap;
+  box-shadow: 0 0 40px rgba(91, 124, 250, 0.05) inset;
 }
 
 .contact-bar-left {
@@ -2100,9 +2126,9 @@ section {
   width: 100%;
   max-width: 560px;
   background: var(--surface);
-  border: 1px solid var(--line-strong);
+  border: 1px solid rgba(91, 124, 250, 0.16);
   border-radius: 20px;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow), 0 0 80px rgba(91, 124, 250, 0.08);
   padding: 32px;
   animation: modal-in 0.2s ease;
 }
@@ -2237,8 +2263,10 @@ section {
 .footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
-  background: var(--bg-elevated);
-  border-top: 1px solid var(--line);
+  background:
+    radial-gradient(ellipse 600px 300px at 50% 0%, rgba(91, 124, 250, 0.04), transparent 70%),
+    var(--bg-elevated);
+  border-top: 1px solid rgba(91, 124, 250, 0.08);
   text-align: center;
 }
 .footer .social {
