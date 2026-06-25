@@ -1406,66 +1406,280 @@ section {
 }
 
 /* =================== EXPERIÊNCIA =================== */
-.experience-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+.experience {
+  background-color: var(--bg-elevated);
 }
-.experience-list > article {
-  padding: 1.5rem 1.75rem;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
+
+.exp-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+  gap: 72px;
+  align-items: start;
 }
-.experience-header {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  margin-bottom: 0.85rem;
+
+/* coluna esquerda */
+.exp-left {
+  padding-top: 4px;
+  position: sticky;
+  top: 100px;
 }
-.experience-role {
-  font-size: 1.2rem;
+
+.exp-eyebrow {
+  font-family: var(--font-display);
+  font-size: 12px;
   font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.exp-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 3.2vw, 46px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
   color: var(--text);
+  margin: 0;
 }
-.experience-meta {
-  font-size: 0.88rem;
+
+.exp-title span {
+  color: var(--accent);
+}
+
+.exp-divider {
+  width: 48px;
+  height: 2px;
+  margin: 28px 0 22px;
+  background: linear-gradient(90deg, var(--accent) 0%, rgba(91, 124, 250, 0) 100%);
+  border-radius: 999px;
+}
+
+.exp-lead {
+  font-size: 15px;
+  line-height: 1.75;
   color: var(--text-muted);
+  max-width: 34ch;
+  margin-bottom: 28px;
 }
-.experience-period {
-  display: inline;
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
-  letter-spacing: 0.02em;
-  padding: 2px 8px;
-  border-radius: 4px;
-  background: var(--surface-soft);
-  color: var(--text-soft);
-  margin-left: 0.5rem;
-  white-space: nowrap;
-}
-.experience-list ul {
+
+.exp-skills {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 12px;
 }
-.experience-list li {
-  position: relative;
-  padding-left: 1.2rem;
+
+.exp-skills li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
   color: var(--text-muted);
-  font-size: 0.9rem;
-  line-height: 1.5;
 }
-.experience-list li::before {
+
+.exp-skills li svg {
+  flex-shrink: 0;
+  color: var(--accent);
+  opacity: 0.85;
+}
+
+/* timeline */
+.exp-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+/* linha vertical */
+.exp-timeline::before {
   content: "";
   position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--accent);
+  left: 22px;
+  top: 24px;
+  bottom: 24px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--accent) 0%, rgba(91, 124, 250, 0.15) 100%);
+}
+
+/* card da timeline */
+.exp-card {
+  display: flex;
+  gap: 20px;
+  padding: 0 0 20px 0;
+  position: relative;
+}
+
+.exp-card:last-child {
+  padding-bottom: 0;
+}
+
+/* ícone / indicador da timeline */
+.exp-card-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--accent);
+  position: relative;
+  z-index: 1;
+}
+
+/* corpo do card */
+.exp-card-body {
+  flex: 1;
+  min-width: 0;
+  padding: 20px 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  transition: border-color 0.2s ease;
+}
+
+.exp-card:hover .exp-card-body {
+  border-color: var(--line-strong);
+}
+
+.exp-card-top {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 32px;
+}
+
+.exp-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 180px;
+}
+
+.exp-period {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.exp-role {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.exp-company {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.exp-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.exp-badges span {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+/* bullets */
+.exp-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0;
+  border-left: 1px solid var(--line);
+  padding-left: 16px;
+}
+
+.exp-bullets li {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  position: relative;
+}
+
+.exp-bullets li::before {
+  content: "·";
+  position: absolute;
+  left: -12px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* nota inferior */
+.exp-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+
+.exp-note svg {
+  color: var(--accent);
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+/* responsivo */
+@media (max-width: 900px) {
+  .exp-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .exp-left {
+    position: static;
+  }
+
+  .exp-lead {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .exp-card-top {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .exp-timeline::before {
+    display: none;
+  }
+
+  .exp-card-icon {
+    display: none;
+  }
+
+  .exp-card {
+    padding-left: 0;
+  }
 }
 
 /* =================== CONTATO =================== */

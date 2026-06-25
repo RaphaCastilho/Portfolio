@@ -129,38 +129,59 @@ const content = {
       ],
     },
     experience: {
-      title: "Experiência em Operações e Sistemas",
-      lead: "Experiência prática em incidentes, suporte avançado, análise de processos e operação crítica aplicada à qualidade de software.",
+      title: "Minha trajetória em operações e qualidade.",
+      lead: "Atuei por anos em operações críticas, suporte e análise de sistemas, evoluindo de ambientes de alta complexidade até me especializar em qualidade de software e automação.",
       items: [
         {
-          company: "LINX",
-          period: "06/2016 - 07/2019",
-          role: "Engenheiro de Suporte L4",
+          company: "ScrumLaunch",
+          period: "2025 — Presente",
+          role: "QA Engineer",
+          badges: ["QA", "Automação", "Playwright", "CI/CD"],
+          icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
           bullets: [
-            "Análise e resolução de incidentes críticos em aplicações corporativas de alta complexidade.",
-            "Investigação de falhas sistêmicas em colaboração direta com equipes de desenvolvimento e arquitetura.",
-            "Validação de comportamentos de sistema para identificação de bugs, inconsistências e regressões.",
-            "Troubleshooting avançado com base em logs, diagnóstico funcional e reprodução de falhas.",
+            "Automação de testes E2E com Playwright",
+            "Criação de pipelines e integração contínua",
+            "Validação de APIs e monitoramento de qualidade",
+            "Documentação técnica e revisão de cenários",
           ],
         },
         {
           company: "Brooks Hamburgueria",
-          period: "01/2019 - 01/2025",
+          period: "2019 — 2025",
           role: "Coordenador Operacional",
+          badges: ["Operações", "Indicadores", "Processos"],
+          icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
           bullets: [
-            "Análise de processos operacionais com foco em eficiência, inconsistências e indicadores.",
-            "Diagnóstico de falhas operacionais e estruturação de melhoria contínua com base em dados.",
-            "Padronização de procedimentos e controle de qualidade operacional em rotinas críticas.",
+            "Gestão de operações e rotinas críticas",
+            "Análise de indicadores e melhoria contínua",
+            "Estruturação de processos e padronizações",
+            "Liderança de equipes e treinamentos",
+          ],
+        },
+        {
+          company: "LINX",
+          period: "2016 — 2019",
+          role: "Engenheiro de Suporte L4",
+          badges: ["Enterprise", "Suporte", "Sistemas", "Logs"],
+          icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
+          bullets: [
+            "Investigação e resolução de incidentes críticos",
+            "Troubleshooting avançado e análise de logs",
+            "Diagnóstico de falhas em sistemas complexos",
+            "Suporte a equipes de desenvolvimento",
           ],
         },
         {
           company: "Kairus Tecnologia",
-          period: "09/2014 - 05/2016",
+          period: "2014 — 2016",
           role: "Analista de Operações e Sistemas",
+          badges: ["SaaS", "Operações", "Sistemas", "Suporte"],
+          icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
           bullets: [
-            "Automação de processos SaaS para otimização operacional e consistência sistêmica.",
-            "Análise de fluxos de sistema e identificação de oportunidades de melhoria.",
-            "Apoio técnico em sistemas de gestão e suporte especializado a usuários internos.",
+            "Monitoramento de sistemas e serviços SaaS",
+            "Análise de fluxos e identificação de melhorias",
+            "Suporte técnico a usuários internos",
+            "Documentação e controle de processos",
           ],
         },
       ],
@@ -311,38 +332,59 @@ const content = {
       ],
     },
     experience: {
-      title: "Operations and Systems Experience",
-      lead: "Hands-on experience with incidents, advanced support, process analysis, and critical operations applied to software quality.",
+      title: "My journey through operations and quality.",
+      lead: "I spent years in critical operations, support, and systems analysis, evolving from high-complexity environments to specializing in software quality and automation.",
       items: [
         {
-          company: "LINX",
-          period: "06/2016 - 07/2019",
-          role: "L4 Support Engineer",
+          company: "ScrumLaunch",
+          period: "2025 — Present",
+          role: "QA Engineer",
+          badges: ["QA", "Automation", "Playwright", "CI/CD"],
+          icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
           bullets: [
-            "Analyzed and resolved critical incidents in complex enterprise applications.",
-            "Investigated systemic failures in direct collaboration with development and architecture teams.",
-            "Validated system behavior to identify bugs, inconsistencies, and regressions.",
-            "Performed advanced troubleshooting using log analysis, functional diagnosis, and failure reproduction.",
+            "E2E test automation with Playwright",
+            "Pipeline creation and continuous integration",
+            "API validation and quality monitoring",
+            "Technical documentation and scenario review",
           ],
         },
         {
           company: "Brooks Hamburgueria",
-          period: "01/2019 - 01/2025",
+          period: "2019 — 2025",
           role: "Operational Coordinator",
+          badges: ["Operations", "Indicators", "Processes"],
+          icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
           bullets: [
-            "Analyzed operational processes to improve efficiency, identify inconsistencies, and monitor performance indicators.",
-            "Diagnosed operational failures and structured continuous improvement flows based on data and metrics.",
-            "Standardized procedures and operational quality controls for critical routines.",
+            "Operations management and critical routines",
+            "Indicator analysis and continuous improvement",
+            "Process structuring and standardization",
+            "Team leadership and training",
+          ],
+        },
+        {
+          company: "LINX",
+          period: "2016 — 2019",
+          role: "L4 Support Engineer",
+          badges: ["Enterprise", "Support", "Systems", "Logs"],
+          icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
+          bullets: [
+            "Investigation and resolution of critical incidents",
+            "Advanced troubleshooting and log analysis",
+            "Fault diagnosis in complex systems",
+            "Support for development teams",
           ],
         },
         {
           company: "Kairus Tecnologia",
-          period: "09/2014 - 05/2016",
+          period: "2014 — 2016",
           role: "Operations & Systems Analyst",
+          badges: ["SaaS", "Operations", "Systems", "Support"],
+          icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
           bullets: [
-            "Automated SaaS processes to improve operational efficiency and system consistency.",
-            "Analyzed system workflows and identified improvement opportunities.",
-            "Provided specialized technical support for management systems and internal users.",
+            "SaaS systems and services monitoring",
+            "Workflow analysis and improvement identification",
+            "Technical support for internal users",
+            "Documentation and process control",
           ],
         },
       ],
@@ -481,15 +523,25 @@ function renderProject(project) {
 }
 
 function renderExperienceItem(item) {
+  const badges = (item.badges || []).map(b => `<span>${escapeHtml(b)}</span>`).join("");
+  const bullets = item.bullets.map(b => `<li>${escapeHtml(b)}</li>`).join("");
+
   return `
-    <article class="experience-item">
-      <div class="experience-header">
-        <p class="experience-role">${escapeHtml(item.role)}</p>
-        <p class="experience-meta">${escapeHtml(item.company)} <span class="experience-period">${escapeHtml(item.period)}</span></p>
+    <article class="exp-card">
+      <div class="exp-card-icon" aria-hidden="true">
+        ${item.icon || '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/></svg>'}
       </div>
-      <ul>
-        ${item.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}
-      </ul>
+      <div class="exp-card-body">
+        <div class="exp-card-top">
+          <div class="exp-card-meta">
+            <span class="exp-period">${escapeHtml(item.period)}</span>
+            <h3 class="exp-role">${escapeHtml(item.role)}</h3>
+            <span class="exp-company">${escapeHtml(item.company)}</span>
+            <div class="exp-badges">${badges}</div>
+          </div>
+          <ul class="exp-bullets">${bullets}</ul>
+        </div>
+      </div>
     </article>
   `;
 }
