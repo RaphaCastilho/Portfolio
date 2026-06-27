@@ -80,6 +80,14 @@ test("portfolio no longer leads with junior front-end positioning", () => {
   }
 });
 
+test("portfolio uses the current QA Lab test count", () => {
+  assert.ok(html.includes('<span class="hero-metric-value">100+</span>'), "index.html fallback still has the old test count");
+  assert.ok(script.includes("100+ testes"), "PT-BR content still has the old QA Lab test count");
+  assert.ok(script.includes("100+ tests"), "EN-US content still has the old QA Lab test count");
+  assert.ok(!html.includes(">90+<"), "index.html still exposes 90+");
+  assert.ok(!script.includes("90+"), "script.js still exposes 90+");
+});
+
 test("published CV assets are referenced by the site script", () => {
   for (const expectedPath of [
     "src/cv/DEV_Rapha_CV_PT.pdf",

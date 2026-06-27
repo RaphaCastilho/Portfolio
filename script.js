@@ -23,7 +23,7 @@ const content = {
       description:
         "Atuo na validação de aplicações web com automação Playwright, testes de API e análise operacional para garantir releases confiáveis e experiências consistentes.",
       tags: ["Playwright", "QA Engineering", "API Testing", "Operational Systems", "AI-assisted QA"],
-      metrics: "90+ testes · 6 suítes · 2 projetos · CI/CD ativo",
+      metrics: "100+ testes · 6 suítes · 2 projetos · CI/CD ativo",
       linkedin: "LinkedIn",
       contact: "Contato",
       opsSubtitle: "O que eu entrego",
@@ -308,7 +308,7 @@ const content = {
       description:
         "I validate web applications through Playwright automation, API testing, and operational analysis to ensure reliable releases and consistent experiences.",
       tags: ["Playwright", "QA Engineering", "API Testing", "Operational Systems", "AI-assisted QA"],
-      metrics: "90+ tests · 6 suites · 2 projects · CI/CD active",
+      metrics: "100+ tests · 6 suites · 2 projects · CI/CD active",
       linkedin: "LinkedIn",
       contact: "Contact",
       opsSubtitle: "What I deliver",
