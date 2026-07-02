@@ -195,23 +195,23 @@ const content = {
       note: "Evolução contínua em qualidade, automação e excelência operacional.",
       items: [
         {
-          company: "",
-          period: "2025 — Presente",
+          company: "ScrumLaunch",
+          period: "Jan/2025 — Mar/2026",
           role: "QA Engineer",
-          badges: ["QA", "Automação", "Playwright", "CI/CD"],
+          badges: ["Playwright", "Cypress", "API Testing", "CI/CD"],
           icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
           bullets: [
-            "Automação de testes E2E com Playwright",
-            "Criação de pipelines e integração contínua",
-            "Validação de APIs e monitoramento de qualidade",
-            "Documentação técnica e revisão de cenários",
+            "Automação E2E com Playwright e Cypress",
+            "Testes funcionais, regressão e APIs REST",
+            "Investigação e documentação de bugs",
+            "Colaboração com Product, Design e Desenvolvimento",
           ],
         },
         {
           company: "Brooks Hamburgueria",
           period: "2019 — 2025",
           role: "Coordenador Operacional",
-          badges: ["Operações", "Indicadores", "Processos"],
+          badges: ["Operações", "Indicadores", "Processos", "Liderança"],
           icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
           bullets: [
             "Gestão de operações e rotinas críticas",
@@ -480,23 +480,23 @@ const content = {
       note: "Continuous evolution in quality, automation, and operational excellence.",
       items: [
         {
-          company: "",
-          period: "2025 — Present",
+          company: "ScrumLaunch",
+          period: "Jan/2025 — Mar/2026",
           role: "QA Engineer",
-          badges: ["QA", "Automation", "Playwright", "CI/CD"],
+          badges: ["Playwright", "Cypress", "API Testing", "CI/CD"],
           icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
           bullets: [
-            "E2E test automation with Playwright",
-            "Pipeline creation and continuous integration",
-            "API validation and quality monitoring",
-            "Technical documentation and scenario review",
+            "E2E automation with Playwright and Cypress",
+            "Functional, regression, and REST API testing",
+            "Bug investigation and documentation",
+            "Collaboration with Product, Design, and Development",
           ],
         },
         {
           company: "Brooks Hamburgueria",
           period: "2019 — 2025",
           role: "Operational Coordinator",
-          badges: ["Operations", "Indicators", "Processes"],
+          badges: ["Operations", "Indicators", "Processes", "Leadership"],
           icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
           bullets: [
             "Operations management and critical routines",
