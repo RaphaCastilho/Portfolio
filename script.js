@@ -195,6 +195,7 @@ const content = {
       note: "Evolução contínua em qualidade, automação e excelência operacional.",
       items: [
         {
+          company: "Autônomo",
           period: "Jan/2025 — Mar/2026",
           role: "QA Engineer",
           badges: ["Playwright", "Cypress", "API Testing", "CI/CD"],
@@ -479,6 +480,7 @@ const content = {
       note: "Continuous evolution in quality, automation, and operational excellence.",
       items: [
         {
+          company: "Independent Consultant",
           period: "Jan/2025 — Mar/2026",
           role: "QA Engineer",
           badges: ["Playwright", "Cypress", "API Testing", "CI/CD"],
