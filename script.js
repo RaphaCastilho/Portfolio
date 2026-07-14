@@ -195,6 +195,18 @@ const content = {
       note: "Evolução contínua em qualidade, automação e excelência operacional.",
       items: [
         {
+          period: "Jan/2025 — Mar/2026",
+          role: "QA Engineer",
+          badges: ["Playwright", "Cypress", "API Testing", "CI/CD"],
+          icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
+          bullets: [
+            "Automação E2E com Playwright e Cypress",
+            "Testes funcionais, regressão e APIs REST",
+            "Investigação e documentação de bugs",
+            "Colaboração com Product, Design e Desenvolvimento",
+          ],
+        },
+        {
           company: "Brooks Hamburgueria",
           period: "2019 — 2025",
           role: "Coordenador Operacional",
@@ -466,6 +478,18 @@ const content = {
       skill4: "Quality engineering",
       note: "Continuous evolution in quality, automation, and operational excellence.",
       items: [
+        {
+          period: "Jan/2025 — Mar/2026",
+          role: "QA Engineer",
+          badges: ["Playwright", "Cypress", "API Testing", "CI/CD"],
+          icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
+          bullets: [
+            "E2E automation with Playwright and Cypress",
+            "Functional, regression, and REST API testing",
+            "Bug investigation and documentation",
+            "Collaboration with Product, Design, and Development",
+          ],
+        },
         {
           company: "Brooks Hamburgueria",
           period: "2019 — 2025",
