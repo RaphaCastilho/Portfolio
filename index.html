@@ -4,43 +4,108 @@
     <!--META DADOS -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raphael Castilho — Engenharia de Qualidade &amp; Automação</title>
     <meta
       name="description"
-      content="Portfólio de Raphael Castilho, desenvolvedor web focado em front-end, UX/UI e soluções digitais."
+      content="Portfólio de Raphael Castilho em Quality Engineering, automação Playwright, testes de API e sistemas operacionais de validação."
     />
     <meta
       name="keywords"
-      content="desenvolvedor web, frontend, portfólio, HTML, CSS, JavaScript"
+      content="quality engineering, QA automation, Playwright, API testing, testes automatizados, sistemas de validação, Raphael Castilho"
     />
+    <meta name="author" content="Raphael Castilho" />
+    <link rel="canonical" href="https://raphacastilho.github.io/Portfolio/" />
 
-    <title>DEV.Rapha - Desenvolvedor Web</title>
-    <!--META DADOS -->
-    <!--ICONES -->
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
+    <!--OPEN GRAPH -->
+    <meta property="og:site_name" content="Rapha.QA" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:title" content="Rapha.QA — Quality Engineering & Automation" />
+    <meta
+      property="og:description"
+      content="Portfólio de Raphael Castilho focado em engenharia de qualidade, automação Playwright, testes de API e confiabilidade operacional."
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://raphacastilho.github.io/Portfolio/" />
+    <meta property="og:image" content="https://raphacastilho.github.io/Portfolio/src/img/og-preview.png" />
+    <meta property="og:image:width" content="1536" />
+    <meta property="og:image:height" content="1024" />
+    <meta property="og:image:alt" content="Página inicial do portfólio Rapha.QA" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Rapha.QA — Quality Engineering & Automation" />
+    <meta name="twitter:description" content="Portfólio de Raphael Castilho focado em engenharia de qualidade, automação Playwright, testes de API e confiabilidade operacional." />
+    <meta name="twitter:image" content="https://raphacastilho.github.io/Portfolio/src/img/og-preview.png" />
+    <!--OPEN GRAPH -->
+
+    <!--STRUCTURED DATA (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Raphael Castilho",
+        "jobTitle": "Quality Engineering & Automation",
+        "url": "https://raphacastilho.github.io/Portfolio/",
+        "image": "https://raphacastilho.github.io/Portfolio/src/img/qa-lab-dashboard.png",
+        "sameAs": [
+          "https://github.com/RaphaCastilho",
+          "https://www.linkedin.com/in/raphael-castilho/"
+        ],
+        "knowsAbout": ["Quality Engineering", "Test Automation", "Playwright", "API Testing", "CI/CD"]
+      }
+    </script>
+    <!--STRUCTURED DATA -->
+
+    <!--FAVICON -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="src/img/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="src/img/favicon-180.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#080b12" />
+    <!--FAVICON -->
+
+    <!--FONTES (self-hosted — sem dependência de CDN externo) -->
+    <link rel="preload" href="src/vendor/fonts/inter-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="src/vendor/fonts/geist-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="src/vendor/fonts/fonts.css" />
+    <!--FONTES -->
+
+    <!--ICONES (Boxicons subset self-hosted — apenas os ícones usados) -->
+    <link rel="preload" href="src/vendor/boxicons/boxicons-subset.woff2" as="font" type="font/woff2" crossorigin />
+    <link href="src/vendor/boxicons/boxicons-subset.css" rel="stylesheet" />
     <!--ICONES -->
+
     <!--CSS -->
     <link rel="stylesheet" href="style.css" />
     <!--CSS -->
   </head>
   <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <header class="header">
-      <a href="#home" class="logo">DEV. <span>Rapha</span></a>
+      <a href="#home" class="logo">Rapha.<span>QA</span></a>
 
       <!-- MENU DE NAVEGAÇÃO -->
-      <nav class="navbar">
-        <a href="#home" class="active" id="homenav">Início</a>
-        <a href="#conhecimento" id="educationnav">Conhecimento</a>
-        <a href="#services" id="servicesnav">Serviços</a>
-        <a href="#portfolio" id="portnav">Projetos</a>
-        <a href="#contato" id="contactnav">Contato</a>
+      <nav class="navbar" id="primary-navigation" aria-label="Navegação principal">
+        <a href="#home" class="active" id="nav-home">Início</a>
+        <a href="#about" id="nav-about">Perfil</a>
+        <a href="#automation" id="nav-automation">Automação</a>
+        <a href="#ecosystem" id="nav-ecosystem">Stack</a>
+        <a href="#projects" id="nav-projects">Sistemas</a>
+        <a href="#experience" id="nav-experience">Experiência</a>
+        <a href="#contact" id="nav-contact">Contato</a>
       </nav>
 
       <!-- ÍCONE DO MENU MOBILE -->
-      <div class="header-right"></div>
-      <i class="bx bx-menu" id="menu-icon"></i>
+      <button
+        class="menu-toggle"
+        id="menu-icon"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+      >
+        <i class="bx bx-menu" aria-hidden="true"></i>
+      </button>
 
       <!-- BOTÕES: MODO ESCURO + IDIOMA -->
       <div class="header-actions">
@@ -53,353 +118,837 @@
             src="src/img/united-states-of-america-flag.svg"
             alt="English"
             id="lang-flag"
+            width="22"
+            height="15"
           />
         </button>
       </div>
     </header>
 
-    <!--HOME-->
-    <section class="home" id="home">
-      <!--Apresentação-->
-      <div class="home-content">
-        <h1 id="hometitle">Oi, sou o <span>Rapha!</span></h1>
-        <h3 class="text-animation" id="homesubtitle">Eu sou <span></span></h3>
-        <p id="homedescription">
-          Sou desenvolvedor Frontend em início de carreira, com foco em
-          construção de interfaces modernas, funcionais e bem estruturadas.
-          <br />Sou proativo, detalhista e com forte capacidade de organização e
-          liderança, características que desenvolvi ao longo de experiências
-          anteriores em gestão de pessoas e projetos. Valorizo o trabalho em
-          equipe, a comunicação clara e o compromisso com prazos e qualidade.
+    <main id="conteudo">
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <p class="hero-eyebrow" id="hero-kicker">Quality Engineering • Automation • Operational Systems</p>
+          <h1 id="hero-title">QA Engineering</h1>
+          <p id="hero-subtitle">focado em qualidade<br>e confiabilidade.</p>
+          <div class="hero-divider"></div>
+          <p id="hero-description">
+            Atuo na validação de aplicações web com automação Playwright, testes de API e análise operacional para garantir releases confiáveis e experiências consistentes.
+          </p>
+          <div class="hero-tags" aria-label="Principais frentes técnicas">
+            <span><i class="bx bx-code-alt"></i>Playwright</span>
+            <span><i class="bx bx-shield-quarter"></i>QA Engineering</span>
+            <span><i class="bx bx-link"></i>API Testing</span>
+            <span><i class="bx bx-cog"></i>Operational Systems</span>
+            <span><i class="bx bx-chip"></i>AI-assisted QA</span>
+          </div>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary" id="contact-cta"><i class="bx bx-envelope"></i>Contato</a>
+            <a href="https://www.linkedin.com/in/raphael-castilho/" class="btn btn-secondary" id="linkedin-cta" target="_blank" rel="noopener noreferrer"><i class="bx bxl-linkedin"></i>LinkedIn</a>
+            <a href="src/cv/DEV_Rapha_CV_PT.pdf" class="btn btn-ghost" id="cv-download" target="_blank" rel="noopener noreferrer"><i class="bx bx-download"></i>Baixar CV</a>
+          </div>
+          <a href="src/cv/DEV_Rapha_CV_PT.html" class="cv-web-link" id="cv-web" target="_blank" rel="noopener noreferrer">Ver versão web do CV ↗</a>
+        </div>
+
+        <div class="ops-panel" aria-label="Painel visual de operações de qualidade">
+          <div class="ops-panel-header">
+            <span id="ops-kicker">QUALITY OPS</span>
+            <strong id="ops-subtitle">O que eu entrego</strong>
+          </div>
+          <div class="ops-grid">
+            <article>
+              <i class="bx bx-layout ops-card-icon"></i>
+              <span class="ops-card-title">Playwright E2E</span>
+              <p class="ops-card-desc" id="ops-desc-1">Cobertura de fluxos críticos e jornadas completas.</p>
+            </article>
+            <article>
+              <i class="bx bx-cloud-upload ops-card-icon"></i>
+              <span class="ops-card-title">API Validation</span>
+              <p class="ops-card-desc" id="ops-desc-2">Validações de contrato, regras e integrações.</p>
+            </article>
+            <article>
+              <i class="bx bx-pulse ops-card-icon"></i>
+              <span class="ops-card-title">Incident Analysis</span>
+              <p class="ops-card-desc" id="ops-desc-3">Análise de causa raiz e melhoria contínua.</p>
+            </article>
+            <article>
+              <i class="bx bx-bot ops-card-icon"></i>
+              <span class="ops-card-title">AI Workflows</span>
+              <p class="ops-card-desc" id="ops-desc-4">Automação inteligente para acelerar entregas.</p>
+            </article>
+          </div>
+          <div class="hero-metrics" id="hero-metrics">
+            <div class="hero-metric-item">
+              <i class="bx bx-check-circle hero-metric-icon"></i>
+              <span class="hero-metric-value">100+</span>
+              <span class="hero-metric-label" id="metric-label-1">testes</span>
+            </div>
+            <div class="hero-metric-item">
+              <i class="bx bx-collection hero-metric-icon"></i>
+              <span class="hero-metric-value">6</span>
+              <span class="hero-metric-label" id="metric-label-2">suítes</span>
+            </div>
+            <div class="hero-metric-item">
+              <i class="bx bx-rocket hero-metric-icon"></i>
+              <span class="hero-metric-value">2</span>
+              <span class="hero-metric-label" id="metric-label-3">projetos live</span>
+            </div>
+            <div class="hero-metric-item">
+              <i class="bx bx-code-block hero-metric-icon"></i>
+              <span class="hero-metric-value">CI/CD</span>
+              <span class="hero-metric-label" id="metric-label-4">ativo</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="tools-strip" aria-label="Tecnologias e ferramentas">
+  <div class="tools-strip-inner">
+    <p class="tools-strip-title" id="tools-strip-label">Tecnologias e<br />Ferramentas</p>
+
+    <div class="tools-strip-list">
+      <span class="tools-strip-item">
+        <!-- Playwright -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Playwright
+      </span>
+
+      <span class="tools-strip-item">
+        <!-- TypeScript -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M13 10h4M15 10v7M5 11h4M7 11v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        TypeScript
+      </span>
+
+      <span class="tools-strip-item">
+        <!-- JavaScript -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M8 16c0 1.1.9 2 2 2s2-.9 2-2v-6M16 10v5c0 1.1-.9 2-2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        JavaScript
+      </span>
+
+      <span class="tools-strip-item">
+        <!-- Node.js -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M12 2v20M3 7l9 5 9-5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+        Node.js
+      </span>
+
+      <span class="tools-strip-item">
+        <!-- API -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 6h16M4 12h10M4 18h7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="19" cy="18" r="3" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        API
+      </span>
+
+      <span class="tools-strip-item">
+        <!-- GitHub -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 2C6.48 2 2 6.59 2 12.25c0 4.54 2.87 8.39 6.84 9.75.5.09.68-.22.68-.49v-1.72c-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0112 7.4c.85 0 1.7.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49C19.13 20.64 22 16.79 22 12.25 22 6.59 17.52 2 12 2z" fill="currentColor"/>
+        </svg>
+        GitHub
+      </span>
+
+      <span class="tools-strip-item">
+        <!-- Jenkins -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        Jenkins
+      </span>
+
+      <span class="tools-strip-item">
+        <!-- Allure -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Allure
+      </span>
+    </div>
+  </div>
+</section>
+
+
+      <section class="operational-profile" id="about">
+        <div class="about-layout">
+
+          <!-- Coluna esquerda -->
+          <div class="about-left">
+            <p class="about-eyebrow" id="about-kicker">Sobre Mim</p>
+            <h2 class="about-title" id="about-title">Como atuo<br>na engenharia<br><span id="about-title-span">de qualidade.</span></h2>
+            <div class="about-divider"></div>
+            <p class="about-lead" id="about-lead">
+              Minha experiência combina QA, automação, investigação de falhas, análise operacional e colaboração multidisciplinar para aumentar a confiabilidade das entregas e reduzir riscos antes do release.
+            </p>
+          </div>
+
+          <!-- Coluna direita: grid 2x2 -->
+          <div class="about-grid" aria-label="Resumo do perfil operacional">
+            <article class="about-card">
+              <div class="about-card-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M12 8v4l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M5 5l1.5 1.5M19 5l-1.5 1.5M5 19l1.5-1.5M19 19l-1.5-1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 id="about-card-title-1">Investigação</h3>
+              <p id="about-card-desc-1">Investigação e reprodução de bugs complexos em aplicações web corporativas. Isolamento de causa raiz e documentação clara para acelerar a resolução.</p>
+            </article>
+            <article class="about-card">
+              <div class="about-card-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 12a8 8 0 0 1 14.93-4M20 12a8 8 0 0 1-14.93 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M18 4l2 4-4-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 id="about-card-title-2">Validação</h3>
+              <p id="about-card-desc-2">Validação de fluxos funcionais, regressão, estados de UI e integrações entre sistemas. Garantia de que o produto entrega o que foi planejado, em todas as camadas.</p>
+            </article>
+            <article class="about-card">
+              <div class="about-card-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="9" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="16" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M3 18c0-3 2.7-5 6-5s6 2 6 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M16 14c1.8.3 4 1.4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 id="about-card-title-3">Colaboração</h3>
+              <p id="about-card-desc-3">Comunicação técnica eficiente entre suporte, produto, QA e desenvolvimento. Trabalho conjunto para entender, priorizar e resolver problemas com agilidade.</p>
+            </article>
+            <article class="about-card">
+              <div class="about-card-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M3 17l5-5 4 4 9-10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M17 7h4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 id="about-card-title-4">Melhoria Contínua</h3>
+              <p id="about-card-desc-4">Mentalidade orientada a dados, rastreabilidade, estabilidade e qualidade contínua. Processos e automações que evoluem junto com o produto e com o time.</p>
+            </article>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="automation-engineering" id="automation">
+        <div class="auto-layout">
+
+          <!-- Coluna esquerda -->
+          <div class="auto-left">
+            <p class="auto-eyebrow" id="auto-kicker">Automação</p>
+            <h2 class="auto-title" id="automation-title">Automação<br>como <span id="auto-title-span">engenharia<br>de qualidade.</span></h2>
+            <div class="auto-divider"></div>
+            <p class="auto-lead" id="automation-lead">
+              Desenho e implemento soluções de automação confiáveis para validar o que importa, reduzir riscos de regressão e acelerar entregas com segurança e previsibilidade.
+            </p>
+            <ul class="auto-benefits" aria-label="Benefícios da abordagem">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span id="auto-benefit-1">Cobertura inteligente dos fluxos críticos</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span id="auto-benefit-2">Feedback rápido para times de desenvolvimento</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span id="auto-benefit-3">Qualidade contínua em cada etapa do ciclo</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Coluna direita: grid 2x2 -->
+          <div class="auto-grid" id="automation-grid">
+            <article class="auto-card">
+              <div class="auto-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 6l-4 6 4 6M16 6l4 6-4 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <p class="auto-card-eyebrow">Playwright E2E</p>
+              <h3>Fluxos críticos automatizados</h3>
+              <p>Automação de jornadas reais, estados da interface, autenticação e comportamento cross-browser com Playwright.</p>
+            </article>
+            <article class="auto-card">
+              <div class="auto-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <p class="auto-card-eyebrow">API Validation</p>
+              <h3>Contratos e respostas confiáveis</h3>
+              <p>Validação de endpoints, payloads, status codes e consistência funcional entre camadas.</p>
+            </article>
+            <article class="auto-card">
+              <div class="auto-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14.93-4M20 12a8 8 0 0 1-14.93 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M18 4l2 4-4-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <p class="auto-card-eyebrow">Regression Strategy</p>
+              <h3>Cobertura contra regressões</h3>
+              <p>Organização de suítes para proteger funcionalidades principais e reduzir risco em mudanças.</p>
+            </article>
+            <article class="auto-card">
+              <div class="auto-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="8" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 8V6a4 4 0 0 1 8 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="14" r="1.5" fill="currentColor"/><circle cx="15" cy="14" r="1.5" fill="currentColor"/><path d="M9 17.5c.83.33 1.67.5 3 .5s2.17-.17 3-.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <p class="auto-card-eyebrow">AI-Assisted QA</p>
+              <h3>Aceleração com IA</h3>
+              <p>Uso de IA para apoiar análise, documentação, geração de cenários e investigação técnica com revisão humana.</p>
+            </article>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="technical-ecosystem" id="ecosystem">
+
+        <div class="eco-header">
+          <p class="eco-eyebrow" id="eco-kicker">Stack</p>
+          <h2 class="eco-title" id="ecosystem-title">Ecossistema Técnico<span class="eco-dot">.</span></h2>
+          <p class="eco-lead" id="ecosystem-lead">Ferramentas organizadas por capacidade operacional,<br>não por lista genérica de ferramentas.</p>
+        </div>
+
+        <div class="eco-grid" id="ecosystem-grid">
+
+          <article class="eco-card">
+            <div class="eco-card-header">
+              <div class="eco-card-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M21 21l-4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <h3>QA &amp; Analysis</h3>
+            </div>
+            <p>Estratégias e técnicas para garantir qualidade em todas as camadas do produto.</p>
+            <div class="eco-chips">
+              <span>Functional Testing</span><span>Exploratory Testing</span><span>Bug Investigation</span><span>Regression Testing</span><span>Test Planning</span>
+            </div>
+          </article>
+
+          <article class="eco-card">
+            <div class="eco-card-header">
+              <div class="eco-card-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 6l-4 6 4 6M16 6l4 6-4 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>Automation</h3>
+            </div>
+            <p>Automação de testes e validações para aceleração de ciclos e confiabilidade.</p>
+            <div class="eco-chips">
+              <span>Playwright</span><span>JavaScript</span><span>TypeScript</span><span>Node.js</span><span>E2E Workflows</span>
+            </div>
+          </article>
+
+          <article class="eco-card">
+            <div class="eco-card-header">
+              <div class="eco-card-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>API &amp; Systems</h3>
+            </div>
+            <p>Testes e integração de APIs e sistemas para garantir estabilidade e segurança.</p>
+            <div class="eco-chips">
+              <span>REST APIs</span><span>API Testing</span><span>Postman</span><span>Chrome DevTools</span><span>Logs</span><span>SQL</span>
+            </div>
+          </article>
+
+          <article class="eco-card">
+            <div class="eco-card-header">
+              <div class="eco-card-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L15 8h6l-5 4 2 6-6-4-6 4 2-6L3 8h6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>CI/CD &amp; DevOps</h3>
+            </div>
+            <p>Integração contínua e entrega automatizada com qualidade em cada etapa.</p>
+            <div class="eco-chips">
+              <span>GitHub Actions</span><span>CI/CD Pipelines</span><span>Jenkins</span><span>GitHub Pages</span><span>Deploy Automation</span>
+            </div>
+          </article>
+
+          <article class="eco-card">
+            <div class="eco-card-header">
+              <div class="eco-card-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 18c0-3 2.7-5 6-5s6 2 6 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M16 14c1.8.3 4 1.4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <h3>Workflow &amp; Collaboration</h3>
+            </div>
+            <p>Gestão de tarefas, documentação e colaboração para mais eficiência e alinhamento.</p>
+            <div class="eco-chips">
+              <span>Jira</span><span>JQL</span><span>Git</span><span>GitHub</span><span>Agile</span><span>Documentation</span>
+            </div>
+          </article>
+
+          <article class="eco-card">
+            <div class="eco-card-header">
+              <div class="eco-card-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" stroke="currentColor" stroke-width="1.5"/></svg>
+              </div>
+              <h3>Web Foundations</h3>
+            </div>
+            <p>Fundamentos e boas práticas para construção, teste e depuração de aplicações web.</p>
+            <div class="eco-chips">
+              <span>HTML</span><span>CSS</span><span>Responsive Testing</span><span>Front-end Debugging</span>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="eco-note">
+          <span class="eco-note-dot"></span>
+          Stack em constante evolução para acompanhar tecnologia e necessidades do negócio.
         </p>
-        <!--Apresentação-->
 
-        <!--Icones-->
-        <div class="social-icons">
-          <a href="https://www.linkedin.com/in/raphael-castilho/"
-            ><i class="bx bxl-linkedin-square"></i
-          ></a>
-          <a href="https://github.com/RaphaCastilho"
-            ><i class="bx bxl-github"></i
-          ></a>
-          <a href="https://www.instagram.com/rapha.castilho/"
-            ><i class="bx bxl-instagram-alt"></i
-          ></a>
-        </div>
-        <!--Icones-->
+      </section>
 
-        <!--Botões-->
-        <div class="btn-group">
-          <a href="#contato" class="btn" id="hire">Contratar</a>
+      <section class="systems-projects" id="projects">
+
+        <!-- Cabeçalho com filtros na mesma linha -->
+        <div class="projects-header">
+          <div class="projects-header-left">
+            <p class="projects-eyebrow" id="projects-kicker">Sistemas</p>
+            <h2 class="projects-title" id="projects-title">Sistemas e Projetos<span class="projects-title-dot">.</span></h2>
+            <p class="projects-lead" id="projects-lead">Projetos reposicionados como sistemas de validação, operação e aprendizado técnico aplicado.</p>
+          </div>
+          <div class="project-filters" id="project-filters" aria-label="Filtros de projetos">
+            <button class="btn filter-button" type="button" data-filter="all">Todos</button>
+            <button class="btn filter-button" type="button" data-filter=".qa-system">QA Systems</button>
+            <button class="btn filter-button" type="button" data-filter=".automation">Automation</button>
+            <button class="btn filter-button" type="button" data-filter=".portfolio">Portfolio</button>
+          </div>
         </div>
+
+        <!-- Grid de cards -->
+        <div class="portfolio-gallery systems-grid" id="projects-grid">
+
+          <article class="project-card mix automation">
+            <div class="project-visual">
+              <picture>
+                <source srcset="src/img/qa-lab-dashboard.webp" type="image/webp" />
+                <img src="src/img/qa-lab-dashboard.png" alt="Screenshot do dashboard do Playwright QA Lab" loading="lazy" width="1280" height="800" />
+              </picture>
+            </div>
+            <div class="project-body">
+              <p class="proj-eyebrow">Automation Showcase</p>
+              <h3>Playwright QA Lab</h3>
+              <p class="proj-desc">Dashboard interativo para acompanhamento de testes E2E, métricas de qualidade e integração contínua.</p>
+              <div class="tech-tags">
+                <span>Playwright</span><span>CI/CD</span><span>GitHub Pages</span><span>Dashboard</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/RaphaCastilho/qa-test-lab" target="_blank" rel="noopener noreferrer" class="proj-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.59 2 12.25c0 4.54 2.87 8.39 6.84 9.75.5.09.68-.22.68-.49v-1.72c-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0112 7.4c.85 0 1.7.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49C19.13 20.64 22 16.79 22 12.25 22 6.59 17.52 2 12 2z"/></svg>
+                GitHub
+              </a>
+              <a href="https://raphacastilho.github.io/qa-test-lab/" target="_blank" rel="noopener noreferrer" class="proj-link proj-link-live">
+                Live Demo
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card mix qa-system">
+            <div class="project-visual">
+              <picture>
+                <source srcset="src/img/Sentinel-Tech-QA.webp" type="image/webp" />
+                <img src="src/img/Sentinel-Tech-QA.png" alt="Screenshot do projeto Sentinel Tech QA" loading="lazy" width="1506" height="909" />
+              </picture>
+            </div>
+            <div class="project-body">
+              <p class="proj-eyebrow">Flagship Ecosystem</p>
+              <h3>Sentinel Tech QA</h3>
+              <p class="proj-desc">Plataforma institucional e ecossistema de qualidade para comunicar QA, automação e fluxos assistidos por IA.</p>
+              <div class="tech-tags">
+                <span>QA</span><span>Automation</span><span>AI-assisted workflows</span><span>Web</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/SentinelQAtech/sentinel-website" target="_blank" rel="noopener noreferrer" class="proj-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.59 2 12.25c0 4.54 2.87 8.39 6.84 9.75.5.09.68-.22.68-.49v-1.72c-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0112 7.4c.85 0 1.7.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49C19.13 20.64 22 16.79 22 12.25 22 6.59 17.52 2 12 2z"/></svg>
+                GitHub
+              </a>
+              <span class="proj-link-disabled">Em desenvolvimento</span>
+            </div>
+          </article>
+
+          <article class="project-card mix portfolio">
+            <div class="project-visual project-visual-dark">
+              <div class="project-cover-text" aria-hidden="true">
+                <span class="proj-cover-eyebrow">Portfólio</span>
+                <strong class="proj-cover-title">Rapha.QA — Portfólio</strong>
+                <span class="proj-cover-sub">Quality Engineer</span>
+                <div class="proj-cover-divider"></div>
+              </div>
+            </div>
+            <div class="project-body">
+              <p class="proj-eyebrow">Flagship Ecosystem</p>
+              <h3>Rapha.QA — Portfólio</h3>
+              <p class="proj-desc">Portfólio bilíngue de Quality Engineering com tema escuro, cards interativos e integração com CV e LinkedIn.</p>
+              <div class="tech-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>GitHub Pages</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/RaphaCastilho/Portfolio" target="_blank" rel="noopener noreferrer" class="proj-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.59 2 12.25c0 4.54 2.87 8.39 6.84 9.75.5.09.68-.22.68-.49v-1.72c-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0112 7.4c.85 0 1.7.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49C19.13 20.64 22 16.79 22 12.25 22 6.59 17.52 2 12 2z"/></svg>
+                GitHub
+              </a>
+              <a href="https://raphacastilho.github.io/Portfolio" target="_blank" rel="noopener noreferrer" class="proj-link proj-link-live">
+                Live Demo
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="projects-note">
+          <span class="projects-note-dot"></span>
+          Mais projetos e experimentos em constante evolução.
+        </p>
+
+      </section>
+
+      <section class="experience" id="experience">
+        <div class="exp-layout">
+
+          <!-- Coluna esquerda -->
+          <div class="exp-left">
+            <p class="exp-eyebrow" id="exp-kicker">Experiência</p>
+            <h2 class="exp-title" id="experience-title">Minha trajetória<br>em <span id="exp-title-span1">operações</span><br>e <span id="exp-title-span2">qualidade.</span></h2>
+            <div class="exp-divider"></div>
+            <p class="exp-lead" id="experience-lead">
+              Atuei por anos em operações críticas, suporte e análise de sistemas, evoluindo de ambientes de alta complexidade até me especializar em qualidade de software e automação.
+            </p>
+            <ul class="exp-skills">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span id="exp-skill-1">Investigação de incidentes</span>
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span id="exp-skill-2">Análise de sistemas</span>
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span id="exp-skill-3">Operações e indicadores</span>
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span id="exp-skill-4">Engenharia de qualidade</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Coluna direita: timeline -->
+          <div class="exp-timeline" id="experience-list">
+
+            <article class="exp-card">
+              <div class="exp-card-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L15 8h6l-5 4 2 6-6-4-6 4 2-6L3 8h6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="exp-card-body">
+                <div class="exp-card-top">
+                  <div class="exp-card-meta">
+                    <span class="exp-period">Jan/2025 — Mar/2026</span>
+                    <h3 class="exp-role">QA Engineer</h3>
+                    <span class="exp-company">Autônomo</span>
+                    <div class="exp-badges">
+                      <span>Playwright</span><span>Cypress</span><span>API Testing</span><span>CI/CD</span>
+                    </div>
+                  </div>
+                  <ul class="exp-bullets">
+                    <li>Automação E2E com Playwright e Cypress</li>
+                    <li>Testes funcionais, regressão e APIs REST</li>
+                    <li>Investigação e documentação de bugs</li>
+                    <li>Colaboração com Product, Design e Desenvolvimento</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="exp-card">
+              <div class="exp-card-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <div class="exp-card-body">
+                <div class="exp-card-top">
+                  <div class="exp-card-meta">
+                    <span class="exp-period">2019 — 2025</span>
+                    <h3 class="exp-role">Coordenador Operacional</h3>
+                    <span class="exp-company">Brooks Hamburgueria</span>
+                    <div class="exp-badges">
+                      <span>Operações</span><span>Indicadores</span><span>Processos</span><span>Liderança</span>
+                    </div>
+                  </div>
+                  <ul class="exp-bullets">
+                    <li>Gestão de operações e rotinas críticas</li>
+                    <li>Análise de indicadores e melhoria contínua</li>
+                    <li>Estruturação de processos e padronizações</li>
+                    <li>Liderança de equipes e treinamentos</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="exp-card">
+              <div class="exp-card-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <div class="exp-card-body">
+                <div class="exp-card-top">
+                  <div class="exp-card-meta">
+                    <span class="exp-period">2016 — 2019</span>
+                    <h3 class="exp-role">Engenheiro de Suporte L4</h3>
+                    <span class="exp-company">LINX</span>
+                    <div class="exp-badges">
+                      <span>Enterprise</span><span>Suporte</span><span>Sistemas</span><span>Logs</span>
+                    </div>
+                  </div>
+                  <ul class="exp-bullets">
+                    <li>Investigação e resolução de incidentes críticos</li>
+                    <li>Troubleshooting avançado e análise de logs</li>
+                    <li>Diagnóstico de falhas em sistemas complexos</li>
+                    <li>Suporte a equipes de desenvolvimento</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="exp-card">
+              <div class="exp-card-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <div class="exp-card-body">
+                <div class="exp-card-top">
+                  <div class="exp-card-meta">
+                    <span class="exp-period">2014 — 2016</span>
+                    <h3 class="exp-role">Analista de Operações e Sistemas</h3>
+                    <span class="exp-company">Kairus Tecnologia</span>
+                    <div class="exp-badges">
+                      <span>SaaS</span><span>Operações</span><span>Sistemas</span><span>Suporte</span>
+                    </div>
+                  </div>
+                  <ul class="exp-bullets">
+                    <li>Monitoramento de sistemas e serviços SaaS</li>
+                    <li>Análise de fluxos e identificação de melhorias</li>
+                    <li>Suporte técnico a usuários internos</li>
+                    <li>Documentação e controle de processos</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <p class="exp-note">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          Evolução contínua em qualidade, automação e excelência operacional.
+        </p>
+
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="contact-layout">
+
+          <!-- Coluna esquerda -->
+          <div class="contact-left">
+            <p class="contact-eyebrow" id="contact-kicker">Contato</p>
+            <h2 class="contact-title" id="contact-title">Vamos construir<br>qualidade<br><span id="contact-title-span">juntos.</span></h2>
+            <div class="contact-divider"></div>
+            <p class="contact-lead" id="contact-lead">
+              Estou aberto a novas oportunidades PJ em QA, automação, Quality Engineering e validação de sistemas.
+            </p>
+            <ul class="contact-perks">
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span id="contact-perk-1">Disponível para projetos e parcerias</span>
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span id="contact-perk-2">Atuação 100% remota</span>
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span id="contact-perk-3">Resposta em até 24h</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Coluna direita -->
+          <div class="contact-right">
+            <p class="contact-channels-title" id="contact-channels-label">Escolha o melhor canal para conversar</p>
+
+            <div class="contact-channels">
+              <a href="mailto:castilho_raphael@hotmail.com" class="channel-card" aria-label="Enviar e-mail">
+                <div class="channel-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 8l10 6 10-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </div>
+                <div class="channel-card-body">
+                  <span class="channel-name">E-mail</span>
+                  <span class="channel-desc" id="contact-email-desc">Enviar mensagem</span>
+                </div>
+                <svg class="channel-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+
+              <a href="https://www.linkedin.com/in/raphael-castilho/" target="_blank" rel="noopener noreferrer" class="channel-card" aria-label="LinkedIn">
+                <div class="channel-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                </div>
+                <div class="channel-card-body">
+                  <span class="channel-name">LinkedIn</span>
+                  <span class="channel-desc" id="contact-linkedin-desc">Vamos nos conectar</span>
+                </div>
+                <svg class="channel-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+
+              <a href="https://github.com/RaphaCastilho" target="_blank" rel="noopener noreferrer" class="channel-card" aria-label="GitHub">
+                <div class="channel-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.59 2 12.25c0 4.54 2.87 8.39 6.84 9.75.5.09.68-.22.68-.49v-1.72c-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0112 7.4c.85 0 1.7.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49C19.13 20.64 22 16.79 22 12.25 22 6.59 17.52 2 12 2z"/></svg>
+                </div>
+                <div class="channel-card-body">
+                  <span class="channel-name">GitHub</span>
+                  <span class="channel-desc" id="contact-github-desc">Ver meus projetos</span>
+                </div>
+                <svg class="channel-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+
+              <a href="src/cv/DEV_Rapha_CV_PT.pdf" target="_blank" rel="noopener noreferrer" class="channel-card" id="cv-download" aria-label="Download CV">
+                <div class="channel-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M14 2v6h6M12 18v-6M9 15l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div class="channel-card-body">
+                  <span class="channel-name">Currículo</span>
+                  <span class="channel-desc" id="contact-cv-desc">Download do CV</span>
+                </div>
+                <svg class="channel-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+
+            <!-- CTAs principais -->
+            <div class="contact-ctas">
+              <a href="mailto:castilho_raphael@hotmail.com" class="btn btn-primary contact-cta-btn" id="contact-cta">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 8l10 6 10-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                Enviar e-mail
+              </a>
+              <button type="button" class="btn btn-secondary contact-cta-btn" id="open-contact-modal" aria-haspopup="dialog">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                <span id="contact-cta-message">Enviar mensagem</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Barra informativa inferior -->
+        <div class="contact-bar">
+          <div class="contact-bar-left">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            <div>
+              <p class="contact-bar-title" id="contact-bar-title">Foco em qualidade, automação e eficiência.</p>
+              <p class="contact-bar-sub" id="contact-bar-sub">Pronto para agregar valor ao seu time e aos seus produtos.</p>
+            </div>
+          </div>
+          <div class="contact-bar-status">
+            <span class="contact-status-dot"></span>
+            <span id="contact-status-label">Disponível para novos desafios</span>
+          </div>
+        </div>
+
+      </section>
+    </main>
+
+    <!-- Modal de contato -->
+    <div class="modal-overlay" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+      <div class="modal-card">
+        <div class="modal-header">
+          <div>
+            <p class="modal-eyebrow" id="modal-eyebrow">Contato</p>
+            <h3 class="modal-title" id="modal-title">Enviar mensagem</h3>
+          </div>
+          <button class="modal-close" id="close-contact-modal" aria-label="Fechar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+
+        <form class="modal-form" action="https://formsubmit.co/castilho_raphael@hotmail.com" method="POST">
+          <input type="hidden" name="_next" value="https://raphacastilho.github.io/Portfolio" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="Novo contato — Rapha.QA" />
+
+          <div class="modal-row">
+            <div class="modal-field">
+              <label for="modal-name" id="modal-label-name">Nome</label>
+              <input type="text" id="modal-name" name="Nome" placeholder="Seu nome" required />
+            </div>
+            <div class="modal-field">
+              <label for="modal-email" id="modal-label-email">E-mail</label>
+              <input type="email" id="modal-email" name="email" placeholder="seu@email.com" required />
+            </div>
+          </div>
+
+          <div class="modal-field">
+            <label for="modal-subject" id="modal-label-subject">Assunto</label>
+            <input type="text" id="modal-subject" name="Assunto" placeholder="Sobre qual oportunidade?" />
+          </div>
+
+          <div class="modal-field">
+            <label for="modal-message" id="modal-label-message">Mensagem</label>
+            <textarea id="modal-message" name="Mensagem" rows="5" placeholder="Conte brevemente sobre a oportunidade..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary modal-submit" id="modal-submit">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 8l10 6 10-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span id="modal-submit-label">Enviar mensagem</span>
+          </button>
+        </form>
       </div>
-      <!--Botões-->
-
-      <!--Imagem Lateral-->
-      <div class="home-img">
-        <img src="src/img/aiease_1748015024598.png" alt="home-img" />
-      </div>
-      <!--Imagem Lateral-->
-    </section>
-    <!--HOME-->
-
-    <!--Conhecimento-->
-    <section class="conhecimento" id="conhecimento">
-      <h2 class="heading" id="educationtitle">Conhecimento</h2>
-
-      <div class="timeline-items">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2024</div>
-          <div class="timeline-content">
-            <h3 id="educationtitle1">Liderança e Gestão de Pessoas</h3>
-            <p id="educationdescription1">
-              Curso de Liderança e Gestão de Pessoas com foco prático e
-              transformacional, abordando habilidades essenciais como
-              Comunicação, Escuta Ativa, Negociação, Gestão Ágil de Projetos
-              (SCRUM), Produtividade (GTD), Inteligência Emocional, Gestão de
-              Equipes Remotas e Multiculturais, Delegação, Feedback e Motivação.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2024</div>
-          <div class="timeline-content">
-            <h3 id="educationtitle2">
-              Negociações de sucesso: estratégias e habilidades essenciais -
-              Universidade de Michigan
-            </h3>
-            <p id="educationdescription2">
-              Curso prático em Estratégias de Negociação, abordando os quatro
-              estágios principais: planejamento, negociação, criação e execução.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2025</div>
-          <div class="timeline-content">
-            <h3 id="educationtitle3">Desenvolvimento Front-End</h3>
-            <p id="educationdescription3">
-              Criação de interfaces modernas e responsivas com foco na
-              experiência do usuário, utilizando HTML, CSS e JavaScript.
-              Transformo ideias em designs funcionais, com código limpo e
-              otimizado.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2025</div>
-          <div class="timeline-content">
-            <h3 id="educationtitle4">Desenvolvimento Back-End</h3>
-            <p id="educationdescription4">
-              Construção de APIs robustas e escaláveis com Node.js e Express,
-              integrando bancos de dados como MongoDB e MySQL. Foco em
-              performance, segurança e arquitetura eficiente para soluções
-              sólidas e modernas.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--Conhecimento-->
-
-    <!--Serviços-->
-    <section class="services" id="services">
-      <h2 class="heading" id="servicestitle">Serviços</h2>
-
-      <div class="services-container">
-        <div class="service-box">
-          <div class="service-info">
-            <h4 id="servicestitle1">Desenvolvimento Web</h4>
-            <p id="servicesdescription1">
-              Criação de sites profissionais, personalizados para apresentar sua
-              marca ou vender seus produtos.<br />
-              Sites responsivos, rápidos e focados em gerar resultado.<br />
-              <strong>Sua presença digital</strong>, do jeito que o mercado
-              exige!
-            </p>
-          </div>
-        </div>
-
-        <div class="service-box">
-          <div class="service-info">
-            <h4 id="servicestitle2">Desenvolvimento de App Web</h4>
-            <p id="servicesdescription2">
-              Aplicativos web responsivos, com foco na melhor experiência para o
-              usuário.<br />
-              Soluções práticas e acessíveis para transformar ideias em
-              plataformas digitais que funcionam em qualquer dispositivo.
-            </p>
-          </div>
-        </div>
-
-        <div class="service-box">
-          <div class="service-info">
-            <h4 id="servicestitle3">Landing Pages e Sites de Vendas</h4>
-            <p id="servicesdescription3">
-              Landing Pages estratégicas, pensadas para converter visitantes em
-              clientes. <br />Layouts modernos, rápidos e com foco total em
-              gerar vendas e oportunidades para o seu negócio.
-            </p>
-          </div>
-        </div>
-
-        <div class="service-box">
-          <div class="service-info">
-            <h4 id="servicestitle4">Consultoria e Suporte Técnico</h4>
-            <p id="servicesdescription4">
-              Acompanhamento técnico completo, desde a escolha da melhor solução
-              até a manutenção do seu site ou app.<br />
-              Consultoria personalizada para garantir que sua presença online
-              esteja sempre atualizada e segura.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--Serviços-->
-
-    <!--Portfolio - Projetos-->
-    <section class="portfolio" id="portfolio">
-      <div class="main-text">
-        <h2 id="portfoliotitle">Projetos</h2>
-      </div>
-
-      <div class="container">
-        <div class="fillter-buttons">
-          <button class="btn" data-filter="all">Todos</button>
-          <button class="btn" data-filter=".webpage">Web Page</button>
-          <button class="btn" data-filter=".webapp">App Web</button>
-          <button class="btn" data-filter=".qa">QA &amp; Testing</button>
-        </div>
-      </div>
-
-      <div class="portfolio-gallery">
-        <div class="port-box mix webpage">
-          <div class="port-img">
-            <img src="src/img/projeto-sentinel.PNG" alt="Sentinel Tech QA" />
-          </div>
-          <div class="port-content">
-            <h3>Sentinel Tech - QA</h3>
-            <p>Site institucional para empresa de Quality Assurance, com design moderno e responsivo.</p>
-            <a href="https://github.com/RaphaCastilho/DEV/tree/main/Sentinel-Tech-QA" target="_blank" rel="noopener noreferrer"><i class="bx bx-link"></i></a>
-          </div>
-        </div>
-
-        <div class="port-box mix webpage">
-          <div class="port-img">
-            <img src="src/img/projeto-marialice.PNG" alt="Maria Alice Crochê" />
-          </div>
-          <div class="port-content">
-            <h3>Maria Alice - Crochê</h3>
-            <p>Landing page para artesã, com catálogo de produtos e formulário de contato.</p>
-            <a href="https://github.com/RaphaCastilho/DEV/tree/main/Maria%20Alice%20-%20Croche" target="_blank" rel="noopener noreferrer"><i class="bx bx-link"></i></a>
-          </div>
-        </div>
-
-        <div class="port-box mix webpage">
-          <div class="port-img">
-            <img src="src/img/projeto-cromo.PNG" alt="Cromo e Ruínas" />
-          </div>
-          <div class="port-content">
-            <h3>Cromo e Ruínas</h3>
-            <p>Site para banda musical com identidade visual forte, repertório e página de contato.</p>
-            <a href="https://github.com/RaphaCastilho/Projetos" target="_blank" rel="noopener noreferrer"><i class="bx bx-link"></i></a>
-          </div>
-        </div>
-
-        <div class="port-box mix webapp">
-          <div class="port-img">
-            <img src="src/img/projeto-gestor.PNG" alt="Gestor Web" />
-          </div>
-          <div class="port-content">
-            <h3>Gestor Web</h3>
-            <p>Aplicativo web de gestão com cadastro, edição e controle de dados em tempo real.</p>
-            <a href="https://github.com/RaphaCastilho/DEV/tree/main/Gestor" target="_blank" rel="noopener noreferrer"><i class="bx bx-link"></i></a>
-          </div>
-        </div>
-
-        <div class="port-box mix webapp">
-          <div class="port-img">
-            <img src="src/img/projeto-checklist.PNG" alt="App CheckList" />
-          </div>
-          <div class="port-content">
-            <h3>App CheckList</h3>
-            <p>Aplicativo responsivo para criação e gerenciamento de listas e tarefas de projetos.</p>
-            <a href="https://github.com/RaphaCastilho/DEV/tree/main/CheckList" target="_blank" rel="noopener noreferrer"><i class="bx bx-link"></i></a>
-          </div>
-        </div>
-
-        <div class="port-box mix qa">
-          <div class="port-img">
-            <img src="src/img/projeto-playwright.PNG" alt="Playwright + k6" />
-          </div>
-          <div class="port-content">
-            <h3>Playwright + k6</h3>
-            <p>Suite de testes E2E com Playwright e testes de carga com k6, integrados ao Jenkins CI/CD.</p>
-            <a href="https://github.com/RaphaCastilho/playwright-serverest" target="_blank" rel="noopener noreferrer"><i class="bx bx-link"></i></a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--Portfolio - Projetos-->
-
-    <!--Contato-->
-    <section class="contato" id="contato">
-      <h2 class="heading" id="contacttitle">Entrar em <span>Contato</span></h2>
-
-      <form
-        action="https://formsubmit.co/castilho_raphael@hotmail.com"
-        method="POST"
-      >
-        <div class="input-group">
-          <div class="input-box">
-            <input
-              type="text"
-              name="Nome"
-              placeholder="Nome Completo"
-              id="contactname"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="email"
-              id="contactemail"
-              required
-            />
-          </div>
-          <div class="input-box">
-            <input
-              type="tel"
-              name="Telefone"
-              placeholder="Telefone"
-              id="contactphone"
-            />
-            <input
-              type="text"
-              name="Assunto"
-              placeholder="Assunto"
-              id="contactsubject"
-            />
-          </div>
-        </div>
-
-        <div class="input-group-2">
-          <textarea
-            name="Mensagem"
-            id="contactmessage"
-            cols="30"
-            rows="10"
-            placeholder="Sua Mensagem"
-          ></textarea>
-          <input
-            type="submit"
-            value="Enviar Mensagem"
-            class="btn"
-            id="contactbutton"
-          />
-        </div>
-      </form>
-    </section>
+    </div>
 
     <footer class="footer">
       <div class="social">
-        <a href="https://www.linkedin.com/in/raphael-castilho/"
+        <a href="https://www.linkedin.com/in/raphael-castilho/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Raphael Castilho"
           ><i class="bx bxl-linkedin-square"></i
         ></a>
-        <a href="https://github.com/RaphaCastilho"
+        <a href="https://github.com/RaphaCastilho" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Raphael Castilho"
           ><i class="bx bxl-github"></i
         ></a>
-        <a href="https://www.instagram.com/rapha.castilho/"
-          ><i class="bx bxl-instagram-alt"> </i
+        <a href="https://www.instagram.com/rapha.castilho/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Raphael Castilho"
+          ><i class="bx bxl-instagram-alt"></i
         ></a>
       </div>
 
       <ul class="list">
         <li>
-          <a href="#home" id="footerhome">Início</a>
+          <a href="#home" id="footer-home">Início</a>
         </li>
 
         <li>
-          <a href="#services" id="footerservice">Serviços</a>
+          <a href="#projects" id="footer-projects">Sistemas</a>
         </li>
 
         <li>
-          <a href="#contato" id="footercontact">Contato</a>
+          <a href="https://raphacastilho.github.io/qa-test-lab/" target="_blank" rel="noopener noreferrer">QA Lab</a>
+        </li>
+
+        <li>
+          <a href="#contact" id="footer-contact">Contato</a>
         </li>
       </ul>
-      <p class="copyright" id="footercopy">
-        © DEV.Rapha 2025 - Todos os direitos reservados
+      <p class="copyright" id="footer-copy">
+        © Rapha.QA 2026 - Todos os direitos reservados
       </p>
     </footer>
 
-    <script src="mixitup.min.js"></script>
-    <script src="script.js"></script>
+    <script src="mixitup.min.js" defer></script>
+    <script src="script.js" defer></script>
   </body>
 </html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Página não encontrada · Rapha.QA</title>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/svg+xml" href="/Portfolio/favicon.svg" />
+    <meta name="theme-color" content="#080b12" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 24px;
+        background:
+          radial-gradient(ellipse 900px 700px at 15% 10%, rgba(91, 124, 250, 0.10), transparent 70%),
+          radial-gradient(ellipse 600px 500px at 85% 80%, rgba(91, 124, 250, 0.06), transparent 70%),
+          #080b12;
+        color: #f1f5f9;
+        font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        text-align: center;
+      }
+      .wrap { max-width: 520px; }
+      .logo {
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin-bottom: 40px;
+      }
+      .logo span { color: #6f8dff; }
+      .code {
+        font-size: clamp(72px, 18vw, 132px);
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -0.05em;
+        background: linear-gradient(180deg, #f1f5f9, #64748b);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      h1 { font-size: 22px; font-weight: 700; margin: 18px 0 10px; }
+      p { font-size: 15px; line-height: 1.6; color: #94a3b8; margin-bottom: 32px; }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 26px;
+        font-size: 15px;
+        font-weight: 600;
+        color: #fff;
+        background: #5b7cfa;
+        border-radius: 10px;
+        text-decoration: none;
+        box-shadow: 0 10px 30px rgba(91, 124, 250, 0.28);
+        transition: background 0.2s ease, transform 0.18s ease;
+      }
+      .btn:hover { background: #6f8dff; transform: translateY(-2px); }
+      @media (prefers-reduced-motion: reduce) {
+        .btn { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <div class="logo">Rapha.<span>QA</span></div>
+      <div class="code">404</div>
+      <h1>Página não encontrada</h1>
+      <p>O endereço que você tentou acessar não existe ou foi movido. Que tal voltar ao início?</p>
+      <a class="btn" href="/Portfolio/">← Voltar ao portfólio</a>
+    </main>
+  </body>
+</html>

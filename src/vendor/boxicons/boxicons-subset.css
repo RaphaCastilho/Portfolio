@@ -1,0 +1,26 @@
+/* Boxicons 2.1.4 - subset self-hosted (apenas icones usados) */
+@font-face{font-family:boxicons;font-weight:400;font-style:normal;src:url(boxicons-subset.woff2) format('woff2')}
+.bx{font-family:boxicons!important;font-weight:400;font-style:normal;font-variant:normal;line-height:1;text-rendering:auto;display:inline-block;text-transform:none;speak:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.bx-bot:before{content:"\e9fa"}
+.bx-check-circle:before{content:"\ea46"}
+.bx-chip:before{content:"\ea5a"}
+.bx-cloud-upload:before{content:"\ea67"}
+.bx-code-alt:before{content:"\ea69"}
+.bx-code-block:before{content:"\ea6a"}
+.bx-cog:before{content:"\ea6e"}
+.bx-collection:before{content:"\ea72"}
+.bx-download:before{content:"\eab9"}
+.bx-envelope:before{content:"\eac1"}
+.bx-layout:before{content:"\eb31"}
+.bx-link:before{content:"\eb3c"}
+.bx-menu:before{content:"\eb5f"}
+.bx-moon:before{content:"\eb94"}
+.bx-pulse:before{content:"\ebca"}
+.bx-rocket:before{content:"\ebeb"}
+.bx-shield-quarter:before{content:"\ec08"}
+.bx-sun:before{content:"\ec34"}
+.bx-x:before{content:"\ec8d"}
+.bxl-github:before{content:"\e93a"}
+.bxl-instagram-alt:before{content:"\e943"}
+.bxl-linkedin:before{content:"\e94d"}
+.bxl-linkedin-square:before{content:"\e94e"}
