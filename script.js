@@ -143,8 +143,11 @@ const content = {
       lead: "Projetos próprios usados para demonstrar testes manuais, automação Playwright, API mocking e evidências.",
       note: "Projetos em evolução conforme avanço nos estudos e nas aplicações para vagas QA.",
       inDev: "Em desenvolvimento",
-      // com um único projeto listado, filtrar não tem função — o controle fica oculto (ver applyLanguage)
-      filters: [],
+      filters: [
+        { value: "all", label: "Todos" },
+        { value: ".portfolio", label: "Portfólio" },
+        { value: ".sandbox", label: "QA Sandbox" },
+      ],
       items: [
         {
           category: "portfolio",
@@ -159,6 +162,21 @@ const content = {
           url: "https://github.com/RaphaCastilho/Portfolio",
           linkLabel: "Ver repositório",
           liveUrl: "https://raphacastilho.github.io/Portfolio",
+        },
+        {
+          category: "sandbox",
+          type: "Sandbox interativo",
+          title: "QA Sandbox",
+          description: "Ambiente próprio para praticar login, filtros de resultados e simulação de API (sucesso, vazio, erro) sem depender de um backend real.",
+          stack: ["HTML", "CSS", "JavaScript", "Playwright"],
+          image: "",
+          imageAlt: "",
+          panelLabel: "QA Sandbox",
+          coverSub: "Ambiente de testes",
+          url: "https://github.com/RaphaCastilho/Portfolio/blob/main/qa-sandbox.html",
+          linkLabel: "Ver código",
+          liveUrl: "https://raphacastilho.github.io/Portfolio/qa-sandbox.html",
+          liveLabel: "Abrir Sandbox",
         },
       ],
     },
@@ -410,8 +428,11 @@ const content = {
       lead: "Personal projects used to demonstrate manual testing, Playwright automation, API mocking, and evidence.",
       note: "Projects evolving as I advance in study and QA job applications.",
       inDev: "In development",
-      // with a single project listed, filtering serves no purpose — the control is hidden (see applyLanguage)
-      filters: [],
+      filters: [
+        { value: "all", label: "All" },
+        { value: ".portfolio", label: "Portfolio" },
+        { value: ".sandbox", label: "QA Sandbox" },
+      ],
       items: [
         {
           category: "portfolio",
@@ -426,6 +447,21 @@ const content = {
           url: "https://github.com/RaphaCastilho/Portfolio",
           linkLabel: "View repository",
           liveUrl: "https://raphacastilho.github.io/Portfolio",
+        },
+        {
+          category: "sandbox",
+          type: "Interactive sandbox",
+          title: "QA Sandbox",
+          description: "A self-built environment to practice login, result filters, and API simulation (success, empty, error) without depending on a real backend.",
+          stack: ["HTML", "CSS", "JavaScript", "Playwright"],
+          image: "",
+          imageAlt: "",
+          panelLabel: "QA Sandbox",
+          coverSub: "Testing environment",
+          url: "https://github.com/RaphaCastilho/Portfolio/blob/main/qa-sandbox.html",
+          linkLabel: "View code",
+          liveUrl: "https://raphacastilho.github.io/Portfolio/qa-sandbox.html",
+          liveLabel: "Open Sandbox",
         },
       ],
     },
