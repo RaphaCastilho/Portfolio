@@ -1,30 +1,30 @@
 {
   "target": "Rapha.QA Portfólio + QA Sandbox",
   "status": "passed",
-  "generatedAt": "2026-09-13T17:18:48.551Z",
+  "generatedAt": "2026-09-13T21:18:31.822Z",
   "summary": {
-    "total": 58,
-    "passed": 58,
+    "total": 38,
+    "passed": 38,
     "failed": 0,
     "skipped": 0,
     "flaky": 0
   },
   "coverage": [
-    "Home do Portfólio carrega e mantém as seções principais",
-    "Links de GitHub, LinkedIn e CV continuam acessíveis",
-    "Troca PT-BR/EN-US atualiza conteúdo e arquivo de CV",
-    "Imagens locais carregam corretamente durante o scroll",
-    "Sandbox valida login, filtros, estado vazio e logout",
-    "Playwright mocka APIs de sessão e checks, incluindo erro 500",
-    "Relatório público resume suites e resultado da execução",
-    "Layout fica sem overflow em mobile, tablet e desktop"
+    "Portfolio home loads and keeps its main sections",
+    "GitHub, LinkedIn, and CV links stay accessible",
+    "PT-BR/EN-US toggle updates content and the CV file",
+    "Local images load correctly while scrolling",
+    "Sandbox validates login, filters, empty state, and logout",
+    "Playwright mocks session and check APIs, including a 500 error",
+    "Evidence summary renders inline, next to what it tests",
+    "Layout stays overflow-free on mobile, tablet, and desktop"
   ],
   "suites": [
     {
       "file": "accessibility.spec.js",
       "title": "accessibility.spec.js",
-      "total": 10,
-      "passed": 10,
+      "total": 6,
+      "passed": 6,
       "failed": 0,
       "skipped": 0,
       "flaky": 0
@@ -57,24 +57,6 @@
       "flaky": 0
     },
     {
-      "file": "qa-lab.spec.js",
-      "title": "qa-lab.spec.js",
-      "total": 2,
-      "passed": 2,
-      "failed": 0,
-      "skipped": 0,
-      "flaky": 0
-    },
-    {
-      "file": "qa-report.spec.js",
-      "title": "qa-report.spec.js",
-      "total": 2,
-      "passed": 2,
-      "failed": 0,
-      "skipped": 0,
-      "flaky": 0
-    },
-    {
       "file": "qa-sandbox.spec.js",
       "title": "qa-sandbox.spec.js",
       "total": 8,
@@ -86,8 +68,8 @@
     {
       "file": "responsive.spec.js",
       "title": "responsive.spec.js",
-      "total": 24,
-      "passed": 24,
+      "total": 12,
+      "passed": 12,
       "failed": 0,
       "skipped": 0,
       "flaky": 0
@@ -95,7 +77,6 @@
   ],
   "links": {
     "portfolio": "./index.html",
-    "sandbox": "./qa-sandbox.html",
-    "report": "./qa-report.html"
+    "sandbox": "./qa-sandbox.html"
   }
 }
