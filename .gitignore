@@ -6,3 +6,15 @@
 *- Copia.*
 *-Copia.*
 *.bak
+
+# Local dependencies and QA artifacts
+node_modules/
+playwright-report/
+test-results/
+qa-lab/results/playwright-results.json
+
+# Documentos internos de estratégia/planejamento — não devem ficar públicos no repo
+MELHORIAS.md
+docs/qa-fast-hiring-plan.md
+docs/playwright-qa-lab-interview-guide.md
+docs/superpowers/

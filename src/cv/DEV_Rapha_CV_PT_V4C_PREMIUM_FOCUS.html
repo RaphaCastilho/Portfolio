@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Raphael Castilho Villela - Analista de QA | Premium Focus</title>
+<style>
+:root {
+  --ink: #14161A;
+  --body: #343A46;
+  --muted: #6D7480;
+  --paper: #FFFFFF;
+  --canvas: #EEF2F6;
+  --line: #DADFE7;
+  --soft: #F8FAFC;
+  --accent: #0F5F66;
+  --accent-soft: #E6F6F7;
+  --gold: #8B6F2F;
+  --gold-soft: #F5EFD9;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--body);
+  font-family: "Inter", "Aptos", "Segoe UI", system-ui, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--accent); text-decoration: underline; }
+
+.page {
+  width: min(910px, calc(100vw - 28px));
+  margin: 28px auto;
+  padding: 42px 48px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 18px 46px rgba(20, 22, 26, .08);
+}
+
+.masthead {
+  display: grid;
+  grid-template-columns: 1fr 255px;
+  gap: 28px;
+  align-items: end;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.mark {
+  display: inline-flex;
+  margin-bottom: 13px;
+  padding: 4px 8px;
+  border-left: 3px solid var(--gold);
+  background: var(--gold-soft);
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 34px;
+  line-height: 1.04;
+  font-weight: 850;
+}
+
+.headline {
+  margin-top: 8px;
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 850;
+}
+
+.positioning {
+  margin-top: 11px;
+  max-width: 575px;
+  color: var(--body);
+  font-size: 12.6px;
+  line-height: 1.48;
+}
+
+.contact {
+  display: grid;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 11.2px;
+  text-align: right;
+}
+
+.meta {
+  margin-top: 8px;
+  color: var(--ink);
+  font-size: 11.5px;
+  font-weight: 800;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 28px;
+  margin-top: 23px;
+}
+
+.rail {
+  padding-right: 22px;
+  border-right: 1px solid var(--line);
+}
+
+.section {
+  margin-top: 18px;
+}
+
+.section:first-child { margin-top: 0; }
+
+.title {
+  margin: 0 0 9px;
+  color: var(--ink);
+  font-size: 10.8px;
+  font-weight: 950;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.rail .title {
+  color: var(--gold);
+}
+
+.main .title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main .title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.focus-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.focus-list li {
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.focus-list li:last-child { border-bottom: 0; }
+
+.focus-list strong {
+  display: block;
+  color: var(--ink);
+  font-size: 12.1px;
+  font-weight: 900;
+}
+
+.focus-list span {
+  display: block;
+  margin-top: 2px;
+  color: var(--body);
+  font-size: 11.2px;
+  line-height: 1.36;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 7px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--soft);
+  color: var(--body);
+  font-size: 10.4px;
+  font-weight: 700;
+}
+
+.chip.key {
+  border-color: #99F6E4;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.note {
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  background: var(--soft);
+  color: var(--body);
+  font-size: 11.5px;
+  line-height: 1.42;
+}
+
+.job {
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  break-inside: avoid;
+}
+
+.job:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+.job-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: start;
+  margin-bottom: 2px;
+}
+
+h2, h3 {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.job h3 { font-size: 14.3px; }
+
+.period {
+  color: var(--muted);
+  font-size: 10.8px;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+.role {
+  margin: 0 0 7px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+ul {
+  margin: 0;
+  padding-left: 17px;
+}
+
+li {
+  margin: 3px 0;
+  color: var(--body);
+  font-size: 12.25px;
+  line-height: 1.37;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.project {
+  padding: 12px 13px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--paper);
+  break-inside: avoid;
+}
+
+.project h3 {
+  font-size: 12.8px;
+}
+
+.project p {
+  margin: 5px 0 0;
+  color: var(--body);
+  font-size: 11.5px;
+  line-height: 1.35;
+}
+
+.project a {
+  display: inline-block;
+  margin-top: 6px;
+  color: var(--accent);
+  font-size: 10.8px;
+  font-weight: 850;
+}
+
+.mini-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mini-list li {
+  padding: 6px 0;
+  margin: 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 11.5px;
+}
+
+.mini-list li:last-child { border-bottom: 0; }
+
+.muted {
+  display: block;
+  margin-top: 1px;
+  color: var(--muted);
+  font-size: 10.2px;
+}
+
+@page { size: A4; margin: 0; }
+
+@media print {
+  html { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  body { background: #FFFFFF; }
+  .page {
+    width: 100%;
+    margin: 0;
+    padding: 9mm 11mm;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .masthead { grid-template-columns: 1fr 58mm; gap: 7mm; padding-bottom: 5mm; }
+  .mark { margin-bottom: 5px; padding: 2px 5px; font-size: 7px; border-left-width: 2px; }
+  h1 { font-size: 23.5px; }
+  .headline { margin-top: 4px; font-size: 10.8px; }
+  .positioning { margin-top: 5px; font-size: 8.2px; line-height: 1.34; }
+  .contact { gap: 2px; font-size: 7.4px; }
+  .meta { margin-top: 4px; font-size: 7.8px; }
+  .grid { grid-template-columns: 56mm 1fr; gap: 7mm; margin-top: 6mm; }
+  .rail { padding-right: 6mm; }
+  .section { margin-top: 10px; }
+  .title { margin-bottom: 5px; font-size: 7.5px; }
+  .focus-list li { padding: 4.5px 0; }
+  .focus-list strong { font-size: 8.3px; }
+  .focus-list span { font-size: 7.5px; line-height: 1.26; }
+  .chips { gap: 2.5px; }
+  .chip { padding: 2px 4.5px; border-radius: 4px; font-size: 7.1px; }
+  .note { padding: 6px 7px; border-radius: 5px; font-size: 7.8px; line-height: 1.28; }
+  .job { padding-bottom: 8px; margin-bottom: 8px; }
+  .job h3 { font-size: 9.5px; }
+  .period { font-size: 7.5px; }
+  .role { margin-bottom: 3px; font-size: 8.2px; }
+  li { margin: 1.4px 0; font-size: 8.05px; line-height: 1.24; }
+  .project-grid { gap: 5px; }
+  .project { padding: 6px 7px; border-radius: 5px; }
+  .project h3 { font-size: 8.8px; }
+  .project p { margin-top: 2px; font-size: 7.7px; line-height: 1.25; }
+  .project a { margin-top: 2px; font-size: 7.4px; }
+  .mini-list li { padding: 3px 0; font-size: 7.8px; }
+  .muted { font-size: 7px; }
+}
+
+@media (max-width: 780px) {
+  .page { padding: 28px 20px; }
+  .masthead, .grid, .project-grid { grid-template-columns: 1fr; }
+  .contact { text-align: left; }
+  .rail { padding-right: 0; border-right: 0; }
+  h1 { font-size: 28px; }
+  .job-head { grid-template-columns: 1fr; gap: 2px; }
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="masthead">
+    <div>
+      <span class="mark">CV V4C - Premium Focus</span>
+      <h1>Raphael Castilho Villela</h1>
+      <div class="headline">Analista de QA | API Testing e Automa&ccedil;&atilde;o Playwright</div>
+      <p class="positioning">QA com foco em validar APIs, estruturar testes funcionais, automatizar fluxos cr&iacute;ticos com Playwright e transformar falhas em evid&ecirc;ncias claras para decis&atilde;o t&eacute;cnica.</p>
+    </div>
+    <address class="contact">
+      <a href="mailto:castilho_raphael@hotmail.com">castilho_raphael@hotmail.com</a>
+      <span>+55 11 98480-6100</span>
+      <span>Ara&ccedil;atuba, SP - Brasil</span>
+      <a href="https://www.linkedin.com/in/raphael-castilho/">LinkedIn</a>
+      <a href="https://github.com/RaphaCastilho">GitHub</a>
+      <a href="https://raphacastilho.github.io/Portfolio/">Portfolio</a>
+      <a href="https://raphacastilho.github.io/qa-test-lab/">Playwright QA Lab</a>
+      <div class="meta">Remoto | CLT/PJ | In&iacute;cio imediato</div>
+    </address>
+  </header>
+
+  <div class="grid">
+    <aside class="rail">
+      <section class="section">
+        <h2 class="title">Foco</h2>
+        <ul class="focus-list">
+          <li>
+            <strong>API Testing</strong>
+            <span>Postman di&aacute;rio, REST, payloads, status codes, autentica&ccedil;&atilde;o, integra&ccedil;&otilde;es e cen&aacute;rios negativos.</span>
+          </li>
+          <li>
+            <strong>Automa&ccedil;&atilde;o Playwright</strong>
+            <span>Fluxos E2E, smoke, regress&atilde;o, API mocking, responsivo, acessibilidade, reports e CI/CD.</span>
+          </li>
+          <li>
+            <strong>Qualidade funcional</strong>
+            <span>Casos de teste, explora&ccedil;&atilde;o, crit&eacute;rios de aceite, bug reports e evid&ecirc;ncias de execu&ccedil;&atilde;o.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="title">Stack</h2>
+        <div class="chips">
+          <span class="chip key">Postman</span>
+          <span class="chip key">REST APIs</span>
+          <span class="chip key">Playwright</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">Node.js</span>
+          <span class="chip">Jira</span>
+          <span class="chip">DevTools</span>
+          <span class="chip">GitHub Actions</span>
+          <span class="chip">Git</span>
+          <span class="chip">SQL b&aacute;sico</span>
+          <span class="chip">Logs</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="title">Contexto &uacute;til</h2>
+        <p class="note">Experi&ecirc;ncia anterior com suporte L4, incidentes, logs, Jira e sistemas cr&iacute;ticos. Essa base entra como diferencial de investiga&ccedil;&atilde;o, n&atilde;o como foco de carreira.</p>
+      </section>
+
+      <section class="section">
+        <h2 class="title">Forma&ccedil;&atilde;o</h2>
+        <ul class="mini-list">
+          <li>Bacharelado em Administra&ccedil;&atilde;o<span class="muted">Faculdade de Mantena - 2015</span></li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="title">Idiomas</h2>
+        <ul class="mini-list">
+          <li>Portugu&ecirc;s<span class="muted">Nativo</span></li>
+          <li>Ingl&ecirc;s<span class="muted">Intermedi&aacute;rio com conversa&ccedil;&atilde;o</span></li>
+        </ul>
+      </section>
+    </aside>
+
+    <div class="main">
+      <section class="section">
+        <h2 class="title">Resumo executivo</h2>
+        <p class="note">Analista de QA focado em API Testing, testes funcionais, regress&atilde;o e automa&ccedil;&atilde;o E2E com Playwright. Perfil pr&aacute;tico para times que precisam de algu&eacute;m capaz de testar APIs REST com consist&ecirc;ncia, reproduzir falhas, documentar bugs acion&aacute;veis, validar fluxos cr&iacute;ticos e apoiar releases com evid&ecirc;ncias claras.</p>
+      </section>
+
+      <section class="section">
+        <h2 class="title">Experi&ecirc;ncia profissional</h2>
+        <article class="job">
+          <div class="job-head">
+            <h3>Analista de QA / Automa&ccedil;&atilde;o</h3>
+            <span class="period">01/2025 - Atual</span>
+          </div>
+          <p class="role">Projetos t&eacute;cnicos, QA Lab e valida&ccedil;&atilde;o de aplica&ccedil;&otilde;es web/API</p>
+          <ul>
+            <li>Testes funcionais, explorat&oacute;rios e regressivos em aplica&ccedil;&otilde;es web, com foco em jornada cr&iacute;tica, crit&eacute;rio de aceite, reprodu&ccedil;&atilde;o e evid&ecirc;ncia.</li>
+            <li>API Testing com Postman em uso di&aacute;rio: endpoints REST, payloads JSON, headers, autentica&ccedil;&atilde;o, status codes, erros e integra&ccedil;&otilde;es.</li>
+            <li>Automa&ccedil;&atilde;o E2E com Playwright em QA Lab p&uacute;blico, cobrindo smoke, intera&ccedil;&atilde;o, responsivo, API mocking, acessibilidade, bug/status reports e CI/CD.</li>
+            <li>Documenta&ccedil;&atilde;o de bugs com passos, esperado/obtido, evid&ecirc;ncias, impacto, severidade e contexto suficiente para desenvolvimento atuar.</li>
+            <li>Uso de Jira, DevTools, logs, GitHub e GitHub Actions para apoiar triagem, rastreabilidade, execu&ccedil;&atilde;o e comunica&ccedil;&atilde;o de qualidade.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head">
+            <h3>Brooks Hamburgueria</h3>
+            <span class="period">2019 - 2025</span>
+          </div>
+          <p class="role">Coordenador Operacional</p>
+          <ul>
+            <li>Coordena&ccedil;&atilde;o m&eacute;dia de 10 pessoas em rotina operacional, definindo prioridades, padr&otilde;es, checklists e acompanhamento de execu&ccedil;&atilde;o.</li>
+            <li>Identifica&ccedil;&atilde;o de falhas recorrentes, melhoria de processos e cria&ccedil;&atilde;o de controles para reduzir retrabalho e aumentar previsibilidade.</li>
+            <li>Base transfer&iacute;vel para QA: valida&ccedil;&atilde;o disciplinada, comunica&ccedil;&atilde;o objetiva, an&aacute;lise de causa/impacto e atua&ccedil;&atilde;o sob press&atilde;o.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head">
+            <h3>LINX</h3>
+            <span class="period">2016 - 2019</span>
+          </div>
+          <p class="role">Engenheiro de Suporte L4</p>
+          <ul>
+            <li>Investiga&ccedil;&atilde;o de incidentes em ERP, PDV, fiscal, varejo e integra&ccedil;&otilde;es no ramo food, com reprodu&ccedil;&atilde;o, evid&ecirc;ncia e an&aacute;lise de comportamento.</li>
+            <li>Valida&ccedil;&atilde;o de corre&ccedil;&otilde;es, acompanhamento de regress&otilde;es, leitura de logs e comunica&ccedil;&atilde;o com desenvolvimento para estabiliza&ccedil;&atilde;o de sistemas.</li>
+            <li>Experi&ecirc;ncia direta com impacto em produ&ccedil;&atilde;o, urg&ecirc;ncia, diagn&oacute;stico e transforma&ccedil;&atilde;o de falhas em informa&ccedil;&atilde;o acion&aacute;vel.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head">
+            <h3>Kairus Tecnologia</h3>
+            <span class="period">2014 - 2016</span>
+          </div>
+          <p class="role">Analista de Opera&ccedil;&otilde;es e Sistemas</p>
+          <ul>
+            <li>An&aacute;lise de fluxos de sistema, suporte especializado e automa&ccedil;&atilde;o de processos SaaS para melhorar confiabilidade operacional.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section">
+        <h2 class="title">Projetos de prova</h2>
+        <div class="project-grid">
+          <article class="project">
+            <h3>Playwright QA Lab</h3>
+            <p>Laborat&oacute;rio p&uacute;blico de automa&ccedil;&atilde;o com Playwright cobrindo smoke, conte&uacute;do, intera&ccedil;&atilde;o, responsivo, API mocking, acessibilidade, bug reports, status reports e CI/CD.</p>
+            <a href="https://raphacastilho.github.io/qa-test-lab/">raphacastilho.github.io/qa-test-lab</a>
+          </article>
+          <article class="project">
+            <h3>Portfolio QA</h3>
+            <p>Portfolio bil&iacute;ngue de Quality Engineering com projetos live, CVs, GitHub e evid&ecirc;ncias p&uacute;blicas de foco em QA.</p>
+            <a href="https://raphacastilho.github.io/Portfolio/">raphacastilho.github.io/Portfolio</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="title">Cursos relevantes</h2>
+        <div class="project-grid">
+          <article class="project">
+            <h3>Acessibilidade com React</h3>
+            <p>Rocketseat Faculdade de Tecnologia - 2025</p>
+          </article>
+          <article class="project">
+            <h3>Dev Global Starter Pack</h3>
+            <p>Rocketseat Faculdade de Tecnologia - 2025</p>
+          </article>
+          <article class="project">
+            <h3>Metodologias &Aacute;geis</h3>
+            <p>Rocketseat Faculdade de Tecnologia - 2024</p>
+          </article>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+</body>
+</html>

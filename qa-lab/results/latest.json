@@ -1,0 +1,101 @@
+{
+  "target": "Rapha.QA Portfólio + QA Sandbox",
+  "status": "passed",
+  "generatedAt": "2026-09-13T17:18:48.551Z",
+  "summary": {
+    "total": 58,
+    "passed": 58,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "coverage": [
+    "Home do Portfólio carrega e mantém as seções principais",
+    "Links de GitHub, LinkedIn e CV continuam acessíveis",
+    "Troca PT-BR/EN-US atualiza conteúdo e arquivo de CV",
+    "Imagens locais carregam corretamente durante o scroll",
+    "Sandbox valida login, filtros, estado vazio e logout",
+    "Playwright mocka APIs de sessão e checks, incluindo erro 500",
+    "Relatório público resume suites e resultado da execução",
+    "Layout fica sem overflow em mobile, tablet e desktop"
+  ],
+  "suites": [
+    {
+      "file": "accessibility.spec.js",
+      "title": "accessibility.spec.js",
+      "total": 10,
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0
+    },
+    {
+      "file": "automation-evidence.spec.js",
+      "title": "automation-evidence.spec.js",
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0
+    },
+    {
+      "file": "i18n.spec.js",
+      "title": "i18n.spec.js",
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0
+    },
+    {
+      "file": "portfolio.spec.js",
+      "title": "portfolio.spec.js",
+      "total": 6,
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0
+    },
+    {
+      "file": "qa-lab.spec.js",
+      "title": "qa-lab.spec.js",
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0
+    },
+    {
+      "file": "qa-report.spec.js",
+      "title": "qa-report.spec.js",
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0
+    },
+    {
+      "file": "qa-sandbox.spec.js",
+      "title": "qa-sandbox.spec.js",
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0
+    },
+    {
+      "file": "responsive.spec.js",
+      "title": "responsive.spec.js",
+      "total": 24,
+      "passed": 24,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0
+    }
+  ],
+  "links": {
+    "portfolio": "./index.html",
+    "sandbox": "./qa-sandbox.html",
+    "report": "./qa-report.html"
+  }
+}

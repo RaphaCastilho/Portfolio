@@ -1,12 +1,12 @@
 const content = {
   "pt-BR": {
-    metaTitle: "Raphael Castilho — Engenharia de Qualidade & Automação",
+    metaTitle: "Raphael Castilho — Analista de QA | Playwright e API Testing",
     nav: {
       home: "Início",
       about: "Perfil",
       automation: "Automação",
       ecosystem: "Stack",
-      projects: "Sistemas",
+      projects: "Projetos",
       experience: "Experiência",
       contact: "Contato",
     },
@@ -17,101 +17,107 @@ const content = {
       webLabel: "Ver versão web do CV",
     },
     hero: {
-      kicker: "Quality Engineering • Automation • Operational Systems",
-      title: "QA Engineering",
-      subtitle: "focado em qualidade e confiabilidade.",
+      kicker: "QA Automation • API Testing • Projeto próprio",
+      title: "Analista de QA",
+      subtitle: "com prática em Playwright e APIs.",
       description:
-        "Atuo na validação de aplicações web com automação Playwright, testes de API e análise operacional para garantir releases confiáveis e experiências consistentes.",
-      tags: ["Playwright", "QA Engineering", "API Testing", "Operational Systems", "AI-assisted QA"],
-      metrics: "100+ testes · 6 suítes · 2 projetos · CI/CD ativo",
+        "Tenho foco em testes funcionais, API Testing e automação Playwright. Meu QA Lab usa este próprio Portfolio como produto-alvo para demonstrar cenários reais de teste, mocks de API e evidências de execução.",
+      tags: ["Playwright", "API Testing", "Postman", "GitHub Actions", "QA Lab"],
+      evidenceTeaser: "Última suíte Playwright rodada — ver resultado real",
       linkedin: "LinkedIn",
       contact: "Contato",
-      opsSubtitle: "O que eu entrego",
-      opsDesc1: "Cobertura de fluxos críticos e jornadas completas.",
-      opsDesc2: "Validações de contrato, regras e integrações.",
-      opsDesc3: "Análise de causa raiz e melhoria contínua.",
-      opsDesc4: "Automação inteligente para acelerar entregas.",
-      metricLabel1: "testes",
-      metricLabel2: "suítes",
-      metricLabel3: "projetos live",
-      metricLabel4: "ativo",
+      opsSubtitle: "O que eu consigo demonstrar",
+      opsDesc1: "Fluxos principais testados em browser real.",
+      opsDesc2: "Mocks de API para sucesso, vazio e erro.",
+      opsDesc3: "Evidências claras para bugs e regressões.",
+      opsDesc4: "Uso de IA com revisão humana para estudo e documentação.",
     },
     toolsStripLabel: "Tecnologias e\nFerramentas",
     about: {
       kicker: "Sobre Mim",
-      titleLine: "de qualidade.",
-      lead: "Minha experiência combina QA, automação, investigação de falhas, análise operacional e colaboração multidisciplinar para aumentar a confiabilidade das entregas e reduzir riscos antes do release.",
-      cardTitle1: "Investigação",
-      cardDesc1: "Investigação e reprodução de bugs complexos em aplicações web corporativas. Isolamento de causa raiz e documentação clara para acelerar a resolução.",
-      cardTitle2: "Validação",
-      cardDesc2: "Validação de fluxos funcionais, regressão, estados de UI e integrações entre sistemas. Garantia de que o produto entrega o que foi planejado, em todas as camadas.",
-      cardTitle3: "Colaboração",
-      cardDesc3: "Comunicação técnica eficiente entre suporte, produto, QA e desenvolvimento. Trabalho conjunto para entender, priorizar e resolver problemas com agilidade.",
-      cardTitle4: "Melhoria Contínua",
-      cardDesc4: "Mentalidade orientada a dados, rastreabilidade, estabilidade e qualidade contínua. Processos e automações que evoluem junto com o produto e com o time.",
+      titleLine: "em QA.",
+      lead: "Venho de mais de uma década em operações, suporte técnico e liderança antes de migrar para QA — incluindo a gestão de uma equipe inteira. Essa base me deu leitura de prioridade sob pressão, investigação estruturada de problema e comunicação direta com times técnicos e não técnicos.",
+      narrative: "Hoje aplico isso em testes funcionais, exploratórios e de regressão, validação de API e investigação de defeitos. Automação, ferramentas e stack estão logo abaixo — aqui é sobre como eu penso QA, não sobre o que eu uso.",
       highlights: [],
     },
     automation: {
       kicker: "Automação",
-      benefit1: "Cobertura inteligente dos fluxos críticos",
-      benefit2: "Feedback rápido para times de desenvolvimento",
-      benefit3: "Qualidade contínua em cada etapa do ciclo",
-      title: "Automation Engineering",
-      lead: "Desenho e implemento soluções de automação confiáveis para validar o que importa, reduzir riscos de regressão e acelerar entregas com segurança e previsibilidade.",
+      benefit1: "Fluxos principais testados em browser real",
+      benefit2: "API mocking para sucesso, vazio e erro",
+      benefit3: "Evidências organizadas para revisão técnica",
+      title: "Automação Playwright aplicada",
+      lead: "Uso automação para validar fluxos reais, simular respostas de API e documentar evidências. O foco é mostrar prática concreta, escopo claro e evolução técnica.",
+      evidenceTitle: "Última execução real dessa suíte",
+      evidenceMeta: "Gerado direto do resultado dos testes — sem página separada, o resumo fica aqui do lado do que ele testa.",
+      statLabelTotal: "Testes passando",
+      statLabelSuites: "Suítes",
+      statLabelFailed: "Falhas",
+      coverageTitle: "O que essa suíte cobre",
+      sandboxTitle: "Sandbox interativo",
+      sandboxDesc: "Ambiente próprio que criei pra praticar login, filtros e simulação de API (sucesso, vazio, erro) sem depender de backend real.",
+      sandboxLinkLabel: "Testar o sandbox →",
+      honestText: "Ainda estou evoluindo em automação — esta suíte documenta esse processo, não uma cobertura completa ou um produto pronto.",
+      statusLabels: {
+        passed: "Passou",
+        failed: "Falhou",
+        attention: "Atenção",
+        "not-run": "Sem execução",
+      },
+      loadingLabel: "Carregando…",
       items: [
         {
           label: "Playwright E2E",
-          title: "Fluxos críticos automatizados",
-          description: "Automação de jornadas reais, estados da interface, autenticação e comportamento cross-browser com Playwright.",
+          title: "Fluxos reais automatizados",
+          description: "Abertura de páginas, cliques, filtros, login, estado vazio, erro de API e validações visuais com Playwright.",
           icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 6l-4 6 4 6M16 6l4 6-4 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
         },
         {
           label: "API Validation",
-          title: "Contratos e respostas confiáveis",
-          description: "Validação de endpoints, payloads, status codes e consistência funcional entre camadas.",
+          title: "APIs simuladas com controle",
+          description: "Uso de mocks para testar sucesso, erro 500 e respostas vazias sem depender de um backend real.",
           icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
         },
         {
-          label: "Regression Strategy",
+          label: "Regression Testing",
           title: "Cobertura contra regressões",
-          description: "Organização de suítes para proteger funcionalidades principais e reduzir risco em mudanças.",
+          description: "Organização de testes para proteger links, idioma, imagens, responsividade e comportamento do Sandbox.",
           icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 0 1 14.93-4M20 12a8 8 0 0 1-14.93 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M18 4l2 4-4-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
         },
         {
-          label: "AI-Assisted QA",
-          title: "Aceleração com IA",
-          description: "Uso de IA para apoiar análise, documentação, geração de cenários e investigação técnica com revisão humana.",
+          label: "IA com revisão",
+          title: "Apoio para estudar e documentar",
+          description: "Uso de IA para organizar cenários, revisar textos e acelerar estudos, mantendo revisão humana.",
           icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 8V6a4 4 0 0 1 8 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="14" r="1.5" fill="currentColor"/><circle cx="15" cy="14" r="1.5" fill="currentColor"/><path d="M9 17.5c.83.33 1.67.5 3 .5s2.17-.17 3-.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
         },
       ],
     },
     ecosystem: {
       kicker: "Stack",
-      title: "Ecossistema Técnico",
-      lead: "Ferramentas organizadas por capacidade operacional, não por lista genérica de ferramentas.",
-      note: "Stack em constante evolução para acompanhar tecnologia e necessidades do negócio.",
+      title: "Stack de QA em prática",
+      lead: "Ferramentas que uso ou estou consolidando em projetos próprios e estudos aplicados.",
+      note: "Stack em evolução, com foco em domínio real antes de inflar a lista de ferramentas.",
       groups: [
         {
           title: "QA & Analysis",
-          description: "Estratégias e técnicas para garantir qualidade em todas as camadas do produto.",
+          description: "Técnicas para planejar cenários, reproduzir falhas e validar comportamento esperado.",
           icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M21 21l-4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
           items: ["Functional Testing", "Exploratory Testing", "Bug Investigation", "Regression Testing", "Test Planning"],
         },
         {
           title: "Automation",
-          description: "Automação de testes e validações para aceleração de ciclos e confiabilidade.",
+          description: "Automação aplicada em fluxos de tela, estados de UI e validações E2E.",
           icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 6l-4 6 4 6M16 6l4 6-4 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
           items: ["Playwright", "JavaScript", "TypeScript", "Node.js", "E2E Workflows"],
         },
         {
           title: "API & Systems",
-          description: "Testes e integração de APIs e sistemas para garantir estabilidade e segurança.",
+          description: "Testes de APIs REST, payloads, status codes, integrações e troubleshooting.",
           icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
           items: ["REST APIs", "API Testing", "Postman", "Chrome DevTools", "Logs", "SQL"],
         },
         {
           title: "CI/CD & DevOps",
-          description: "Integração contínua e entrega automatizada com qualidade em cada etapa.",
+          description: "Execução automatizada de checks para dar visibilidade ao resultado dos testes.",
           icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15 8h6l-5 4 2 6-6-4-6 4 2-6L3 8h6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
           items: ["GitHub Actions", "CI/CD Pipelines", "Jenkins", "GitHub Pages", "Deploy Automation"],
         },
@@ -130,52 +136,24 @@ const content = {
       ],
     },
     projects: {
-      kicker: "Sistemas",
-      title: "Sistemas e Projetos",
-      lead: "Projetos reposicionados como sistemas de validação, operação e aprendizado técnico aplicado.",
-      note: "Mais projetos e experimentos em constante evolução.",
+      kicker: "Projetos",
+      title: "Projetos de QA",
+      lead: "Projetos próprios usados para demonstrar testes manuais, automação Playwright, API mocking e evidências.",
+      note: "Projetos em evolução conforme avanço nos estudos e nas aplicações para vagas QA.",
       inDev: "Em desenvolvimento",
-      filters: [
-        { label: "Todos", value: "all" },
-        { label: "QA Systems", value: ".qa-system" },
-        { label: "Automation", value: ".automation" },
-        { label: "Portfolio", value: ".portfolio" },
-      ],
+      // com um único projeto listado, filtrar não tem função — o controle fica oculto (ver applyLanguage)
+      filters: [],
       items: [
         {
-          category: "automation",
-          type: "Automation Showcase",
-          title: "Playwright QA Lab",
-          description: "Dashboard interativo para acompanhamento de testes E2E, métricas de qualidade e integração contínua.",
-          stack: ["Playwright", "CI/CD", "GitHub Pages", "Dashboard"],
-          image: "src/img/qa-lab-dashboard.png",
-          imageAlt: "Screenshot do dashboard do Playwright QA Lab",
-          panelLabel: "QA Lab",
-          url: "https://github.com/RaphaCastilho/qa-test-lab",
-          linkLabel: "Ver repositório",
-          liveUrl: "https://raphacastilho.github.io/qa-test-lab/",
-        },
-        {
-          category: "qa-system",
-          type: "Flagship Ecosystem",
-          title: "Sentinel Tech QA",
-          description: "Plataforma institucional e ecossistema de qualidade para comunicar QA, automação e fluxos assistidos por IA.",
-          stack: ["QA", "Automation", "AI-assisted workflows", "Web"],
-          image: "src/img/Sentinel-Tech-QA.png",
-          imageAlt: "Screenshot do projeto Sentinel Tech QA",
-          panelLabel: "QA Ops",
-          url: "https://github.com/SentinelQAtech/sentinel-website",
-          linkLabel: "Ver repositório",
-        },
-        {
           category: "portfolio",
-          type: "Flagship Ecosystem",
+          type: "Portfolio pessoal",
           title: "Rapha.QA — Portfólio",
-          description: "Portfólio bilíngue de Quality Engineering com tema escuro, cards interativos e integração com CV e LinkedIn.",
+          description: "Portfolio bilíngue com foco em QA, projetos práticos, CV, GitHub, LinkedIn e evidências técnicas.",
           stack: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
           image: "",
           imageAlt: "",
           panelLabel: "Portfólio",
+          coverSub: "Analista de QA",
           url: "https://github.com/RaphaCastilho/Portfolio",
           linkLabel: "Ver repositório",
           liveUrl: "https://raphacastilho.github.io/Portfolio",
@@ -185,26 +163,26 @@ const content = {
     experience: {
       kicker: "Experiência",
       titleSpan1: "operações",
-      titleSpan2: "qualidade.",
-      title: "Minha trajetória em operações e qualidade.",
-      lead: "Atuei por anos em operações críticas, suporte e análise de sistemas, evoluindo de ambientes de alta complexidade até me especializar em qualidade de software e automação.",
+      titleSpan2: "QA.",
+      title: "Minha trajetória até QA.",
+      lead: "Venho de suporte, operações e análise de sistemas, e hoje direciono essa base para testes funcionais, API Testing, documentação de bugs e automação Playwright.",
       skill1: "Investigação de incidentes",
       skill2: "Análise de sistemas",
       skill3: "Operações e indicadores",
-      skill4: "Engenharia de qualidade",
-      note: "Evolução contínua em qualidade, automação e excelência operacional.",
+      skill4: "Testes e automação",
+      note: "Transição focada em QA, com projetos próprios para demonstrar prática e evolução técnica.",
       items: [
         {
           company: "Autônomo",
-          period: "Jan/2025 — Mar/2026",
-          role: "QA Engineer",
-          badges: ["Playwright", "Cypress", "API Testing", "CI/CD"],
+          period: "Jan/2025 — Atual",
+          role: "Projetos próprios em QA",
+          badges: ["Playwright", "API Testing", "Postman", "GitHub Actions"],
           icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
           bullets: [
-            "Automação E2E com Playwright e Cypress",
-            "Testes funcionais, regressão e APIs REST",
+            "Automação E2E com Playwright em projeto próprio",
+            "Testes funcionais, regressão e APIs REST com Postman",
             "Investigação e documentação de bugs",
-            "Colaboração com Product, Design e Desenvolvimento",
+            "Organização de evidências para revisão técnica",
           ],
         },
         {
@@ -252,8 +230,8 @@ const content = {
       kicker: "Contato",
       titleSpan: "juntos.",
       title: "Vamos construir qualidade juntos.",
-      lead: "Estou aberto a novas oportunidades PJ em QA, automação, Quality Engineering e validação de sistemas.",
-      perk1: "Disponível para projetos e parcerias",
+      lead: "Estou aberto a oportunidades remotas CLT ou PJ em QA Júnior/Pleno, testes manuais, API Testing e automação Playwright.",
+      perk1: "Disponibilidade imediata",
       perk2: "Atuação 100% remota",
       perk3: "Resposta em até 24h",
       channelsLabel: "Escolha o melhor canal para conversar",
@@ -263,8 +241,8 @@ const content = {
       cvDesc: "Download do CV",
       ctaEmail: "Enviar e-mail",
       ctaMessage: "Enviar mensagem",
-      barTitle: "Foco em qualidade, automação e eficiência.",
-      barSub: "Pronto para agregar valor ao seu time e aos seus produtos.",
+      barTitle: "Foco em QA, APIs e automação Playwright.",
+      barSub: "Projeto próprio disponível para demonstrar meu processo de validação.",
       statusLabel: "Disponível para novos desafios",
       modalEyebrow: "Contato",
       modalTitle: "Enviar mensagem",
@@ -280,18 +258,19 @@ const content = {
     },
     footer: {
       home: "Início",
+      automation: "Automação",
       contact: "Contato",
-      copy: "© Rapha.QA 2026 - Quality Engineering & Automation",
+      copy: "© Rapha.QA 2026 - QA Automation & API Testing",
     },
   },
   "en-US": {
-    metaTitle: "Raphael Castilho — Quality Engineering & Automation",
+    metaTitle: "Raphael Castilho — QA Analyst | Playwright and API Testing",
     nav: {
       home: "Home",
       about: "Profile",
       automation: "Automation",
       ecosystem: "Stack",
-      projects: "Systems",
+      projects: "Projects",
       experience: "Experience",
       contact: "Contact",
     },
@@ -302,101 +281,107 @@ const content = {
       webLabel: "View web CV",
     },
     hero: {
-      kicker: "Quality Engineering • Automation • Operational Systems",
-      title: "QA Engineering",
-      subtitle: "focused on quality and reliability.",
+      kicker: "QA Automation • API Testing • Personal Project",
+      title: "QA Analyst",
+      subtitle: "practicing Playwright and APIs.",
       description:
-        "I validate web applications through Playwright automation, API testing, and operational analysis to ensure reliable releases and consistent experiences.",
-      tags: ["Playwright", "QA Engineering", "API Testing", "Operational Systems", "AI-assisted QA"],
-      metrics: "100+ tests · 6 suites · 2 projects · CI/CD active",
+        "I focus on functional testing, API Testing, and Playwright automation. My QA Lab uses this Portfolio as the tested product to demonstrate real test scenarios, API mocks, and execution evidence.",
+      tags: ["Playwright", "API Testing", "Postman", "GitHub Actions", "QA Lab"],
+      evidenceTeaser: "Latest Playwright suite run — see the real result",
       linkedin: "LinkedIn",
       contact: "Contact",
-      opsSubtitle: "What I deliver",
-      opsDesc1: "Coverage of critical flows and complete user journeys.",
-      opsDesc2: "Contract validation, rules, and integrations.",
-      opsDesc3: "Root cause analysis and continuous improvement.",
-      opsDesc4: "Intelligent automation to accelerate delivery.",
-      metricLabel1: "tests",
-      metricLabel2: "suites",
-      metricLabel3: "live projects",
-      metricLabel4: "active",
+      opsSubtitle: "What I can demonstrate",
+      opsDesc1: "Main flows tested in a real browser.",
+      opsDesc2: "API mocks for success, empty and error states.",
+      opsDesc3: "Clear evidence for bugs and regressions.",
+      opsDesc4: "AI used with human review for study and documentation.",
     },
     toolsStripLabel: "Technologies &\nTools",
     about: {
       kicker: "About Me",
-      titleLine: "engineering.",
-      lead: "My background combines QA, automation, incident investigation, operational analysis, and cross-functional collaboration to increase delivery reliability and reduce risk before release.",
-      cardTitle1: "Investigation",
-      cardDesc1: "Investigation and reproduction of complex bugs in enterprise web applications. Root cause isolation and clear documentation to speed up resolution.",
-      cardTitle2: "Validation",
-      cardDesc2: "Validation of functional flows, regression, UI states, and system integrations. Ensuring the product delivers what was planned, across all layers.",
-      cardTitle3: "Collaboration",
-      cardDesc3: "Efficient technical communication between support, product, QA, and engineering. Working together to understand, prioritize, and resolve issues quickly.",
-      cardTitle4: "Continuous Improvement",
-      cardDesc4: "Data-driven mindset focused on traceability, stability, and ongoing quality. Processes and automations that evolve alongside the product and the team.",
+      titleLine: "in QA.",
+      lead: "I bring over a decade in operations, technical support, and leadership before moving into QA — including managing a full team. That background gave me priority judgment under pressure, structured problem investigation, and direct communication with technical and non-technical teams.",
+      narrative: "Today I apply that to functional, exploratory, and regression testing, API validation, and defect investigation. Automation, tools, and stack are right below — this section is about how I think QA, not what I use.",
       highlights: [],
     },
     automation: {
       kicker: "Automation",
-      benefit1: "Intelligent coverage of critical flows",
-      benefit2: "Fast feedback for development teams",
-      benefit3: "Continuous quality at every stage of the cycle",
-      title: "Automation Engineering",
-      lead: "I design and implement reliable automation solutions to validate what matters, reduce regression risks, and accelerate delivery with safety and predictability.",
+      benefit1: "Main flows tested in a real browser",
+      benefit2: "API mocking for success, empty and error states",
+      benefit3: "Evidence organized for technical review",
+      title: "Applied Playwright automation",
+      lead: "I use automation to validate real flows, simulate API responses, and document evidence. The focus is practical work, clear scope, and technical progress.",
+      evidenceTitle: "Latest real run of this suite",
+      evidenceMeta: "Generated straight from the test results — no separate page, the summary sits right next to what it tests.",
+      statLabelTotal: "Tests passing",
+      statLabelSuites: "Suites",
+      statLabelFailed: "Failures",
+      coverageTitle: "What this suite covers",
+      sandboxTitle: "Interactive sandbox",
+      sandboxDesc: "A self-built environment to practice login, filters, and API simulation (success, empty, error) without depending on a real backend.",
+      sandboxLinkLabel: "Try the sandbox →",
+      honestText: "I'm still evolving in automation — this suite documents that process, not full coverage or a finished product.",
+      statusLabels: {
+        passed: "Passed",
+        failed: "Failed",
+        attention: "Attention",
+        "not-run": "Not run",
+      },
+      loadingLabel: "Loading…",
       items: [
         {
           label: "Playwright E2E",
-          title: "Automated critical workflows",
-          description: "Automation of real user journeys, UI states, authentication, and cross-browser behavior with Playwright.",
+          title: "Automated real flows",
+          description: "Page navigation, clicks, filters, login, empty state, API error, and visual validations with Playwright.",
           icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 6l-4 6 4 6M16 6l4 6-4 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
         },
         {
           label: "API Validation",
-          title: "Reliable contracts and responses",
-          description: "Endpoint, payload, status code, and functional consistency checks across system layers.",
+          title: "Controlled API simulation",
+          description: "Mocks used to test success, 500 errors, and empty responses without depending on a real backend.",
           icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
         },
         {
-          label: "Regression Strategy",
+          label: "Regression Testing",
           title: "Coverage against regressions",
-          description: "Suite organization to protect core functionality and reduce change risk.",
+          description: "Tests organized to protect links, language switching, images, responsiveness, and Sandbox behavior.",
           icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 0 1 14.93-4M20 12a8 8 0 0 1-14.93 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M18 4l2 4-4-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
         },
         {
-          label: "AI-Assisted QA",
-          title: "AI-enabled acceleration",
-          description: "AI support for analysis, documentation, scenario generation, and technical investigation with human review.",
+          label: "AI with review",
+          title: "Support for studying and documentation",
+          description: "AI support for organizing scenarios, reviewing copy, and accelerating study, with human review.",
           icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 8V6a4 4 0 0 1 8 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="14" r="1.5" fill="currentColor"/><circle cx="15" cy="14" r="1.5" fill="currentColor"/><path d="M9 17.5c.83.33 1.67.5 3 .5s2.17-.17 3-.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
         },
       ],
     },
     ecosystem: {
       kicker: "Stack",
-      title: "Technical Ecosystem",
-      lead: "Tools organized by operational capability, not a generic tool list.",
-      note: "Stack constantly evolving to keep up with technology and business needs.",
+      title: "QA stack in practice",
+      lead: "Tools I use or am consolidating through personal projects and applied study.",
+      note: "Stack in progress, focused on real understanding before expanding the tool list.",
       groups: [
         {
           title: "QA & Analysis",
-          description: "Strategies and techniques to ensure quality across all product layers.",
+          description: "Techniques to plan scenarios, reproduce bugs, and validate expected behavior.",
           icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M21 21l-4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
           items: ["Functional Testing", "Exploratory Testing", "Bug Investigation", "Regression Testing", "Test Planning"],
         },
         {
           title: "Automation",
-          description: "Test and validation automation to accelerate cycles and improve reliability.",
+          description: "Automation applied to screen flows, UI states, and E2E validations.",
           icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 6l-4 6 4 6M16 6l4 6-4 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
           items: ["Playwright", "JavaScript", "TypeScript", "Node.js", "E2E Workflows"],
         },
         {
           title: "API & Systems",
-          description: "API and system testing and integration to ensure stability and security.",
+          description: "REST API tests, payloads, status codes, integrations, and troubleshooting.",
           icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
           items: ["REST APIs", "API Testing", "Postman", "Chrome DevTools", "Logs", "SQL"],
         },
         {
           title: "CI/CD & DevOps",
-          description: "Continuous integration and automated delivery with quality at every step.",
+          description: "Automated check execution to make test results visible.",
           icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15 8h6l-5 4 2 6-6-4-6 4 2-6L3 8h6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
           items: ["GitHub Actions", "CI/CD Pipelines", "Jenkins", "GitHub Pages", "Deploy Automation"],
         },
@@ -415,52 +400,24 @@ const content = {
       ],
     },
     projects: {
-      kicker: "Systems",
-      title: "Systems and Projects",
-      lead: "Projects reframed as validation systems, operational tools, and applied technical learning.",
-      note: "More projects and experiments in constant evolution.",
+      kicker: "Projects",
+      title: "QA Projects",
+      lead: "Personal projects used to demonstrate manual testing, Playwright automation, API mocking, and evidence.",
+      note: "Projects evolving as I advance in study and QA job applications.",
       inDev: "In development",
-      filters: [
-        { label: "All", value: "all" },
-        { label: "QA Systems", value: ".qa-system" },
-        { label: "Automation", value: ".automation" },
-        { label: "Portfolio", value: ".portfolio" },
-      ],
+      // with a single project listed, filtering serves no purpose — the control is hidden (see applyLanguage)
+      filters: [],
       items: [
         {
-          category: "automation",
-          type: "Automation Showcase",
-          title: "Playwright QA Lab",
-          description: "Interactive dashboard for E2E test tracking, quality metrics, and continuous integration.",
-          stack: ["Playwright", "CI/CD", "GitHub Pages", "Dashboard"],
-          image: "src/img/qa-lab-dashboard.png",
-          imageAlt: "Playwright QA Lab dashboard screenshot",
-          panelLabel: "QA Lab",
-          url: "https://github.com/RaphaCastilho/qa-test-lab",
-          linkLabel: "View repository",
-          liveUrl: "https://raphacastilho.github.io/qa-test-lab/",
-        },
-        {
-          category: "qa-system",
-          type: "Flagship Ecosystem",
-          title: "Sentinel Tech QA",
-          description: "A quality-focused platform and ecosystem communicating QA, automation, and AI-assisted workflows.",
-          stack: ["QA", "Automation", "AI-assisted workflows", "Web"],
-          image: "src/img/Sentinel-Tech-QA.png",
-          imageAlt: "Sentinel Tech QA project screenshot",
-          panelLabel: "QA Ops",
-          url: "https://github.com/SentinelQAtech/sentinel-website",
-          linkLabel: "View repository",
-        },
-        {
           category: "portfolio",
-          type: "Flagship Ecosystem",
+          type: "Personal portfolio",
           title: "Rapha.QA — Portfolio",
-          description: "Bilingual Quality Engineering portfolio with dark theme, interactive cards, and CV/LinkedIn integration.",
+          description: "Bilingual portfolio focused on QA, practical projects, CV, GitHub, LinkedIn, and technical evidence.",
           stack: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
           image: "",
           imageAlt: "",
           panelLabel: "Portfolio",
+          coverSub: "QA Portfolio",
           url: "https://github.com/RaphaCastilho/Portfolio",
           linkLabel: "View repository",
           liveUrl: "https://raphacastilho.github.io/Portfolio",
@@ -470,26 +427,26 @@ const content = {
     experience: {
       kicker: "Experience",
       titleSpan1: "operations",
-      titleSpan2: "quality.",
-      title: "My journey through operations and quality.",
-      lead: "I spent years in critical operations, support, and systems analysis, evolving from high-complexity environments to specializing in software quality and automation.",
+      titleSpan2: "QA.",
+      title: "My path into QA.",
+      lead: "I come from support, operations, and systems analysis, and now apply that background to functional testing, API Testing, bug documentation, and Playwright automation.",
       skill1: "Incident investigation",
       skill2: "Systems analysis",
       skill3: "Operations and metrics",
-      skill4: "Quality engineering",
-      note: "Continuous evolution in quality, automation, and operational excellence.",
+      skill4: "Testing and automation",
+      note: "QA-focused transition, with personal projects built to demonstrate practical progress.",
       items: [
         {
           company: "Independent Consultant",
-          period: "Jan/2025 — Mar/2026",
-          role: "QA Engineer",
-          badges: ["Playwright", "Cypress", "API Testing", "CI/CD"],
+          period: "Jan/2025 — Present",
+          role: "Personal QA projects",
+          badges: ["Playwright", "API Testing", "Postman", "GitHub Actions"],
           icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
           bullets: [
-            "E2E automation with Playwright and Cypress",
-            "Functional, regression, and REST API testing",
+            "E2E automation with Playwright in a personal project",
+            "Functional, regression, and REST API testing with Postman",
             "Bug investigation and documentation",
-            "Collaboration with Product, Design, and Development",
+            "Evidence organization for technical review",
           ],
         },
         {
@@ -537,8 +494,8 @@ const content = {
       kicker: "Contact",
       titleSpan: "together.",
       title: "Let's build quality together.",
-      lead: "Open to freelance opportunities in QA, automation, Quality Engineering, and system validation.",
-      perk1: "Available for projects and partnerships",
+      lead: "Open to remote CLT or PJ opportunities in Junior/Mid-level QA, manual testing, API Testing, and Playwright automation.",
+      perk1: "Immediate availability",
       perk2: "100% remote",
       perk3: "Response within 24h",
       channelsLabel: "Choose the best channel to connect",
@@ -548,8 +505,8 @@ const content = {
       cvDesc: "Download CV",
       ctaEmail: "Send e-mail",
       ctaMessage: "Send message",
-      barTitle: "Focused on quality, automation and efficiency.",
-      barSub: "Ready to add value to your team and your products.",
+      barTitle: "Focused on QA, APIs, and Playwright automation.",
+      barSub: "Personal project available to demonstrate my validation process.",
       statusLabel: "Available for new challenges",
       modalEyebrow: "Contact",
       modalTitle: "Send a message",
@@ -565,8 +522,9 @@ const content = {
     },
     footer: {
       home: "Home",
+      automation: "Automation",
       contact: "Contact",
-      copy: "© Rapha.QA 2026 - Quality Engineering & Automation",
+      copy: "© Rapha.QA 2026 - QA Automation & API Testing",
     },
   },
 };
@@ -610,10 +568,10 @@ function escapeHtml(value) {
 
 const tagIcons = {
   "Playwright": "bx-code-alt",
-  "QA Engineering": "bx-shield-quarter",
   "API Testing": "bx-link",
-  "Operational Systems": "bx-cog",
-  "AI-assisted QA": "bx-chip",
+  "Postman": "bx-cloud-upload",
+  "GitHub Actions": "bxl-github",
+  "QA Lab": "bx-layout",
 };
 
 function renderTags(items) {
@@ -661,18 +619,20 @@ function renderProject(project) {
     : `<div class="project-cover-text" aria-hidden="true">
         <span class="proj-cover-eyebrow">${escapeHtml(project.panelLabel)}</span>
         <strong class="proj-cover-title">${escapeHtml(project.title)}</strong>
-        <span class="proj-cover-sub">Quality Engineer</span>
+        <span class="proj-cover-sub">${escapeHtml(project.coverSub || "Analista de QA")}</span>
         <div class="proj-cover-divider"></div>
        </div>`;
 
   const visualClass = project.image ? "project-visual" : "project-visual project-visual-dark";
 
   const githubLink = project.url
-    ? `<a href="${escapeHtml(project.url)}" target="_blank" rel="noopener noreferrer" class="proj-link">${githubIcon}GitHub</a>`
+    ? `<a href="${escapeHtml(project.url)}" target="_blank" rel="noopener noreferrer" class="proj-link">${githubIcon}${escapeHtml(project.linkLabel || "GitHub")}</a>`
     : "";
 
+  const isExternalLiveUrl = /^https?:\/\//i.test(project.liveUrl || "");
+  const liveAttrs = isExternalLiveUrl ? ' target="_blank" rel="noopener noreferrer"' : "";
   const liveLink = project.liveUrl
-    ? `<a href="${escapeHtml(project.liveUrl)}" target="_blank" rel="noopener noreferrer" class="proj-link proj-link-live">Live Demo ${externalIcon}</a>`
+    ? `<a href="${escapeHtml(project.liveUrl)}"${liveAttrs} class="proj-link proj-link-live">${escapeHtml(project.liveLabel || "Live Demo")} ${externalIcon}</a>`
     : `<span class="proj-link-disabled">Em desenvolvimento</span>`;
 
   return `
@@ -819,6 +779,59 @@ function updateLanguageFlag(lang) {
   if (toggle) toggle.setAttribute("aria-label", label);
 }
 
+let evidenceData = null;
+
+function renderEvidenceStatus(lang) {
+  const pill = byId("evidence-status");
+  if (!pill) return;
+
+  const t = content[lang] || content["pt-BR"];
+  const labels = t.automation.statusLabels || {};
+
+  if (!evidenceData) {
+    pill.textContent = t.automation.loadingLabel || "…";
+    pill.className = "status-pill";
+    return;
+  }
+
+  const status = evidenceData.status || "not-run";
+  pill.textContent = labels[status] || status;
+  pill.className = `status-pill ${status}`;
+}
+
+function renderEvidenceData(data) {
+  evidenceData = data;
+
+  const summary = data.summary || { total: 0, passed: 0, failed: 0 };
+  setText("evidence-stat-total", `${summary.passed ?? 0}/${summary.total ?? 0}`);
+  setText("evidence-stat-suites", String((data.suites || []).length));
+  setText("evidence-stat-failed", String(summary.failed ?? 0));
+
+  const list = byId("evidence-coverage-list");
+  if (list) {
+    list.innerHTML = (data.coverage || [])
+      .slice(0, 5)
+      .map((line) => `<li>${escapeHtml(line)}</li>`)
+      .join("");
+  }
+
+  renderEvidenceStatus(document.documentElement.lang || "pt-BR");
+}
+
+function loadEvidence() {
+  const fallback = {
+    status: "not-run",
+    summary: { total: 0, passed: 0, failed: 0, skipped: 0, flaky: 0 },
+    coverage: [],
+    suites: [],
+  };
+
+  fetch("./qa-lab/results/latest.json", { cache: "no-store" })
+    .then((response) => (response.ok ? response.json() : fallback))
+    .then(renderEvidenceData)
+    .catch(() => renderEvidenceData(fallback));
+}
+
 function applyLanguage(lang) {
   const active = content[lang] ? lang : "pt-BR";
   const t = content[active];
@@ -846,10 +859,7 @@ function applyLanguage(lang) {
   setText("ops-desc-2", t.hero.opsDesc2);
   setText("ops-desc-3", t.hero.opsDesc3);
   setText("ops-desc-4", t.hero.opsDesc4);
-  setText("metric-label-1", t.hero.metricLabel1);
-  setText("metric-label-2", t.hero.metricLabel2);
-  setText("metric-label-3", t.hero.metricLabel3);
-  setText("metric-label-4", t.hero.metricLabel4);
+  setText("hero-evidence-teaser-text", t.hero.evidenceTeaser);
   setText("cv-download", t.cv.downloadLabel);
   setHref("cv-download", t.cv.pdf);
   setText("cv-web", t.cv.webLabel);
@@ -865,21 +875,28 @@ function applyLanguage(lang) {
   setText("about-kicker", t.about.kicker);
   setText("about-lead", t.about.lead);
   if (t.about.titleLine) setText("about-title-span", t.about.titleLine);
-  setText("about-card-title-1", t.about.cardTitle1);
-  setText("about-card-desc-1", t.about.cardDesc1);
-  setText("about-card-title-2", t.about.cardTitle2);
-  setText("about-card-desc-2", t.about.cardDesc2);
-  setText("about-card-title-3", t.about.cardTitle3);
-  setText("about-card-desc-3", t.about.cardDesc3);
-  setText("about-card-title-4", t.about.cardTitle4);
-  setText("about-card-desc-4", t.about.cardDesc4);
+  setText("about-narrative", t.about.narrative);
 
   // automation
   setText("auto-kicker", t.automation.kicker);
+  setText("automation-title", t.automation.title);
   setText("automation-lead", t.automation.lead);
   setText("auto-benefit-1", t.automation.benefit1);
   setText("auto-benefit-2", t.automation.benefit2);
   setText("auto-benefit-3", t.automation.benefit3);
+
+  // automation — evidence block
+  setText("evidence-title", t.automation.evidenceTitle);
+  setText("evidence-meta", t.automation.evidenceMeta);
+  setText("evidence-label-total", t.automation.statLabelTotal);
+  setText("evidence-label-suites", t.automation.statLabelSuites);
+  setText("evidence-label-failed", t.automation.statLabelFailed);
+  setText("evidence-coverage-title", t.automation.coverageTitle);
+  setText("evidence-sandbox-title", t.automation.sandboxTitle);
+  setText("evidence-sandbox-desc", t.automation.sandboxDesc);
+  setText("evidence-sandbox-link", t.automation.sandboxLinkLabel);
+  setText("evidence-honest-text", t.automation.honestText);
+  renderEvidenceStatus(active);
 
   // ecosystem
   setText("eco-kicker", t.ecosystem.kicker);
@@ -927,9 +944,9 @@ function applyLanguage(lang) {
   if (aboutTitleEl) {
     const lang = document.documentElement.lang;
     if (lang === "en-US") {
-      aboutTitleEl.innerHTML = 'How I work<br>in quality<br><span id="about-title-span">' + escapeHtml(t.about.titleLine) + '</span>';
+      aboutTitleEl.innerHTML = 'How I work<br>in practice<br><span id="about-title-span">' + escapeHtml(t.about.titleLine) + '</span>';
     } else {
-      aboutTitleEl.innerHTML = 'Como atuo<br>na engenharia<br><span id="about-title-span">' + escapeHtml(t.about.titleLine) + '</span>';
+      aboutTitleEl.innerHTML = 'Como atuo<br>na prática<br><span id="about-title-span">' + escapeHtml(t.about.titleLine) + '</span>';
     }
   }
 
@@ -937,11 +954,14 @@ function applyLanguage(lang) {
   renderList("automation-grid", t.automation.items, renderAutomationItem);
   renderList("ecosystem-grid", t.ecosystem.groups, renderEcosystemGroup);
   renderList("project-filters", t.projects.filters, renderProjectFilter);
+  const filtersContainer = byId("project-filters");
+  if (filtersContainer) filtersContainer.hidden = t.projects.filters.length === 0;
   renderList("projects-grid", t.projects.items, renderProject);
   renderList("experience-list", t.experience.items, renderExperienceItem);
 
   setText("footer-home", t.footer.home);
   setText("footer-projects", t.nav.projects);
+  setText("footer-automation", t.footer.automation);
   setText("footer-contact", t.footer.contact);
   setText("footer-copy", t.footer.copy);
   updateLanguageFlag(active);
@@ -1079,4 +1099,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   applyLanguage(readFromLocalStorage("siteLang", "pt-BR"));
   applyTheme(readFromLocalStorage("theme", "dark"));
+  loadEvidence();
 });

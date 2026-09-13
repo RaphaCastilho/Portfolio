@@ -37,8 +37,7 @@ Site estático, bilíngue (PT-BR / EN-US) e compatível com GitHub Pages.
 
 - **Tipografia:** Geist + Inter (Google Fonts)
 - **Ícones:** Boxicons + SVG inline
-- **Filtro de projetos:** MixItUp
-- **Testes:** Node.js built-in test runner (sem dependências)
+- **Testes:** Node.js built-in test runner (sem dependências) + Playwright (E2E, desktop e mobile)
 
 ## Estrutura
 
@@ -46,30 +45,32 @@ Site estático, bilíngue (PT-BR / EN-US) e compatível com GitHub Pages.
 Portfolio/
 ├── index.html              # Estrutura semântica + conteúdo estático de fallback (PT-BR)
 ├── style.css               # Sistema visual dark enterprise / operational UI
-├── script.js               # Modelo de conteúdo bilíngue, toggle, CTAs, render das seções
-├── mixitup.min.js          # Lib de filtro de projetos (vendor)
+├── script.js               # Modelo de conteúdo bilíngue, toggle, CTAs, render das seções, evidência de automação
 ├── favicon.svg             # Favicon SVG (identidade QA)
 ├── site.webmanifest        # Web app manifest
-├── package.json            # Script de teste (npm test)
+├── package.json            # Scripts de teste e geração do resumo de QA
 ├── src/
 │   ├── cv/                 # Currículos publicados (HTML + PDF, PT e EN)
 │   │   ├── DEV_Rapha_CV_PT.html
 │   │   ├── DEV_Rapha_CV_PT.pdf
 │   │   ├── DEV_Rapha_CV_EN.html
 │   │   └── DEV_Rapha_CV_EN.pdf
-│   └── img/                # Imagens, bandeiras, favicons e screenshots de projeto
+│   └── img/                # Imagens, bandeiras e favicons
 │       ├── favicon-16.png … favicon-512.png
 │       ├── favicon-180.png (apple-touch-icon)
 │       ├── favicon-192.png / favicon-512.png (PWA)
 │       ├── brazil-flag.svg
-│       ├── united-states-of-america-flag.svg
-│       └── qa-lab-dashboard.png
+│       └── united-states-of-america-flag.svg
+├── qa-lab/
+│   └── results/latest.json # Resumo gerado a partir do resultado real do Playwright (lido pelo bloco de evidência)
+├── qa-sandbox.html          # Sandbox interativo (login, filtros, simulação de API)
 ├── tests/
-│   ├── static-site.test.mjs  # Estrutura, posicionamento, assets locais, PDFs
-│   └── cv-content.test.mjs    # Idioma/consistência dos CVs HTML
-└── docs/
-    ├── maintenance.md       # Guia de manutenção (conteúdo bilíngue, PDFs, testes, deploy)
-    └── superpowers/         # Spec de design e plano de implementação
+│   ├── static-site.test.mjs      # Estrutura, posicionamento, assets locais, PDFs
+│   ├── cv-content.test.mjs       # Idioma/consistência dos CVs HTML
+│   └── e2e/                      # Suíte Playwright (desktop + mobile)
+├── tools/
+│   └── update-qa-lab-summary.mjs # Gera qa-lab/results/latest.json a partir do reporter do Playwright
+└── .github/workflows/portfolio-quality.yml  # CI: testes unitários + Playwright a cada push/PR
 ```
 
 ## Currículos (caminhos finais)
@@ -88,10 +89,12 @@ Abra `index.html` no navegador (ou use uma extensão como Live Server no VS Code
 ## Como testar
 
 ```bash
-npm test
+npm run test:unit   # smoke tests estáticos (estrutura, assets locais, PDFs, idioma dos CVs)
+npm run test:e2e    # suíte Playwright (desktop + mobile)
+npm run qa:summary  # regenera qa-lab/results/latest.json a partir do resultado do Playwright
 ```
 
-Roda os smoke tests estáticos (estrutura das seções, existência de assets locais, validade dos PDFs de CV e consistência de idioma dos CVs).
+O CI (`.github/workflows/portfolio-quality.yml`) roda as três etapas a cada push/PR e publica o relatório do Playwright e o resumo de QA como artifacts.
 
 ## Manutenção
 

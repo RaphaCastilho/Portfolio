@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rapha.QA - QA Sandbox</title>
+    <meta
+      name="description"
+      content="Mini-produto do Rapha.QA para validar login, filtros, estados de UI e APIs mockadas com Playwright."
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="src/vendor/fonts/fonts.css" />
+    <style>
+      :root {
+        --bg: #071019;
+        --surface: #0D1724;
+        --surface-2: #111F30;
+        --line: rgba(148, 163, 184, 0.2);
+        --text: #F8FAFC;
+        --muted: #9AA7B8;
+        --accent: #38BDF8;
+        --accent-2: #2DD4BF;
+        --success: #22C55E;
+        --warning: #F59E0B;
+        --danger: #EF4444;
+        --shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+        --radius: 8px;
+        color-scheme: dark;
+      }
+
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at top left, rgba(56, 189, 248, 0.13), transparent 34rem),
+          linear-gradient(145deg, #071019 0%, #0A1220 48%, #0F172A 100%);
+        color: var(--text);
+        font-family: "Inter", "Aptos", "Segoe UI", system-ui, sans-serif;
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      input,
+      select {
+        font: inherit;
+      }
+
+      .shell {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 18px;
+        padding: 22px 0;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 850;
+        letter-spacing: 0.01em;
+      }
+
+      .brand-mark {
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border: 1px solid rgba(56, 189, 248, 0.35);
+        border-radius: 8px;
+        background: rgba(56, 189, 248, 0.11);
+        color: var(--accent);
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 10px;
+      }
+
+      .nav a,
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 38px;
+        padding: 0 14px;
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text);
+        font-weight: 800;
+        font-size: 13px;
+        cursor: pointer;
+      }
+
+      .nav a:hover,
+      .btn:hover {
+        border-color: rgba(56, 189, 248, 0.6);
+        color: var(--accent);
+      }
+
+      .btn-primary {
+        border-color: rgba(45, 212, 191, 0.45);
+        background: linear-gradient(135deg, rgba(45, 212, 191, 0.24), rgba(56, 189, 248, 0.18));
+      }
+
+      .btn-danger {
+        border-color: rgba(239, 68, 68, 0.4);
+        color: #FCA5A5;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 360px;
+        gap: 24px;
+        align-items: stretch;
+        padding: 30px 0 28px;
+      }
+
+      .intro,
+      .panel,
+      .card,
+      .table-panel {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(13, 23, 36, 0.82);
+        box-shadow: var(--shadow);
+      }
+
+      .intro {
+        padding: 32px;
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        color: var(--accent-2);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        max-width: 760px;
+        font-size: clamp(34px, 6vw, 64px);
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        max-width: 680px;
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: 16px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 26px;
+      }
+
+      .mini {
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        background: rgba(255, 255, 255, 0.035);
+      }
+
+      .mini strong {
+        display: block;
+        color: var(--text);
+        font-size: 13px;
+      }
+
+      .mini span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .panel {
+        padding: 22px;
+      }
+
+      .panel h2,
+      .section-title {
+        margin: 0 0 12px;
+        color: var(--text);
+        font-size: 18px;
+      }
+
+      .field {
+        display: grid;
+        gap: 6px;
+        margin-bottom: 13px;
+      }
+
+      .field label {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .field input,
+      .field select,
+      .filters input,
+      .filters select {
+        width: 100%;
+        min-height: 42px;
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--text);
+        padding: 0 12px;
+        outline: none;
+      }
+
+      .field input:focus,
+      .filters input:focus,
+      .filters select:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.14);
+      }
+
+      .status {
+        min-height: 24px;
+        margin: 12px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .status[data-state="success"] { color: #86EFAC; }
+      .status[data-state="error"] { color: #FCA5A5; }
+      .status[data-state="loading"] { color: #BAE6FD; }
+
+      .scenario-actions {
+        display: grid;
+        gap: 10px;
+        margin: 16px 0;
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 18px;
+        padding: 0 0 44px;
+      }
+
+      .workspace[hidden] {
+        display: none;
+      }
+
+      .card {
+        padding: 20px;
+        box-shadow: none;
+      }
+
+      .summary-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .summary-item {
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .summary-item strong {
+        display: block;
+        font-size: 22px;
+      }
+
+      .summary-item span {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .filters {
+        display: grid;
+        grid-template-columns: minmax(240px, 1fr) minmax(180px, 220px) minmax(180px, 220px);
+        gap: 10px;
+        margin-bottom: 14px;
+      }
+
+      .check-grid {
+        display: grid;
+        gap: 10px;
+      }
+
+      .check {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        background: rgba(255, 255, 255, 0.035);
+      }
+
+      .check h3 {
+        margin: 0;
+        font-size: 15px;
+      }
+
+      .check p {
+        margin: 4px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .badge {
+        align-self: start;
+        padding: 4px 8px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .badge.passed {
+        border-color: rgba(34, 197, 94, 0.45);
+        color: #86EFAC;
+      }
+
+      .badge.failed {
+        border-color: rgba(239, 68, 68, 0.45);
+        color: #FCA5A5;
+      }
+
+      .badge.risk {
+        border-color: rgba(245, 158, 11, 0.45);
+        color: #FCD34D;
+      }
+
+      .table-panel {
+        padding: 20px;
+        box-shadow: none;
+      }
+
+      .table-panel h2 {
+        margin: 0 0 10px;
+        font-size: 17px;
+      }
+
+      .evidence-list {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+
+      .evidence-list li {
+        margin: 6px 0;
+      }
+
+      @media (max-width: 860px) {
+        .hero,
+        .workspace,
+        .filters {
+          grid-template-columns: 1fr;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="shell topbar">
+      <a class="brand" href="./index.html" aria-label="Voltar para Portfólio">
+        <span class="brand-mark">QA</span>
+        <span>Rapha.QA Sandbox</span>
+      </a>
+      <nav class="nav" aria-label="Navegação da sandbox">
+        <a href="./index.html">Portfólio</a>
+        <a href="./qa-lab.html">QA Lab</a>
+        <a href="./qa-report.html">Relatório</a>
+        <a href="https://github.com/RaphaCastilho/Portfolio" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <main class="shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="intro">
+          <p class="eyebrow">Produto-alvo controlado</p>
+          <h1 id="page-title">Um mini-produto feito para quebrar e validar.</h1>
+          <p class="lead">
+            Ambiente que criei para praticar QA em um produto que controlo por completo: login validado, dados carregados por adapter local ou rota mockada no Playwright, filtros sobre os resultados e simulação de API vazia ou com erro, sem depender de backend real.
+          </p>
+          <div class="hero-grid" aria-label="Cobertura da sandbox">
+            <div class="mini">
+              <strong>Autenticação</strong>
+              <span>Sucesso, credencial inválida, storage e logout.</span>
+            </div>
+            <div class="mini">
+              <strong>Contrato de API</strong>
+              <span>Sessão, lista de checks e respostas controladas.</span>
+            </div>
+            <div class="mini">
+              <strong>Estados testáveis</strong>
+              <span>Sucesso, lista vazia, erro, busca e filtros.</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="panel" id="login-form" data-testid="login-form">
+          <h2>Acesso QA</h2>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" data-testid="email-input" name="email" type="email" value="qa@rapha.test" autocomplete="username" required />
+          </div>
+          <div class="field">
+            <label for="password">Senha</label>
+            <input id="password" data-testid="password-input" name="password" type="password" value="quality123" autocomplete="current-password" required />
+          </div>
+          <button class="btn btn-primary" data-testid="login-button" type="submit">Entrar na sandbox</button>
+          <p class="status" id="login-status" data-testid="status-message" data-state="idle">Modo demo local ativo.</p>
+        </form>
+      </section>
+
+      <section class="workspace" id="workspace" data-testid="workspace" hidden>
+        <aside class="card" aria-label="Resumo da execução">
+          <h2 class="section-title">Sessão QA</h2>
+          <div class="summary-list">
+            <div class="summary-item">
+              <strong id="summary-total" data-testid="summary-total">0</strong>
+              <span>checks carregados</span>
+            </div>
+            <div class="summary-item">
+              <strong id="summary-passed" data-testid="summary-passed">0</strong>
+              <span>checks aprovados</span>
+            </div>
+            <div class="summary-item">
+              <strong id="summary-risks" data-testid="summary-risks">0</strong>
+              <span>riscos ou falhas</span>
+            </div>
+          </div>
+          <p class="status" id="checks-status" data-testid="checks-status" data-state="idle"></p>
+          <div class="scenario-actions">
+            <div class="field">
+              <label for="scenario">Cenário local da API</label>
+              <select id="scenario" data-testid="scenario-select">
+                <option value="success">API retorna checks</option>
+                <option value="empty">API retorna lista vazia</option>
+                <option value="error">API retorna erro 500</option>
+              </select>
+            </div>
+            <button class="btn" id="reload-checks" data-testid="reload-checks" type="button">Recarregar checks</button>
+          </div>
+          <button class="btn btn-danger" id="logout-button" data-testid="logout-button" type="button">Encerrar sessão</button>
+        </aside>
+
+        <section class="table-panel" aria-labelledby="checks-title">
+          <h2 id="checks-title">Checks de qualidade</h2>
+          <div class="filters">
+            <input id="search" data-testid="search-input" type="search" placeholder="Buscar por título ou área" aria-label="Buscar checks" />
+            <select id="status-filter" data-testid="status-filter" aria-label="Filtrar por status">
+              <option value="all">Todos os status</option>
+              <option value="passed">Passed</option>
+              <option value="risk">Risk</option>
+              <option value="failed">Failed</option>
+            </select>
+            <select id="area-filter" data-testid="area-filter" aria-label="Filtrar por área">
+              <option value="all">Todas as áreas</option>
+              <option value="portfolio">Portfólio</option>
+              <option value="api">API</option>
+              <option value="accessibility">Acessibilidade</option>
+              <option value="responsive">Responsivo</option>
+            </select>
+          </div>
+          <div class="check-grid" id="check-grid" data-testid="check-grid"></div>
+        </section>
+      </section>
+
+      <section class="table-panel" aria-labelledby="evidence-title">
+        <h2 id="evidence-title">Evidências esperadas em Playwright</h2>
+        <ul class="evidence-list">
+          <li>Login com credenciais válidas, credenciais inválidas, sessionStorage e logout.</li>
+          <li>Contrato dos endpoints /session e /checks controlado pelo Playwright.</li>
+          <li>Cenários visíveis para sucesso, lista vazia e erro 500.</li>
+          <li>Filtros por busca, status e área com resumo atualizado.</li>
+          <li>Execução responsiva junto ao Portfólio real.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script>
+      const demoChecks = [
+        {
+          id: "PF-001",
+          title: "Portfólio carrega seções",
+          area: "portfolio",
+          status: "passed",
+          detail: "Home, seções principais, CTAs e links internos respondem corretamente."
+        },
+        {
+          id: "API-001",
+          title: "Login retorna sessão válida",
+          area: "api",
+          status: "passed",
+          detail: "A chamada de sessão retorna usuário, token demonstrativo e escopo QA."
+        },
+        {
+          id: "A11Y-001",
+          title: "Campos possuem labels",
+          area: "accessibility",
+          status: "passed",
+          detail: "Inputs e filtros têm labels ou aria-label para automação e leitores de tela."
+        },
+        {
+          id: "RESP-001",
+          title: "Layout sem overflow mobile",
+          area: "responsive",
+          status: "passed",
+          detail: "A sandbox deve funcionar em mobile, tablet e desktop sem scroll horizontal."
+        },
+        {
+          id: "API-002",
+          title: "Erro de API exibe mensagem clara",
+          area: "api",
+          status: "risk",
+          detail: "O fluxo precisa mostrar feedback quando a API falha ou demora."
+        }
+      ];
+
+      const state = {
+        checks: [],
+        session: null,
+        scenario: "success",
+        networkMode: new URLSearchParams(window.location.search).get("network") === "1"
+      };
+
+      const els = {
+        form: document.getElementById("login-form"),
+        email: document.getElementById("email"),
+        password: document.getElementById("password"),
+        loginStatus: document.getElementById("login-status"),
+        workspace: document.getElementById("workspace"),
+        checksStatus: document.getElementById("checks-status"),
+        grid: document.getElementById("check-grid"),
+        scenario: document.getElementById("scenario"),
+        reload: document.getElementById("reload-checks"),
+        search: document.getElementById("search"),
+        statusFilter: document.getElementById("status-filter"),
+        areaFilter: document.getElementById("area-filter"),
+        logout: document.getElementById("logout-button"),
+        total: document.getElementById("summary-total"),
+        passed: document.getElementById("summary-passed"),
+        risks: document.getElementById("summary-risks")
+      };
+
+      function setStatus(element, message, kind = "idle") {
+        element.textContent = message;
+        element.dataset.state = kind;
+      }
+
+      async function requestJSON(path, options = {}) {
+        if (state.networkMode) {
+          const response = await fetch(path, options);
+          const payload = await response.json().catch(() => ({}));
+          if (!response.ok) {
+            throw new Error(payload.message || "Falha na API simulada.");
+          }
+          return payload;
+        }
+
+        await new Promise((resolve) => setTimeout(resolve, 180));
+
+        if (path.endsWith("/session")) {
+          const body = JSON.parse(options.body || "{}");
+          if (body.email === "qa@rapha.test" && body.password === "quality123") {
+            return {
+              user: { name: "Raphael QA", role: "QA Analyst" },
+              token: "demo-token",
+              scope: "portfolio-quality"
+            };
+          }
+          throw new Error("Credenciais inválidas para a sandbox.");
+        }
+
+        if (path.endsWith("/checks")) {
+          if (state.scenario === "empty") {
+            return { checks: [] };
+          }
+          if (state.scenario === "error") {
+            throw new Error("API local simulada retornou erro 500.");
+          }
+          return { checks: demoChecks };
+        }
+
+        throw new Error("Endpoint não mapeado na sandbox.");
+      }
+
+      async function loadChecks() {
+        setStatus(els.checksStatus, "Carregando checks...", "loading");
+        try {
+          const payload = await requestJSON("/api/qa-sandbox/checks");
+          state.checks = payload.checks || [];
+          renderChecks();
+          setStatus(
+            els.checksStatus,
+            state.checks.length ? "Checks carregados com sucesso." : "API respondeu sem checks para exibir.",
+            state.checks.length ? "success" : "idle"
+          );
+        } catch (error) {
+          state.checks = [];
+          renderChecks();
+          setStatus(els.checksStatus, error.message, "error");
+        }
+      }
+
+      function updateSummary(items) {
+        els.total.textContent = String(items.length);
+        els.passed.textContent = String(items.filter((item) => item.status === "passed").length);
+        els.risks.textContent = String(items.filter((item) => item.status !== "passed").length);
+      }
+
+      function renderChecks() {
+        const term = els.search.value.trim().toLowerCase();
+        const status = els.statusFilter.value;
+        const area = els.areaFilter.value;
+        const filtered = state.checks.filter((check) => {
+          const textMatch = `${check.id} ${check.title} ${check.area}`.toLowerCase().includes(term);
+          const statusMatch = status === "all" || check.status === status;
+          const areaMatch = area === "all" || check.area === area;
+          return textMatch && statusMatch && areaMatch;
+        });
+
+        updateSummary(filtered);
+
+        if (!filtered.length) {
+          els.grid.innerHTML = '<p class="status" data-testid="empty-state" data-state="error">Nenhum check encontrado para os filtros atuais.</p>';
+          return;
+        }
+
+        els.grid.innerHTML = filtered.map((check) => `
+          <article class="check" data-testid="check-card" data-area="${check.area}" data-status="${check.status}">
+            <div>
+              <h3>${check.id} - ${check.title}</h3>
+              <p>${check.detail}</p>
+            </div>
+            <span class="badge ${check.status}">${check.status}</span>
+          </article>
+        `).join("");
+      }
+
+      async function login(event) {
+        event.preventDefault();
+        setStatus(els.loginStatus, "Validando credenciais...", "loading");
+
+        try {
+          const session = await requestJSON("/api/qa-sandbox/session", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              email: els.email.value,
+              password: els.password.value
+            })
+          });
+
+          state.session = session;
+          sessionStorage.setItem("qaSandboxSession", JSON.stringify(session));
+          els.workspace.hidden = false;
+          setStatus(els.loginStatus, `Sessão ativa para ${session.user?.name || "QA"}.`, "success");
+          await loadChecks();
+        } catch (error) {
+          els.workspace.hidden = true;
+          setStatus(els.loginStatus, error.message, "error");
+        }
+      }
+
+      function logout() {
+        state.session = null;
+        state.checks = [];
+        sessionStorage.removeItem("qaSandboxSession");
+        els.workspace.hidden = true;
+        setStatus(els.loginStatus, "Sessão encerrada.", "idle");
+      }
+
+      els.form.addEventListener("submit", login);
+      els.scenario.addEventListener("change", () => {
+        state.scenario = els.scenario.value;
+        loadChecks();
+      });
+      els.reload.addEventListener("click", loadChecks);
+      els.search.addEventListener("input", renderChecks);
+      els.statusFilter.addEventListener("change", renderChecks);
+      els.areaFilter.addEventListener("change", renderChecks);
+      els.logout.addEventListener("click", logout);
+
+      if (state.networkMode) {
+        els.scenario.disabled = true;
+      }
+    </script>
+  </body>
+</html>
