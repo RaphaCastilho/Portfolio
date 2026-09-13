@@ -652,7 +652,7 @@ function renderEcosystemGroup(group) {
 const githubIcon = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.59 2 12.25c0 4.54 2.87 8.39 6.84 9.75.5.09.68-.22.68-.49v-1.72c-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0112 7.4c.85 0 1.7.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49C19.13 20.64 22 16.79 22 12.25 22 6.59 17.52 2 12 2z"/></svg>';
 const externalIcon = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
-function renderProject(project) {
+function renderProject(project, labels = {}) {
   const imageMarkup = project.image
     ? `<picture>
         <source srcset="${escapeHtml(project.image.replace(/\.(png|jpe?g)$/i, ".webp"))}" type="image/webp" />
@@ -661,7 +661,7 @@ function renderProject(project) {
     : `<div class="project-cover-text" aria-hidden="true">
         <span class="proj-cover-eyebrow">${escapeHtml(project.panelLabel)}</span>
         <strong class="proj-cover-title">${escapeHtml(project.title)}</strong>
-        <span class="proj-cover-sub">${escapeHtml(project.coverSub || "Analista de QA")}</span>
+        <span class="proj-cover-sub">${escapeHtml(project.coverSub || labels.coverSub || "")}</span>
         <div class="proj-cover-divider"></div>
        </div>`;
 
@@ -675,7 +675,7 @@ function renderProject(project) {
   const liveAttrs = isExternalLiveUrl ? ' target="_blank" rel="noopener noreferrer"' : "";
   const liveLink = project.liveUrl
     ? `<a href="${escapeHtml(project.liveUrl)}"${liveAttrs} class="proj-link proj-link-live">${escapeHtml(project.liveLabel || "Live Demo")} ${externalIcon}</a>`
-    : `<span class="proj-link-disabled">Em desenvolvimento</span>`;
+    : `<span class="proj-link-disabled">${escapeHtml(labels.inDev || "In development")}</span>`;
 
   return `
     <article class="project-card mix ${escapeHtml(project.category)}">
@@ -1007,7 +1007,9 @@ function applyLanguage(lang) {
   renderList("project-filters", t.projects.filters, renderProjectFilter);
   const filtersContainer = byId("project-filters");
   if (filtersContainer) filtersContainer.hidden = t.projects.filters.length === 0;
-  renderList("projects-grid", t.projects.items, renderProject);
+  renderList("projects-grid", t.projects.items, (item) =>
+    renderProject(item, { inDev: t.projects.inDev, coverSub: t.hero.title })
+  );
   renderList("experience-list", t.experience.items, renderExperienceItem);
 
   setText("footer-home", t.footer.home);
