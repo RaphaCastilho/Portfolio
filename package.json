@@ -1,5 +1,16 @@
 {
   "scripts": {
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "test:unit": "node --test tests/*.test.mjs",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:report": "playwright show-report",
+    "qa:summary": "node tools/update-qa-lab-summary.mjs",
+    "qa:run": "npm run test:e2e && npm run qa:summary",
+    "serve": "http-server . -p 3000 -c-1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "http-server": "^14.1.1"
   }
 }

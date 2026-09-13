@@ -60,7 +60,7 @@ function localStylesheetReferences(source) {
     .filter(Boolean);
 }
 
-test("portfolio exposes the approved Quality Engineering sections", () => {
+test("portfolio exposes the approved QA sections", () => {
   for (const id of ["home", "about", "automation", "ecosystem", "projects", "experience", "contact"]) {
     assert.ok(hasTagAttribute(html, "section", "id", id), `missing section #${id}`);
   }
@@ -80,12 +80,21 @@ test("portfolio no longer leads with junior front-end positioning", () => {
   }
 });
 
-test("portfolio uses the current QA Lab test count", () => {
-  assert.ok(html.includes('<span class="hero-metric-value">100+</span>'), "index.html fallback still has the old test count");
-  assert.ok(script.includes("100+ testes"), "PT-BR content still has the old QA Lab test count");
-  assert.ok(script.includes("100+ tests"), "EN-US content still has the old QA Lab test count");
+test("portfolio consolidates automation proof into the Automação section instead of a separate QA Lab page", () => {
+  // O resultado real da suíte vive dentro da home (bloco de evidência), não mais
+  // duplicado como número estático na hero nem como página/card de projeto à parte.
+  assert.ok(html.includes('id="automation-evidence"'), "index.html is missing the automation evidence block");
+  assert.ok(html.includes('id="hero-evidence-teaser"'), "index.html hero is missing the link down to the evidence block");
+  assert.ok(script.includes('fetch("./qa-lab/results/latest.json"'), "script.js does not fetch the real Playwright summary for the evidence block");
+  assert.ok(html.includes('href="./qa-sandbox.html"'), "index.html no longer links the live sandbox from the evidence block");
+
+  assert.ok(!html.includes('class="hero-metric-value"'), "index.html still duplicates the test count in the hero");
+  assert.ok(!html.includes('href="./qa-lab.html"'), "index.html should no longer link a standalone QA Lab page");
+  assert.ok(!script.includes('liveUrl: "./qa-lab.html"'), "script.js should no longer carry a standalone QA Lab project card");
   assert.ok(!html.includes(">90+<"), "index.html still exposes 90+");
   assert.ok(!script.includes("90+"), "script.js still exposes 90+");
+  assert.ok(!html.includes("qa-test-lab"), "index.html still links the previous QA Lab project");
+  assert.ok(!script.includes("qa-test-lab"), "script.js still links the previous QA Lab project");
 });
 
 test("published CV assets are referenced by the site script", () => {

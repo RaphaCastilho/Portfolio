@@ -1,0 +1,57 @@
+name: Portfolio Quality
+
+on:
+  push:
+    branches:
+      - main
+      - codex/portfolio-playwright-lab
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Unit and Playwright checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Run unit checks
+        run: npm test
+
+      - name: Run Playwright tests
+        run: npm run test:e2e
+
+      - name: Generate QA Lab summary
+        if: always()
+        run: npm run qa:summary
+
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-playwright-report
+          path: playwright-report/
+          retention-days: 7
+
+      - name: Upload QA Lab summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-qa-summary
+          path: qa-lab/results/latest.json
+          retention-days: 7
