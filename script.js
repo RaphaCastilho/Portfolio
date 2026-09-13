@@ -29,7 +29,9 @@ const content = {
       opsSubtitle: "O que eu consigo demonstrar",
       opsDesc1: "Fluxos principais testados em browser real.",
       opsDesc2: "Mocks de API para sucesso, vazio e erro.",
+      opsLabel3: "Investigação de bugs",
       opsDesc3: "Evidências claras para bugs e regressões.",
+      opsLabel4: "IA com revisão",
       opsDesc4: "Uso de IA com revisão humana para estudo e documentação.",
     },
     toolsStripLabel: "Tecnologias e\nFerramentas",
@@ -238,6 +240,7 @@ const content = {
       emailDesc: "Enviar mensagem",
       linkedinDesc: "Vamos nos conectar",
       githubDesc: "Ver meus projetos",
+      cvLabel: "Currículo",
       cvDesc: "Download do CV",
       ctaEmail: "Enviar e-mail",
       ctaMessage: "Enviar mensagem",
@@ -293,7 +296,9 @@ const content = {
       opsSubtitle: "What I can demonstrate",
       opsDesc1: "Main flows tested in a real browser.",
       opsDesc2: "API mocks for success, empty and error states.",
+      opsLabel3: "Bug Investigation",
       opsDesc3: "Clear evidence for bugs and regressions.",
+      opsLabel4: "AI with review",
       opsDesc4: "AI used with human review for study and documentation.",
     },
     toolsStripLabel: "Technologies &\nTools",
@@ -502,6 +507,7 @@ const content = {
       emailDesc: "Send a message",
       linkedinDesc: "Let's connect",
       githubDesc: "View my projects",
+      cvLabel: "CV",
       cvDesc: "Download CV",
       ctaEmail: "Send e-mail",
       ctaMessage: "Send message",
@@ -857,11 +863,14 @@ function applyLanguage(lang) {
   setText("ops-subtitle", t.hero.opsSubtitle);
   setText("ops-desc-1", t.hero.opsDesc1);
   setText("ops-desc-2", t.hero.opsDesc2);
+  setText("ops-title-3", t.hero.opsLabel3);
   setText("ops-desc-3", t.hero.opsDesc3);
+  setText("ops-title-4", t.hero.opsLabel4);
   setText("ops-desc-4", t.hero.opsDesc4);
   setText("hero-evidence-teaser-text", t.hero.evidenceTeaser);
   setText("cv-download", t.cv.downloadLabel);
   setHref("cv-download", t.cv.pdf);
+  setHref("cv-download-channel", t.cv.pdf);
   setText("cv-web", t.cv.webLabel);
   setHref("cv-web", t.cv.web);
   setText("linkedin-cta", t.hero.linkedin);
@@ -902,16 +911,19 @@ function applyLanguage(lang) {
   setText("eco-kicker", t.ecosystem.kicker);
   setText("ecosystem-title", t.ecosystem.title);
   setText("ecosystem-lead", t.ecosystem.lead);
+  setText("ecosystem-note-text", t.ecosystem.note);
 
   // projects
   setText("projects-kicker", t.projects.kicker);
   setText("projects-title", t.projects.title);
   setText("projects-lead", t.projects.lead);
+  setText("projects-note-text", t.projects.note);
 
   // experience
   setText("exp-kicker", t.experience.kicker);
   setText("experience-title", t.experience.title);
   setText("experience-lead", t.experience.lead);
+  setText("experience-note-text", t.experience.note);
   setText("exp-skill-1", t.experience.skill1);
   setText("exp-skill-2", t.experience.skill2);
   setText("exp-skill-3", t.experience.skill3);
@@ -928,7 +940,9 @@ function applyLanguage(lang) {
   setText("contact-email-desc", t.contact.emailDesc);
   setText("contact-linkedin-desc", t.contact.linkedinDesc);
   setText("contact-github-desc", t.contact.githubDesc);
+  setText("cv-channel-name", t.contact.cvLabel);
   setText("contact-cv-desc", t.contact.cvDesc);
+  setText("contact-cta-email-text", t.contact.ctaEmail);
   setText("contact-bar-title", t.contact.barTitle);
   setText("contact-bar-sub", t.contact.barSub);
   setText("contact-status-label", t.contact.statusLabel);
@@ -938,6 +952,7 @@ function applyLanguage(lang) {
   setText("modal-submit-label", t.contact.modalSubmit);
   setText("contact-cta-message", t.contact.ctaMessage);
   setHref("cv-download", t.cv.pdf);
+  setHref("cv-download-channel", t.cv.pdf);
 
   // about title - rebuild with line
   const aboutTitleEl = byId("about-title");
