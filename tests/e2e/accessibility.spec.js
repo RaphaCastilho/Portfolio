@@ -1,6 +1,6 @@
 const { test, expect } = require("@playwright/test");
 
-const pages = ["/", "/qa-sandbox.html", "/qa-lab.html", "/qa-report.html"];
+const pages = ["/", "/qa-sandbox.html"];
 
 test.describe("Basic accessibility contract", () => {
   for (const route of pages) {

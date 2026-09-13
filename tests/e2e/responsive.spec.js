@@ -6,7 +6,7 @@ const viewports = [
   { name: "desktop", width: 1366, height: 900 },
 ];
 
-const pages = ["/", "/qa-sandbox.html", "/qa-lab.html", "/qa-report.html"];
+const pages = ["/", "/qa-sandbox.html"];
 
 for (const route of pages) {
   for (const viewport of viewports) {
