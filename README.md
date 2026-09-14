@@ -1,33 +1,30 @@
-# Rapha.QA — Quality Engineering Portfolio
+# Rapha.QA — Portfolio de QA
 
-Portfólio profissional de **Raphael Castilho**, focado em **Quality Engineering, Playwright Automation, Operational Systems, validação de API e fluxos modernos de QA**.
+Portfolio profissional de **Raphael Castilho**, focado em **Analista de QA**, testes funcionais, API Testing e automação Playwright aplicada em projeto próprio.
+
+O objetivo deste repositório é demonstrar um fluxo simples e verificável:
+
+1. O Portfolio é o produto real sob teste.
+2. O QA Sandbox simula fluxos controlados de login, filtros e respostas de API.
+3. A suíte Playwright valida o comportamento em navegador real.
+4. A Home exibe um resumo da última execução a partir de `qa-lab/results/latest.json`.
 
 Site estático, bilíngue (PT-BR / EN-US) e compatível com GitHub Pages.
 
 ## Acesso
 
-> **[Ver online →](https://raphacastilho.github.io/Portfolio)**
+> **[Ver online](https://raphacastilho.github.io/Portfolio)**
 
-## Funcionalidades
+## O que o projeto demonstra
 
-- **Hero command center** com painel "Quality Ops" e métricas operacionais (testes, suítes, projetos live, CI/CD)
-- **Bilíngue PT-BR / EN-US** com troca de idioma em tempo real (`html.lang`, textos, labels, ARIA)
-- **CTA de CV por idioma**: o botão principal aponta para o PDF do idioma ativo; link secundário abre a versão web (HTML)
-- **CVs publicados em HTML e PDF** (PT-BR e EN-US)
-- **Favicon personalizado** com identidade QA (SVG + PNGs em todos os tamanhos: 16, 32, 48, 64, 128, 180, 192, 512px)
-- **Sistema visual dark enterprise** — Operational Intelligence Platform com gradientes sutis, glow em cards e borders premium
-- **Tipografia dupla:** Inter para corpo de texto, Geist para títulos, botões e logo
-- **Tools strip** com ícones SVG inline das principais tecnologias
-- Seções: Hero, Perfil Operacional, Automation Engineering, Ecossistema Técnico (Stack), Sistemas/Projetos, Experiência e Contato
-- **Seção Sobre** — layout 2 colunas, grid 2×2 com ícones SVG
-- **Seção Automation** — layout 2 colunas, grid 2×2, lista de benefícios
-- **Seção Stack** — header centralizado, grid 3×2, cards com ícone + descrição + chips
-- **Seção Experiência** — layout 2 colunas, timeline vertical, cards com badges e bullets
-- **Seção Projetos** — header + filtros inline, cards 3 colunas altura fixa, rodapé alinhado; links sem repositório exibem estado "em breve"
-- **Seção Contato** — CTA moderno, grid de canais 2×2, barra de status, modal de formulário no estilo do portfólio
-- **Filtros de projeto** por QA Systems / Automation / Web Foundations (MixItUp)
-- **Tema dark/light** com persistência (direção principal: dark enterprise)
-- **Smoke tests estáticos** com Node.js (`node:test`)
+- Posicionamento profissional para QA, sem exagerar experiência.
+- Portfolio bilíngue com troca PT-BR / EN-US em tempo real.
+- Links de CV por idioma, GitHub, LinkedIn e canais de contato.
+- QA Sandbox próprio para praticar login, filtros, estado vazio e erro de API.
+- Playwright usando navegador real, API mocking com `page.route`, responsividade e acessibilidade básica.
+- Resumo de evidências exibido dentro da Home, ao lado da seção que explica a automação.
+- CI com GitHub Actions para rodar testes unitários e E2E em push/PR.
+- IA tratada apenas como apoio para estudo, revisão e documentação; a validação técnica continua humana.
 
 ## Tecnologias
 
@@ -35,74 +32,89 @@ Site estático, bilíngue (PT-BR / EN-US) e compatível com GitHub Pages.
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 
-- **Tipografia:** Geist + Inter (Google Fonts)
-- **Ícones:** Boxicons + SVG inline
-- **Testes:** Node.js built-in test runner (sem dependências) + Playwright (E2E, desktop e mobile)
+- **Base:** HTML, CSS e JavaScript puro
+- **Testes:** Node.js `node:test` + Playwright
+- **Automação:** Playwright E2E, API mocking, execução desktop/mobile
+- **Publicação:** GitHub Pages
+- **CI:** GitHub Actions
+- **UI:** fontes self-hosted, Boxicons local e SVG inline
 
 ## Estrutura
 
-```
+```text
 Portfolio/
-├── index.html              # Estrutura semântica + conteúdo estático de fallback (PT-BR)
-├── style.css               # Sistema visual dark enterprise / operational UI
-├── script.js               # Modelo de conteúdo bilíngue, toggle, CTAs, render das seções, evidência de automação
-├── favicon.svg             # Favicon SVG (identidade QA)
-├── site.webmanifest        # Web app manifest
-├── package.json            # Scripts de teste e geração do resumo de QA
-├── src/
-│   ├── cv/                 # Currículos publicados (HTML + PDF, PT e EN)
-│   │   ├── DEV_Rapha_CV_PT.html
-│   │   ├── DEV_Rapha_CV_PT.pdf
-│   │   ├── DEV_Rapha_CV_EN.html
-│   │   └── DEV_Rapha_CV_EN.pdf
-│   └── img/                # Imagens, bandeiras e favicons
-│       ├── favicon-16.png … favicon-512.png
-│       ├── favicon-180.png (apple-touch-icon)
-│       ├── favicon-192.png / favicon-512.png (PWA)
-│       ├── brazil-flag.svg
-│       └── united-states-of-america-flag.svg
+├── index.html                    # Home, fallback PT-BR e hooks usados pelo script
+├── style.css                     # Sistema visual do Portfolio e componentes
+├── script.js                     # Conteúdo bilíngue, tema, filtros, projetos e evidências
+├── qa-sandbox.html               # Sandbox interativo de QA
 ├── qa-lab/
-│   └── results/latest.json # Resumo gerado a partir do resultado real do Playwright (lido pelo bloco de evidência)
-├── qa-sandbox.html          # Sandbox interativo (login, filtros, simulação de API)
+│   └── results/latest.json       # Resumo público da última execução Playwright
+├── src/
+│   ├── cv/                       # CVs publicados em HTML e PDF
+│   ├── img/                      # Imagens, bandeiras e favicons
+│   └── vendor/                   # Fontes e ícones locais
 ├── tests/
-│   ├── static-site.test.mjs      # Estrutura, posicionamento, assets locais, PDFs
-│   ├── cv-content.test.mjs       # Idioma/consistência dos CVs HTML
-│   └── e2e/                      # Suíte Playwright (desktop + mobile)
+│   ├── *.test.mjs                # Testes estáticos com Node.js
+│   └── e2e/*.spec.js             # Testes Playwright
 ├── tools/
-│   └── update-qa-lab-summary.mjs # Gera qa-lab/results/latest.json a partir do reporter do Playwright
-└── .github/workflows/portfolio-quality.yml  # CI: testes unitários + Playwright a cada push/PR
+│   └── update-qa-lab-summary.mjs # Gera latest.json a partir do JSON do Playwright
+└── .github/workflows/
+    └── portfolio-quality.yml     # Pipeline de qualidade
 ```
 
-## Currículos (caminhos finais)
+## Currículos
 
-| Idioma | PDF (primário p/ recrutador) | HTML (versão web) |
-|--------|------------------------------|-------------------|
-| PT-BR  | `src/cv/DEV_Rapha_CV_PT.pdf` | `src/cv/DEV_Rapha_CV_PT.html` |
-| EN-US  | `src/cv/DEV_Rapha_CV_EN.pdf` | `src/cv/DEV_Rapha_CV_EN.html` |
+| Idioma | PDF | HTML |
+| --- | --- | --- |
+| PT-BR | `src/cv/DEV_Rapha_CV_PT.pdf` | `src/cv/DEV_Rapha_CV_PT.html` |
+| EN-US | `src/cv/DEV_Rapha_CV_EN.pdf` | `src/cv/DEV_Rapha_CV_EN.html` |
 
-Os caminhos são relativos e os nomes são **case-sensitive** (importante para GitHub Pages). Eles estão referenciados no modelo de conteúdo de `script.js`.
+Os caminhos são relativos e case-sensitive, o que é importante para GitHub Pages.
 
 ## Como rodar localmente
 
-Abra `index.html` no navegador (ou use uma extensão como Live Server no VS Code).
+```bash
+npm install
+npm run serve
+```
+
+Depois abra:
+
+```text
+http://127.0.0.1:3000/
+http://127.0.0.1:3000/qa-sandbox.html
+```
+
+Abrir `index.html` direto no navegador funciona para leitura básica, mas o bloco de evidências usa `fetch` para ler `qa-lab/results/latest.json`; por isso o servidor local é o caminho recomendado.
 
 ## Como testar
 
 ```bash
-npm run test:unit   # smoke tests estáticos (estrutura, assets locais, PDFs, idioma dos CVs)
-npm run test:e2e    # suíte Playwright (desktop + mobile)
-npm run qa:summary  # regenera qa-lab/results/latest.json a partir do resultado do Playwright
+npm test          # testes estáticos: estrutura, assets, CVs e posicionamento
+npm run test:e2e  # testes Playwright em Chromium desktop e mobile
+npm run qa:run    # roda E2E e atualiza qa-lab/results/latest.json
 ```
 
-O CI (`.github/workflows/portfolio-quality.yml`) roda as três etapas a cada push/PR e publica o relatório do Playwright e o resumo de QA como artifacts.
+O workflow `.github/workflows/portfolio-quality.yml` executa os testes no GitHub Actions e publica os relatórios como artifacts. O arquivo `qa-lab/results/latest.json` precisa ser regenerado e commitado quando a suíte Playwright mudar, porque o CI não commita resultados automaticamente.
+
+## Cobertura atual
+
+A suíte cobre:
+
+- Home do Portfolio e seções principais.
+- Links de GitHub, LinkedIn, CV e QA Sandbox.
+- Troca de idioma PT-BR / EN-US.
+- Carregamento de imagens locais.
+- Resumo de evidências na Home.
+- Login, filtros, estado vazio, logout e erro 500 no QA Sandbox.
+- API mocking com `page.route` e `route.fulfill`.
+- Renderização segura de conteúdo retornado por mock/API.
+- Ausência de overflow horizontal em mobile, tablet e desktop.
+- Acessibilidade básica: idioma da página, navegação nomeada e labels em formulário.
 
 ## Manutenção
 
-Para editar textos bilíngues, regenerar os PDFs a partir dos HTMLs, entender os testes e o fluxo seguro de alteração, veja **[docs/maintenance.md](docs/maintenance.md)**.
-
-## Compatibilidade GitHub Pages
-
-Site 100% estático. Servido em `https://raphacastilho.github.io/Portfolio/`, todos os caminhos são relativos (`src/cv/...`, `style.css`, `script.js`). Como o GitHub Pages roda em Linux (case-sensitive), os nomes de arquivo devem bater exatamente com as referências em `script.js` e `index.html`. Detalhes em [docs/maintenance.md](docs/maintenance.md).
+Para editar textos bilíngues, regenerar PDFs de CV, entender os testes e seguir o fluxo seguro de alteração, veja [docs/maintenance.md](docs/maintenance.md).
 
 ## Contato
 

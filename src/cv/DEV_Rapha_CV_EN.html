@@ -3,595 +3,607 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Raphael Castilho — Quality Engineer</title>
+<title>Raphael Castilho Villela - QA Analyst</title>
 <style>
-/* ── VARIABLES ─────────────────────────────────── */
 :root {
-  --accent:        #5B21B6;
-  --accent-soft:   #EDE9FE;
-  --accent-border: #C4B5FD;
-  --text:          #0F172A;
-  --body:          #334155;
-  --muted:         #64748B;
-  --line:          #E2E8F0;
-  --chip-bg:       #F8FAFC;
-  --chip-border:   #E2E8F0;
-  --bg:            #F1F5F9;
-  --card:          #FFFFFF;
-  --green-soft:    #F0FDF4;
-  --green-border:  #BBF7D0;
-  --green-text:    #15803D;
+  --ink: #0B1220;
+  --body: #263244;
+  --muted: #667085;
+  --paper: #FFFFFF;
+  --soft: #F7FAFC;
+  --line: #D6E0EA;
+  --blue: #0369A1;
+  --blue-soft: #E0F2FE;
+  --green: #047857;
+  --green-soft: #DFF7EA;
+  --amber: #A16207;
+  --amber-soft: #FEF3C7;
 }
 
-/* ── RESET ─────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
+
 body {
   margin: 0;
-  background: var(--bg);
-  font-family: 'Inter', 'Aptos', 'Segoe UI', system-ui, Arial, sans-serif;
+  background: #EEF3F8;
   color: var(--body);
-  line-height: 1.6;
+  font-family: "Inter", "Aptos", "Segoe UI", system-ui, Arial, sans-serif;
   font-size: 14px;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── PAGE CONTAINER ────────────────────────────── */
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--blue); text-decoration: underline; }
+
 .page {
-  max-width: 900px;
-  margin: 32px auto;
-  padding: 48px 56px;
-  background: var(--card);
+  width: min(930px, calc(100vw - 28px));
+  margin: 28px auto;
+  background: var(--paper);
   border: 1px solid var(--line);
-  border-radius: 20px;
-  box-shadow:
-    0 1px 2px rgba(0,0,0,.04),
-    0 8px 20px rgba(0,0,0,.05),
-    0 28px 52px rgba(0,0,0,.04);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 12px 34px rgba(11, 18, 32, .08);
 }
 
-/* ── HEADER ────────────────────────────────────── */
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  background: var(--accent-soft);
-  border: 1px solid var(--accent-border);
-  color: var(--accent);
-  border-radius: 6px;
-  padding: 4px 11px;
-  font-size: 10.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
-}
-h1 { font-size: 36px; line-height: 1.08; margin: 12px 0 5px; color: var(--text); letter-spacing: -.035em; font-weight: 800; }
-.subtitle { font-size: 14.5px; font-weight: 500; color: var(--muted); margin: 0 0 12px; letter-spacing: -.01em; }
-.contacts { display: flex; flex-wrap: wrap; align-items: center; color: var(--muted); font-size: 12px; margin-bottom: 24px; }
-.contacts .sep { margin: 0 8px; color: var(--line); font-size: 13px; }
-
-/* ── DIVIDER ───────────────────────────────────── */
-.divider { height: 1px; background: var(--line); margin-bottom: 22px; }
-
-/* ── SECTION TITLE ─────────────────────────────── */
-.section-title {
-  display: flex; align-items: center; gap: 10px;
-  margin: 22px 0 10px; color: var(--muted);
-  font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
-}
-.section-title::after { content: ''; flex: 1; height: 1px; background: var(--line); }
-
-/* ── CARDS ─────────────────────────────────────── */
-.card { border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px; margin-bottom: 10px; background: var(--card); }
-
-/* ── SUMMARY ───────────────────────────────────── */
-.summary p { margin: 0 0 10px; color: var(--body); line-height: 1.72; font-size: 13.5px; }
-.summary p:last-child { margin-bottom: 0; }
-
-/* ── CHIPS ─────────────────────────────────────── */
-.chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
-.chip {
-  display: inline-flex; align-items: center;
-  background: var(--chip-bg); border: 1px solid var(--chip-border);
-  border-radius: 6px; padding: 3px 9px; font-size: 11px;
-  color: var(--body); font-weight: 500; white-space: nowrap;
-  transition: border-color .15s, background .15s, color .15s; cursor: default;
-}
-.chip:hover { border-color: var(--accent-border); background: var(--accent-soft); color: var(--accent); }
-.chip.primary { background: var(--accent-soft); border-color: var(--accent-border); color: var(--accent); font-weight: 600; }
-.chip.primary:hover { background: #DDD6FE; border-color: #A78BFA; }
-.chip.green { background: var(--green-soft); border-color: var(--green-border); color: var(--green-text); font-weight: 600; }
-
-/* ── COMPETÊNCIAS — ROW LAYOUT ─────────────────── */
-.skill-rows { display: flex; flex-direction: column; }
-.skill-row {
+.hero {
   display: grid;
-  grid-template-columns: 170px 1fr;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 12px 0;
+  grid-template-columns: 1fr 248px;
+  gap: 26px;
+  padding: 30px 44px 22px;
+  background: var(--paper);
+  color: var(--ink);
+  border-top: 6px solid var(--blue);
   border-bottom: 1px solid var(--line);
 }
-.skill-row:first-child { padding-top: 0; }
-.skill-row:last-child { border-bottom: none; padding-bottom: 0; }
-.skill-row-label { font-size: 12px; font-weight: 700; color: var(--text); padding-top: 3px; letter-spacing: -.01em; }
-.skill-row .chips { margin-top: 0; }
 
-/* ── ECOSYSTEM GRID ────────────────────────────── */
-.eco-panel {
+.kicker {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 12px;
+  padding: 4px 8px;
+  border: 1px solid rgba(125, 211, 252, .55);
+  border-radius: 5px;
+  color: #BAE6FD;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.04;
+  font-weight: 850;
+}
+
+.headline {
+  margin-top: 8px;
+  color: var(--blue);
+  font-size: 15.5px;
+  font-weight: 800;
+}
+
+.micro {
+  margin-top: 10px;
+  color: #475467;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.links {
+  display: grid;
+  gap: 5px;
+  align-content: start;
+  padding: 2px 0 2px 18px;
+  border-left: 1px solid var(--line);
+  color: var(--body);
+  font-size: 11px;
+}
+
+.signal-bar {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.signal {
+  padding: 13px 18px;
+  background: var(--soft);
+}
+
+.signal strong {
+  display: block;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.signal span {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 282px;
+  gap: 24px;
+  padding: 26px 44px 38px;
+}
+
+.section {
+  margin-top: 18px;
+}
+
+.section:first-child { margin-top: 0; }
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 9px;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 950;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.title::before {
+  content: "";
+  width: 22px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--blue);
+}
+
+.summary {
+  margin: 0;
+  color: var(--body);
+  font-size: 13px;
+  line-height: 1.58;
+}
+
+.qa-stack {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 9px;
+}
+
+.stack-card {
+  padding: 12px 13px;
   border: 1px solid var(--line);
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 10px;
+  border-radius: 7px;
+  background: var(--paper);
+  break-inside: avoid;
 }
-.eco-group {
-  padding: 14px 16px;
-  border-right: 1px solid var(--line);
-}
-.eco-group:last-child { border-right: none; }
-.eco-label {
-  font-size: 9.5px; font-weight: 800; letter-spacing: .08em;
-  text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
-}
-.eco-group .chips { margin-top: 0; gap: 4px; }
 
-/* ── EXPERIENCE ────────────────────────────────── */
-.job-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 2px; }
-.job-head h3 { margin: 0; color: var(--text); font-size: 14.5px; font-weight: 700; letter-spacing: -.01em; }
+.stack-card strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--blue);
+  font-size: 12.5px;
+  font-weight: 900;
+}
+
+.stack-card p {
+  margin: 0;
+  color: var(--body);
+  font-size: 11.6px;
+  line-height: 1.38;
+}
+
+.job {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 16px;
+  border-left: 2px solid var(--line);
+  break-inside: avoid;
+}
+
+.job::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 0 4px #E0F2FE;
+}
+
+.job-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 2px;
+}
+
+h2, h3 {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.job h3 { font-size: 14px; }
+
 .period {
-  color: var(--muted); font-size: 11px; font-weight: 600; white-space: nowrap;
-  background: var(--chip-bg); border: 1px solid var(--chip-border);
-  border-radius: 6px; padding: 3px 8px; flex-shrink: 0;
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 10.8px;
+  font-weight: 850;
+  white-space: nowrap;
 }
-.role { font-size: 12.5px; font-weight: 500; color: var(--muted); margin: 3px 0 8px; }
-ul { margin: 6px 0 0; padding-left: 16px; }
-li { margin: 4px 0; color: var(--body); line-height: 1.52; font-size: 13px; }
 
-/* ── AMBIENTES ─────────────────────────────────── */
-.env-wrap { display: flex; flex-wrap: wrap; gap: 6px; }
+.role {
+  margin: 0 0 6px;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+}
 
-/* ── PROJECTS ──────────────────────────────────── */
-.project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.project h3 { margin: 0 0 8px; color: var(--text); font-size: 13px; font-weight: 700; }
+ul {
+  margin: 0;
+  padding-left: 16px;
+}
 
-/* ── EDUCATION ─────────────────────────────────── */
-.edu-top { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
-.edu-block h3 { margin: 0 0 6px; color: var(--text); font-size: 12px; font-weight: 700; letter-spacing: -.01em; }
-.edu-block p { margin: 0 0 3px; font-size: 12.5px; color: var(--body); line-height: 1.55; }
-.edu-block .edu-sub { font-size: 11px; color: var(--muted); margin: 0 0 8px; }
+li {
+  margin: 3px 0;
+  color: var(--body);
+  font-size: 12.2px;
+  line-height: 1.36;
+}
 
-.training-list { list-style: none; padding: 0; margin: 0; }
-.training-list li { padding: 6px 0; border-bottom: 1px solid var(--line); font-size: 12px; color: var(--body); margin: 0; }
-.training-list li:last-child { border-bottom: none; padding-bottom: 0; }
-.training-list .inst { display: block; font-size: 10.5px; color: var(--muted); margin-top: 1px; }
+.side-panel {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--soft);
+  break-inside: avoid;
+}
 
-.cert-list { list-style: none; padding: 0; margin: 0; }
-.cert-list li { padding: 5px 0; border-bottom: 1px solid var(--line); font-size: 12px; color: var(--body); margin: 0; line-height: 1.4; }
-.cert-list li:last-child { border-bottom: none; padding-bottom: 0; }
-.cert-list .inst { display: block; font-size: 10.5px; color: var(--muted); margin-top: 1px; }
+.side-panel + .side-panel { margin-top: 12px; }
 
-.lang-row { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 1px solid var(--line); font-size: 12.5px; }
-.lang-row:last-child { border-bottom: none; padding-bottom: 0; }
-.lang-row .lang-level { font-size: 11px; color: var(--muted); font-weight: 500; }
+.side-title {
+  margin-bottom: 9px;
+  color: var(--ink);
+  font-size: 10.5px;
+  font-weight: 950;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
 
-/* ── HIGHLIGHTS ────────────────────────────────── */
-.highlights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 22px; margin: 0; padding: 0; list-style: none; }
-.highlights-grid li { font-size: 12.5px; color: var(--body); line-height: 1.52; padding-left: 13px; position: relative; margin: 0; }
-.highlights-grid li::before { content: '›'; position: absolute; left: 0; color: var(--accent); font-weight: 700; line-height: 1.52; }
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
 
-/* ── PRINT ─────────────────────────────────────── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 7px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--paper);
+  color: var(--body);
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+.chip.blue {
+  border-color: #7DD3FC;
+  background: var(--blue-soft);
+  color: var(--blue);
+}
+
+.chip.green {
+  border-color: #B7D5E8;
+  background: #F5FAFD;
+  color: var(--blue);
+}
+
+.mini {
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+
+.mini:first-of-type { border-top: 0; padding-top: 0; }
+
+.mini h3 {
+  font-size: 12.4px;
+}
+
+.mini p {
+  margin: 4px 0 0;
+  color: var(--body);
+  font-size: 11.3px;
+  line-height: 1.35;
+}
+
+.mini a {
+  display: inline-block;
+  margin-top: 5px;
+  color: var(--blue);
+  font-size: 10.8px;
+  font-weight: 850;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.list li {
+  margin: 0;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 11.4px;
+}
+
+.list li:last-child { border-bottom: 0; }
+
+.muted {
+  display: block;
+  margin-top: 1px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
 @page { size: A4; margin: 0; }
 
 @media print {
   html { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-  body { background: #fff; font-size: 10px; }
-
-  .page { margin: 0; max-width: none; width: 100%; padding: 9mm 12mm; background: #fff; border: none; border-radius: 0; box-shadow: none; }
-
-  /* PAGE BREAKS */
-  .page-2 { break-before: page; page-break-before: always; }
-  .page-3 { break-before: page; page-break-before: always; }
-  .no-break { break-inside: avoid; page-break-inside: avoid; }
-
-  h1 { font-size: 25px; }
-  .subtitle { font-size: 12px; margin-bottom: 8px; }
-  .contacts { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; align-items: center; font-size: 8px; margin-bottom: 10px; gap: 0; overflow: hidden; }
-  .contacts span { white-space: nowrap; }
-  .contacts .sep { display: inline-block !important; margin: 0 5px; flex-shrink: 0; }
-  .eyebrow { font-size: 8.5px; padding: 3px 7px; }
-  .divider { margin-bottom: 12px; }
-  .section-title { margin: 13px 0 7px; font-size: 8px; }
-
-  .card { break-inside: avoid; page-break-inside: avoid; padding: 9px 12px; margin-bottom: 7px; border-radius: 8px; }
-
-  .chip, .chip.primary, .chip.green { font-size: 8.5px; padding: 2px 6px; border-radius: 4px; }
-  .chips { gap: 3px; margin-top: 6px; }
-
-  /* Skill rows print */
-  .skill-row { grid-template-columns: 130px 1fr; gap: 10px; padding: 8px 0; }
-  .skill-row-label { font-size: 9.5px; }
-
-  /* Ecosystem print */
-  .eco-panel { border-radius: 7px; }
-  .eco-group { padding: 9px 11px; }
-  .eco-label { font-size: 8px; margin-bottom: 7px; }
-
-  ul { margin-top: 4px; }
-  li { margin: 2px 0; font-size: 9.5px; line-height: 1.45; }
-  .job, .project { break-inside: avoid; page-break-inside: avoid; }
-  .period { font-size: 9px; }
-  .role { font-size: 10px; margin-bottom: 4px; }
-  .job-head h3 { font-size: 11.5px; }
-
-  .project-grid { gap: 7px; }
-  .project h3 { font-size: 10.5px; margin-bottom: 5px; }
-  .edu-top { gap: 7px; margin-bottom: 7px; }
-  .edu-block h3 { font-size: 10px; }
-  .edu-block p { font-size: 9.5px; }
-  .edu-block .edu-sub { font-size: 9px; }
-  .training-list li, .cert-list li { font-size: 9.5px; padding: 4px 0; }
-  .training-list .inst, .cert-list .inst { font-size: 8.5px; }
-  .lang-row { font-size: 9.5px; padding: 4px 0; }
-  .lang-row .lang-level { font-size: 9px; }
-  .highlights-grid { gap: 6px 16px; }
-  .highlights-grid li { font-size: 9.5px; }
-  .summary p { font-size: 10px; line-height: 1.65; margin-bottom: 6px; }
-  .env-wrap { gap: 4px; }
+  body { background: #FFFFFF; }
+  .page {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .hero { grid-template-columns: 1fr 60mm; gap: 7mm; padding: 8mm 10mm 6mm; border-top-width: 2mm; }
+  .kicker { font-size: 7.2px; padding: 2px 5px; margin-bottom: 5px; }
+  h1 { font-size: 23.5px; }
+  .headline { margin-top: 4px; font-size: 10.8px; }
+  .micro { margin-top: 5px; font-size: 8px; }
+  .links { padding: 1px 0 1px 5mm; gap: 2px; font-size: 7.3px; }
+  .signal-bar { grid-template-columns: repeat(4, 1fr); }
+  .signal { padding: 6px 9px; }
+  .signal strong { font-size: 8.4px; }
+  .signal span { font-size: 7.4px; }
+  .content { grid-template-columns: 1fr 60mm; gap: 7mm; padding: 7mm 10mm 9mm; }
+  .section { margin-top: 10px; }
+  .title { margin-bottom: 5px; font-size: 7.7px; }
+  .title::before { width: 14px; height: 2px; }
+  .summary { font-size: 8.7px; line-height: 1.4; }
+  .qa-stack { gap: 5px; }
+  .stack-card { padding: 6px 7px; border-radius: 5px; }
+  .stack-card strong { margin-bottom: 2px; font-size: 8.5px; }
+  .stack-card p { font-size: 7.8px; line-height: 1.26; }
+  .job { padding-left: 12px; margin-bottom: 8px; border-left-width: 1px; }
+  .job::before { left: -4px; width: 7px; height: 7px; box-shadow: 0 0 0 3px #E0F2FE; }
+  .job h3 { font-size: 9.4px; }
+  .period { font-size: 7.5px; }
+  .role { margin-bottom: 3px; font-size: 8.2px; }
+  li { margin: 1.4px 0; font-size: 8.1px; line-height: 1.25; }
+  .side-panel { padding: 7px; border-radius: 5px; }
+  .side-panel + .side-panel { margin-top: 6px; }
+  .side-title { margin-bottom: 5px; font-size: 7.4px; }
+  .chips { gap: 2.5px; }
+  .chip { padding: 2px 4.5px; border-radius: 4px; font-size: 7.2px; }
+  .mini { padding: 5px 0; }
+  .mini h3 { font-size: 8.5px; }
+  .mini p { margin-top: 2px; font-size: 7.7px; line-height: 1.25; }
+  .mini a { margin-top: 2px; font-size: 7.5px; }
+  .list li { padding: 3px 0; font-size: 7.8px; }
+  .muted { font-size: 7px; }
 }
 
-/* ── RESPONSIVE ────────────────────────────────── */
-@media (max-width: 720px) {
-  .page { padding: 28px 20px; margin: 10px; border-radius: 14px; }
+@media (max-width: 780px) {
+  .hero, .content, .signal-bar, .qa-stack { grid-template-columns: 1fr; }
+  .hero, .content { padding-left: 22px; padding-right: 22px; }
   h1 { font-size: 28px; }
-  .skill-row { grid-template-columns: 1fr; gap: 6px; }
-  .eco-panel { grid-template-columns: 1fr 1fr; }
-  .eco-group { border-right: none; border-bottom: 1px solid var(--line); }
-  .eco-group:nth-child(2n) { border-right: 1px solid var(--line); }
-  .project-grid, .edu-top, .highlights-grid { grid-template-columns: 1fr; }
-  .job-head { flex-direction: column; gap: 6px; }
-  .period { align-self: flex-start; }
-  .contacts { flex-direction: column; align-items: flex-start; gap: 3px; }
-  .contacts .sep { display: none; }
+  .job-head { flex-direction: column; gap: 2px; }
 }
 </style>
 </head>
 <body>
 <main class="page">
+  <header class="hero">
+    <div>
+      <h1>Raphael Castilho Villela</h1>
+      <div class="headline">QA Analyst | API Testing and Playwright Automation</div>
+      <div class="micro">Functional testing, API Testing with Postman, Playwright automation, and release evidence.</div>
+    </div>
+    <div class="links">
+      <a href="mailto:castilho_raphael@hotmail.com">castilho_raphael@hotmail.com</a>
+      <span>+55 11 98480-6100</span>
+      <span>Aracatuba, Brazil - Remote</span>
+      <span>CLT or PJ - immediate start</span>
+      <a href="https://www.linkedin.com/in/raphael-castilho/">LinkedIn</a>
+      <a href="https://github.com/RaphaCastilho">GitHub</a>
+      <a href="https://raphacastilho.github.io/Portfolio/">Portfolio</a>
+      <a href="https://raphacastilho.github.io/Portfolio/qa-sandbox.html">QA Sandbox</a>
+    </div>
+  </header>
 
-  <!-- ══════════════ PÁGINA 1 ════════════════════ -->
-
-  <!-- HEADER ──────────────────────────────────── -->
-  <span class="eyebrow">Quality Engineering &bull; Automation &bull; Operational Systems</span>
-  <h1>Raphael Castilho Villela</h1>
-  <div class="subtitle">QA Engineer &nbsp;&middot;&nbsp; Test Automation &nbsp;&middot;&nbsp; API Testing</div>
-  <div class="contacts">
-    <span>castilho_raphael@hotmail.com</span>
-    <span class="sep">&middot;</span>
-    <span>+55 11 98480-6100</span>
-    <span class="sep">&middot;</span>
-    <span>Araçatuba, Brazil</span>
-    <span class="sep">&middot;</span>
-    <span>linkedin.com/in/raphael-castilho</span>
-    <span class="sep">&middot;</span>
-    <span>github.com/RaphaCastilho</span>
-  </div>
-  <div class="divider"></div>
-
-  <!-- RESUMO ──────────────────────────────────── -->
-  <div class="section-title no-break">Professional Summary</div>
-
-<section class="card summary no-break">
-    <p>QA Engineer with experience in functional, exploratory, and regression testing, E2E automation using Playwright and Cypress, REST API validation, and bug investigation across corporate web applications. Collaborates with cross-functional teams to ensure stability, quality, and release readiness.</p>
-</section>
-
-
-  <!-- COMPETÊNCIAS ────────────────────────────── -->
-  <div class="section-title no-break">Technical Skills</div>
-  <section class="card no-break">
-    <div class="skill-rows">
-      <div class="skill-row">
-        <span class="skill-row-label">Quality Engineering</span>
-        <div class="chips">
-          <span class="chip primary">Functional Testing</span>
-          <span class="chip primary">Functional Test Design</span>
-          <span class="chip">Exploratory Testing</span>
-          <span class="chip">Bug Investigation</span>
-          <span class="chip">Bug Reporting</span>
-          <span class="chip">Regression Testing</span>
-        </div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-row-label">Systems &amp; Troubleshooting</span>
-        <div class="chips">
-          <span class="chip primary">Troubleshooting</span>
-          <span class="chip primary">System Analysis</span>
-          <span class="chip">Log Analysis</span>
-          <span class="chip">Functional Validation</span>
-          <span class="chip">Incident Management</span>
-        </div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-row-label">Automation &amp; Engineering</span>
-        <div class="chips">
-          <span class="chip primary">Playwright</span>
-          <span class="chip primary">Cypress</span>
-          <span class="chip primary">JavaScript</span>
-          <span class="chip">REST APIs</span>
-          <span class="chip">API Testing</span>
-          <span class="chip">SQL</span>
-          <span class="chip">TypeScript</span>
-        </div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-row-label">Automation Stack</span>
-        <div class="chips">
-          <span class="chip primary">Jira</span>
-          <span class="chip primary">JQL</span>
-          <span class="chip primary">Postman</span>
-          <span class="chip primary">Chrome DevTools</span>
-          <span class="chip">Git</span>
-          <span class="chip">GitHub</span>
-          <span class="chip">Node.js</span>
-          <span class="chip">Agile</span>
-          <span class="chip green">Playwright</span>
-          <span class="chip green">Cypress</span>
-        </div>
-      </div>
+  <section class="signal-bar" aria-label="Key signals">
+    <div class="signal">
+      <strong>API Testing</strong>
+      <span>Daily Postman use</span>
+    </div>
+    <div class="signal">
+      <strong>Playwright</strong>
+      <span>Portfolio + Sandbox</span>
+    </div>
+    <div class="signal">
+      <strong>Bugs</strong>
+      <span>Actionable evidence</span>
+    </div>
+    <div class="signal">
+      <strong>Remote</strong>
+      <span>CLT/PJ available now</span>
     </div>
   </section>
 
+  <div class="content">
+    <div>
+      <section class="section">
+        <h2 class="title">Profile</h2>
+        <p class="summary">QA Analyst focused on API Testing, functional testing, regression, and E2E automation with Playwright. I use Postman daily to validate REST APIs, JSON payloads, status codes, authentication, integrations, and negative scenarios. For automation practice, I maintain a personal project that uses my Portfolio as the product under test, plus a QA Sandbox for login, filters, UI states, and mocked API responses. My previous background in L4 support, logs, Jira, and critical systems strengthens my ability to investigate issues, reproduce defects, and communicate clearly with development teams.</p>
+      </section>
 
-  <div class="section-title no-break">Automation Engineering</div>
-  <section class="card no-break">
-    <div class="chips">
-      <span class="chip green">Playwright E2E</span>
-      <span class="chip green">Cypress E2E</span>
-      <span class="chip">Cross-browser Testing</span>
-      <span class="chip">API Validation</span>
-      <span class="chip">Regression Automation</span>
-      <span class="chip">Session/Auth Validation</span>
-      <span class="chip">Automation Workflows</span>
-      <span class="chip">Execution Analysis</span>
-      <span class="chip">Functional Reliability</span>
-    </div>
-  </section>
+      <section class="section">
+        <h2 class="title">QA Delivery Stack</h2>
+        <div class="qa-stack">
+          <article class="stack-card">
+            <strong>Test APIs with consistency</strong>
+            <p>Postman, REST, status codes, headers, tokens, payloads, contracts, positive/negative scenarios, and integration validation.</p>
+          </article>
+          <article class="stack-card">
+            <strong>Automate demonstrable flows</strong>
+            <p>Playwright applied to my own project, covering navigation, login, filters, API mocking, responsiveness, basic accessibility, and reports.</p>
+          </article>
+          <article class="stack-card">
+            <strong>Document actionable bugs</strong>
+            <p>Steps, evidence, severity, impact, expected/actual behavior, technical context, and objective communication.</p>
+          </article>
+          <article class="stack-card">
+            <strong>Investigate real issues</strong>
+            <p>DevTools, logs, Jira, reproduction steps, system behavior analysis, and hypotheses for development teams.</p>
+          </article>
+        </div>
+      </section>
 
+      <section class="section">
+        <h2 class="title">Experience and Projects</h2>
+        <article class="job">
+          <div class="job-head">
+            <h3>Personal QA / Automation Projects</h3>
+            <span class="period">01/2025 - Present</span>
+          </div>
+          <p class="role">Portfolio, QA Sandbox, and functional/API validation</p>
+          <ul>
+            <li>Functional, exploratory, and regression testing in a personal project, focused on critical journeys, acceptance criteria, and evidence.</li>
+            <li>Daily Postman use for API Testing across REST endpoints, JSON payloads, status codes, authentication, errors, and integrations.</li>
+            <li>Playwright automation using the Portfolio as the product under test, covering web flows, smoke tests, interactions, responsive behavior, API mocking, and basic accessibility.</li>
+            <li>Bug documentation with reproduction steps, expected/actual behavior, evidence, severity, and context for development.</li>
+            <li>Use of Jira, Chrome DevTools, logs, Git, GitHub Actions, and Playwright reports to support triage, execution, and traceability.</li>
+          </ul>
+        </article>
 
-  <!-- ECOSSISTEMA TÉCNICO ──────────────────────── -->
-  <div class="section-title no-break">Technical Ecosystem</div>
-  <div class="eco-panel no-break">
-    <div class="eco-group">
-      <div class="eco-label">QA &amp; Analysis</div>
-      <div class="chips">
-        <span class="chip primary">Jira</span>
-        <span class="chip primary">JQL</span>
-        <span class="chip primary">Postman</span>
-        <span class="chip primary">Chrome DevTools</span>
-        <span class="chip">API Testing</span>
-      </div>
+        <article class="job">
+          <div class="job-head">
+            <h3>Brooks Hamburgueria</h3>
+            <span class="period">2019 - 2025</span>
+          </div>
+          <p class="role">Operations Coordinator</p>
+          <ul>
+            <li>Coordinated an average team of 10 people in a high-pressure operation, organizing priorities, standards, and execution quality.</li>
+            <li>Created checklists, validation routines, controls, and process improvements to reduce failures and increase predictability.</li>
+            <li>Built transferable QA skills: attention to detail, objective communication, urgency, and cause/impact analysis.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head">
+            <h3>LINX</h3>
+            <span class="period">2016 - 2019</span>
+          </div>
+          <p class="role">Specialized L4 support for corporate systems</p>
+          <ul>
+            <li>Investigated incidents and system behavior across ERP, POS, fiscal, retail, and food-industry integrations.</li>
+            <li>Reproduced failures, analyzed logs, collected evidence, validated fixes, and communicated with development teams.</li>
+            <li>Worked close to real production issues, strengthening test reasoning, impact analysis, and regression prevention.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head">
+            <h3>Kairus Tecnologia</h3>
+            <span class="period">2014 - 2016</span>
+          </div>
+          <p class="role">Operations and Systems Analyst</p>
+          <ul>
+            <li>Specialized support, system-flow analysis, and SaaS process automation to improve operational reliability.</li>
+          </ul>
+        </article>
+      </section>
     </div>
-    <div class="eco-group">
-      <div class="eco-label">Front-End &amp; Web</div>
-      <div class="chips">
-        <span class="chip">HTML5</span>
-        <span class="chip">CSS3</span>
-        <span class="chip">JavaScript</span>
-        <span class="chip">Responsive Testing</span>
-        <span class="chip">Cross-browser Testing</span>
-      </div>
-    </div>
-    <div class="eco-group">
-      <div class="eco-label">Workflow &amp; Collab</div>
-      <div class="chips">
-        <span class="chip">Git</span>
-        <span class="chip">GitHub</span>
-        <span class="chip">Scrum</span>
-        <span class="chip">Kanban</span>
-        <span class="chip">Agile</span>
-      </div>
-    </div>
-    <div class="eco-group">
-      <div class="eco-label">Automation</div>
-      <div class="chips">
-        <span class="chip green">Playwright</span>
-        <span class="chip green">Cypress</span>
-      </div>
-    </div>
+
+    <aside>
+      <section class="side-panel">
+        <h2 class="side-title">Core Skills</h2>
+        <div class="chips">
+          <span class="chip blue">API Testing</span>
+          <span class="chip blue">Postman</span>
+          <span class="chip blue">Playwright</span>
+          <span class="chip">Functional testing</span>
+          <span class="chip">Regression</span>
+          <span class="chip">Bug report</span>
+          <span class="chip">Jira</span>
+          <span class="chip">DevTools</span>
+          <span class="chip">GitHub Actions</span>
+          <span class="chip">Basic SQL</span>
+        </div>
+      </section>
+
+      <section class="side-panel">
+        <h2 class="side-title">Public Projects</h2>
+        <article class="mini">
+          <h3>Rapha.QA Portfolio + QA Sandbox</h3>
+          <p>Personal project used as a product under test for Playwright checks, with login, filters, UI states, mocked API, responsiveness, and execution summary.</p>
+          <a href="https://raphacastilho.github.io/Portfolio/">Open portfolio</a>
+        </article>
+        <article class="mini">
+          <h3>QA Sandbox</h3>
+          <p>Controlled environment to practice login, filters, success, empty, and API-error scenarios without depending on a real backend.</p>
+          <a href="https://raphacastilho.github.io/Portfolio/qa-sandbox.html">Open sandbox</a>
+        </article>
+        <article class="mini">
+          <h3>GitHub</h3>
+          <p>Repositories, studies, and technical progress focused on QA, API Testing, Playwright, and automation evidence.</p>
+          <a href="https://github.com/RaphaCastilho">Open GitHub</a>
+        </article>
+      </section>
+
+      <section class="side-panel">
+        <h2 class="side-title">Education and Languages</h2>
+        <ul class="list">
+          <li>Bachelor's Degree in Business Administration<span class="muted">Faculdade de Mantena - 2015</span></li>
+          <li>English<span class="muted">Intermediate conversation</span></li>
+          <li>Portuguese<span class="muted">Native</span></li>
+        </ul>
+      </section>
+
+      <section class="side-panel">
+        <h2 class="side-title">Courses</h2>
+        <ul class="list">
+          <li>Accessibility with React<span class="muted">Rocketseat - 2025</span></li>
+          <li>Dev Global Starter Pack<span class="muted">Rocketseat - 2025</span></li>
+          <li>Agile Methodologies<span class="muted">Rocketseat - 2024</span></li>
+        </ul>
+      </section>
+
+      <section class="side-panel">
+        <h2 class="side-title">Target Roles</h2>
+        <div class="chips">
+          <span class="chip green">QA Analyst</span>
+          <span class="chip green">QA Tester</span>
+          <span class="chip green">Functional QA</span>
+          <span class="chip green">API QA</span>
+          <span class="chip green">QA Automation Jr</span>
+          <span class="chip green">Remote</span>
+        </div>
+      </section>
+    </aside>
   </div>
-
-  <!-- ══════════════ PÁGINA 2 ════════════════════ -->
-  <div class="page-2">
-
-    <!-- EXPERIÊNCIA ────────────────────────────── -->
-    <div class="section-title">Professional Experience</div>
-
-    <section class="card job no-break">
-      <div class="job-head">
-        <h3>QA Engineer</h3>
-        <span class="period">01/2025 &ndash; 03/2026</span>
-      </div>
-      <p class="role">Independent Consultant</p>
-      <ul>
-        <li>Planned and executed functional, exploratory, and regression tests for web applications.</li>
-        <li>Automated E2E tests using Playwright and Cypress.</li>
-        <li>Validated REST APIs, integrations, and acceptance criteria.</li>
-        <li>Investigated, reproduced, and documented bugs.</li>
-        <li>Created test cases, evidence, and QA reports.</li>
-        <li>Collaborated daily with Product Managers, Designers, and Developers in an agile environment.</li>
-      </ul>
-      <div class="chips">
-        <span class="chip primary">Test Automation</span>
-        <span class="chip primary">Playwright</span>
-        <span class="chip primary">Cypress</span>
-        <span class="chip">API Testing</span>
-        <span class="chip">E2E Testing</span>
-        <span class="chip">Functional Testing</span>
-      </div>
-    </section>
-
-    <section class="card job no-break">
-      <div class="job-head">
-        <h3>Brooks Hamburgueria</h3>
-        <span class="period">01/2019 &ndash; 01/2025</span>
-      </div>
-      <p class="role">Operational Coordinator</p>
-      <ul>
-        <li>Analyzed operational processes to improve efficiency, identify inconsistencies, and monitor performance indicators.</li>
-        <li>Diagnosed operational failures and structured continuous improvement flows based on data and metrics.</li>
-        <li>Standardized procedures, operational quality controls, and troubleshooting routines for critical processes.</li>
-        <li>Managed teams with focus on operational consistency and adherence to defined processes.</li>
-      </ul>
-      <div class="chips">
-        <span class="chip primary">Operational Analysis</span>
-        <span class="chip">Performance Indicators</span>
-        <span class="chip">Failure Diagnosis</span>
-        <span class="chip">Continuous Improvement</span>
-        <span class="chip">Operational Troubleshooting</span>
-      </div>
-    </section>
-
-    <section class="card job no-break">
-      <div class="job-head">
-        <h3>LINX</h3>
-        <span class="period">06/2016 &ndash; 07/2019</span>
-      </div>
-      <p class="role">L4 Support Engineer</p>
-      <ul>
-        <li>Analyzed and resolved critical incidents in complex enterprise applications.</li>
-        <li>Investigated systemic failures in direct collaboration with development and architecture teams.</li>
-        <li>Validated system behavior to identify bugs, inconsistencies, and regressions.</li>
-        <li>Performed advanced troubleshooting using log analysis, functional diagnosis, and failure reproduction.</li>
-        <li>Validated critical workflows before releases and production fixes.</li>
-        <li>Identified integration inconsistencies and application behavior issues in enterprise environments.</li>
-      </ul>
-      <div class="chips">
-        <span class="chip primary">Troubleshooting</span>
-        <span class="chip primary">System Analysis</span>
-        <span class="chip">Bug Investigation</span>
-        <span class="chip">Critical Incidents</span>
-        <span class="chip">Software Quality</span>
-        <span class="chip">Functional Validation</span>
-      </div>
-    </section>
-
-    <section class="card job no-break">
-      <div class="job-head">
-        <h3>Kairus Tecnologia</h3>
-        <span class="period">09/2014 &ndash; 05/2016</span>
-      </div>
-      <p class="role">Operations &amp; Systems Analyst</p>
-      <ul>
-        <li>Automated SaaS processes to improve operational efficiency and system consistency.</li>
-        <li>Analyzed system workflows and identified improvement opportunities.</li>
-        <li>Provided specialized technical support for management systems and internal users.</li>
-      </ul>
-      <div class="chips">
-        <span class="chip primary">SaaS</span>
-        <span class="chip">Process Automation</span>
-        <span class="chip">Management Systems</span>
-        <span class="chip">Workflow Analysis</span>
-      </div>
-    </section>
-
-    <!-- AMBIENTES DE ATUAÇÃO ─────────────────── -->
-    <div class="section-title">Operating Environments</div>
-    <section class="card no-break">
-      <div class="env-wrap">
-        <span class="chip">SaaS</span>
-        <span class="chip">CRM</span>
-        <span class="chip">Enterprise Applications</span>
-        <span class="chip">Web Systems</span>
-        <span class="chip">Critical Operations</span>
-        <span class="chip">Enterprise Support</span>
-        <span class="chip">Retail Tech</span>
-        <span class="chip">System Integrations</span>
-      </div>
-    </section>
-
-  </div><!-- /page-2 -->
-
-  <!-- ══════════════ PÁGINA 3 ════════════════════ -->
-  <div class="page-3">
-
-    <!-- PROJETOS INDEPENDENTES ─────────────────── -->
-    <div class="section-title">Independent Projects &amp; Engineering</div>
-    <div class="project-grid">
-      <section class="card project no-break">
-        <h3>Operational Management Dashboard</h3>
-        <ul>
-          <li>Responsive administrative dashboard built with HTML5, CSS3, and JavaScript.</li>
-          <li>Manual testing, functional validations, and user workflow verification.</li>
-          <li>Chrome DevTools inspection and cross-browser responsiveness validation.</li>
-        </ul>
-        <div class="chips">
-          <span class="chip primary">QA Manual</span>
-          <span class="chip">Front-End Debugging</span>
-          <span class="chip">HTML5</span>
-          <span class="chip">JavaScript</span>
-        </div>
-      </section>
-      <section class="card project no-break">
-        <h3>Operational Workflow Validation App</h3>
-        <ul>
-          <li>Interactive web application with LocalStorage data persistence.</li>
-          <li>Validated UI states, edge cases, and interface behaviors.</li>
-          <li>Exploratory testing focused on user experience and functional quality.</li>
-        </ul>
-        <div class="chips">
-          <span class="chip primary">JavaScript</span>
-          <span class="chip">Exploratory Testing</span>
-          <span class="chip">UI/UX</span>
-          <span class="chip">Web Applications</span>
-        </div>
-      </section>
-    </div>
-
-    <!-- FORMAÇÃO & CERTIFICAÇÕES ──────────────── -->
-    <div class="section-title">Education &amp; Certifications</div>
-
-    <div class="edu-top">
-      <section class="card edu-block no-break">
-        <h3>Education</h3>
-        <p>Bachelor's Degree in Business Administration</p>
-        <p class="edu-sub">Faculdade de Mantena &mdash; 2015</p>
-      </section>
-      <section class="card edu-block no-break">
-        <h3>Languages</h3>
-        <div class="lang-row"><span>Portuguese</span><span class="lang-level">Native</span></div>
-        <div class="lang-row"><span>English</span><span class="lang-level">Intermediate</span></div>
-        <div class="lang-row"><span>Spanish</span><span class="lang-level">Basic</span></div>
-      </section>
-    </div>
-
-    <div class="edu-top">
-      <section class="card edu-block no-break">
-        <h3>Continuing Education</h3>
-        <ul class="training-list">
-          <li>Accessibility with React<span class="inst">Rocketseat Faculdade de Tecnologia &mdash; 2025</span></li>
-          <li>Dev Global Starter Pack<span class="inst">Rocketseat Faculdade de Tecnologia &mdash; 2025</span></li>
-          <li>Agile Methodologies<span class="inst">Rocketseat Faculdade de Tecnologia &mdash; 2024</span></li>
-        </ul>
-      </section>
-      <section class="card edu-block no-break">
-        <h3>Certifications</h3>
-        <ul class="cert-list">
-          <li>Facebook Ads<span class="inst">ComSchool</span></li>
-          <li>Leadership &amp; People Management<span class="inst">Udemy</span></li>
-          <li>Successful Negotiation<span class="inst">University of Michigan</span></li>
-        </ul>
-      </section>
-    </div>
-
-    <!-- DIFERENCIAIS ────────────────────────────── -->
-    <section class="card no-break">
-      <div class="section-title" style="margin:0 0 12px;">Technical Highlights</div>
-      <ul class="highlights-grid">
-        <li>Investigation and reproduction of bugs in corporate web applications.</li>
-        <li>Functional analysis with DevTools, logs, and behavioral system validation.</li>
-        <li>Clear technical communication across QA, support, and development teams.</li>
-        <li>Analytical profile focused on troubleshooting, traceability, and system quality.</li>
-      </ul>
-    </section>
-
-  </div><!-- /page-3 -->
-
 </main>
 </body>
 </html>

@@ -27,7 +27,7 @@ salvo for inválido, cai para `pt-BR`.
 ```
 index.html                 Estrutura + fallback estático PT-BR + IDs/hooks
 qa-sandbox.html             QA Sandbox (projeto interativo: login, filtros, mock de API)
-style.css                   Sistema visual dark enterprise (NÃO precisa mudar para editar texto)
+style.css                   Sistema visual dark do Portfolio (NÃO precisa mudar para editar texto)
 script.js                   Modelo de conteúdo bilíngue + toggle + render
 mixitup.min.js               Filtro de projetos (vendor)
 playwright.config.js        Configuração dos testes E2E (Playwright)
@@ -40,6 +40,10 @@ qa-lab/results/latest.json  Resumo de evidências exibido na seção "Automaçã
 .github/workflows/portfolio-quality.yml   Workflow de CI (testes a cada push/PR)
 docs/                       Este guia
 ```
+
+Arquivos locais de apoio como `.vscode/`, `imgs/`, `.claude/`, `.superpowers/`, relatórios
+Playwright brutos e rascunhos de CV ficam no `.gitignore`. Eles podem existir na máquina local,
+mas não fazem parte da entrega pública do Portfolio.
 
 ---
 
@@ -147,8 +151,8 @@ texto fixo em `script.js`.
 ## 5. Como regenerar os PDFs a partir dos HTMLs
 
 Os PDFs são **gerados a partir de `src/cv/*.html`** para manter consistência HTML↔PDF.
-Os CVs já têm CSS de impressão pronto: `@page { size: A4; margin: 0 }` e `@media print`
-com quebras explícitas (`.page-2`, `.page-3`) → **3 páginas A4**.
+Os CVs oficiais têm CSS de impressão pronto: `@page { size: A4; margin: 0 }` e
+`@media print`. A versão atual foi ajustada para **1 página A4** em PT-BR e EN-US.
 
 ### Método A — Navegador (recomendado, sem dependências)
 
@@ -236,7 +240,7 @@ Suíte com 6 arquivos de spec, cobrindo `index.html` e `qa-sandbox.html`:
 | `portfolio.spec.js` | Home carrega e mantém as seções principais; links de GitHub/LinkedIn/CV acessíveis |
 | `i18n.spec.js` | Toggle PT-BR/EN-US atualiza conteúdo e o arquivo de CV vinculado |
 | `automation-evidence.spec.js` | Resumo de evidências (seção Automação) renderiza corretamente ao lado do que testa |
-| `qa-sandbox.spec.js` | Sandbox valida login, filtros, estado vazio e logout; mocka as APIs de sessão/checagem, incluindo um erro 500 |
+| `qa-sandbox.spec.js` | Sandbox valida login, filtros, estado vazio, logout, erro 500 e renderização segura de conteúdo retornado por mock/API |
 | `responsive.spec.js` | Layout sem overflow em mobile, tablet e desktop |
 | `accessibility.spec.js` | Checagens básicas de acessibilidade |
 
@@ -248,8 +252,21 @@ roda os specs em Chromium desktop e Chromium mobile (`Pixel 5`), e grava:
 ### Evidências no site (`qa-lab/results/latest.json`) — atenção ao CI
 
 A seção "Automação" do site lê `qa-lab/results/latest.json` para mostrar contagem de testes,
-suítes e status. Esse arquivo é gerado por `tools/update-qa-lab-summary.mjs` a partir de
-`qa-lab/results/playwright-results.json` (a saída do Playwright).
+suítes, status e cobertura. Esse arquivo é gerado por `tools/update-qa-lab-summary.mjs` a partir
+de `qa-lab/results/playwright-results.json` (a saída do Playwright).
+
+O campo `coverage` é bilíngue:
+
+```json
+{
+  "coverage": {
+    "pt-BR": ["..."],
+    "en-US": ["..."]
+  }
+}
+```
+
+O `script.js` escolhe a lista de cobertura conforme o idioma ativo da página.
 
 **O workflow de CI (`.github/workflows/portfolio-quality.yml`) roda `npm run qa:summary` a cada
 push/PR, mas só faz upload do resultado como *artifact* do GitHub Actions — ele não commita o

@@ -10,7 +10,10 @@ test.describe("Home — automation evidence block", () => {
           status: "passed",
           generatedAt: "2026-09-13T12:00:00.000Z",
           summary: { total: 10, passed: 10, failed: 0, skipped: 0, flaky: 0 },
-          coverage: ["Mocked coverage line one", "Mocked coverage line two"],
+          coverage: {
+            "pt-BR": ["Linha de cobertura mockada em PT", "Segunda linha em PT"],
+            "en-US": ["Mocked coverage line one", "Mocked coverage line two"],
+          },
           suites: [
             { file: "a.spec.js", total: 5, passed: 5, failed: 0, skipped: 0, flaky: 0 },
             { file: "b.spec.js", total: 5, passed: 5, failed: 0, skipped: 0, flaky: 0 },
@@ -25,10 +28,11 @@ test.describe("Home — automation evidence block", () => {
     await expect(page.locator('[data-testid="evidence-total"]')).toHaveText("10/10");
     await expect(page.locator('[data-testid="evidence-suites"]')).toHaveText("2");
     await expect(page.locator('[data-testid="evidence-failed"]')).toHaveText("0");
-    await expect(page.locator('[data-testid="evidence-coverage-list"]')).toContainText("Mocked coverage line one");
+    await expect(page.locator('[data-testid="evidence-coverage-list"]')).toContainText("Linha de cobertura mockada em PT");
 
     await page.locator("#lang-toggle").click();
     await expect(page.locator('[data-testid="evidence-status"]')).toHaveText("Passed");
+    await expect(page.locator('[data-testid="evidence-coverage-list"]')).toContainText("Mocked coverage line one");
   });
 
   test("falls back gracefully when the summary JSON is unavailable", async ({ page }) => {

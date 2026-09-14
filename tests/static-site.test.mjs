@@ -7,6 +7,9 @@ import { fileURLToPath } from "node:url";
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const html = readFileSync(join(root, "index.html"), "utf8");
 const script = readFileSync(join(root, "script.js"), "utf8");
+const readme = readFileSync(join(root, "README.md"), "utf8");
+const gitignore = readFileSync(join(root, ".gitignore"), "utf8");
+const latestSummary = JSON.parse(readFileSync(join(root, "qa-lab", "results", "latest.json"), "utf8"));
 
 function attributeValue(tag, attribute) {
   const pattern = new RegExp(`\\s${attribute}\\s*=\\s*["']([^"']+)["']`, "i");
@@ -95,6 +98,36 @@ test("portfolio consolidates automation proof into the Automação section inste
   assert.ok(!script.includes("90+"), "script.js still exposes 90+");
   assert.ok(!html.includes("qa-test-lab"), "index.html still links the previous QA Lab project");
   assert.ok(!script.includes("qa-test-lab"), "script.js still links the previous QA Lab project");
+});
+
+test("public documentation matches the current QA Analyst positioning", () => {
+  const forbidden = [
+    /Quality Engineering Portfolio/i,
+    /Quality Ops/i,
+    /Operational Intelligence/i,
+    /Automation Engineering/i,
+    /qa-test-lab/i,
+    /100\+/,
+    /90\+/,
+  ];
+
+  for (const pattern of forbidden) {
+    assert.ok(!readme.match(pattern), `README still contains outdated positioning: ${pattern}`);
+  }
+
+  assert.ok(readme.includes("Analista de QA"), "README does not state the current QA positioning");
+  assert.ok(readme.includes("IA tratada apenas como apoio"), "README does not frame AI as support");
+});
+
+test("local-only workspace artifacts are ignored", () => {
+  for (const expected of [".vscode/", "imgs/", ".claude/", ".superpowers/", ".env", "node_modules/"]) {
+    assert.ok(gitignore.includes(expected), `.gitignore is missing ${expected}`);
+  }
+});
+
+test("QA evidence summary carries bilingual coverage lines", () => {
+  assert.ok(Array.isArray(latestSummary.coverage["pt-BR"]), "latest.json is missing pt-BR coverage");
+  assert.ok(Array.isArray(latestSummary.coverage["en-US"]), "latest.json is missing en-US coverage");
 });
 
 test("published CV assets are referenced by the site script", () => {

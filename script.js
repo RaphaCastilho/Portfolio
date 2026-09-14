@@ -88,7 +88,7 @@ const content = {
         {
           label: "IA com revisão",
           title: "Apoio para estudar e documentar",
-          description: "Uso de IA para organizar cenários, revisar textos e acelerar estudos, mantendo revisão humana.",
+          description: "Uso IA como apoio para organizar cenários, revisar textos e acelerar estudos. A decisão, a validação e a responsabilidade continuam humanas.",
           icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 8V6a4 4 0 0 1 8 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="14" r="1.5" fill="currentColor"/><circle cx="15" cy="14" r="1.5" fill="currentColor"/><path d="M9 17.5c.83.33 1.67.5 3 .5s2.17-.17 3-.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
         },
       ],
@@ -373,7 +373,7 @@ const content = {
         {
           label: "AI with review",
           title: "Support for studying and documentation",
-          description: "AI support for organizing scenarios, reviewing copy, and accelerating study, with human review.",
+          description: "I use AI as support to organize scenarios, review copy, and accelerate study. Decisions, validation, and responsibility stay human.",
           icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 8V6a4 4 0 0 1 8 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="14" r="1.5" fill="currentColor"/><circle cx="15" cy="14" r="1.5" fill="currentColor"/><path d="M9 17.5c.83.33 1.67.5 3 .5s2.17-.17 3-.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
         },
       ],
@@ -823,6 +823,26 @@ function updateLanguageFlag(lang) {
 
 let evidenceData = null;
 
+function getEvidenceCoverage(lang) {
+  const coverage = evidenceData?.coverage || [];
+
+  if (Array.isArray(coverage)) {
+    return coverage;
+  }
+
+  return coverage[lang] || coverage["pt-BR"] || coverage["en-US"] || [];
+}
+
+function renderEvidenceCoverage(lang) {
+  const list = byId("evidence-coverage-list");
+  if (!list) return;
+
+  list.innerHTML = getEvidenceCoverage(lang)
+    .slice(0, 5)
+    .map((line) => `<li>${escapeHtml(line)}</li>`)
+    .join("");
+}
+
 function renderEvidenceStatus(lang) {
   const pill = byId("evidence-status");
   if (!pill) return;
@@ -849,15 +869,9 @@ function renderEvidenceData(data) {
   setText("evidence-stat-suites", String((data.suites || []).length));
   setText("evidence-stat-failed", String(summary.failed ?? 0));
 
-  const list = byId("evidence-coverage-list");
-  if (list) {
-    list.innerHTML = (data.coverage || [])
-      .slice(0, 5)
-      .map((line) => `<li>${escapeHtml(line)}</li>`)
-      .join("");
-  }
-
-  renderEvidenceStatus(document.documentElement.lang || "pt-BR");
+  const lang = document.documentElement.lang || "pt-BR";
+  renderEvidenceCoverage(lang);
+  renderEvidenceStatus(lang);
 }
 
 function loadEvidence() {
@@ -941,6 +955,7 @@ function applyLanguage(lang) {
   setText("evidence-sandbox-desc", t.automation.sandboxDesc);
   setText("evidence-sandbox-link", t.automation.sandboxLinkLabel);
   setText("evidence-honest-text", t.automation.honestText);
+  renderEvidenceCoverage(active);
   renderEvidenceStatus(active);
 
   // ecosystem

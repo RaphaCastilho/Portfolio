@@ -1,17 +1,32 @@
 .superpowers/
 .claude/
+.vscode/
+imgs/
 
 # Backups / cópias locais
 * - Copia.*
 *- Copia.*
 *-Copia.*
 *.bak
+*.tmp
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+Thumbs.db
+
+# Ambiente local / segredos
+.env
+.env.*
+!.env.example
 
 # Local dependencies and QA artifacts
 node_modules/
 playwright-report/
 test-results/
 qa-lab/results/playwright-results.json
+output/playwright/
 
 # Documentos internos de estratégia/planejamento — não devem ficar públicos no repo
 MELHORIAS.md
@@ -25,3 +40,5 @@ src/cv/*_V3_*
 src/cv/*_V4A_*
 src/cv/*_V4B_*
 src/cv/*_V4C_*
+src/cv/*_V4D_*
+src/cv/*_V4E_*

@@ -5,16 +5,28 @@ import { fileURLToPath } from "node:url";
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const sourcePath = join(root, "qa-lab", "results", "playwright-results.json");
 const outputPath = join(root, "qa-lab", "results", "latest.json");
-const coverage = [
-  "Portfolio home loads and keeps its main sections",
-  "GitHub, LinkedIn, and CV links stay accessible",
-  "PT-BR/EN-US toggle updates content and the CV file",
-  "Local images load correctly while scrolling",
-  "Sandbox validates login, filters, empty state, and logout",
-  "Playwright mocks session and check APIs, including a 500 error",
-  "Evidence summary renders inline, next to what it tests",
-  "Layout stays overflow-free on mobile, tablet, and desktop",
-];
+const coverage = {
+  "pt-BR": [
+    "Home do Portfolio carrega e mantém as seções principais",
+    "Links de GitHub, LinkedIn e CV continuam acessíveis",
+    "Troca PT-BR/EN-US atualiza conteúdo e arquivo de CV",
+    "Imagens locais carregam corretamente durante o scroll",
+    "Sandbox valida login, filtros, estado vazio e logout",
+    "Playwright mocka APIs de sessão e checks, incluindo erro 500",
+    "Resumo de evidências aparece dentro da Home, ao lado do que ele testa",
+    "Layout fica sem overflow em mobile, tablet e desktop",
+  ],
+  "en-US": [
+    "Portfolio home loads and keeps its main sections",
+    "GitHub, LinkedIn, and CV links stay accessible",
+    "PT-BR/EN-US toggle updates content and the CV file",
+    "Local images load correctly while scrolling",
+    "Sandbox validates login, filters, empty state, and logout",
+    "Playwright mocks session and check APIs, including a 500 error",
+    "Evidence summary renders inline, next to what it tests",
+    "Layout stays overflow-free on mobile, tablet, and desktop",
+  ],
+};
 
 function emptySummary(status = "not-run") {
   return {

@@ -112,4 +112,45 @@ test.describe("QA Sandbox", () => {
     await expect(page.locator('[data-testid="workspace"]')).toBeVisible();
     await expect(page.locator('[data-testid="checks-status"]')).toContainText("Checks endpoint offline");
   });
+
+  test("renders mocked API content as text instead of executable HTML", async ({ page }) => {
+    await page.route("**/api/qa-sandbox/session", async (route) => {
+      await route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify({
+          user: { name: "Safe Render QA", role: "QA Analyst" },
+          token: "mock-token",
+          scope: "portfolio-quality",
+        }),
+      });
+    });
+    await page.route("**/api/qa-sandbox/checks", async (route) => {
+      await route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify({
+          checks: [
+            {
+              id: "SAFE-001",
+              title: '<img src=x onerror="window.__qaSandboxXss=1">',
+              area: "api",
+              status: "passed",
+              detail: "<script>window.__qaSandboxXss=1</script>",
+            },
+          ],
+        }),
+      });
+    });
+
+    await page.goto("/qa-sandbox.html?network=1");
+    await page.locator('[data-testid="email-input"]').fill("safe@qa.test");
+    await page.locator('[data-testid="password-input"]').fill("any-password");
+    await page.locator('[data-testid="login-button"]').click();
+
+    const card = page.locator('[data-testid="check-card"]').first();
+    await expect(card).toContainText("SAFE-001 - <img");
+    await expect(card.locator("img")).toHaveCount(0);
+    expect(await page.evaluate(() => window.__qaSandboxXss)).toBeUndefined();
+  });
 });

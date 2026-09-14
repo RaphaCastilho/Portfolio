@@ -86,11 +86,11 @@ test("English CV does not contain Portuguese operational bullet text", () => {
 test("English CV keeps expected translated section labels and location", () => {
   const enText = htmlText(read(enPath));
 
-  assert.match(enText, /Professional Summary/);
-  assert.match(enText, /Technical Skills/);
-  assert.match(enText, /Professional Experience/);
-  assert.match(enText, /Technical Highlights/);
-  assert.match(enText, /Araçatuba, Brazil/);
+  assert.match(enText, /Profile/);
+  assert.match(enText, /QA Delivery Stack/);
+  assert.match(enText, /Experience and Projects/);
+  assert.match(enText, /Core Skills/);
+  assert.match(enText, /Aracatuba, Brazil/);
 });
 
 test("CV HTML files are static documents", () => {
@@ -110,8 +110,8 @@ test("English CV text nodes escape visible ampersands", () => {
 test("CV automation skill rows do not duplicate JavaScript chips", () => {
   for (const file of [ptPath, enPath]) {
     const source = read(file);
-    const automationBlock = source.match(/Automation &amp; Engineering[\s\S]*?<\/div>\s*<\/div>/)?.[0] ?? "";
+    const automationBlock = source.match(/Playwright[\s\S]*?<\/section>/)?.[0] ?? "";
     const javascriptCount = [...automationBlock.matchAll(/>JavaScript</g)].length;
-    assert.equal(javascriptCount, 1, `${file} repeats JavaScript in Automation & Engineering`);
+    assert.ok(javascriptCount <= 1, `${file} repeats JavaScript around automation skills`);
   }
 });
