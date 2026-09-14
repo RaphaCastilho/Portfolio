@@ -7,6 +7,7 @@ import { fileURLToPath } from "node:url";
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const ptPath = join(root, "src", "cv", "DEV_Rapha_CV_PT.html");
 const enPath = join(root, "src", "cv", "DEV_Rapha_CV_EN.html");
+const obsoleteLinxCvPeriod = ["2016", " - ", "2019"].join("");
 
 function read(path) {
   return readFileSync(path, "utf8");
@@ -113,5 +114,14 @@ test("CV automation skill rows do not duplicate JavaScript chips", () => {
     const automationBlock = source.match(/Playwright[\s\S]*?<\/section>/)?.[0] ?? "";
     const javascriptCount = [...automationBlock.matchAll(/>JavaScript</g)].length;
     assert.ok(javascriptCount <= 1, `${file} repeats JavaScript around automation skills`);
+  }
+});
+
+test("CV timeline matches validated LINX dates", () => {
+  for (const file of [ptPath, enPath]) {
+    const text = htmlText(read(file));
+
+    assert.match(text, /LINX\s+2016 - 2017/, `${file} should show LINX as 2016 - 2017`);
+    assert.ok(!text.includes(`LINX ${obsoleteLinxCvPeriod}`), `${file} still shows the old LINX period`);
   }
 });

@@ -13,6 +13,14 @@ const gitignore = readFileSync(join(root, ".gitignore"), "utf8");
 const latestSummary = JSON.parse(readFileSync(join(root, "qa-lab", "results", "latest.json"), "utf8"));
 const obsoleteStandaloneLabSlug = ["qa", "test", "lab"].join("-");
 const obsoletePortfolioLabel = ["Quality", "Engineering", "Portfolio"].join(" ");
+const obsoleteHeroCount = ["90", "+"].join("");
+const obsoleteLinxSitePeriod = ["2016", " — ", "2019"].join("");
+const obsoleteCurrentProjectPeriod = ["Jan/2025", " — ", "Mar/2026"].join("");
+const overclaimedPrimaryTools = [
+  ["Type", "Script"],
+  ["Jen", "kins"],
+  ["All", "ure"],
+].map((parts) => parts.join(""));
 
 function attributeValue(tag, attribute) {
   const pattern = new RegExp(`\\s${attribute}\\s*=\\s*["']([^"']+)["']`, "i");
@@ -97,10 +105,28 @@ test("portfolio consolidates automation proof into the Automação section inste
   assert.ok(!html.includes('class="hero-metric-value"'), "index.html still duplicates the test count in the hero");
   assert.ok(!html.includes('href="./qa-lab.html"'), "index.html should no longer link a standalone QA Lab page");
   assert.ok(!script.includes('liveUrl: "./qa-lab.html"'), "script.js should no longer carry a standalone QA Lab project card");
-  assert.ok(!html.includes(">90+<"), "index.html still exposes 90+");
-  assert.ok(!script.includes("90+"), "script.js still exposes 90+");
+  assert.ok(!html.includes(`>${obsoleteHeroCount}<`), "index.html still exposes the old static hero count");
+  assert.ok(!script.includes(obsoleteHeroCount), "script.js still exposes the old static hero count");
   assert.ok(!html.includes(obsoleteStandaloneLabSlug), "index.html still links the previous standalone lab project");
   assert.ok(!script.includes(obsoleteStandaloneLabSlug), "script.js still links the previous standalone lab project");
+});
+
+test("portfolio timeline matches validated LINX dates", () => {
+  assert.ok(html.includes("Jan/2025 — Atual"), "index.html does not show the current QA project as ongoing");
+  assert.ok(script.includes('period: "Jan/2025 — Atual"'), "script.js does not show the current QA project as ongoing");
+  assert.ok(!html.includes(obsoleteCurrentProjectPeriod), "index.html still shows a closed/future period for current QA work");
+  assert.ok(!script.includes(`period: "${obsoleteCurrentProjectPeriod}"`), "script.js still shows a closed/future period for current QA work");
+  assert.ok(html.includes("2016 — 2017"), "index.html does not show the corrected LINX period");
+  assert.ok(script.includes('period: "2016 — 2017"'), "script.js does not show the corrected LINX period");
+  assert.ok(!html.includes(obsoleteLinxSitePeriod), "index.html still shows the old LINX period");
+  assert.ok(!script.includes(`period: "${obsoleteLinxSitePeriod}"`), "script.js still shows the old LINX period");
+});
+
+test("portfolio primary stack avoids tools outside the current safe positioning", () => {
+  for (const tool of overclaimedPrimaryTools) {
+    assert.ok(!html.includes(tool), `index.html still exposes ${tool} in the primary stack`);
+    assert.ok(!script.includes(tool), `script.js still exposes ${tool} in the primary stack`);
+  }
 });
 
 test("public metadata matches the current QA Analyst positioning", () => {
@@ -126,7 +152,7 @@ test("public metadata matches the current QA Analyst positioning", () => {
 });
 
 test("local-only workspace artifacts are ignored", () => {
-  for (const expected of [".vscode/", "imgs/", ".claude/", ".superpowers/", ".env", "node_modules/"]) {
+  for (const expected of [".vscode/", "imgs/", ".claude/", ".superpowers/", ".env", "node_modules/", "output/pdf-render-check/"]) {
     assert.ok(gitignore.includes(expected), `.gitignore is missing ${expected}`);
   }
 });

@@ -27,6 +27,7 @@ playwright-report/
 test-results/
 qa-lab/results/playwright-results.json
 output/playwright/
+output/pdf-render-check/
 
 # Documentos internos de estratégia/planejamento — não devem ficar públicos no repo
 MELHORIAS.md

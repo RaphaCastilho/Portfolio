@@ -109,7 +109,7 @@ const content = {
           title: "Automation",
           description: "Automação aplicada em fluxos de tela, estados de UI e validações E2E.",
           icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 6l-4 6 4 6M16 6l4 6-4 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-          items: ["Playwright", "JavaScript", "TypeScript", "Node.js", "E2E Workflows"],
+          items: ["Playwright", "JavaScript", "Node.js", "E2E Workflows", "Locators"],
         },
         {
           title: "API & Systems",
@@ -118,10 +118,10 @@ const content = {
           items: ["REST APIs", "API Testing", "Postman", "Chrome DevTools", "Logs", "SQL"],
         },
         {
-          title: "CI/CD & DevOps",
+          title: "CI/CD & Evidence",
           description: "Execução automatizada de checks para dar visibilidade ao resultado dos testes.",
           icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15 8h6l-5 4 2 6-6-4-6 4 2-6L3 8h6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
-          items: ["GitHub Actions", "CI/CD Pipelines", "Jenkins", "GitHub Pages", "Deploy Automation"],
+          items: ["GitHub Actions", "CI/CD Basics", "Quality Gates", "GitHub Pages", "Test Evidence"],
         },
         {
           title: "Workflow & Collaboration",
@@ -220,8 +220,8 @@ const content = {
         },
         {
           company: "LINX",
-          period: "2016 — 2019",
-          role: "Engenheiro de Suporte L4",
+          period: "2016 — 2017",
+          role: "Analista de Suporte L4",
           badges: ["Enterprise", "Suporte", "Sistemas", "Logs"],
           icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
           bullets: [
@@ -394,7 +394,7 @@ const content = {
           title: "Automation",
           description: "Automation applied to screen flows, UI states, and E2E validations.",
           icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 6l-4 6 4 6M16 6l4 6-4 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-          items: ["Playwright", "JavaScript", "TypeScript", "Node.js", "E2E Workflows"],
+          items: ["Playwright", "JavaScript", "Node.js", "E2E Workflows", "Locators"],
         },
         {
           title: "API & Systems",
@@ -403,10 +403,10 @@ const content = {
           items: ["REST APIs", "API Testing", "Postman", "Chrome DevTools", "Logs", "SQL"],
         },
         {
-          title: "CI/CD & DevOps",
-          description: "Automated check execution to make test results visible.",
+          title: "CI/CD & Evidence",
+          description: "Automated check execution to make test results and quality evidence visible.",
           icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15 8h6l-5 4 2 6-6-4-6 4 2-6L3 8h6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>',
-          items: ["GitHub Actions", "CI/CD Pipelines", "Jenkins", "GitHub Pages", "Deploy Automation"],
+          items: ["GitHub Actions", "CI/CD Basics", "Quality Gates", "GitHub Pages", "Test Evidence"],
         },
         {
           title: "Workflow & Collaboration",
@@ -505,8 +505,8 @@ const content = {
         },
         {
           company: "LINX",
-          period: "2016 — 2019",
-          role: "L4 Support Engineer",
+          period: "2016 — 2017",
+          role: "L4 Support Analyst",
           badges: ["Enterprise", "Support", "Systems", "Logs"],
           icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
           bullets: [
