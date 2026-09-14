@@ -1,7 +1,7 @@
 {
-  "name": "Rapha.QA — Quality Engineering & Automation",
+  "name": "Rapha.QA — QA Analyst Portfolio",
   "short_name": "Rapha.QA",
-  "description": "Portfólio de Raphael Castilho — QA Engineer, Automation e Quality Engineering.",
+  "description": "Portfólio de Raphael Castilho — Analista de QA com foco em API Testing, Postman e automação Playwright.",
   "start_url": "/Portfolio/",
   "display": "standalone",
   "background_color": "#0B0F19",

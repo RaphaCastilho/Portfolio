@@ -8,8 +8,11 @@ const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const html = readFileSync(join(root, "index.html"), "utf8");
 const script = readFileSync(join(root, "script.js"), "utf8");
 const readme = readFileSync(join(root, "README.md"), "utf8");
+const manifest = readFileSync(join(root, "site.webmanifest"), "utf8");
 const gitignore = readFileSync(join(root, ".gitignore"), "utf8");
 const latestSummary = JSON.parse(readFileSync(join(root, "qa-lab", "results", "latest.json"), "utf8"));
+const obsoleteStandaloneLabSlug = ["qa", "test", "lab"].join("-");
+const obsoletePortfolioLabel = ["Quality", "Engineering", "Portfolio"].join(" ");
 
 function attributeValue(tag, attribute) {
   const pattern = new RegExp(`\\s${attribute}\\s*=\\s*["']([^"']+)["']`, "i");
@@ -96,27 +99,30 @@ test("portfolio consolidates automation proof into the Automação section inste
   assert.ok(!script.includes('liveUrl: "./qa-lab.html"'), "script.js should no longer carry a standalone QA Lab project card");
   assert.ok(!html.includes(">90+<"), "index.html still exposes 90+");
   assert.ok(!script.includes("90+"), "script.js still exposes 90+");
-  assert.ok(!html.includes("qa-test-lab"), "index.html still links the previous QA Lab project");
-  assert.ok(!script.includes("qa-test-lab"), "script.js still links the previous QA Lab project");
+  assert.ok(!html.includes(obsoleteStandaloneLabSlug), "index.html still links the previous standalone lab project");
+  assert.ok(!script.includes(obsoleteStandaloneLabSlug), "script.js still links the previous standalone lab project");
 });
 
-test("public documentation matches the current QA Analyst positioning", () => {
+test("public metadata matches the current QA Analyst positioning", () => {
   const forbidden = [
-    /Quality Engineering Portfolio/i,
+    new RegExp(obsoletePortfolioLabel, "i"),
     /Quality Ops/i,
     /Operational Intelligence/i,
     /Automation Engineering/i,
-    /qa-test-lab/i,
+    new RegExp(obsoleteStandaloneLabSlug, "i"),
     /100\+/,
     /90\+/,
   ];
 
   for (const pattern of forbidden) {
     assert.ok(!readme.match(pattern), `README still contains outdated positioning: ${pattern}`);
+    assert.ok(!manifest.match(pattern), `site.webmanifest still contains outdated positioning: ${pattern}`);
   }
 
   assert.ok(readme.includes("Analista de QA"), "README does not state the current QA positioning");
   assert.ok(readme.includes("IA tratada apenas como apoio"), "README does not frame AI as support");
+  assert.ok(manifest.includes("QA Analyst Portfolio"), "site.webmanifest does not state the current portfolio positioning");
+  assert.ok(manifest.includes("API Testing"), "site.webmanifest does not mention API Testing");
 });
 
 test("local-only workspace artifacts are ignored", () => {
