@@ -355,6 +355,10 @@ li {
   font-size: 10px;
 }
 
+.print-footer {
+  display: none;
+}
+
 @page { size: A4; margin: 0; }
 
 @media print {
@@ -362,47 +366,67 @@ li {
   body { background: #FFFFFF; }
   .page {
     width: 100%;
+    min-height: 297mm;
     margin: 0;
     border: 0;
     border-radius: 0;
     box-shadow: none;
+    position: relative;
   }
-  .hero { grid-template-columns: 1fr 60mm; gap: 7mm; padding: 8mm 10mm 6mm; border-top-width: 2mm; }
+  .hero { grid-template-columns: 1fr 60mm; gap: 7mm; padding: 9mm 10mm 7mm; border-top-width: 2mm; }
   .kicker { font-size: 7.2px; padding: 2px 5px; margin-bottom: 5px; }
-  h1 { font-size: 23.5px; }
-  .headline { margin-top: 4px; font-size: 10.8px; }
-  .micro { margin-top: 5px; font-size: 8px; }
-  .links { padding: 1px 0 1px 5mm; gap: 2px; font-size: 7.3px; }
+  h1 { font-size: 26px; }
+  .headline { margin-top: 5px; font-size: 12px; }
+  .micro { margin-top: 6px; font-size: 9px; }
+  .links { padding: 1px 0 1px 5mm; gap: 3px; font-size: 8.1px; }
   .signal-bar { grid-template-columns: repeat(4, 1fr); }
-  .signal { padding: 6px 9px; }
-  .signal strong { font-size: 8.4px; }
-  .signal span { font-size: 7.4px; }
-  .content { grid-template-columns: 1fr 60mm; gap: 7mm; padding: 7mm 10mm 9mm; }
-  .section { margin-top: 10px; }
-  .title { margin-bottom: 5px; font-size: 7.7px; }
+  .signal { padding: 8px 9px; }
+  .signal strong { font-size: 9.3px; }
+  .signal span { font-size: 8.2px; }
+  .content { grid-template-columns: 1fr 60mm; gap: 7mm; padding: 8mm 10mm 18mm; }
+  .section { margin-top: 12px; }
+  .title { margin-bottom: 6px; font-size: 8.4px; }
   .title::before { width: 14px; height: 2px; }
-  .summary { font-size: 8.7px; line-height: 1.4; }
-  .qa-stack { gap: 5px; }
-  .stack-card { padding: 6px 7px; border-radius: 5px; }
-  .stack-card strong { margin-bottom: 2px; font-size: 8.5px; }
-  .stack-card p { font-size: 7.8px; line-height: 1.26; }
-  .job { padding-left: 12px; margin-bottom: 8px; border-left-width: 1px; }
+  .summary { font-size: 9.6px; line-height: 1.5; }
+  .qa-stack { gap: 6px; }
+  .stack-card { padding: 7.5px 8px; border-radius: 5px; }
+  .stack-card strong { margin-bottom: 3px; font-size: 9.3px; }
+  .stack-card p { font-size: 8.5px; line-height: 1.35; }
+  .job { padding-left: 12px; margin-bottom: 10px; border-left-width: 1px; }
   .job::before { left: -4px; width: 7px; height: 7px; box-shadow: 0 0 0 3px #E0F2FE; }
-  .job h3 { font-size: 9.4px; }
-  .period { font-size: 7.5px; }
-  .role { margin-bottom: 3px; font-size: 8.2px; }
-  li { margin: 1.4px 0; font-size: 8.1px; line-height: 1.25; }
-  .side-panel { padding: 7px; border-radius: 5px; }
-  .side-panel + .side-panel { margin-top: 6px; }
-  .side-title { margin-bottom: 5px; font-size: 7.4px; }
-  .chips { gap: 2.5px; }
-  .chip { padding: 2px 4.5px; border-radius: 4px; font-size: 7.2px; }
-  .mini { padding: 5px 0; }
-  .mini h3 { font-size: 8.5px; }
-  .mini p { margin-top: 2px; font-size: 7.7px; line-height: 1.25; }
-  .mini a { margin-top: 2px; font-size: 7.5px; }
-  .list li { padding: 3px 0; font-size: 7.8px; }
-  .muted { font-size: 7px; }
+  .job h3 { font-size: 10.2px; }
+  .period { font-size: 8.1px; }
+  .role { margin-bottom: 4px; font-size: 9px; }
+  li { margin: 2px 0; font-size: 8.8px; line-height: 1.35; }
+  .side-panel { padding: 8.5px; border-radius: 5px; }
+  .side-panel + .side-panel { margin-top: 7.5px; }
+  .side-title { margin-bottom: 6px; font-size: 8px; }
+  .chips { gap: 3px; }
+  .chip { padding: 2.6px 5px; border-radius: 4px; font-size: 7.8px; }
+  .mini { padding: 6px 0; }
+  .mini h3 { font-size: 9.2px; }
+  .mini p { margin-top: 2.5px; font-size: 8.3px; line-height: 1.35; }
+  .mini a { margin-top: 3px; font-size: 8px; }
+  .list li { padding: 4px 0; font-size: 8.4px; }
+  .muted { font-size: 7.5px; }
+  .print-footer {
+    position: absolute;
+    left: 10mm;
+    right: 10mm;
+    bottom: 7mm;
+    display: flex;
+    justify-content: space-between;
+    gap: 8mm;
+    padding-top: 3mm;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 7.8px;
+    line-height: 1.25;
+  }
+  .print-footer strong {
+    color: var(--blue);
+    font-weight: 900;
+  }
 }
 
 @media (max-width: 780px) {
@@ -605,6 +629,10 @@ li {
       </section>
     </aside>
   </div>
+  <footer class="print-footer" aria-hidden="true">
+    <span><strong>Raphael Castilho Villela</strong> - Analista de QA | API Testing | Playwright</span>
+    <span>Portfolio + QA Sandbox - disponibilidade imediata para remoto CLT/PJ</span>
+  </footer>
 </main>
 </body>
 </html>
