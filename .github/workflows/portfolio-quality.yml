@@ -42,7 +42,7 @@ jobs:
 
       - name: Upload Playwright report
         if: always()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: portfolio-playwright-report
           path: playwright-report/
@@ -50,7 +50,7 @@ jobs:
 
       - name: Upload QA Lab summary
         if: always()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: portfolio-qa-summary
           path: qa-lab/results/latest.json
