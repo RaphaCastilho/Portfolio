@@ -207,7 +207,7 @@ const content = {
         },
         {
           company: "Brooks Hamburgueria",
-          period: "2019 — 2025",
+          period: "2018 — 2025",
           role: "Coordenador Operacional",
           badges: ["Operações", "Indicadores", "Processos", "Liderança"],
           icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
@@ -492,7 +492,7 @@ const content = {
         },
         {
           company: "Brooks Hamburgueria",
-          period: "2019 — 2025",
+          period: "2018 — 2025",
           role: "Operational Coordinator",
           badges: ["Operations", "Indicators", "Processes", "Leadership"],
           icon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
